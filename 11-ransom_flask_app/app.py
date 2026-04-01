@@ -642,4 +642,4 @@ def api_cve_exposure_stats():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8880)
