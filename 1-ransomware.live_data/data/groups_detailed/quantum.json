@@ -1,0 +1,64 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "quantum",
+  "description": null,
+  "added_date": null,
+  "victims": 68,
+  "firstseen": "2021-09-09",
+  "lastseen": "2022-12-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "RSAT",
+      "Splashtop"
+    ],
+    "DiscoveryEnum": [
+      "AdFind"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz",
+      "ProcDump"
+    ],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "PsExec",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "quantum445bh3gzuyilxdzs5xdepf3b7lkcupswvkryf3n7hgzpxebid.onion",
+      "title": "Quantum Blog",
+      "slug": "http://quantum445bh3gzuyilxdzs5xdepf3b7lkcupswvkryf3n7hgzpxebid.onion/",
+      "available": false,
+      "updated": "2024-12-31 10:36:23.813921",
+      "lastscrape": "2025-06-01 21:19:12.449806",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "22rnyep2aa2exx3fdm26p4onwjfmhciodb55v5l3w4iny7e5bxpg3yad.onion",
+      "title": "Secure Chat",
+      "slug": "http://22rnyep2aa2exx3fdm26p4onwjfmhciodb55v5l3w4iny7e5bxpg3yad.onion/",
+      "available": false,
+      "updated": "2022-08-29 08:32:48.555282",
+      "lastscrape": "2025-06-01 21:19:23.847715",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/quantum"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "shaoleaks",
+  "description": null,
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2022-11-01",
+  "lastseen": "2022-11-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "crptd5sv5bdz6hovrbkac6mnp3rt7zij62njsqwh5a6ldd3asxdd22qd.onion",
+      "title": "Shao leaks team",
+      "slug": "http://crptd5sv5bdz6hovrbkac6mnp3rt7zij62njsqwh5a6ldd3asxdd22qd.onion",
+      "available": false,
+      "updated": "2022-11-01 16:55:57.245233",
+      "lastscrape": "2025-06-01 21:18:32.608365",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/shaoleaks"
+}

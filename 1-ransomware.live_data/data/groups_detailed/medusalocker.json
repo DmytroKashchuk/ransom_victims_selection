@@ -1,0 +1,92 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "medusalocker",
+  "description": "Medusa is a DDoS bot written in .NET 2.0. In its current incarnation its C&C protocol is based on HTTP, while its predecessor made use of IRC.\n",
+  "added_date": null,
+  "victims": 51,
+  "firstseen": "2021-11-03",
+  "lastseen": "2025-11-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "Remote Desktop Plus (RDP+)"
+    ],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner",
+      "Advanced Port Scanner",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Invoke-TheHash",
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Impacket"
+    ],
+    "DefenseEvasion": [
+      "HRSword",
+      "PCHunter",
+      "ProcessHacker"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "qd7pcafncosqfqu3ha6fcx4h6sr7tzwagzpcdcnytiw3b6varaeqv5yd.onion",
+      "title": null,
+      "slug": "https://qd7pcafncosqfqu3ha6fcx4h6sr7tzwagzpcdcnytiw3b6varaeqv5yd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:12.353452",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "z6wkgghtoawog5noty5nxulmmt2zs7c3yvwr22v4czbffdoly2kl4uad.onion",
+      "title": "Ransomware blog – We will not give ourselves a name. Just watch out for the leakage of your data:)",
+      "slug": "http://z6wkgghtoawog5noty5nxulmmt2zs7c3yvwr22v4czbffdoly2kl4uad.onion",
+      "available": false,
+      "updated": "2025-11-18 23:01:19.959995",
+      "lastscrape": "2025-12-18 23:30:18.151032",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-18T23:30:18+00:00",
+        "start_url": "http://z6wkgghtoawog5noty5nxulmmt2zs7c3yvwr22v4czbffdoly2kl4uad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "95.143.191.148:3000",
+      "title": "Medusa Chat",
+      "slug": "http://95.143.191.148:3000/",
+      "available": false,
+      "updated": "2024-05-27 17:15:56.012955",
+      "lastscrape": "2025-06-01 21:20:10.065870",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "medusaxko7jxtrojdkxo66j7ck4q5tgktf7uqsqyfry4ebnxlcbkccyd.onion",
+      "title": "Human Verify",
+      "slug": "http://medusaxko7jxtrojdkxo66j7ck4q5tgktf7uqsqyfry4ebnxlcbkccyd.onion/",
+      "available": false,
+      "updated": "2024-03-01 12:41:40.767894",
+      "lastscrape": "2025-06-01 21:20:46.683986",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/medusalocker"
+}

@@ -1,0 +1,140 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "funksec",
+  "description": null,
+  "added_date": null,
+  "victims": 172,
+  "firstseen": "2023-04-13",
+  "lastseen": "2025-03-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "7ixfdvqb4eaju5lzj4gg76kwlrxg4ugqpuog5oqkkmgfyn33h527oyyd.onion",
+      "title": "Funksec",
+      "slug": "http://7ixfdvqb4eaju5lzj4gg76kwlrxg4ugqpuog5oqkkmgfyn33h527oyyd.onion",
+      "available": false,
+      "updated": "2024-12-31 11:01:32.060131",
+      "lastscrape": "2025-06-01 21:18:24.065538",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "pke2vht5jdeninupk7i2thcfvxegsue6oraswpka35breuj7xxz2erid.onion",
+      "title": "Funksec",
+      "slug": "http://pke2vht5jdeninupk7i2thcfvxegsue6oraswpka35breuj7xxz2erid.onion",
+      "available": false,
+      "updated": "2024-12-31 11:01:34.839974",
+      "lastscrape": "2025-06-01 21:19:12.835605",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "ykqjcrptcai76ru5u7jhvspkeizfsvpgovton4jmreawj4zdwe4qnlid.onion",
+      "title": null,
+      "slug": "http://ykqjcrptcai76ru5u7jhvspkeizfsvpgovton4jmreawj4zdwe4qnlid.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:30.167939",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "funkxxkovrk7ctnggbjnthdajav4ggex53k6m2x3esjwlxrkb3qiztid.onion",
+      "title": "New Address Blog",
+      "slug": "http://funkxxkovrk7ctnggbjnthdajav4ggex53k6m2x3esjwlxrkb3qiztid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:29.595884",
+      "lastscrape": "2026-02-18 18:01:29.595884",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:29+00:00",
+        "start_url": "http://funkxxkovrk7ctnggbjnthdajav4ggex53k6m2x3esjwlxrkb3qiztid.onion",
+        "final_url": "http://funkxxkovrk7ctnggbjnthdajav4ggex53k6m2x3esjwlxrkb3qiztid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:06:40 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Tue, 04 Mar 2025 14:10:03 GMT",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"67c709bb-12fe\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "funknqn44slwmgwgnewne6bintbooauwkaupik4yrlgtycew3ergraid.onion",
+      "title": "New Address Blog",
+      "slug": "http://funknqn44slwmgwgnewne6bintbooauwkaupik4yrlgtycew3ergraid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:03:00.219507",
+      "lastscrape": "2026-02-18 18:03:00.219507",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:03:00+00:00",
+        "start_url": "http://funknqn44slwmgwgnewne6bintbooauwkaupik4yrlgtycew3ergraid.onion",
+        "final_url": "http://funknqn44slwmgwgnewne6bintbooauwkaupik4yrlgtycew3ergraid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:08:07 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Tue, 04 Mar 2025 14:10:03 GMT",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"67c709bb-12fe\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "funksec.top",
+      "title": "Anon Hosting - Hidden Services",
+      "slug": "http://funksec.top",
+      "available": false,
+      "updated": "2025-06-05 05:31:38.079233",
+      "lastscrape": "2025-07-05 05:32:30.222806",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "funksec53xh7j5t6ysgwnaidj5vkh3aqajanplix533kwxdz3qrwugid.onion",
+      "title": "Funksec v3.0",
+      "slug": "http://funksec53xh7j5t6ysgwnaidj5vkh3aqajanplix533kwxdz3qrwugid.onion",
+      "available": false,
+      "updated": "2025-04-13 14:34:25.895491",
+      "lastscrape": "2025-06-01 21:21:01.574328",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/funksec"
+}

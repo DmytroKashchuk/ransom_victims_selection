@@ -1,0 +1,241 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "donex",
+  "description": null,
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2024-02-22",
+  "lastseen": "2024-02-27",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Windows Management Instrumentation",
+          "technique_id": "T1047",
+          "technique_details": "The ransomware uses wmic.exe to query the OS."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter",
+          "technique_id": "T1059",
+          "technique_details": "Apparent internal use of CMD.exe."
+        },
+        {
+          "technique_name": "Scripting",
+          "technique_id": "T1064",
+          "technique_details": "Performs batch file execution."
+        },
+        {
+          "technique_name": "Native API",
+          "technique_id": "T1106",
+          "technique_details": "The process attempted to delete shadow volume copies (VSS)."
+        },
+        {
+          "technique_name": "Shared Modules",
+          "technique_id": "T1129",
+          "technique_details": "The ransomware tries to carry out process loader, malicious functions."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Windows Services",
+          "technique_id": "T1543.003",
+          "technique_details": "Paralyzes some types of services."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Obfuscated Files or Information",
+          "technique_id": "T1027",
+          "technique_details": "Uses payload data encoding."
+        },
+        {
+          "technique_name": "Indicator Removal from Tools",
+          "technique_id": "T1027.005",
+          "technique_details": "Contains obfuscated stackstrings."
+        },
+        {
+          "technique_name": "Embedded Payloads",
+          "technique_id": "T1027.009",
+          "technique_details": "Discards interesting files and uses them in its execution."
+        },
+        {
+          "technique_name": "Masquerading",
+          "technique_id": "T1036",
+          "technique_details": "Creates files within the user directory. Adversaries use it for purposes of manipulating characteristics of their artifacts to make them appear legitimate."
+        },
+        {
+          "technique_name": "Scripting",
+          "technique_id": "T1064",
+          "technique_details": "Execute files in bat."
+        },
+        {
+          "technique_name": "Clear Windows Event Logs",
+          "technique_id": "T1070.001",
+          "technique_details": "Clears the Windows Operating System event logs."
+        },
+        {
+          "technique_name": "File Deletion",
+          "technique_id": "T1070.004",
+          "technique_details": "Performs the deletion of shadow file data and also self-exclusion."
+        },
+        {
+          "technique_name": "Indirect Command Execution",
+          "technique_id": "T1202",
+          "technique_details": "The adversary abuses utilities that allow the execution of commands to bypass security controls."
+        },
+        {
+          "technique_name": "File and Directory Permissions Modification",
+          "technique_id": "T1222",
+          "technique_details": "Retrieves and sets file attributes."
+        },
+        {
+          "technique_name": "Abuse Elevation Control Mechanism",
+          "technique_id": "T1548",
+          "technique_details": "The threat actor uses privilege control mechanisms to bypass privilege control mechanisms to obtain permissions."
+        },
+        {
+          "technique_name": "Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Uses taskkill to terminate processes."
+        },
+        {
+          "technique_name": "Hidden Window",
+          "technique_id": "T1564.003",
+          "technique_details": "Graphical window operation."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "Input Capture",
+          "technique_id": "T1056",
+          "technique_details": "Creates an object generally used for keystroke capture purposes."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "System Service Discovery",
+          "technique_id": "T1007",
+          "technique_details": "List some services and check their status."
+        },
+        {
+          "technique_name": "Application Window Discovery",
+          "technique_id": "T1010",
+          "technique_details": "The threat actor attempts to obtain a list of open applications and processes."
+        },
+        {
+          "technique_name": "System Network Configuration Discovery",
+          "technique_id": "T1016",
+          "technique_details": "Uses ping.exe to check the status of network devices."
+        },
+        {
+          "technique_name": "Remote System Discovery",
+          "technique_id": "T1018",
+          "technique_details": "Uses ping.exe to check the status of network devices."
+        },
+        {
+          "technique_name": "Process Discovery",
+          "technique_id": "T1057",
+          "technique_details": "Malware attempts to obtain information about the processes running on a system."
+        },
+        {
+          "technique_name": "System Information Discovery",
+          "technique_id": "T1082",
+          "technique_details": "Searches and collects information related to the Operating System."
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Reads the files, gets the size and enumerates according to Windows."
+        },
+        {
+          "technique_name": "Network Share Discovery",
+          "technique_id": "T1135",
+          "technique_details": "Enumerates the victim's network shares."
+        },
+        {
+          "technique_name": "Security Software Discovery",
+          "technique_id": "T1518.001",
+          "technique_details": "Attempts to detect the virtual machine to make analysis more difficult."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0009",
+      "tactic_name": "Collection",
+      "techniques": [
+        {
+          "technique_name": "Data Staged",
+          "technique_id": "T1074",
+          "technique_details": "The actor uses data storage in a central location before performing exfiltration."
+        },
+        {
+          "technique_name": "Automated Collection",
+          "technique_id": "T1119",
+          "technique_details": "The process attempted to detect the presence of forensic and debug utilities."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "The ransomware renames files according to their variant and writes a file for ransom note purposes."
+        },
+        {
+          "technique_name": "Service Stop",
+          "technique_id": "T1489",
+          "technique_details": "Paralyzes some types of services."
+        },
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "The cmd.exe process invoked by the malware performs the deletion of Windows volume shadow copies."
+        },
+        {
+          "technique_name": "Data Destruction",
+          "technique_id": "T1485",
+          "technique_details": "The ransomware deletes various types of user files."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "g3h3klsev3eiofxhykmtenmdpi67wzmaixredk5pjuttbx7okcfkftqd.onion",
+      "title": "Donex ransomeware leakage - ",
+      "slug": "http://g3h3klsev3eiofxhykmtenmdpi67wzmaixredk5pjuttbx7okcfkftqd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:57:49.806508",
+      "lastscrape": "2025-06-01 21:18:38.072158",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/donex"
+}

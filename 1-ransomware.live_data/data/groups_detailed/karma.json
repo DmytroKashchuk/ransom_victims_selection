@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "karma",
+  "description": null,
+  "added_date": null,
+  "victims": 7,
+  "firstseen": "2021-10-04",
+  "lastseen": "2021-10-04",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "3nvzqyo6l4wkrzumzu5aod7zbosq4ipgf7ifgj3hsvbcr5vcasordvqd.onion",
+      "title": "Karma Leaks",
+      "slug": "http://3nvzqyo6l4wkrzumzu5aod7zbosq4ipgf7ifgj3hsvbcr5vcasordvqd.onion",
+      "available": false,
+      "updated": "2021-11-05 02:09:55.300967",
+      "lastscrape": "2025-06-01 21:18:23.681519",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/karma"
+}

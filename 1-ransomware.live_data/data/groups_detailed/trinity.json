@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "trinity",
+  "description": null,
+  "added_date": null,
+  "victims": 18,
+  "firstseen": "2024-06-06",
+  "lastseen": "2025-03-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "txtggyng5euqkyzl2knbejwpm4rlq575jn2egqldu27osbqytrj6ruyd.onion",
+      "title": "rans",
+      "slug": "http://txtggyng5euqkyzl2knbejwpm4rlq575jn2egqldu27osbqytrj6ruyd.onion/articles",
+      "available": false,
+      "updated": "2025-07-13 13:31:08.374258",
+      "lastscrape": "2025-08-12 14:00:20.388679",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 14,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/trinity"
+}

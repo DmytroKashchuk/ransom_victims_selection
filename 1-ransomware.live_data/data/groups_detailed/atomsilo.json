@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "atomsilo",
+  "description": "",
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2021-12-21",
+  "lastseen": "2021-12-21",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mhdehvkomeabau7gsetnsrhkfign4jgnx3wajth5yb5h6kvzbd72wlqd.onion",
+      "title": "AtomSilo",
+      "slug": "http://mhdehvkomeabau7gsetnsrhkfign4jgnx3wajth5yb5h6kvzbd72wlqd.onion",
+      "available": false,
+      "updated": "2021-12-17 05:02:38.125479",
+      "lastscrape": "2025-06-01 21:18:41.961884",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "l5cjga2ksw6rxumu5l4xxn3cmahhi2irkbwg3amx6ajroyfmfgpfllid.onion",
+      "title": "AtomSilo",
+      "slug": "http://l5cjga2ksw6rxumu5l4xxn3cmahhi2irkbwg3amx6ajroyfmfgpfllid.onion/list.html",
+      "available": false,
+      "updated": "2022-01-25 06:15:22.944304",
+      "lastscrape": "2025-06-01 21:18:49.381610",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/atomsilo"
+}

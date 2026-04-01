@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "sparta",
+  "description": null,
+  "added_date": null,
+  "victims": 16,
+  "firstseen": "2022-09-13",
+  "lastseen": "2022-09-22",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "zj2ex44e2b2xi43m2txk4uwi3l55aglsarre7repw7rkfwpj54j46iqd.onion",
+      "title": "Blog",
+      "slug": "http://zj2ex44e2b2xi43m2txk4uwi3l55aglsarre7repw7rkfwpj54j46iqd.onion/",
+      "available": false,
+      "updated": "2022-10-01 15:29:55.894378",
+      "lastscrape": "2025-06-01 21:19:12.528609",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/sparta"
+}

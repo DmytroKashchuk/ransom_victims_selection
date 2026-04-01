@@ -1,0 +1,48 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "diavol",
+  "description": "A ransomware with potential ties to Wizard Spider.",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "FileZilla"
+    ],
+    "RMM-Tools": [
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Advanced IP Scanner",
+      "ShareFinder"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike",
+      "Rubeus"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "7ypnbv3snejqmgce4kbewwvym4cm5j6lkzf2hra2hyhtsvwjaxwipkyd.onion",
+      "title": "Chat",
+      "slug": "https://7ypnbv3snejqmgce4kbewwvym4cm5j6lkzf2hra2hyhtsvwjaxwipkyd.onion",
+      "available": false,
+      "updated": "2022-10-31 16:33:31.076656",
+      "lastscrape": "2025-06-01 21:37:26.387538",
+      "type": "Chat"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/diavol"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "rabbithole",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "z5jixbfejdu5wtxd2baliu6hwzgcitlspnttr7c2eopl5ccfcjrhkqid.onion",
+      "title": "Rabbit Hole",
+      "slug": "http://z5jixbfejdu5wtxd2baliu6hwzgcitlspnttr7c2eopl5ccfcjrhkqid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:36:29.645746",
+      "lastscrape": "2025-06-01 21:19:12.451377",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/rabbithole"
+}

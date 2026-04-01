@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "reynolds",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2025-11-13",
+  "lastseen": "2025-11-13",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "bs2tlg32pfjwmclm22cyngqmoo24cdlhfxzbruwrdaxumisfeory32qd.onion",
+      "title": "Reynolds",
+      "slug": "http://bs2tlg32pfjwmclm22cyngqmoo24cdlhfxzbruwrdaxumisfeory32qd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:09.894261",
+      "lastscrape": "2026-02-18 18:32:09.894261",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:09+00:00",
+        "start_url": "http://bs2tlg32pfjwmclm22cyngqmoo24cdlhfxzbruwrdaxumisfeory32qd.onion",
+        "final_url": "http://bs2tlg32pfjwmclm22cyngqmoo24cdlhfxzbruwrdaxumisfeory32qd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.18.0 (Ubuntu)",
+          "date": "Wed, 18 Feb 2026 18:32:10 GMT",
+          "content-type": "text/html",
+          "last-modified": "Mon, 17 Nov 2025 13:54:22 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"691b290e-e1b\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/reynolds"
+}

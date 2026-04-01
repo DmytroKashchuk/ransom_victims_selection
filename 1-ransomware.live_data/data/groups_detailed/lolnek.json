@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lolnek",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mmeeiix2ejdwkmseycljetmpiwebdvgjts75c63camjofn2cjdoulzqd.onion",
+      "title": null,
+      "slug": "http://mmeeiix2ejdwkmseycljetmpiwebdvgjts75c63camjofn2cjdoulzqd.onion",
+      "available": false,
+      "updated": "2022-08-27 08:28:33.916679",
+      "lastscrape": "2025-06-01 21:18:57.072327",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "obzuqvr5424kkc4unbq2p2i67ny3zngce3tbdr37nicjqesgqcgomfqd.onion",
+      "title": null,
+      "slug": "http://obzuqvr5424kkc4unbq2p2i67ny3zngce3tbdr37nicjqesgqcgomfqd.onion",
+      "available": false,
+      "updated": "2023-05-11 04:34:11.379767",
+      "lastscrape": "2025-06-01 21:19:06.062962",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "nclen75pwlgebpxpsqhlcnxsmdvpyrr7ogz36ehhatfmkvakeyden6ad.onion",
+      "title": null,
+      "slug": "http://nclen75pwlgebpxpsqhlcnxsmdvpyrr7ogz36ehhatfmkvakeyden6ad.onion",
+      "available": false,
+      "updated": "2022-10-01 05:15:03.408250",
+      "lastscrape": "2025-06-01 21:19:20.123596",
+      "type": "Chat"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/lolnek"
+}

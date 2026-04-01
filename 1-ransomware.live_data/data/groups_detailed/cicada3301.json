@@ -1,0 +1,66 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cicada3301",
+  "description": null,
+  "added_date": null,
+  "victims": 75,
+  "firstseen": "2024-06-04",
+  "lastseen": "2025-09-04",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "ADRecon",
+      "PowerView",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "GOST",
+      "Plink"
+    ],
+    "CredentialTheft": [],
+    "Offsec": [
+      "PowerSploit",
+      "Rubeus"
+    ],
+    "DefenseEvasion": [
+      "EDRSandBlast"
+    ],
+    "LOLBAS": [
+      "BCDEdit",
+      "PsExec",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "cicadabv7vicyvgz5khl7v2x5yygcgow7ryy6yppwmxii4eoobdaztqd.onion",
+      "title": "Anti-DDoS",
+      "slug": "http://cicadabv7vicyvgz5khl7v2x5yygcgow7ryy6yppwmxii4eoobdaztqd.onion",
+      "available": false,
+      "updated": "2025-11-12 12:01:13.023659",
+      "lastscrape": "2025-12-12 12:30:15.860856",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-12T12:30:16+00:00",
+        "start_url": "http://cicadabv7vicyvgz5khl7v2x5yygcgow7ryy6yppwmxii4eoobdaztqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/cicada3301"
+}

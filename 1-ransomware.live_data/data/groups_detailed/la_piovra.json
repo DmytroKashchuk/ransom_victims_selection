@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "la_piovra",
+  "description": "ℹ️  La Piovra Ransomware is an exercise of the company Offensive Security (also known as OffSec)",
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2022-06-25",
+  "lastseen": "2022-06-25",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "et22fibzuzfyzgurm35sttm52qbzvdgzy5qhzy46a3gmkrrht3lec5ad.onion",
+      "title": " La Piovra Ransomware ",
+      "slug": "http://et22fibzuzfyzgurm35sttm52qbzvdgzy5qhzy46a3gmkrrht3lec5ad.onion",
+      "available": false,
+      "updated": "2023-06-14 10:25:44.316640",
+      "lastscrape": "2025-06-01 21:18:34.687435",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "h3txev6jev7rcm6p2qkxn2vctybi4dvochr3inymzgif53n2j2oqviqd.onion",
+      "title": "La Piovra Ransomware – a new cartel",
+      "slug": "http://h3txev6jev7rcm6p2qkxn2vctybi4dvochr3inymzgif53n2j2oqviqd.onion",
+      "available": false,
+      "updated": "2023-06-14 10:26:15.036262",
+      "lastscrape": "2025-06-01 21:18:39.483255",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "wx3djgl4cacl6y4x7r4e4mbqrrub24ectue7ixyix2du25nfowtvfiyd.onion",
+      "title": "La Piovra Ransomware - Members Only ",
+      "slug": "http://wx3djgl4cacl6y4x7r4e4mbqrrub24ectue7ixyix2du25nfowtvfiyd.onion",
+      "available": false,
+      "updated": "2023-08-11 17:27:39.991890",
+      "lastscrape": "2025-06-01 21:19:34.838134",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/la_piovra"
+}

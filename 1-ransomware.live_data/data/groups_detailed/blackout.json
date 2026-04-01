@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blackout",
+  "description": null,
+  "added_date": null,
+  "victims": 9,
+  "firstseen": "2024-02-26",
+  "lastseen": "2024-12-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "black3gnkizshuynieigw6ejgpblb53mpasftzd6pydqpmq2vn2xf6yd.onion",
+      "title": "Blackout Blog",
+      "slug": "http://black3gnkizshuynieigw6ejgpblb53mpasftzd6pydqpmq2vn2xf6yd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:20.399137",
+      "lastscrape": "2026-02-18 18:31:20.399137",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:20+00:00",
+        "start_url": "http://black3gnkizshuynieigw6ejgpblb53mpasftzd6pydqpmq2vn2xf6yd.onion",
+        "final_url": "http://black3gnkizshuynieigw6ejgpblb53mpasftzd6pydqpmq2vn2xf6yd.onion/b/challenge",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "http://black3gnkizshuynieigw6ejgpblb53mpasftzd6pydqpmq2vn2xf6yd.onion/b/challenge"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:21 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/blackout"
+}

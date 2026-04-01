@@ -1,0 +1,729 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lockbit5",
+  "description": null,
+  "added_date": null,
+  "victims": 135,
+  "firstseen": "2024-08-17",
+  "lastseen": "2026-02-13",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "lockbitsuppyx2jegaoyiw44ica5vdho63m5ijjlmfb7omq3tfr3qhyd.onion",
+      "title": "LockBit lite chat",
+      "slug": "http://lockbitsuppyx2jegaoyiw44ica5vdho63m5ijjlmfb7omq3tfr3qhyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:02.980521",
+      "lastscrape": "2026-02-18 19:02:02.980521",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:03+00:00",
+        "start_url": "http://lockbitsuppyx2jegaoyiw44ica5vdho63m5ijjlmfb7omq3tfr3qhyd.onion",
+        "final_url": "http://lockbitsuppyx2jegaoyiw44ica5vdho63m5ijjlmfb7omq3tfr3qhyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 19:02:09 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "set-cookie": "dcap=i6xQRQTIE84WMELcV0iS95XOyCc92/5tGGIoRzD5x3PnT7ki1B/tTS7rB4kPMFFG/5gI2RBSq8ORgvzHoJxqw5GT+AE9IywhPSesonmjH/CpASfSYYF84PV/Q6lh6GimpcGY1mut389OelaTj2BI87nkU/W6; Max-Age=30; Domain=lockbitsuppyx2jegaoyiw44ica5vdho63m5ijjlmfb7omq3tfr3qhyd.onion; Path=/; HttpOnly; SameSite=Lax",
+          "refresh": "20",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitapt67g6rwzjbcxnww5efpg4qok6vpfeth7wx3okj52ks4wtad.onion",
+      "title": "LockBit 5.0 blog DDoS protection",
+      "slug": "http://lockbitapt67g6rwzjbcxnww5efpg4qok6vpfeth7wx3okj52ks4wtad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:16.102336",
+      "lastscrape": "2026-02-18 19:03:16.102336",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:16+00:00",
+        "start_url": "http://lockbitapt67g6rwzjbcxnww5efpg4qok6vpfeth7wx3okj52ks4wtad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "lockbitynxdcxtuvma5deq5pxtnqoacftuigkk37xjq3whefozdpcuad.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitynxdcxtuvma5deq5pxtnqoacftuigkk37xjq3whefozdpcuad.onion",
+      "available": false,
+      "updated": "2026-02-18 11:04:21.999421",
+      "lastscrape": "2026-02-18 19:04:16.869580",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T12:33:28+00:00",
+        "start_url": "http://lockbitynxdcxtuvma5deq5pxtnqoacftuigkk37xjq3whefozdpcuad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbity44loulvujiaoels7knti2tfsnglclnse22syaa6x3vpqp7yd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbity44loulvujiaoels7knti2tfsnglclnse22syaa6x3vpqp7yd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:07:15.587126",
+      "lastscrape": "2026-02-18 19:07:15.587126",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:07:15+00:00",
+        "start_url": "http://lockbity44loulvujiaoels7knti2tfsnglclnse22syaa6x3vpqp7yd.onion",
+        "final_url": "http://lockbity44loulvujiaoels7knti2tfsnglclnse22syaa6x3vpqp7yd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:07:18 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitqth2ij5cdqmj4cdchoh3etnlbh74utqviwqb5svvhxygnmoqd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitqth2ij5cdqmj4cdchoh3etnlbh74utqviwqb5svvhxygnmoqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:34:40.991842",
+      "lastscrape": "2026-02-18 18:34:40.991842",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:34:41+00:00",
+        "start_url": "http://lockbitqth2ij5cdqmj4cdchoh3etnlbh74utqviwqb5svvhxygnmoqd.onion",
+        "final_url": "http://lockbitqth2ij5cdqmj4cdchoh3etnlbh74utqviwqb5svvhxygnmoqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:34:45 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitotfzuq2lpyydzgbhelps2mcz62cpix4nzpcyaak5444iwfmqd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitotfzuq2lpyydzgbhelps2mcz62cpix4nzpcyaak5444iwfmqd.onion",
+      "available": false,
+      "updated": "2026-02-18 17:38:06.290648",
+      "lastscrape": "2026-02-18 19:08:19.082191",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:08:19+00:00",
+        "start_url": "http://lockbitotfzuq2lpyydzgbhelps2mcz62cpix4nzpcyaak5444iwfmqd.onion",
+        "final_url": "http://lockbitotfzuq2lpyydzgbhelps2mcz62cpix4nzpcyaak5444iwfmqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:08:29 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitgf43c7avhx5wesx5ambjgbormhwc2tujsy6lvg6drkjhnjryd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitgf43c7avhx5wesx5ambjgbormhwc2tujsy6lvg6drkjhnjryd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:09:53.204085",
+      "lastscrape": "2026-02-18 19:09:53.204085",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:09:53+00:00",
+        "start_url": "http://lockbitgf43c7avhx5wesx5ambjgbormhwc2tujsy6lvg6drkjhnjryd.onion",
+        "final_url": "http://lockbitgf43c7avhx5wesx5ambjgbormhwc2tujsy6lvg6drkjhnjryd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:10:04 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitfnszjao7hayqsd424m74k5jxc52hozvabjrut7pjfsfaaaoad.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitfnszjao7hayqsd424m74k5jxc52hozvabjrut7pjfsfaaaoad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:38:08.107538",
+      "lastscrape": "2026-02-18 18:38:08.107538",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:38:08+00:00",
+        "start_url": "http://lockbitfnszjao7hayqsd424m74k5jxc52hozvabjrut7pjfsfaaaoad.onion",
+        "final_url": "http://lockbitfnszjao7hayqsd424m74k5jxc52hozvabjrut7pjfsfaaaoad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:38:09 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitdzdbv5dh6ncf65c22tdgej72sty6ikiieuinibh6icnzrv4yd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitdzdbv5dh6ncf65c22tdgej72sty6ikiieuinibh6icnzrv4yd.onion",
+      "available": false,
+      "updated": "2026-02-17 21:46:59.460674",
+      "lastscrape": "2026-02-18 19:11:05.757220",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T14:15:37+00:00",
+        "start_url": "http://lockbitdzdbv5dh6ncf65c22tdgej72sty6ikiieuinibh6icnzrv4yd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbitbgtyqtgutvasrld5gx23ozo32y4xkjrby6bte3zyvjdlyoxyd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitbgtyqtgutvasrld5gx23ozo32y4xkjrby6bte3zyvjdlyoxyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:14:35.534751",
+      "lastscrape": "2026-02-18 19:14:35.534751",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:14:35+00:00",
+        "start_url": "http://lockbitbgtyqtgutvasrld5gx23ozo32y4xkjrby6bte3zyvjdlyoxyd.onion",
+        "final_url": "http://lockbitbgtyqtgutvasrld5gx23ozo32y4xkjrby6bte3zyvjdlyoxyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:14:35 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitabmbzz652qeqd7yztgugcihpy4s4f6zuqi3jx32rzjylsn7ad.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitabmbzz652qeqd7yztgugcihpy4s4f6zuqi3jx32rzjylsn7ad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:16:24.885474",
+      "lastscrape": "2026-02-18 19:16:24.885474",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T17:44:34+00:00",
+        "start_url": "http://lockbitabmbzz652qeqd7yztgugcihpy4s4f6zuqi3jx32rzjylsn7ad.onion",
+        "final_url": "http://lockbitabmbzz652qeqd7yztgugcihpy4s4f6zuqi3jx32rzjylsn7ad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 17:45:02 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbit24pegjquuwbmwjlvyivmyaujf33kvlepcxyncnugm3zw73myd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbit24pegjquuwbmwjlvyivmyaujf33kvlepcxyncnugm3zw73myd.onion",
+      "available": false,
+      "updated": "2026-02-18 17:18:13.871460",
+      "lastscrape": "2026-02-18 19:18:56.845992",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:18:56+00:00",
+        "start_url": "http://lockbit24pegjquuwbmwjlvyivmyaujf33kvlepcxyncnugm3zw73myd.onion",
+        "final_url": "http://lockbit24pegjquuwbmwjlvyivmyaujf33kvlepcxyncnugm3zw73myd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:19:10 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbityq64mwtobqqcr3iwxs5q4o7iliuv72gbx4vflggj4m4wqekad.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbityq64mwtobqqcr3iwxs5q4o7iliuv72gbx4vflggj4m4wqekad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:43:21.271856",
+      "lastscrape": "2026-02-18 18:43:21.271856",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:43:21+00:00",
+        "start_url": "http://lockbityq64mwtobqqcr3iwxs5q4o7iliuv72gbx4vflggj4m4wqekad.onion",
+        "final_url": "http://lockbityq64mwtobqqcr3iwxs5q4o7iliuv72gbx4vflggj4m4wqekad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:43:21 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbity3v2rhjjjt6opcgvdrrlvdbrt3p2wqmxmq4cm36cchphdy6qd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbity3v2rhjjjt6opcgvdrrlvdbrt3p2wqmxmq4cm36cchphdy6qd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:21:02.152515",
+      "lastscrape": "2026-02-18 19:21:02.152515",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:21:02+00:00",
+        "start_url": "http://lockbity3v2rhjjjt6opcgvdrrlvdbrt3p2wqmxmq4cm36cchphdy6qd.onion",
+        "final_url": "http://lockbity3v2rhjjjt6opcgvdrrlvdbrt3p2wqmxmq4cm36cchphdy6qd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:21:02 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitnpobu6luzzlxb7br5uyqnmeruwimpjuw2kv442nvxd6sufsad.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitnpobu6luzzlxb7br5uyqnmeruwimpjuw2kv442nvxd6sufsad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:22:52.203667",
+      "lastscrape": "2026-02-18 19:22:52.203667",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:22:52+00:00",
+        "start_url": "http://lockbitnpobu6luzzlxb7br5uyqnmeruwimpjuw2kv442nvxd6sufsad.onion",
+        "final_url": "http://lockbitnpobu6luzzlxb7br5uyqnmeruwimpjuw2kv442nvxd6sufsad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:23:33 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitkybiqhyv64vdaamz7uf2ymjoafyalx3e6spmmsz5xyk5nbcad.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitkybiqhyv64vdaamz7uf2ymjoafyalx3e6spmmsz5xyk5nbcad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:25:22.706349",
+      "lastscrape": "2026-02-18 19:25:22.706349",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:25:22+00:00",
+        "start_url": "http://lockbitkybiqhyv64vdaamz7uf2ymjoafyalx3e6spmmsz5xyk5nbcad.onion",
+        "final_url": "http://lockbitkybiqhyv64vdaamz7uf2ymjoafyalx3e6spmmsz5xyk5nbcad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:25:23 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitjqfuyrkxiie6bcly6ow4sh6lmyuyvyats5hcpe5e6hbuhikyd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitjqfuyrkxiie6bcly6ow4sh6lmyuyvyats5hcpe5e6hbuhikyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:26:35.019804",
+      "lastscrape": "2026-02-18 19:26:35.019804",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:26:35+00:00",
+        "start_url": "http://lockbitjqfuyrkxiie6bcly6ow4sh6lmyuyvyats5hcpe5e6hbuhikyd.onion",
+        "final_url": "http://lockbitjqfuyrkxiie6bcly6ow4sh6lmyuyvyats5hcpe5e6hbuhikyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:26:35 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbithn5a2qgf4ojvut3q25yylrauvjxrz6sjdd4teas65osru2lqd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbithn5a2qgf4ojvut3q25yylrauvjxrz6sjdd4teas65osru2lqd.onion",
+      "available": false,
+      "updated": "2026-02-18 17:50:28.232908",
+      "lastscrape": "2026-02-18 19:27:36.362472",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:27:36+00:00",
+        "start_url": "http://lockbithn5a2qgf4ojvut3q25yylrauvjxrz6sjdd4teas65osru2lqd.onion",
+        "final_url": "http://lockbithn5a2qgf4ojvut3q25yylrauvjxrz6sjdd4teas65osru2lqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:27:36 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitf75dfwq4bsec3iaytf6z5z6dmstx3g35grn74ndxy3py2ozyd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitf75dfwq4bsec3iaytf6z5z6dmstx3g35grn74ndxy3py2ozyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:29:05.186133",
+      "lastscrape": "2026-02-18 19:29:05.186133",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:29:05+00:00",
+        "start_url": "http://lockbitf75dfwq4bsec3iaytf6z5z6dmstx3g35grn74ndxy3py2ozyd.onion",
+        "final_url": "http://lockbitf75dfwq4bsec3iaytf6z5z6dmstx3g35grn74ndxy3py2ozyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:29:05 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitdx4kanolaotenc3nmonlxv5enmhxdh2lk54rirvcdsljfbjyd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbitdx4kanolaotenc3nmonlxv5enmhxdh2lk54rirvcdsljfbjyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:30:14.742958",
+      "lastscrape": "2026-02-18 19:30:14.742958",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:30:14+00:00",
+        "start_url": "http://lockbitdx4kanolaotenc3nmonlxv5enmhxdh2lk54rirvcdsljfbjyd.onion",
+        "final_url": "http://lockbitdx4kanolaotenc3nmonlxv5enmhxdh2lk54rirvcdsljfbjyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:30:15 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbit7tnu7whmaqnnlmvnoxzejssvr6vkcoovg35encvnp24pikvyd.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbit7tnu7whmaqnnlmvnoxzejssvr6vkcoovg35encvnp24pikvyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:32:08.803408",
+      "lastscrape": "2026-02-18 19:32:08.803408",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:32:08+00:00",
+        "start_url": "http://lockbit7tnu7whmaqnnlmvnoxzejssvr6vkcoovg35encvnp24pikvyd.onion",
+        "final_url": "http://lockbit7tnu7whmaqnnlmvnoxzejssvr6vkcoovg35encvnp24pikvyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:32:09 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbit6vhrjaqzsdj6pqalyideigxv4xycfeyunpx35znogiwmojnid.onion",
+      "title": "LockBit - Leaked",
+      "slug": "http://lockbit6vhrjaqzsdj6pqalyideigxv4xycfeyunpx35znogiwmojnid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:33:18.102834",
+      "lastscrape": "2026-02-18 19:33:18.102834",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:33:18+00:00",
+        "start_url": "http://lockbit6vhrjaqzsdj6pqalyideigxv4xycfeyunpx35znogiwmojnid.onion",
+        "final_url": "http://lockbit6vhrjaqzsdj6pqalyideigxv4xycfeyunpx35znogiwmojnid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:33:18 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/lockbit5"
+}

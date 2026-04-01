@@ -1,0 +1,199 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dragonforce",
+  "description": null,
+  "added_date": null,
+  "victims": 371,
+  "firstseen": "2022-10-20",
+  "lastseen": "2026-02-16",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "User Execution",
+          "technique_id": "T1204.002",
+          "technique_details": "Executes a malicious file on the victim's system."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Impair Defenses: Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Disables Windows Defender (if it is running)."
+        },
+        {
+          "technique_name": "Indicator Removal: File Deletion",
+          "technique_id": "T1070.004",
+          "technique_details": "The ransomware self-deletes after execution."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "The ransomware enumerates directories to encrypt files."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "The ransomware uses data encryption to extort the victim."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner",
+      "PingCastle",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion",
+      "title": "DragonForce | Blog",
+      "slug": "http://z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion/blog",
+      "available": true,
+      "updated": "2026-02-18 19:01:25.283320",
+      "lastscrape": "2026-02-18 19:01:25.283320",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:25+00:00",
+        "start_url": "http://z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion/blog",
+        "final_url": "http://z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion/blog",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "openresty",
+          "x_powered_by": "Nuxt",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html;charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "openresty",
+          "date": "Wed, 18 Feb 2026 19:01:26 GMT",
+          "content-type": "text/html;charset=utf-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "x-powered-by": "Nuxt"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "3pktcrcbmssvrnwe5skburdwe2h3v6ibdnn5kbjqihsg6eu6s6b7ryqd.onion",
+      "title": "DragonForce | Recovery",
+      "slug": "http://3pktcrcbmssvrnwe5skburdwe2h3v6ibdnn5kbjqihsg6eu6s6b7ryqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:39.636788",
+      "lastscrape": "2026-02-18 19:02:39.636788",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:39+00:00",
+        "start_url": "http://3pktcrcbmssvrnwe5skburdwe2h3v6ibdnn5kbjqihsg6eu6s6b7ryqd.onion",
+        "final_url": "http://3pktcrcbmssvrnwe5skburdwe2h3v6ibdnn5kbjqihsg6eu6s6b7ryqd.onion/login",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 307,
+            "location": "/login"
+          }
+        ],
+        "fingerprint": {
+          "server": "openresty",
+          "x_powered_by": "Nuxt",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html;charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "openresty",
+          "date": "Wed, 18 Feb 2026 19:02:40 GMT",
+          "content-type": "text/html;charset=utf-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "x-powered-by": "Nuxt"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "dragonforxxbp3awc7mzs5dkswrua3znqyx5roefmi4smjrsdi22xwqd.onion",
+      "title": "DragonForce | Leaks",
+      "slug": "http://dragonforxxbp3awc7mzs5dkswrua3znqyx5roefmi4smjrsdi22xwqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:45.370527",
+      "lastscrape": "2026-02-18 19:03:45.370527",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:45+00:00",
+        "start_url": "http://dragonforxxbp3awc7mzs5dkswrua3znqyx5roefmi4smjrsdi22xwqd.onion",
+        "final_url": "http://dragonforxxbp3awc7mzs5dkswrua3znqyx5roefmi4smjrsdi22xwqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "openresty",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "openresty",
+          "date": "Wed, 18 Feb 2026 19:03:45 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-headers": "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With",
+          "access-control-allow-methods": "POST, OPTIONS, GET, PUT, PATCH, DELETE",
+          "access-control-allow-origin": ""
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 17,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/dragonforce"
+}

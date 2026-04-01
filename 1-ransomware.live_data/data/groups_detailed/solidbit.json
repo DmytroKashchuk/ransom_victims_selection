@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "solidbit",
+  "description": "Ransomware, written in .NET.\n",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "solidb2jco63vbhx4sfimnqmwhtdjk4jbbgq7a24cmzzkfse4rduxgid.onion",
+      "title": "SOLIDBIT LOGIN",
+      "slug": "http://solidb2jco63vbhx4sfimnqmwhtdjk4jbbgq7a24cmzzkfse4rduxgid.onion/login",
+      "available": false,
+      "updated": "2022-08-27 10:45:55.554414",
+      "lastscrape": "2025-06-01 21:19:12.526386",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/solidbit"
+}

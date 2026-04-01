@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cheers",
+  "description": null,
+  "added_date": null,
+  "victims": 15,
+  "firstseen": "2022-05-29",
+  "lastseen": "2022-09-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "rwiajgajdr4kzlnrj5zwebbukpcbrjhupjmk6gufxv6tg7myx34iocad.onion",
+      "title": "Cheers!",
+      "slug": "http://rwiajgajdr4kzlnrj5zwebbukpcbrjhupjmk6gufxv6tg7myx34iocad.onion",
+      "available": false,
+      "updated": "2022-09-20 06:46:08.188884",
+      "lastscrape": "2025-06-01 21:18:20.383966",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "crkfkmrh4qzbddfrl2axnkvjp5tgwx73d7lq4oycsfxc7pfgbfhtfiid.onion",
+      "title": "sembmarine",
+      "slug": "http://crkfkmrh4qzbddfrl2axnkvjp5tgwx73d7lq4oycsfxc7pfgbfhtfiid.onion/",
+      "available": false,
+      "updated": "2022-09-20 08:22:30.186700",
+      "lastscrape": "2025-06-01 21:18:33.372791",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/cheers"
+}

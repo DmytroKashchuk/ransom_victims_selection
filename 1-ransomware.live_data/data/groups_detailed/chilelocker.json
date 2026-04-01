@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "chilelocker",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "z6vidveub2ypo3d3x7omsmcxqwxkkmvn5y3paoufyd2tt4bfbkg33kid.onion",
+      "title": "Login",
+      "slug": "http://z6vidveub2ypo3d3x7omsmcxqwxkkmvn5y3paoufyd2tt4bfbkg33kid.onion",
+      "available": false,
+      "updated": "2023-04-19 13:15:09.169709",
+      "lastscrape": "2025-06-01 21:18:21.292108",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/chilelocker"
+}

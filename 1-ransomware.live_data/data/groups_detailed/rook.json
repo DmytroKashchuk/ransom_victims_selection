@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "rook",
+  "description": "According to PCrisk, Rook is ransomware (an updated variant of Babuk) that prevents victims from accessing/opening files by encrypting them. It also modifies filenames and creates a text file/ransom note (HowToRestoreYourFiles.txt). Rook renames files by appending the .Rook extension. For example, it renames 1.jpg to 1.jpg.Rook, 2.jpg to 2.jpg.Rook.",
+  "added_date": null,
+  "victims": 9,
+  "firstseen": "2021-12-07",
+  "lastseen": "2022-01-08",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "gamol6n6p2p4c3ad7gxmx3ur7wwdwlywebo2azv3vv5qlmjmole2zbyd.onion",
+      "title": "We Are Rook!!!",
+      "slug": "http://gamol6n6p2p4c3ad7gxmx3ur7wwdwlywebo2azv3vv5qlmjmole2zbyd.onion",
+      "available": false,
+      "updated": "2022-01-26 15:24:16.586837",
+      "lastscrape": "2025-06-01 21:18:35.863247",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/rook"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "prometheus",
+  "description": "Ransomware written in .NET, apparently derived from the codebase of win.hakbit (Thanos) ransomware.\n",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "promethw27cbrcot.onion",
+      "title": null,
+      "slug": "http://promethw27cbrcot.onion/blog/",
+      "available": false,
+      "updated": "2021-09-08 00:07:17.934621",
+      "lastscrape": "2025-06-01 21:19:07.566847",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/prometheus"
+}

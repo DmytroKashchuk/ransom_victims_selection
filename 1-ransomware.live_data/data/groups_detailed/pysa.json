@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "pysa",
+  "description": "Mespinosa is a ransomware which encrypts file using an asymmetric encryption and adds .pysa as file extension. According to dissectingmalware the extension \"pysa\" is probably derived from the Zanzibari Coin with the same name.",
+  "added_date": null,
+  "victims": 311,
+  "firstseen": "2020-07-01",
+  "lastseen": "2022-09-20",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "FileZilla",
+      "WinSCP"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "ADRecon",
+      "Advanced IP Scanner",
+      "Advanced Port Scanner"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz",
+      "ProcDump",
+      "SessionGopher"
+    ],
+    "Offsec": [
+      "Chashell",
+      "Koadic",
+      "PowerShell Empire",
+      "PowerSploit"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "PsExec",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "pysa2bitc5ldeyfak4seeruqymqs4sj5wt5qkcq7aoyg4h2acqieywad.onion",
+      "title": "Pysa's Partners",
+      "slug": "http://pysa2bitc5ldeyfak4seeruqymqs4sj5wt5qkcq7aoyg4h2acqieywad.onion/partners.html",
+      "available": false,
+      "updated": "2022-02-22 10:11:40.537498",
+      "lastscrape": "2025-06-01 21:19:12.441407",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/pysa"
+}

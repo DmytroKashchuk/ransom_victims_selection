@@ -1,0 +1,152 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "shinyhunters",
+  "description": null,
+  "added_date": null,
+  "victims": 54,
+  "firstseen": "2024-04-23",
+  "lastseen": "2026-01-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+      "title": "Seized",
+      "slug": "http://shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+      "available": false,
+      "updated": "2025-11-04 09:31:34.256073",
+      "lastscrape": "2025-12-04 10:00:57.043992",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-04T10:00:57+00:00",
+        "start_url": "http://shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "breachforums.hn",
+      "title": "This Domain Has Been Seized",
+      "slug": "https://breachforums.hn/",
+      "available": true,
+      "updated": "2026-02-18 19:02:05.415013",
+      "lastscrape": "2026-02-18 19:02:05.415013",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:05+00:00",
+        "start_url": "https://breachforums.hn/",
+        "final_url": "https://breachforums.hn/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "cloudflare",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": "9cffc6e17e569cd3-AMS",
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 19:02:06 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Rsv3OKU28OpXe9xz2oVtzeEeI68BnsC%2FP41I57b15cSbiQiR2YS9q6U3vGmP%2FC7OmshM7MmXBOFwPm7bv5vXTuQ%2FaVs50%2BiKfEsZ9qYsqw%3D%3D\"}]}",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "content-encoding": "br",
+          "server": "cloudflare",
+          "cf-ray": "9cffc6e17e569cd3-AMS",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+      "title": "SH",
+      "slug": "http://shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:11.607674",
+      "lastscrape": "2026-02-18 19:03:11.607674",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:11+00:00",
+        "start_url": "http://shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+        "final_url": "http://shinypogk4jjniry5qi7247tznop6mxdrdte2k6pdu5cyo43vdzmrwid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 19:03:16 GMT",
+          "content-type": "text/html",
+          "last-modified": "Thu, 22 Jan 2026 22:57:10 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"6972ab46-18a\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "toolatedhs5dtr2pv6h5kdraneak5gs3sxrecqhoufc5e45edior7mqd.onion",
+      "title": "SH",
+      "slug": "http://toolatedhs5dtr2pv6h5kdraneak5gs3sxrecqhoufc5e45edior7mqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:04:18.232569",
+      "lastscrape": "2026-02-18 19:04:18.232569",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:04:18+00:00",
+        "start_url": "http://toolatedhs5dtr2pv6h5kdraneak5gs3sxrecqhoufc5e45edior7mqd.onion",
+        "final_url": "http://toolatedhs5dtr2pv6h5kdraneak5gs3sxrecqhoufc5e45edior7mqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 19:04:26 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "set-cookie": "dcap=jAy4SSvo/Ba7dzYnGjYeDtBct6wz6sL0LnXWPrb3K42iS0AmrBETfRqakHyFQVwy0YWuGrfeb2b1ZHxVWiapAYlFcPZv9dNGF7s2bsVeELfsgOQ5suh5wBELNNwOfPsvgtzK2HWueDD37/Q=; Max-Age=30; Domain=toolatedhs5dtr2pv6h5kdraneak5gs3sxrecqhoufc5e45edior7mqd.onion; Path=/; HttpOnly; SameSite=Lax",
+          "refresh": "20",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/shinyhunters"
+}

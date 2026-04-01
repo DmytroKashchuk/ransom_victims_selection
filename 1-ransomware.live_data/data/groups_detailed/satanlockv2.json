@@ -1,0 +1,53 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "satanlockv2",
+  "description": null,
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2025-07-04",
+  "lastseen": "2025-07-07",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "tzhwmgguyxrg6q3tu4q3gvopcjynrhw6ryx2bdl5ghisdkyunfua5xyd.onion",
+      "title": "SatanLock V2 Leaks",
+      "slug": "http://tzhwmgguyxrg6q3tu4q3gvopcjynrhw6ryx2bdl5ghisdkyunfua5xyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:52.165034",
+      "lastscrape": "2026-02-18 19:01:52.165034",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:52+00:00",
+        "start_url": "http://tzhwmgguyxrg6q3tu4q3gvopcjynrhw6ryx2bdl5ghisdkyunfua5xyd.onion",
+        "final_url": "http://tzhwmgguyxrg6q3tu4q3gvopcjynrhw6ryx2bdl5ghisdkyunfua5xyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12",
+          "x_powered_by": "PHP/8.2.12",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:51:04 GMT",
+          "server": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12",
+          "x-powered-by": "PHP/8.2.12",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/satanlockv2"
+}

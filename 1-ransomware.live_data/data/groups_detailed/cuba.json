@@ -1,0 +1,217 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cuba",
+  "description": "The Cuba Ransomware, also known as Colddraw Ransomware, was first identified in the threat landscape in 2019 and built a relatively small but selected list of victims. The group is also known as Fidel Ransomware, due to a characteristic marker placed at the beginning of all encrypted files. This file marker is used as an indicator for the ransomware and its decoder that the file has been encrypted.<br> <br> Despite its name and the Cuban nationalist style on its leak site, it is difficult to assert any connection or affiliation with the Republic of Cuba. The group has been linked to a Russian-language threat actor by Profero researchers due to some details of incorrect translation they discovered, as well as the discovery of a 404 page containing text in Russian on the threat actor's own leak site.<br> <br> According to BlackBerry, based on the analysis of the code strings used in the campaign analyzed in 2023, there were indications that the developer behind the Cuba ransomware speaks Russian.<br> <br> The ransomware operators use a double extortion approach, and following the USA, in August 2022, it was believed that the Cuba ransomware group had compromised 101 entities, demanding $145 million in ransom payments and receiving up to $60 million.<br> <br> The group used a similar set of TTPs, with only a slight change each year, as they generally consist of LOLBins (executables that are part of the operating system and can be exploited to support an attack), exploits, off-the-shelf and custom malware, as well as intrusion tools like Cobalt Strike and Metasploit.<br> <br> In 2022, the group allegedly developed a relationship with operators of the Industrial Spy market, using their platform as a means of data leakage.<BR>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 105,
+  "firstseen": "2021-02-03",
+  "lastseen": "2024-02-01",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "External Remote Services",
+          "technique_id": "T1133",
+          "technique_details": "Cuba ransomware operators used external remote services for initial access."
+        },
+        {
+          "technique_name": "Valid Accounts: Local Accounts",
+          "technique_id": "T1078.003",
+          "technique_details": "Operators leveraged valid local accounts for initial access."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Native API",
+          "technique_id": "T1106",
+          "technique_details": "Cuba ransomware used native API calls to execute malicious behaviors."
+        },
+        {
+          "technique_name": "User Execution: Malicious File",
+          "technique_id": "T1204.002",
+          "technique_details": "Malicious files were used to trick users into executing ransomware."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter: PowerShell",
+          "technique_id": "T1059.001",
+          "technique_details": "Cuba ransomware operators executed PowerShell commands during the attack."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter: Windows Command Shell",
+          "technique_id": "T1059.003",
+          "technique_details": "The Windows Command Shell was used to execute various commands during the attack."
+        },
+        {
+          "technique_name": "System Services: Service Execution",
+          "technique_id": "T1569.002",
+          "technique_details": "Cuba ransomware was executed using Windows system services."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Masquerading: Match Legitimate Name or Location",
+          "technique_id": "T1036.005",
+          "technique_details": "The ransomware used legitimate names or locations to evade detection."
+        },
+        {
+          "technique_name": "Exploitation for Privilege Escalation",
+          "technique_id": "T1068",
+          "technique_details": "Cuba ransomware exploited vulnerabilities to escalate privileges."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Time Discovery",
+          "technique_id": "T1124",
+          "technique_details": "Cuba ransomware operators performed time discovery on infected systems."
+        },
+        {
+          "technique_name": "Network Share Discovery",
+          "technique_id": "T1135",
+          "technique_details": "Network shares were enumerated by the ransomware."
+        },
+        {
+          "technique_name": "Remote System Discovery",
+          "technique_id": "T1018",
+          "technique_details": "Remote systems were discovered using built-in utilities."
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Files and directories were enumerated during the attack."
+        },
+        {
+          "technique_name": "Process Discovery",
+          "technique_id": "T1057",
+          "technique_details": "Running processes were identified during the attack."
+        },
+        {
+          "technique_name": "Network Configuration Discovery: Network Connection Enumeration",
+          "technique_id": "T1016.001",
+          "technique_details": "Network connections were enumerated for discovery purposes."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Tool Transfer",
+          "technique_id": "T1570",
+          "technique_details": "Cuba ransomware operators used tool transfer for lateral movement."
+        },
+        {
+          "technique_name": "External Remote Services",
+          "technique_id": "T1333",
+          "technique_details": "Operators utilized external remote services to move laterally within the network."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "Exploitation for Credential Access",
+          "technique_id": "T1212",
+          "technique_details": "Cuba ransomware operators exploited vulnerabilities to gain credential access."
+        },
+        {
+          "technique_name": "Remote Services: External Remote Services",
+          "technique_id": "T1021.002",
+          "technique_details": "Remote services were used to gain access to systems during the attack."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Remote Desktop Protocol",
+          "technique_id": "T1219",
+          "technique_details": "The operators used Remote Desktop Protocol (RDP) for command and control."
+        },
+        {
+          "technique_name": "Multi-hop Proxy",
+          "technique_id": "T1090.003",
+          "technique_details": "Cuba ransomware operators used multi-hop proxies to obfuscate communication."
+        },
+        {
+          "technique_name": "Application Layer Protocol: DNS",
+          "technique_id": "T1071.004",
+          "technique_details": "DNS was used as a protocol for command and control communication."
+        },
+        {
+          "technique_name": "Application Layer Protocol: Web Protocols",
+          "technique_id": "T1071.001",
+          "technique_details": "Web protocols such as HTTP and HTTPS were used for communication."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "NetSupport"
+    ],
+    "DiscoveryEnum": [],
+    "Networking": [
+      "Termite"
+    ],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "Meterpreter"
+    ],
+    "DefenseEvasion": [
+      "Avast Anti-Rootkit driver"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "cuba4mp6ximo2zlo.onion",
+      "title": null,
+      "slug": "http://cuba4mp6ximo2zlo.onion",
+      "available": false,
+      "updated": "2021-09-08 00:06:45.725369",
+      "lastscrape": "2025-06-01 21:18:24.965948",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion",
+      "title": "Cuba",
+      "slug": "http://cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:54:12.662221",
+      "lastscrape": "2025-06-01 21:18:32.514335",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/cuba"
+}

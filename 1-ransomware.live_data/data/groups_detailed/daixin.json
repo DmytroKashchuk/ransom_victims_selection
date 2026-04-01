@@ -1,0 +1,76 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "daixin",
+  "description": null,
+  "added_date": null,
+  "victims": 21,
+  "firstseen": "2022-08-03",
+  "lastseen": "2025-09-11",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "232fwh5cea3ub6qguz3pynijxfzl2uj3c73nbrayipf3gq25vtq2r4qd.onion",
+      "title": null,
+      "slug": "http://232fwh5cea3ub6qguz3pynijxfzl2uj3c73nbrayipf3gq25vtq2r4qd.onion",
+      "available": false,
+      "updated": "2022-11-10 22:30:36.546003",
+      "lastscrape": "2025-06-01 21:18:21.581832",
+      "type": "Files"
+    },
+    {
+      "fqdn": "7ukmkdtyxdkdivtjad57klqnd3kdsmq6tp45rrsxqnu76zzv3jvitlqd.onion",
+      "title": "Data Leak",
+      "slug": "http://7ukmkdtyxdkdivtjad57klqnd3kdsmq6tp45rrsxqnu76zzv3jvitlqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:29.273409",
+      "lastscrape": "2026-02-18 19:01:29.273409",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:30+00:00",
+        "start_url": "http://7ukmkdtyxdkdivtjad57klqnd3kdsmq6tp45rrsxqnu76zzv3jvitlqd.onion",
+        "final_url": "http://7ukmkdtyxdkdivtjad57klqnd3kdsmq6tp45rrsxqnu76zzv3jvitlqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:32 GMT",
+          "content-type": "text/html",
+          "last-modified": "Tue, 30 Sep 2025 00:36:43 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"68db261b-7ce1\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/daixin"
+}

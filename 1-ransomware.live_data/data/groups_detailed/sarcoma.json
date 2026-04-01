@@ -1,0 +1,69 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "sarcoma",
+  "description": null,
+  "added_date": null,
+  "victims": 140,
+  "firstseen": "2024-07-09",
+  "lastseen": "2026-01-23",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "sarcomawmawlhov7o5mdhz4eszxxlkyaoiyiy2b5iwxnds2dmb4jakad.onion",
+      "title": "Sarcoma Group",
+      "slug": "http://sarcomawmawlhov7o5mdhz4eszxxlkyaoiyiy2b5iwxnds2dmb4jakad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:27.764935",
+      "lastscrape": "2026-02-18 19:01:27.764935",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:28+00:00",
+        "start_url": "http://sarcomawmawlhov7o5mdhz4eszxxlkyaoiyiy2b5iwxnds2dmb4jakad.onion",
+        "final_url": "http://sarcomawmawlhov7o5mdhz4eszxxlkyaoiyiy2b5iwxnds2dmb4jakad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 19:01:29 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "set-cookie": "PHPSESSID=hoa5cucolf7ba3ub0lemegrqb8; path=/",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/sarcoma"
+}

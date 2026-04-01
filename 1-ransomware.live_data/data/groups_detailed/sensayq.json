@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "SenSayQ",
+  "description": null,
+  "added_date": null,
+  "victims": 2,
+  "firstseen": "2024-06-04",
+  "lastseen": "2024-06-04",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "gmixcebhni6c3kcf5m7xxybomaphj7pizoqtxiqmrz5wsh6g6x5s2wqd.onion",
+      "title": "SenSayQ",
+      "slug": "http://gmixcebhni6c3kcf5m7xxybomaphj7pizoqtxiqmrz5wsh6g6x5s2wqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:45:29.366789",
+      "lastscrape": "2025-06-01 21:18:48.468010",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "159.69.60.54.",
+      "title": "SenSayQ",
+      "slug": "http://159.69.60.54",
+      "available": false,
+      "updated": "2024-12-31 10:46:02.381760",
+      "lastscrape": "2025-06-01 21:18:58.795985",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "152.89.198.177.",
+      "title": "SenSayQ",
+      "slug": "http://152.89.198.177",
+      "available": false,
+      "updated": "2024-12-31 10:46:35.005200",
+      "lastscrape": "2025-06-01 21:19:29.074244",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/sensayq"
+}

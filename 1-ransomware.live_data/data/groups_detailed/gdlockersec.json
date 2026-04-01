@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "GDLockerSec",
+  "description": "Our team members are from different countries and we are not interested in anything else, we are only interested in dollars. We do not allow CIS, Cuba, North Korea and China to be targeted. Re-attacks are not allowed for target companies that have already made payments. We do not allow non-profit hospitals and some non-profit organizations be targeted.",
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2025-01-24",
+  "lastseen": "2025-01-26",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "igziys7pres4644kbrtakxfbrwkyld64nxk5prpkgtcexwrrjgtfjzyd.onion",
+      "title": "Index of /",
+      "slug": "http://igziys7pres4644kbrtakxfbrwkyld64nxk5prpkgtcexwrrjgtfjzyd.onion",
+      "available": false,
+      "updated": "2025-01-27 19:41:27.101310",
+      "lastscrape": "2025-06-01 21:18:42.072352",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/gdlockersec"
+}

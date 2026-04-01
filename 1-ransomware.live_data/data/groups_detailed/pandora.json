@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "pandora",
+  "description": "Pandora ransomware was obtained by vx-underground at 2022-03-14.\n",
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2022-03-17",
+  "lastseen": "2022-03-30",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "vbfqeh5nugm6r2u2qvghsdxm3fotf5wbxb5ltv6vw77vus5frdpuaiid.onion",
+      "title": "Pandora Data Leak",
+      "slug": "http://vbfqeh5nugm6r2u2qvghsdxm3fotf5wbxb5ltv6vw77vus5frdpuaiid.onion",
+      "available": false,
+      "updated": "2022-05-03 11:24:22.895487",
+      "lastscrape": "2025-06-01 21:19:12.423336",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "pandoraxyz.xyz",
+      "title": null,
+      "slug": "http://pandoraxyz.xyz",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:14.295221",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/pandora"
+}

@@ -1,0 +1,136 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ragnarlocker",
+  "description": "",
+  "added_date": null,
+  "victims": 128,
+  "firstseen": "2020-04-01",
+  "lastseen": "2023-10-11",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Remote Manipulator System (RMS)",
+      "RemoteUtilities"
+    ],
+    "DiscoveryEnum": [
+      "Advanced Port Scanner",
+      "Dsquery",
+      "PsInfo",
+      "SoftPerfect LanSearchPro"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [
+      "VirtualBox"
+    ],
+    "LOLBAS": [
+      "PsExec",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "rgleak7op734elep.onion",
+      "title": null,
+      "slug": "http://rgleak7op734elep.onion",
+      "available": false,
+      "updated": "2021-09-08 00:04:15.576142",
+      "lastscrape": "2025-06-01 21:19:12.458770",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion",
+      "title": "This site has been seized",
+      "slug": "http://rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion/",
+      "available": true,
+      "updated": "2026-02-18 19:01:25.565773",
+      "lastscrape": "2026-02-18 19:01:25.565773",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:25+00:00",
+        "start_url": "http://rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion/",
+        "final_url": "http://rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.28.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.28.1",
+          "date": "Wed, 18 Feb 2026 19:01:26 GMT",
+          "content-type": "text/html",
+          "last-modified": "Mon, 16 Feb 2026 04:01:02 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"6992967e-2e1\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "p6o7m73ujalhgkiv.onion",
+      "title": null,
+      "slug": "http://p6o7m73ujalhgkiv.onion",
+      "available": false,
+      "updated": "2021-09-08 00:04:19.843356",
+      "lastscrape": "2025-06-01 21:20:46.717865",
+      "type": "Files"
+    },
+    {
+      "fqdn": "ragnarnwvli32xnmwudsvhbl7klzmofxeylyhcqfc5ifx5mbybq3ekqd.onion",
+      "title": "This site has been seized",
+      "slug": "http://ragnarnwvli32xnmwudsvhbl7klzmofxeylyhcqfc5ifx5mbybq3ekqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:38.852711",
+      "lastscrape": "2026-02-18 19:02:38.852711",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:38+00:00",
+        "start_url": "http://ragnarnwvli32xnmwudsvhbl7klzmofxeylyhcqfc5ifx5mbybq3ekqd.onion",
+        "final_url": "http://ragnarnwvli32xnmwudsvhbl7klzmofxeylyhcqfc5ifx5mbybq3ekqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.28.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.28.1",
+          "date": "Wed, 18 Feb 2026 19:02:39 GMT",
+          "content-type": "text/html",
+          "last-modified": "Mon, 16 Feb 2026 04:01:02 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"6992967e-2e1\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/ragnarlocker"
+}

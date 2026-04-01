@@ -1,0 +1,71 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "0mega",
+  "description": null,
+  "added_date": null,
+  "victims": 7,
+  "firstseen": "2022-07-14",
+  "lastseen": "2024-01-25",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "omegalock5zxwbhswbisc42o2q2i54vdulyvtqqbudqousisjgc7j7yd.onion",
+      "title": "0mega | Blog",
+      "slug": "http://omegalock5zxwbhswbisc42o2q2i54vdulyvtqqbudqousisjgc7j7yd.onion",
+      "available": false,
+      "updated": "2025-05-29 18:31:10.964469",
+      "lastscrape": "2025-06-28 19:00:07.646448",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "0mega.cc",
+      "title": "",
+      "slug": "http://0mega.cc",
+      "available": false,
+      "updated": "2026-02-18 17:31:11.209349",
+      "lastscrape": "2026-02-18 19:00:07.425685",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:07+00:00",
+        "start_url": "http://0mega.cc",
+        "final_url": "http://ww17.0mega.cc/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "http://ww17.0mega.cc/"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx/1.28.0",
+          "x_powered_by": null,
+          "via": "1.1 google",
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.28.0",
+          "date": "Wed, 18 Feb 2026 19:00:12 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "x-sc-h": "21-ckgu",
+          "via": "1.1 google",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/0mega"
+}

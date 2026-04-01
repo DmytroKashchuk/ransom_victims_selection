@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "metaencryptor",
+  "description": null,
+  "added_date": null,
+  "victims": 31,
+  "firstseen": "2023-08-16",
+  "lastseen": "2025-06-24",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "metacrptmytukkj7ajwjovdpjqzd7esg5v3sg344uzhigagpezcqlpyd.onion",
+      "title": "Metaencryptor::Home",
+      "slug": "https://metacrptmytukkj7ajwjovdpjqzd7esg5v3sg344uzhigagpezcqlpyd.onion",
+      "available": false,
+      "updated": "2025-07-20 03:31:29.221224",
+      "lastscrape": "2025-08-19 04:00:14.776322",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-08-19T04:00:15+00:00",
+        "start_url": "https://metacrptmytukkj7ajwjovdpjqzd7esg5v3sg344uzhigagpezcqlpyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "metacrpttdfpbm4qoxzcrqqgr6e6zafpazgxm72knmujw2mwvi34rwad.onion",
+      "title": "Metaencryptor::Home",
+      "slug": "https://metacrpttdfpbm4qoxzcrqqgr6e6zafpazgxm72knmujw2mwvi34rwad.onion",
+      "available": false,
+      "updated": "2025-07-20 03:33:00.010926",
+      "lastscrape": "2025-08-19 04:00:37.303563",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-08-19T04:00:37+00:00",
+        "start_url": "https://metacrpttdfpbm4qoxzcrqqgr6e6zafpazgxm72knmujw2mwvi34rwad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/metaencryptor"
+}

@@ -1,0 +1,127 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "radar",
+  "description": null,
+  "added_date": null,
+  "victims": 23,
+  "firstseen": "2024-01-22",
+  "lastseen": "2025-12-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion",
+      "title": "RADAR",
+      "slug": "http://3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:57.839392",
+      "lastscrape": "2026-02-18 19:01:57.839392",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:57+00:00",
+        "start_url": "http://3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion",
+        "final_url": "http://3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "823",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "accept-ranges": "bytes",
+          "content-length": "823",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Wed, 18 Feb 2026 12:03:01 GMT",
+          "date": "Wed, 18 Feb 2026 19:01:58 GMT"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "4q5tsu5o3msmv4am4dfhupwhzlyg7wv3lpswbvbhcrknr4ega7xetxad.onion",
+      "title": "",
+      "slug": "http://4q5tsu5o3msmv4am4dfhupwhzlyg7wv3lpswbvbhcrknr4ega7xetxad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:02.940494",
+      "lastscrape": "2026-02-18 19:03:02.940494",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:02+00:00",
+        "start_url": "http://4q5tsu5o3msmv4am4dfhupwhzlyg7wv3lpswbvbhcrknr4ega7xetxad.onion",
+        "final_url": "http://4q5tsu5o3msmv4am4dfhupwhzlyg7wv3lpswbvbhcrknr4ega7xetxad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.23.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8, charset=UTF-8",
+          "content_length": "16",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.23.1",
+          "date": "Wed, 18 Feb 2026 19:03:03 GMT",
+          "content-type": "text/html; charset=utf-8, charset=UTF-8",
+          "content-length": "16",
+          "last-modified": "Mon, 18 Nov 2024 17:10:27 GMT",
+          "connection": "keep-alive",
+          "etag": "\"673b7503-10\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion",
+      "title": "RADAR",
+      "slug": "http://3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion/leaked-data",
+      "available": true,
+      "updated": "2026-02-18 19:04:08.828195",
+      "lastscrape": "2026-02-18 19:04:08.828195",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:04:08+00:00",
+        "start_url": "http://3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion/leaked-data",
+        "final_url": "http://3bnusfu2lgk5at43ceu7cdok5yv4gfbono2jv57ho74ucjvc7czirfid.onion/leaked-data",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "823",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "accept-ranges": "bytes",
+          "content-length": "823",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Wed, 18 Feb 2026 12:03:01 GMT",
+          "date": "Wed, 18 Feb 2026 19:04:09 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/radar"
+}

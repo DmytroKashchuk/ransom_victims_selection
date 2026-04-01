@@ -1,0 +1,246 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "royal",
+  "description": "According to Trendmicro, Royal ransomware was first observed in September 2022, and the threat actors behind it are believed to be seasoned cybercriminals who used to be part of Conti Team One.",
+  "added_date": null,
+  "victims": 211,
+  "firstseen": "2022-11-04",
+  "lastseen": "2023-07-19",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Phishing: Spearphishing Attachment",
+          "technique_id": "T1566.001",
+          "technique_details": "A spearphishing email was sent to employees."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Command and Scripting Interpreter: Windows Command Shell",
+          "technique_id": "T1059.003",
+          "technique_details": "Qbot was launched through the Windows Command Shell with cmd.exe."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter: PowerShell",
+          "technique_id": "T1059.001",
+          "technique_details": "Cobalt Strike was executed through encoded PowerShell commands."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+          "technique_id": "T1547.001",
+          "technique_details": "Qbot DLL was added to HKCUEY_CURRENT_USER \\Software \\Microsoft \\Windows \\CurrentVersion \\Run."
+        },
+        {
+          "technique_name": "Create or Modify System Process: Windows Service",
+          "technique_id": "T1543.003",
+          "technique_details": "Cobalt Strike was installed as a Windows service on multiple systems."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Domain Accounts",
+          "technique_id": "T1078.002",
+          "technique_details": "Royal ransomware operators used (privileged) domain accounts for lateral movement."
+        },
+        {
+          "technique_name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+          "technique_id": "T1548.002",
+          "technique_details": "Royal ransomware operations executed a known UAC bypass that abuses a default scheduled task to launch PowerShell with escalated privileges."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Obfuscated Files or Information: HTML Smuggling",
+          "technique_id": "T1027.006",
+          "technique_details": "Password protected file containing an ISO file with a hidden file used in combination with an LNK file to execute Qbot."
+        },
+        {
+          "technique_name": "Domain Accounts",
+          "technique_id": "T1078.002",
+          "technique_details": "Royal ransomware operators used domain accounts for lateral movement."
+        },
+        {
+          "technique_name": "Process Injection",
+          "technique_id": "T1055",
+          "technique_details": "Qbot and Cobalt Strike were both injected into legitimate Windows processes."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Account Discovery: Local Account",
+          "technique_id": "T1087.001",
+          "technique_details": "The FindLocalAdmin PowerSploit script was used to find local administrator accounts on workstations/servers."
+        },
+        {
+          "technique_name": "Account Discovery: Domain Account",
+          "technique_id": "T1087.002",
+          "technique_details": "Users and groups were enumerated with built-in Windows utilities and with AdFind software."
+        },
+        {
+          "technique_name": "Domain Trust Discovery",
+          "technique_id": "T1482",
+          "technique_details": "Domain trust was enumerated with built-in Windows utilities."
+        },
+        {
+          "technique_name": "Network Share Discovery",
+          "technique_id": "T1135",
+          "technique_details": "Network shares were enumerated with PowerSploit software."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Remote Services: SMB/Windows Admin Shares",
+          "technique_id": "T1021.002",
+          "technique_details": "Remote admin shares C$ were mounted from the Patient 0 workstation."
+        },
+        {
+          "technique_name": "Use Alternate Authentication Material: Pass the Hash",
+          "technique_id": "T1550.002",
+          "technique_details": "The Royal ransomware operators leveraged credential hashes from privileged accounts to perform lateral movement."
+        },
+        {
+          "technique_name": "Valid Accounts: Domain Accounts",
+          "technique_id": "T1078.002",
+          "technique_details": "Several (privileged) domain accounts were used during the attack for lateral movement and deployment of ransomware."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Application Layer Protocol",
+          "technique_id": "T1071",
+          "technique_details": "Cobalt Strike uses peer-to-peer communication over Windows named pipes encapsulated in the SMB protocol."
+        },
+        {
+          "technique_name": "Application Layer Protocol: Web Protocols",
+          "technique_id": "T1071.001",
+          "technique_details": "Qbot and Cobalt Strike used HTTPS traffic for their C2 communication."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+          "technique_id": "T1567.002",
+          "technique_details": "Royal ransomware operators used Mega Cloud Storage and Dropbox to exfiltrate data from multiple hosts."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Royal ransomware encrypted files on systems with the .royal extension."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "LogMeIn",
+      "MobaXterm",
+      "Syncro"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Advanced IP Scanner",
+      "SharpShares",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Chisel",
+      "Cloudflared",
+      "OpenSSH"
+    ],
+    "CredentialTheft": [
+      "Mimikatz",
+      "NirSoft Dialupass",
+      "NirSoft IEPassView (iepv)",
+      "NirSoft MailPassView",
+      "NirSoft Netpass",
+      "NirSoft RouterPassView"
+    ],
+    "Offsec": [
+      "Brute Ratel C4",
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [
+      "Eraser",
+      "GMER",
+      "NSudo",
+      "PowerTool"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "royal2xthig3ou5hd7zsliqagy6yygk2cdelaxtni2fyad6dpmpxedid.onion",
+      "title": "Royal",
+      "slug": "http://royal2xthig3ou5hd7zsliqagy6yygk2cdelaxtni2fyad6dpmpxedid.onion",
+      "available": false,
+      "updated": "2023-10-16 12:57:21.526860",
+      "lastscrape": "2025-06-01 21:19:12.509212",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "royal4ezp7xrbakkus3oofjw6gszrohpodmdnfbe5e4w3og5sm7vb3qd.onion",
+      "title": null,
+      "slug": "http://royal4ezp7xrbakkus3oofjw6gszrohpodmdnfbe5e4w3og5sm7vb3qd.onion/api/posts/list",
+      "available": false,
+      "updated": "2023-10-16 14:20:44.663529",
+      "lastscrape": "2025-06-01 21:19:32.098483",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/royal"
+}

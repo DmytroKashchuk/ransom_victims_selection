@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "osiris",
+  "description": null,
+  "added_date": null,
+  "victims": 2,
+  "firstseen": "2025-12-10",
+  "lastseen": "2026-01-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "osirisbm3357xrccnid23nlyuqwzbgqheaei6dxvyi34tbkqr3bmvfid.onion",
+      "title": "Osiris",
+      "slug": "https://osirisbm3357xrccnid23nlyuqwzbgqheaei6dxvyi34tbkqr3bmvfid.onion/app/publications",
+      "available": false,
+      "updated": "2026-01-14 18:01:51.503831",
+      "lastscrape": "2026-02-13 18:30:55.115528",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-13T18:30:55+00:00",
+        "start_url": "https://osirisbm3357xrccnid23nlyuqwzbgqheaei6dxvyi34tbkqr3bmvfid.onion/app/publications",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Connection refused by destination host"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/osiris"
+}

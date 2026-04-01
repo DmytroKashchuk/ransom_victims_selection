@@ -1,0 +1,89 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "bravox",
+  "description": null,
+  "added_date": null,
+  "victims": 7,
+  "firstseen": "2025-05-15",
+  "lastseen": "2026-02-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "bravoxxtrmqeeevhl7gdh2yzvlrjxajr66d33c7ozosrccx4cz7cepad.onion",
+      "title": "BravoX Blog",
+      "slug": "http://bravoxxtrmqeeevhl7gdh2yzvlrjxajr66d33c7ozosrccx4cz7cepad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:11.589726",
+      "lastscrape": "2026-02-18 19:02:11.589726",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:11+00:00",
+        "start_url": "http://bravoxxtrmqeeevhl7gdh2yzvlrjxajr66d33c7ozosrccx4cz7cepad.onion",
+        "final_url": "http://bravoxxtrmqeeevhl7gdh2yzvlrjxajr66d33c7ozosrccx4cz7cepad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "452",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "content-type": "text/html",
+          "accept-ranges": "bytes",
+          "last-modified": "Wed, 28 Jan 2026 18:40:05 GMT",
+          "content-length": "452",
+          "date": "Wed, 18 Feb 2026 19:02:13 GMT"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "bravoxxwcfz5qk43ychgveprpd5mw5hvxfs4a2uz2okx7mumiht4fzyd.onion",
+      "title": "BravoX Blog",
+      "slug": "http://bravoxxwcfz5qk43ychgveprpd5mw5hvxfs4a2uz2okx7mumiht4fzyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:18.252106",
+      "lastscrape": "2026-02-18 19:03:18.252106",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:18+00:00",
+        "start_url": "http://bravoxxwcfz5qk43ychgveprpd5mw5hvxfs4a2uz2okx7mumiht4fzyd.onion",
+        "final_url": "http://bravoxxwcfz5qk43ychgveprpd5mw5hvxfs4a2uz2okx7mumiht4fzyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "452",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "content-type": "text/html",
+          "accept-ranges": "bytes",
+          "last-modified": "Wed, 28 Jan 2026 18:40:05 GMT",
+          "content-length": "452",
+          "date": "Wed, 18 Feb 2026 19:03:18 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/bravox"
+}

@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "babuk",
+  "description": "Babuk Ransomware is a sophisticated ransomware compiled for several platforms. Windows and ARM for Linux are the most used compiled versions, but ESX and a 32bit old PE executable were observed over time. as well It uses an Elliptic Curve Algorithm (Montgomery Algorithm) to build the encryption keys.\n",
+  "added_date": null,
+  "victims": 8,
+  "firstseen": "2020-10-25",
+  "lastseen": "2021-07-27",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "File[.]io"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "nq4zyac4ukl4tykmidbzgdlvaboqeqsemkp4t35bzvjeve6zm2lqcjid.onion",
+      "title": "Babuk - Leaks site",
+      "slug": "http://nq4zyac4ukl4tykmidbzgdlvaboqeqsemkp4t35bzvjeve6zm2lqcjid.onion/",
+      "available": false,
+      "updated": "2024-12-31 09:46:21.777521",
+      "lastscrape": "2025-06-01 21:18:21.680202",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 2,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/babuk"
+}

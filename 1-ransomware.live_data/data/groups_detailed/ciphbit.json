@@ -1,0 +1,52 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ciphbit",
+  "description": null,
+  "added_date": null,
+  "victims": 38,
+  "firstseen": "2023-09-14",
+  "lastseen": "2026-02-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ciphbitqyg26jor7eeo6xieyq7reouctefrompp6ogvhqjba7uo4xdid.onion",
+      "title": "CiphBit Data Leak",
+      "slug": "http://ciphbitqyg26jor7eeo6xieyq7reouctefrompp6ogvhqjba7uo4xdid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:19.159879",
+      "lastscrape": "2026-02-18 18:31:19.159879",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:19+00:00",
+        "start_url": "http://ciphbitqyg26jor7eeo6xieyq7reouctefrompp6ogvhqjba7uo4xdid.onion",
+        "final_url": "http://ciphbitqyg26jor7eeo6xieyq7reouctefrompp6ogvhqjba7uo4xdid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:19 GMT",
+          "server": "Apache",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/ciphbit"
+}

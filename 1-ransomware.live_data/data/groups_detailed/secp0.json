@@ -1,0 +1,57 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "secp0",
+  "description": "Encrypted Extension: .vanhelsing, .vanlocker. Targets Windows Platform only",
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2025-03-14",
+  "lastseen": "2025-03-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "secponewsxgrlnirowclps2kllzaotaf5w2bsvktdnz4qhjr2jnwvvyd.onion",
+      "title": "SECP0 News",
+      "slug": "http://secponewsxgrlnirowclps2kllzaotaf5w2bsvktdnz4qhjr2jnwvvyd.onion/",
+      "available": true,
+      "updated": "2026-02-18 19:01:29.267649",
+      "lastscrape": "2026-02-18 19:01:29.267649",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:29+00:00",
+        "start_url": "http://secponewsxgrlnirowclps2kllzaotaf5w2bsvktdnz4qhjr2jnwvvyd.onion/",
+        "final_url": "http://secponewsxgrlnirowclps2kllzaotaf5w2bsvktdnz4qhjr2jnwvvyd.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.24.0 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "3735",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.24.0 (Ubuntu)",
+          "date": "Wed, 18 Feb 2026 19:01:29 GMT",
+          "content-type": "text/html",
+          "content-length": "3735",
+          "last-modified": "Wed, 11 Feb 2026 23:20:51 GMT",
+          "connection": "keep-alive",
+          "etag": "\"698d0ed3-e97\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/secp0"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dataleak",
+  "description": null,
+  "added_date": null,
+  "victims": 6,
+  "firstseen": "2022-12-02",
+  "lastseen": "2022-12-02",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "woqjumaahi662ka26jzxyx7fznbp4kg3bsjar4b52tqkxgm2pylcjlad.onion",
+      "title": "DataLeak",
+      "slug": "http://woqjumaahi662ka26jzxyx7fznbp4kg3bsjar4b52tqkxgm2pylcjlad.onion/",
+      "available": false,
+      "updated": "2023-02-22 12:58:22.449966",
+      "lastscrape": "2025-06-01 21:19:12.104366",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/dataleak"
+}

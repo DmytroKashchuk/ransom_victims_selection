@@ -1,0 +1,75 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "coinbasecartel",
+  "description": "CoinbaseCartel specializes in data acquisition through system access and strategic partnerships. It focus exclusively on data exfiltration—our operations never involve system encryption or operational disruption.",
+  "added_date": null,
+  "victims": 75,
+  "firstseen": "2023-05-26",
+  "lastseen": "2026-02-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion",
+      "title": "System Breach • Coinbasecartel",
+      "slug": "http://fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:54.206712",
+      "lastscrape": "2026-02-18 19:01:54.206712",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:54+00:00",
+        "start_url": "http://fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion",
+        "final_url": "http://fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion",
+        "status": 404,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "727",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'self' data:; script-src 'self' 'nonce-v6LYxNa5lhS+gKMHPKvgnQ=='; style-src 'self'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "no-referrer",
+            "permissions-policy": "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "x-xss-protection": "0"
+          }
+        },
+        "headers": {
+          "alt-svc": "clear",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "content-security-policy": "default-src 'self' data:; script-src 'self' 'nonce-v6LYxNa5lhS+gKMHPKvgnQ=='; style-src 'self'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "cross-origin-embedder-policy": "credentialless",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "expires": "0",
+          "onion-location": "http://fjg4zi4opkxkvdz7mvwp7h6goe4tcby3hhkrz43pht4j3vakhy75znyd.onion/",
+          "permissions-policy": "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()",
+          "pragma": "no-cache",
+          "referrer-policy": "no-referrer",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0",
+          "date": "Wed, 18 Feb 2026 19:01:55 GMT",
+          "content-length": "727"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/coinbasecartel"
+}

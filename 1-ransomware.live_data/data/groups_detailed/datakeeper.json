@@ -1,0 +1,63 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "datakeeper",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "dc4nwiijwiffwztwzj5fngmcoppedrxg4jqj2tq67ontbini6qmlguid.onion",
+      "title": "Data Keeper - About",
+      "slug": "http://dc4nwiijwiffwztwzj5fngmcoppedrxg4jqj2tq67ontbini6qmlguid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:09.923990",
+      "lastscrape": "2026-02-18 18:32:09.923990",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:09+00:00",
+        "start_url": "http://dc4nwiijwiffwztwzj5fngmcoppedrxg4jqj2tq67ontbini6qmlguid.onion",
+        "final_url": "http://dc4nwiijwiffwztwzj5fngmcoppedrxg4jqj2tq67ontbini6qmlguid.onion/account/index.php?action=about",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 301,
+            "location": "http://dc4nwiijwiffwztwzj5fngmcoppedrxg4jqj2tq67ontbini6qmlguid.onion/account/index.php?action=about"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:32:10 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "set-cookie": "PHPSESSID=ji9o618onofpl78ur4cifglnq6; path=/",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/datakeeper"
+}

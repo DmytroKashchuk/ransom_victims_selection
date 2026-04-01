@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blacklock",
+  "description": "BlackLock is a rebranded version of another ransomware group known as Eldorado. It has since become one of the most active extortion syndicates in 2025, heavily targeting technology, manufacturing, construction, finance, and retail sectors. ",
+  "added_date": null,
+  "victims": 64,
+  "firstseen": "2023-11-27",
+  "lastseen": "2025-07-02",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "zdkexsh2e7yihw5uhg5hpsgq3dois2m5je7lzfagij2y6iw5ptl35gyd.onion",
+      "title": "BlackLock",
+      "slug": "http://zdkexsh2e7yihw5uhg5hpsgq3dois2m5je7lzfagij2y6iw5ptl35gyd.onion",
+      "available": false,
+      "updated": "2025-08-25 08:01:51.951723",
+      "lastscrape": "2025-09-24 08:30:23.017671",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-24T08:30:23+00:00",
+        "start_url": "http://zdkexsh2e7yihw5uhg5hpsgq3dois2m5je7lzfagij2y6iw5ptl35gyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/blacklock"
+}

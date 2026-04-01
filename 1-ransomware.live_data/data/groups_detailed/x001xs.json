@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "x001xs",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "nalr2uqsave7y2r235am5jsfiklfjh5h4jc5nztu3rzvmhklwt5j6kid.onion",
+      "title": "BITCARDS - Prepaid cards",
+      "slug": "http://nalr2uqsave7y2r235am5jsfiklfjh5h4jc5nztu3rzvmhklwt5j6kid.onion",
+      "available": false,
+      "updated": "2025-11-20 17:01:26.454747",
+      "lastscrape": "2025-12-20 17:30:19.647331",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-20T17:30:20+00:00",
+        "start_url": "http://nalr2uqsave7y2r235am5jsfiklfjh5h4jc5nztu3rzvmhklwt5j6kid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/x001xs"
+}

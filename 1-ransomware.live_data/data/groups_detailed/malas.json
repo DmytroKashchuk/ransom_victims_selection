@@ -1,0 +1,57 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "malas",
+  "description": null,
+  "added_date": null,
+  "victims": 171,
+  "firstseen": "2023-04-09",
+  "lastseen": "2023-04-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "malas2urovbyyavjzaezkt5ohljvyd5lt7vv7mnsgbf2y4bwlh72doqd.onion",
+      "title": "",
+      "slug": "http://malas2urovbyyavjzaezkt5ohljvyd5lt7vv7mnsgbf2y4bwlh72doqd.onion/atom.xml",
+      "available": true,
+      "updated": "2026-02-18 19:01:12.775338",
+      "lastscrape": "2026-02-18 19:01:12.775338",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:12+00:00",
+        "start_url": "http://malas2urovbyyavjzaezkt5ohljvyd5lt7vv7mnsgbf2y4bwlh72doqd.onion/atom.xml",
+        "final_url": "http://malas2urovbyyavjzaezkt5ohljvyd5lt7vv7mnsgbf2y4bwlh72doqd.onion/atom.xml",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/xml",
+          "content_length": "32589",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.18.0",
+          "date": "Wed, 18 Feb 2026 19:01:14 GMT",
+          "content-type": "text/xml",
+          "content-length": "32589",
+          "last-modified": "Wed, 19 Apr 2023 22:03:58 GMT",
+          "connection": "keep-alive",
+          "etag": "\"6440654e-7f4d\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/malas"
+}

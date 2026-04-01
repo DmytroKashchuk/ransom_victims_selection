@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "knight",
+  "description": "[Cyclops](group/cyclops) rebrand",
+  "added_date": null,
+  "victims": 48,
+  "firstseen": "2023-09-06",
+  "lastseen": "2024-02-12",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "knight3xppu263m7g4ag3xlit2qxpryjwueobh7vjdc3zrscqlfu3pqd.onion",
+      "title": "Please wait...",
+      "slug": "http://knight3xppu263m7g4ag3xlit2qxpryjwueobh7vjdc3zrscqlfu3pqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:11:51.236418",
+      "lastscrape": "2025-06-01 21:18:51.867627",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/knight"
+}

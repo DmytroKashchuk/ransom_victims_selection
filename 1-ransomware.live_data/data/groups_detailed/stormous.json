@@ -1,0 +1,92 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "stormous",
+  "description": null,
+  "added_date": null,
+  "victims": 165,
+  "firstseen": "2022-03-22",
+  "lastseen": "2025-12-08",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "3slz4povugieoi3tw7sblxoowxhbzxeju427cffsst5fo2tizepwatid.onion",
+      "title": "Database Shop",
+      "slug": "http://3slz4povugieoi3tw7sblxoowxhbzxeju427cffsst5fo2tizepwatid.onion/datashop.html",
+      "available": false,
+      "updated": "2022-05-09 22:27:33.062746",
+      "lastscrape": "2025-06-01 21:18:25.071620",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "h3reihqb2y7woqdary2g3bmk3apgtxuyhx4j2ftovbhe3l5svev7bdyd.onion",
+      "title": "Stormous _ official Site",
+      "slug": "http://h3reihqb2y7woqdary2g3bmk3apgtxuyhx4j2ftovbhe3l5svev7bdyd.onion/stm.html",
+      "available": false,
+      "updated": "2023-09-30 21:58:19.347924",
+      "lastscrape": "2025-06-01 21:18:39.978194",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "pdcizqzjitsgfcgqeyhuee5u6uki6zy5slzioinlhx6xjnsw25irdgqd.onion",
+      "title": "STORMOUS | Data Leak",
+      "slug": "http://pdcizqzjitsgfcgqeyhuee5u6uki6zy5slzioinlhx6xjnsw25irdgqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:02.633572",
+      "lastscrape": "2026-02-18 18:32:02.633572",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:02+00:00",
+        "start_url": "http://pdcizqzjitsgfcgqeyhuee5u6uki6zy5slzioinlhx6xjnsw25irdgqd.onion",
+        "final_url": "http://pdcizqzjitsgfcgqeyhuee5u6uki6zy5slzioinlhx6xjnsw25irdgqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "84669",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:32:15 GMT",
+          "server": "Apache",
+          "last-modified": "Thu, 29 Jan 2026 22:08:15 GMT",
+          "etag": "\"14abd-6498e17ebb52f\"",
+          "accept-ranges": "bytes",
+          "content-length": "84669",
+          "content-type": "text/html"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "stmxylixiz4atpmkspvhkym4xccjvpcv3v67uh3dze7xwwhtnz4faxid.onion",
+      "title": "StormouS.X BLOG | Official blog",
+      "slug": "http://stmxylixiz4atpmkspvhkym4xccjvpcv3v67uh3dze7xwwhtnz4faxid.onion",
+      "available": false,
+      "updated": "2024-02-29 02:37:02.971108",
+      "lastscrape": "2025-06-01 21:19:40.369720",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "pdcizqzjitsgfcgqeyhuee5u6uki6zy5slzioinlhx6xjnsw25irdgqd.onion",
+      "title": "StormouS.X*Blog",
+      "slug": "http://pdcizqzjitsgfcgqeyhuee5u6uki6zy5slzioinlhx6xjnsw25irdgqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:47:37.239652",
+      "lastscrape": "2025-06-01 21:20:18.361504",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/stormous"
+}

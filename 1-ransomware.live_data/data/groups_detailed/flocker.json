@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "flocker",
+  "description": null,
+  "added_date": null,
+  "victims": 59,
+  "firstseen": "2024-04-25",
+  "lastseen": "2025-07-31",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "flock4cvoeqm4c62gyohvmncx6ck2e7ugvyqgyxqtrumklhd5ptwzpqd.onion",
+      "title": "𝐅𝐒𝐎𝐂𝐈𝐄𝐓𝐘 | 𝐅𝐋𝐎𝐂𝐊𝐄𝐑",
+      "slug": "http://flock4cvoeqm4c62gyohvmncx6ck2e7ugvyqgyxqtrumklhd5ptwzpqd.onion",
+      "available": false,
+      "updated": "2025-08-30 03:01:34.967330",
+      "lastscrape": "2025-09-29 03:30:16.485704",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-29T03:30:16+00:00",
+        "start_url": "http://flock4cvoeqm4c62gyohvmncx6ck2e7ugvyqgyxqtrumklhd5ptwzpqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/flocker"
+}

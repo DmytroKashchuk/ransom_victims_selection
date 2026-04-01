@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "apos",
+  "description": null,
+  "added_date": null,
+  "victims": 16,
+  "firstseen": "2024-04-26",
+  "lastseen": "2025-06-24",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "yrz6bayqwhleymbeviter7ejccxm64sv2ppgqgderzgdhutozcbbhpqd.onion",
+      "title": "SBU",
+      "slug": "http://yrz6bayqwhleymbeviter7ejccxm64sv2ppgqgderzgdhutozcbbhpqd.onion",
+      "available": false,
+      "updated": "2025-10-08 15:31:25.809827",
+      "lastscrape": "2025-11-07 16:00:36.529427",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-07T16:00:36+00:00",
+        "start_url": "http://yrz6bayqwhleymbeviter7ejccxm64sv2ppgqgderzgdhutozcbbhpqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/apos"
+}

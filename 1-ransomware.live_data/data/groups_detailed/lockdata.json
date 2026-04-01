@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lockdata",
+  "description": null,
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2021-09-09",
+  "lastseen": "2021-09-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "wm6mbuzipviusuc42kcggzkdpbhuv45sn7olyamy6mcqqked3waslbqd.onion",
+      "title": "LockData Auction",
+      "slug": "http://wm6mbuzipviusuc42kcggzkdpbhuv45sn7olyamy6mcqqked3waslbqd.onion/",
+      "available": false,
+      "updated": "2022-04-09 16:16:17.344917",
+      "lastscrape": "2025-06-01 21:19:12.330698",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/lockdata"
+}

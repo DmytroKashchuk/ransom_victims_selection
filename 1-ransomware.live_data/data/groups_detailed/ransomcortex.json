@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ransomcortex",
+  "description": null,
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2024-07-12",
+  "lastseen": "2024-07-12",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "gg6owuhu72muoelkt2msjrp2llwr2on5634sk5v2xefzmobvryywbhid.onion",
+      "title": "offline",
+      "slug": "http://gg6owuhu72muoelkt2msjrp2llwr2on5634sk5v2xefzmobvryywbhid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:38:46.945781",
+      "lastscrape": "2025-06-01 21:18:38.202015",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ransomcortex"
+}

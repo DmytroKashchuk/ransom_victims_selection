@@ -1,0 +1,55 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "donutleaks",
+  "description": null,
+  "added_date": null,
+  "victims": 42,
+  "firstseen": "2022-08-24",
+  "lastseen": "2024-07-24",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "qkbbaxiuqqcqb5nox4np4qjcniy2q6m7yeluvj7n5i5dn7pgpcwxwfid.onion",
+      "title": "_D0#Nut::__chat",
+      "slug": "https://qkbbaxiuqqcqb5nox4np4qjcniy2q6m7yeluvj7n5i5dn7pgpcwxwfid.onion",
+      "available": false,
+      "updated": "2022-10-21 20:39:13.660531",
+      "lastscrape": "2025-06-01 21:19:12.143715",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "sbc2zv2qnz5vubwtx3aobfpkeao6l4igjegm3xx7tk5suqhjkp5jxtqd.onion",
+      "title": "",
+      "slug": "http://sbc2zv2qnz5vubwtx3aobfpkeao6l4igjegm3xx7tk5suqhjkp5jxtqd.onion/",
+      "available": false,
+      "updated": "2025-01-21 04:01:16.432174",
+      "lastscrape": "2025-06-01 21:19:25.218720",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "doq32rjiuomfghm5a4lyf3lwwakt2774tkv4ppsos6ueo5mhx7662gid.onion",
+      "title": "_d0nut.::Files_",
+      "slug": "https://doq32rjiuomfghm5a4lyf3lwwakt2774tkv4ppsos6ueo5mhx7662gid.onion",
+      "available": false,
+      "updated": "2022-10-21 20:39:50.289006",
+      "lastscrape": "2025-06-01 21:19:37.852106",
+      "type": "Files"
+    },
+    {
+      "fqdn": "dk4mkfzqai6ure62oukzgtypedmwlfq57yj2fube7j5wsoi6tuia7nyd.onion",
+      "title": "Index of /",
+      "slug": "http://dk4mkfzqai6ure62oukzgtypedmwlfq57yj2fube7j5wsoi6tuia7nyd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:58:02.668318",
+      "lastscrape": "2025-06-01 21:19:47.144335",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/donutleaks"
+}

@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ransomcartel",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "u67aylig7i6l657wxmp274eoilaowhp3boljowa6bli63rxyzfzsbtyd.onion",
+      "title": "Ransomware - Control Panel",
+      "slug": "http://u67aylig7i6l657wxmp274eoilaowhp3boljowa6bli63rxyzfzsbtyd.onion",
+      "available": false,
+      "updated": "2022-03-03 18:21:44.305019",
+      "lastscrape": "2025-06-01 21:19:12.482357",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "cartelirsn5l54ehcbalyyqtfb3j7be2rpvf6ujayaf5qqmg3vlwiayd.onion",
+      "title": null,
+      "slug": "http://cartelirsn5l54ehcbalyyqtfb3j7be2rpvf6ujayaf5qqmg3vlwiayd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:25.142616",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "cartelraqonekult2cxbzzz2ukiff7v6cav3w373uuhenybgqulxm5id.onion",
+      "title": "Ransom Cartel",
+      "slug": "http://cartelraqonekult2cxbzzz2ukiff7v6cav3w373uuhenybgqulxm5id.onion/company/auth",
+      "available": false,
+      "updated": "2023-01-19 17:17:04.631327",
+      "lastscrape": "2025-06-01 21:19:41.048914",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ransomcartel"
+}

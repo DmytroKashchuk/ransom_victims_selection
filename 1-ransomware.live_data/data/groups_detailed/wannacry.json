@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "wannacry",
+  "description": "WannaCry ransomware is a cyber attack that spreads by exploiting vulnerabilities in the Windows operating system. At its peak in May 2017, WannaCry became a global threat. Cybercriminals used the ransomware to hold an organization's data hostage and extort money in the form of cryptocurrency. WannaCry spreads using EternalBlue, an exploit leaked from the National Security Agency (NSA). EternalBlue enables attackers to use a zero-day vulnerability to gain access to a system. It targets Windows computers that use a legacy version of the Server Message Block (SMB) protocol.",
+  "added_date": null,
+  "victims": 33,
+  "firstseen": "2017-05-12",
+  "lastseen": "2018-02-23",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "none.",
+      "title": null,
+      "slug": "http://none",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:54.997779",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/wannacry"
+}

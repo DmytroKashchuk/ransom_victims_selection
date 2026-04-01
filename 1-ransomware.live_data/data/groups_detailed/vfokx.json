@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "vfokx",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "vfokxcdzjbpehgit223vzdzwte47l3zcqtafj34qrr26htjo4uf3obid.onion",
+      "title": null,
+      "slug": "http://vfokxcdzjbpehgit223vzdzwte47l3zcqtafj34qrr26htjo4uf3obid.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:12.568495",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "746pbrxl7acvrlhzshosye3b3udk4plurpxt2pp27pojfhkkaooqiiqd.onion",
+      "title": null,
+      "slug": "http://746pbrxl7acvrlhzshosye3b3udk4plurpxt2pp27pojfhkkaooqiiqd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:23.722426",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/vfokx"
+}

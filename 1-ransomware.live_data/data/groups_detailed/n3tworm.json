@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "n3tworm",
+  "description": "N3tw0rm ransomware group is linked to Iran by many security researchers especially for the fact that the group targeting only Israeli companies. Like other ransomware groups, N3tw0rm has a data leak site in the darknet. Due to the low ransom price the group requested and lack of response to negotiations, some security researchers believe that the N3tw0rm group's main goal is to be used for sowing chaos for Israeli interests and not for profit.\n",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "n3twormruynhn3oetmxvasum2miix2jgg56xskdoyihra4wthvlgyeyd.onion",
+      "title": null,
+      "slug": "http://n3twormruynhn3oetmxvasum2miix2jgg56xskdoyihra4wthvlgyeyd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:57.077784",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/n3tworm"
+}

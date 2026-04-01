@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dragonransomware",
+  "description": "Dragon Ransomware, is promising rapid and customizable ransomware operations for Windows systems. Key features include a compact 50KB file size, ultra-fast encryption speed, and a builder tool that allows users to personalize ransomware configurations. The tool will be available to the public once the team reaches 1,000 subscribers on their channel, signaling a potential rise in availability to threat actors.",
+  "added_date": null,
+  "victims": 39,
+  "firstseen": "2024-10-22",
+  "lastseen": "2024-12-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "t.me",
+      "title": "Telegram: Contact @DragonRansom",
+      "slug": "https://t.me/DragonRansom",
+      "available": false,
+      "updated": "2024-12-31 11:03:34.560075",
+      "lastscrape": "2025-06-01 21:19:12.620977",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/dragonransomware"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ValenciaLeaks",
+  "description": null,
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2024-09-18",
+  "lastseen": "2024-09-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "6doyqxqqj36vnedtt2zwxmngx52mgyp7brbrtwkyd75jgiolocoybgid.onion",
+      "title": "Valencia Ransomware",
+      "slug": "http://6doyqxqqj36vnedtt2zwxmngx52mgyp7brbrtwkyd75jgiolocoybgid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:54:14.591879",
+      "lastscrape": "2025-06-01 21:18:28.693380",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/valencialeaks"
+}

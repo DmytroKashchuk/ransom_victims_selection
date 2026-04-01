@@ -1,0 +1,105 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "killsec",
+  "description": null,
+  "added_date": null,
+  "victims": 266,
+  "firstseen": "2024-02-21",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "kill432ltnkqvaqntbalnsgojqqs2wz4lhnamrqjg66tq6fuvcztilyd.onion",
+      "title": "Kill Security 2.0",
+      "slug": "http://kill432ltnkqvaqntbalnsgojqqs2wz4lhnamrqjg66tq6fuvcztilyd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:10:23.130220",
+      "lastscrape": "2025-06-01 21:18:46.474087",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion",
+      "title": "",
+      "slug": "http://ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:46.058875",
+      "lastscrape": "2026-02-18 18:01:46.058875",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:46+00:00",
+        "start_url": "http://ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion",
+        "final_url": "http://ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": "Express",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "x-powered-by": "Express",
+          "access-control-allow-origin": "*",
+          "vary": "Origin",
+          "content-type": "text/html",
+          "cache-control": "no-cache",
+          "etag": "W/\"21d-MqlJuHKhfLXFyBO7ojk9kS3q1CA\"",
+          "date": "Wed, 18 Feb 2026 18:01:46 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion",
+      "title": "KillSec",
+      "slug": "http://ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion/posts.php",
+      "available": true,
+      "updated": "2026-02-18 19:01:42.664913",
+      "lastscrape": "2026-02-18 19:01:42.664913",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:42+00:00",
+        "start_url": "http://ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion/posts.php",
+        "final_url": "http://ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion/posts.php",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": "Express",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "597",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "x-powered-by": "Express",
+          "access-control-allow-origin": "*",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "597",
+          "etag": "W/\"255-l9XJ0Dgnvy4ftsRZwvmG1ommHHA\"",
+          "date": "Wed, 18 Feb 2026 19:01:43 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/killsec"
+}

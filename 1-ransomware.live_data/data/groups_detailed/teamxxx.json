@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "teamxxx",
+  "description": null,
+  "added_date": null,
+  "victims": 12,
+  "firstseen": "2025-02-17",
+  "lastseen": "2025-08-03",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "tp5cwh6d2b5hekcg6jlhoe6mawa7dlwiv47epvnfmzuaaur2dnaa3uid.onion",
+      "title": "",
+      "slug": "http://tp5cwh6d2b5hekcg6jlhoe6mawa7dlwiv47epvnfmzuaaur2dnaa3uid.onion",
+      "available": false,
+      "updated": "2025-09-01 08:01:29.648424",
+      "lastscrape": "2025-10-01 08:30:41.569612",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-10-01T08:30:41+00:00",
+        "start_url": "http://tp5cwh6d2b5hekcg6jlhoe6mawa7dlwiv47epvnfmzuaaur2dnaa3uid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/teamxxx"
+}

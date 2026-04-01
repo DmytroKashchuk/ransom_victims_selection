@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mogilevich",
+  "description": null,
+  "added_date": null,
+  "victims": 9,
+  "firstseen": "2024-02-20",
+  "lastseen": "2024-03-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "dkgn45pinr7nwvdaehemcrpgcjqf4fooit3c4gjw6dhzrp443ctvnoad.onion",
+      "title": "Mogilevich | Blog | Leaks",
+      "slug": "http://dkgn45pinr7nwvdaehemcrpgcjqf4fooit3c4gjw6dhzrp443ctvnoad.onion/leaks.html",
+      "available": false,
+      "updated": "2024-12-31 10:30:49.381165",
+      "lastscrape": "2025-06-01 21:18:33.539851",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/mogilevich"
+}

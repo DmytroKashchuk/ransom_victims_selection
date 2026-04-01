@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "onyx",
+  "description": null,
+  "added_date": null,
+  "victims": 28,
+  "firstseen": "2022-04-29",
+  "lastseen": "2022-11-21",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mrdxtxy6vqeqbmb4rvbvueh2kukb3e3mhu3wdothqn7242gztxyzycid.onion",
+      "title": "VSOP NEWS",
+      "slug": "http://mrdxtxy6vqeqbmb4rvbvueh2kukb3e3mhu3wdothqn7242gztxyzycid.onion",
+      "available": false,
+      "updated": "2023-01-02 05:00:48.303078",
+      "lastscrape": "2025-06-01 21:18:55.106853",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/onyx"
+}

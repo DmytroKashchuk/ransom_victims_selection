@@ -1,0 +1,94 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "conti",
+  "description": "Conti is an extremely damaging ransomware due to the speed with which it encrypts data and spreads to other systems. It was first observed in 2020 and it is thought to be led by a Russia-based cybercrime group that goes under the Wizard Spider pseudonym. In early May 2022, the US government announced a reward of up to $10 million for information on the Conti ransomware gang.\n",
+  "added_date": null,
+  "victims": 351,
+  "firstseen": "2020-07-31",
+  "lastseen": "2022-06-07",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Dropfiles",
+      "MEGA",
+      "Qaz[.]im",
+      "RClone",
+      "Sendspace",
+      "WinSCP"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "Splashtop"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Bloodhound",
+      "PowerView",
+      "Seatbelt",
+      "ShareFinder",
+      "SharpView",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz",
+      "ProcDump",
+      "Router Scan",
+      "SharpChrome"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "Metasploit",
+      "Meterpreter",
+      "PowerShell Empire",
+      "PowerSploit",
+      "Rubeus"
+    ],
+    "DefenseEvasion": [
+      "GMER",
+      "PCHunter"
+    ],
+    "LOLBAS": [
+      "BITSAdmin",
+      "NTDS Utility (ntdsutil)",
+      "PsExec",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion",
+      "title": "CONTI.News",
+      "slug": "http://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion/",
+      "available": false,
+      "updated": "2022-06-22 06:25:03.781337",
+      "lastscrape": "2025-06-01 21:18:23.047981",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "continews.click",
+      "title": "Access Blocked",
+      "slug": "http://continews.click",
+      "available": false,
+      "updated": "2024-12-31 09:54:05.968742",
+      "lastscrape": "2025-06-01 21:18:25.159295",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "continews.bz",
+      "title": "Error Response Page",
+      "slug": "http://continews.bz",
+      "available": false,
+      "updated": "2022-11-23 12:36:43.837472",
+      "lastscrape": "2025-06-01 21:18:26.684573",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 32,
+  "has_ransomnote": true,
+  "ransomnotes_count": 4,
+  "url": "https://www.ransomware.live/group/conti"
+}

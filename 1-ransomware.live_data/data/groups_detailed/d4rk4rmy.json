@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "d4rk4rmy",
+  "description": null,
+  "added_date": null,
+  "victims": 18,
+  "firstseen": "2025-07-07",
+  "lastseen": "2025-08-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "d4rkd2fybtclo44hss2dpqpw7gmofboxhruax2az3uejw7puxxbpkvqd.onion",
+      "title": "D4RK4RMY – 共产主义勒索软件党",
+      "slug": "http://d4rkd2fybtclo44hss2dpqpw7gmofboxhruax2az3uejw7puxxbpkvqd.onion",
+      "available": false,
+      "updated": "2025-08-30 13:32:03.470125",
+      "lastscrape": "2025-09-29 14:00:40.301217",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-29T14:00:40+00:00",
+        "start_url": "http://d4rkd2fybtclo44hss2dpqpw7gmofboxhruax2az3uejw7puxxbpkvqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/d4rk4rmy"
+}

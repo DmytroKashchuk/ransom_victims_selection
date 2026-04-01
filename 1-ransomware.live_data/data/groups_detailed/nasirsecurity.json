@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "nasirsecurity",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2025-10-05",
+  "lastseen": "2025-10-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "yzcpwxuhbkyjnyn4qsf4o5dkvu6m2fyo7dwizmnlutanlmzlos7pa6qd.onion",
+      "title": "Nasir Security",
+      "slug": "http://yzcpwxuhbkyjnyn4qsf4o5dkvu6m2fyo7dwizmnlutanlmzlos7pa6qd.onion",
+      "available": false,
+      "updated": "2025-10-14 11:31:38.613276",
+      "lastscrape": "2025-11-13 12:00:43.737119",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-13T12:00:43+00:00",
+        "start_url": "http://yzcpwxuhbkyjnyn4qsf4o5dkvu6m2fyo7dwizmnlutanlmzlos7pa6qd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "nasir.cc",
+      "title": "Error Response Page",
+      "slug": "http://nasir.cc/",
+      "available": false,
+      "updated": "2025-12-15 02:02:18.375859",
+      "lastscrape": "2026-01-14 02:30:29.670551",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-01-14T02:30:29+00:00",
+        "start_url": "http://nasir.cc/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Connection refused by destination host"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/nasirsecurity"
+}

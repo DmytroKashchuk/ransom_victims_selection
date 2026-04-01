@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "vendetta",
+  "description": "Ransomware, which appears to be a rebranding of win.cuba.",
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2023-02-12",
+  "lastseen": "2023-02-27",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "test.cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion",
+      "title": "Vendetta",
+      "slug": "http://test.cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:52:50.266414",
+      "lastscrape": "2025-06-01 21:19:12.564073",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/vendetta"
+}

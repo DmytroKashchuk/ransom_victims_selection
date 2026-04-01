@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "brotherhood",
+  "description": null,
+  "added_date": null,
+  "victims": 18,
+  "firstseen": "2025-04-04",
+  "lastseen": "2026-01-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "brohoodyaifh2ptccph5zfljyajjabwjjo4lg6gfp4xb6ynw5w7ml6id.onion",
+      "title": "BrotherHood",
+      "slug": "http://brohoodyaifh2ptccph5zfljyajjabwjjo4lg6gfp4xb6ynw5w7ml6id.onion",
+      "available": false,
+      "updated": "2026-01-21 17:01:55.885118",
+      "lastscrape": "2026-02-18 19:00:53.739733",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:54+00:00",
+        "start_url": "http://brohoodyaifh2ptccph5zfljyajjabwjjo4lg6gfp4xb6ynw5w7ml6id.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/brotherhood"
+}

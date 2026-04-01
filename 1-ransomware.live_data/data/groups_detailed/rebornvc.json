@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "rebornvc",
+  "description": null,
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2025-07-08",
+  "lastseen": "2025-07-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ransomed.vc",
+      "title": "",
+      "slug": "http://ransomed.vc",
+      "available": false,
+      "updated": "2026-01-29 09:01:31.063289",
+      "lastscrape": "2026-02-18 19:01:36.131326",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:42+00:00",
+        "start_url": "http://ransomed.vc",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "ransomed.biz",
+      "title": "404 Not Found",
+      "slug": "http://ransomed.biz",
+      "available": false,
+      "updated": "2025-10-19 11:02:43.267890",
+      "lastscrape": "2025-11-18 11:30:35.644944",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-18T11:30:35+00:00",
+        "start_url": "http://ransomed.biz",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Connection refused by destination host"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/rebornvc"
+}

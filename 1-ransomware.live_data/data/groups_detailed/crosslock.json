@@ -1,0 +1,135 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "crosslock",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2023-04-17",
+  "lastseen": "2023-04-17",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Command and Scripting Interpreter",
+          "technique_id": "T1059",
+          "technique_details": "Utilizes the Windows Command Shell for execution.",
+          "sub_technique": {
+            "sub_technique_name": "Windows Command Shell",
+            "sub_technique_id": "T1059.003"
+          }
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Process Injection",
+          "technique_id": "T1055",
+          "technique_details": "Employs process hollowing to evade detection.",
+          "sub_technique": {
+            "sub_technique_name": "Process Hollowing",
+            "sub_technique_id": "T1055.012"
+          }
+        },
+        {
+          "technique_name": "Indicator Removal",
+          "technique_id": "T1070",
+          "technique_details": "Clears Windows event logs to remove evidence.",
+          "sub_technique": {
+            "sub_technique_name": "Clear Windows Event Logs",
+            "sub_technique_id": "T1070.001"
+          }
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Abuse Elevation Control Mechanism",
+          "technique_id": "T1548",
+          "technique_details": "Bypasses User Account Control (UAC) to escalate privileges.",
+          "sub_technique": {
+            "sub_technique_name": "Bypass User Account Control",
+            "sub_technique_id": "T1548.002"
+          }
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "System Service Discovery",
+          "technique_id": "T1007",
+          "technique_details": "Discovers system services running on the victim's machine."
+        },
+        {
+          "technique_name": "Process Discovery",
+          "technique_id": "T1057",
+          "technique_details": "Enumerates running processes on the victim's system."
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Enumerates files and directories on the victim's system."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Remote Services",
+          "technique_id": "T1021",
+          "technique_details": "Uses SMB/Windows Admin Shares to move laterally within the network.",
+          "sub_technique": {
+            "sub_technique_name": "SMB/Windows Admin Shares",
+            "sub_technique_id": "T1021.002"
+          }
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Encrypts data on the victim's system to extort payment."
+        },
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "Deletes volume shadow copies to prevent system recovery."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "crosslock5cwfljbw4v37zuzq4talxxhyavjm2lufmjwgbpfjdsh56yd.onion",
+      "title": "Cross Lock - Data leak",
+      "slug": "http://crosslock5cwfljbw4v37zuzq4talxxhyavjm2lufmjwgbpfjdsh56yd.onion",
+      "available": false,
+      "updated": "2023-07-27 21:16:36.918233",
+      "lastscrape": "2025-06-01 21:18:31.988831",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/crosslock"
+}

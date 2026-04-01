@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "unsafe",
+  "description": "A group which seems to recycle leak from other ransomware groups",
+  "added_date": null,
+  "victims": 14,
+  "firstseen": "2022-12-21",
+  "lastseen": "2024-01-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "unsafeipw6wbkzzmj7yqp7bz6j7ivzynggmwxsm6u2wwfmfqrxqrrhyd.onion",
+      "title": "Home | UnSafeBlog",
+      "slug": "http://unsafeipw6wbkzzmj7yqp7bz6j7ivzynggmwxsm6u2wwfmfqrxqrrhyd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:50:57.997677",
+      "lastscrape": "2025-06-01 21:19:12.565388",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/unsafe"
+}

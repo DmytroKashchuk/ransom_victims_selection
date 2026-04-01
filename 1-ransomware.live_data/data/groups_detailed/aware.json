@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "aware",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ui2uleaiisccbtcooyi34cy5u3plpd5wraiza6wtibolshuf7tnzziid.onion",
+      "title": "Aware",
+      "slug": "http://ui2uleaiisccbtcooyi34cy5u3plpd5wraiza6wtibolshuf7tnzziid.onion",
+      "available": false,
+      "updated": "2026-01-25 14:03:13.022771",
+      "lastscrape": "2026-02-18 19:01:04.359539",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:04+00:00",
+        "start_url": "http://ui2uleaiisccbtcooyi34cy5u3plpd5wraiza6wtibolshuf7tnzziid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/aware"
+}

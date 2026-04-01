@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "minteye",
+  "description": null,
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2025-12-07",
+  "lastseen": "2025-12-12",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "85.121.48.68",
+      "title": "MintEye blog",
+      "slug": "http://85.121.48.68",
+      "available": false,
+      "updated": "2026-01-10 06:01:20.206352",
+      "lastscrape": "2026-02-09 06:31:34.356109",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-09T06:31:34+00:00",
+        "start_url": "http://85.121.48.68",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "i6575ykikb3yvut4btucoqjshbktouxxyu3eb3ffa3ukvyvtam5y5pqd.onion",
+      "title": "",
+      "slug": "http://i6575ykikb3yvut4btucoqjshbktouxxyu3eb3ffa3ukvyvtam5y5pqd.onion",
+      "available": false,
+      "updated": "2025-12-24 07:32:47.715395",
+      "lastscrape": "2026-01-23 07:33:08.061640",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-01-23T07:33:08+00:00",
+        "start_url": "http://i6575ykikb3yvut4btucoqjshbktouxxyu3eb3ffa3ukvyvtam5y5pqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/minteye"
+}

@@ -1,0 +1,164 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "weyhro",
+  "description": null,
+  "added_date": null,
+  "victims": 14,
+  "firstseen": "2024-12-12",
+  "lastseen": "2025-08-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "xtxtpqpyaaek4p4525ksepyyy75gfvi47fptm2gftw7cn656rnfhzdqd.onion",
+      "title": "",
+      "slug": "http://xtxtpqpyaaek4p4525ksepyyy75gfvi47fptm2gftw7cn656rnfhzdqd.onion/leaks",
+      "available": false,
+      "updated": "2025-03-07 13:01:26.784550",
+      "lastscrape": "2025-06-01 21:19:12.636054",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "weyhro.hk",
+      "title": "Weyhro",
+      "slug": "https://weyhro.hk/leaks/",
+      "available": true,
+      "updated": "2026-02-18 19:01:26.518397",
+      "lastscrape": "2026-02-18 19:01:26.518397",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:27+00:00",
+        "start_url": "https://weyhro.hk/leaks/",
+        "final_url": "https://weyhro.hk/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 308,
+            "location": "/leaks"
+          }
+        ],
+        "fingerprint": {
+          "server": "cloudflare",
+          "x_powered_by": "Next.js",
+          "via": null,
+          "cdn": "9cffc5f77927e522-TXL",
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 19:01:29 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+          "onion-location": "http://weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion",
+          "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url, Accept-Encoding",
+          "x-powered-by": "Next.js",
+          "cf-cache-status": "DYNAMIC",
+          "speculation-rules": "\"/cdn-cgi/speculation\"",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=eI637%2F2qRb27IHh59n2eD0UAZ9YWI8DN4bClABlP3hfPdATLMHOsHSLbMNd681GzMlGjWUYwxDOSwBrqI0WpgvgkaZ48I%2Bk%3D\"}]}",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "content-encoding": "br",
+          "server": "cloudflare",
+          "cf-ray": "9cffc5f77927e522-TXL",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion",
+      "title": "Weyhro",
+      "slug": "http://weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion/",
+      "available": false,
+      "updated": "2025-11-25 13:02:26.269686",
+      "lastscrape": "2025-12-25 13:30:19.763483",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-25T13:30:20+00:00",
+        "start_url": "http://weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion",
+      "title": "Weyhro",
+      "slug": "http://weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion/leaks/",
+      "available": false,
+      "updated": "2025-11-25 13:03:28.149036",
+      "lastscrape": "2025-12-25 13:30:36.198706",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-25T13:30:36+00:00",
+        "start_url": "http://weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion/leaks/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "weyhro.hk",
+      "title": "Weyhro",
+      "slug": "https://weyhro.hk",
+      "available": true,
+      "updated": "2026-02-18 19:02:35.005315",
+      "lastscrape": "2026-02-18 19:02:35.005315",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:35+00:00",
+        "start_url": "https://weyhro.hk",
+        "final_url": "https://weyhro.hk",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "cloudflare",
+          "x_powered_by": "Next.js",
+          "via": null,
+          "cdn": "9cffc797da4a5cc8-ARN",
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 19:02:35 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "cache-control": "s-maxage=31536000, stale-while-revalidate",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=WNwDJd0ANq3Ci2Yll8ErkXcN5a9Cm9TWRc3GPchq269j%2Bvh1UXVV6u2sRkAMEqinb3bLHuM1lo%2FXp%2F5gwi4we4yswUG40IC88w%3D%3D\"}]}",
+          "onion-location": "http://weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion",
+          "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Url, Accept-Encoding",
+          "x-nextjs-cache": "HIT",
+          "x-powered-by": "Next.js",
+          "cf-cache-status": "DYNAMIC",
+          "speculation-rules": "\"/cdn-cgi/speculation\"",
+          "content-encoding": "br",
+          "server": "cloudflare",
+          "cf-ray": "9cffc797da4a5cc8-ARN",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/weyhro"
+}

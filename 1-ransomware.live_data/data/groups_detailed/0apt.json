@@ -1,0 +1,55 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "0apt",
+  "description": "The group appears unreliable. Most, if not all, of its alleged victims cannot be verified and appear to be randomly selected organizations. WE HAVE DECIDED TO REMOVE ENTRIES FOR THIS GROUP",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "oaptxiyisljt2kv3we2we34kuudmqda7f2geffoylzpeo7ourhtz4dad.onion",
+      "title": "0APT | Command Ops",
+      "slug": "http://oaptxiyisljt2kv3we2we34kuudmqda7f2geffoylzpeo7ourhtz4dad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:31.063533",
+      "lastscrape": "2026-02-18 18:01:31.063533",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:02:42+00:00",
+        "start_url": "http://oaptxiyisljt2kv3we2we34kuudmqda7f2geffoylzpeo7ourhtz4dad.onion",
+        "final_url": "http://oaptxiyisljt2kv3we2we34kuudmqda7f2geffoylzpeo7ourhtz4dad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:02:43 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/0apt"
+}

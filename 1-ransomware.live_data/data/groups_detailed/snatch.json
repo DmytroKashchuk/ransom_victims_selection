@@ -1,0 +1,79 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "snatch",
+  "description": "Snatch is a ransomware which infects victims by rebooting the PC into Safe Mode. Most of the existing security protections do not run in Safe Mode so that it the malware can act without expected countermeasures and it can encrypt as many files as it finds. It uses common packers such as UPX to hide its payload.\n",
+  "added_date": null,
+  "victims": 142,
+  "firstseen": "2021-11-29",
+  "lastseen": "2024-05-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike",
+      "Meterpreter"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "BCDEdit",
+      "ServiceControl (sc.exe)"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "hl66646wtlp2naoqnhattngigjp5palgqmbwixepcjyq5i534acgqyad.onion",
+      "title": "News",
+      "slug": "http://hl66646wtlp2naoqnhattngigjp5palgqmbwixepcjyq5i534acgqyad.onion",
+      "available": false,
+      "updated": "2023-11-02 06:54:54.208515",
+      "lastscrape": "2025-06-01 21:18:41.299589",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "snatch.press",
+      "title": "Access Denied",
+      "slug": "http://snatch.press",
+      "available": false,
+      "updated": "2023-01-29 17:17:24.955870",
+      "lastscrape": "2025-06-01 21:19:13.836044",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "snatchteam.top",
+      "title": "News",
+      "slug": "https://snatchteam.top",
+      "available": false,
+      "updated": "2023-09-13 02:27:59.433094",
+      "lastscrape": "2025-06-01 21:19:38.660241",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "snatchteam.cc",
+      "title": "Origin DNS error snatchteam.cc Cloudflare",
+      "slug": "http://snatchteam.cc",
+      "available": false,
+      "updated": "2024-12-31 10:46:47.942225",
+      "lastscrape": "2025-06-01 21:19:39.429805",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "snatchnews.top",
+      "title": "Just a moment...",
+      "slug": "https://snatchnews.top",
+      "available": false,
+      "updated": "2024-12-31 10:46:56.462911",
+      "lastscrape": "2025-06-01 21:19:40.306451",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/snatch"
+}

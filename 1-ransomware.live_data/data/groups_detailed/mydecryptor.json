@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mydecryptor",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "5s4ixqul2enwxrqv.onion",
+      "title": null,
+      "slug": "http://58b87e60649ccc808ac8mstiejnj.5s4ixqul2enwxrqv.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:20.234116",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/mydecryptor"
+}

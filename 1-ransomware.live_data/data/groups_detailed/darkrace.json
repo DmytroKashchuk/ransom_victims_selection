@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "darkrace",
+  "description": null,
+  "added_date": null,
+  "victims": 10,
+  "firstseen": "2023-05-30",
+  "lastseen": "2023-06-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "wkrlpub5k52rjigwxfm6m7ogid55kamgc5azxlq7zjgaopv33tgx2sqd.onion",
+      "title": "Darkrace blog",
+      "slug": "http://wkrlpub5k52rjigwxfm6m7ogid55kamgc5azxlq7zjgaopv33tgx2sqd.onion/",
+      "available": false,
+      "updated": "2023-06-20 23:24:51.549575",
+      "lastscrape": "2025-06-01 21:19:12.062999",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/darkrace"
+}

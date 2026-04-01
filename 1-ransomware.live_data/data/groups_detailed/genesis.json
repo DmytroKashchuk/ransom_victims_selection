@@ -1,0 +1,53 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "genesis",
+  "description": null,
+  "added_date": null,
+  "victims": 45,
+  "firstseen": "2024-05-07",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "genesis6ixpb5mcy4kudybtw5op2wqlrkocfogbnenz3c647ibqixiad.onion",
+      "title": "GENESIS",
+      "slug": "http://genesis6ixpb5mcy4kudybtw5op2wqlrkocfogbnenz3c647ibqixiad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:58.691487",
+      "lastscrape": "2026-02-18 19:01:58.691487",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:58+00:00",
+        "start_url": "http://genesis6ixpb5mcy4kudybtw5op2wqlrkocfogbnenz3c647ibqixiad.onion",
+        "final_url": "http://genesis6ixpb5mcy4kudybtw5op2wqlrkocfogbnenz3c647ibqixiad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "13468",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "accept-ranges": "bytes",
+          "content-length": "13468",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 18 Feb 2026 19:02:02 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/genesis"
+}

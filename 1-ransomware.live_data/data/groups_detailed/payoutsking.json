@@ -1,0 +1,65 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "payoutsking",
+  "description": null,
+  "added_date": null,
+  "victims": 60,
+  "firstseen": "2025-04-17",
+  "lastseen": "2026-01-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "payoutsgn7cy6uliwevdqspncjpfxpmzgirwl2au65la7rfs5x3qnbqd.onion",
+      "title": "PayoutsKing",
+      "slug": "https://payoutsgn7cy6uliwevdqspncjpfxpmzgirwl2au65la7rfs5x3qnbqd.onion/",
+      "available": false,
+      "updated": "2026-02-18 17:31:51.035751",
+      "lastscrape": "2026-02-18 19:01:34.114401",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:34+00:00",
+        "start_url": "https://payoutsgn7cy6uliwevdqspncjpfxpmzgirwl2au65la7rfs5x3qnbqd.onion/",
+        "final_url": "https://payoutsgn7cy6uliwevdqspncjpfxpmzgirwl2au65la7rfs5x3qnbqd.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:58 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "set-cookie": "clk=KrN7IFtwuP9k7yE2gvn9zKthkB3Kti3Fr4KedtKXTXBDuKabPA6IPgL1dAlAAihaIw64ee6Xz0f9ZBI3",
+          "expires": "Wed, 18 Feb 2026 20:01:58 GMT",
+          "cache-control": "max-age=3600",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/payoutsking"
+}

@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "icefire",
+  "description": null,
+  "added_date": null,
+  "victims": 11,
+  "firstseen": "2022-08-20",
+  "lastseen": "2022-08-20",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "kf6x3mjeqljqxjznaw65jixin7dpcunfxbbakwuitizytcpzn4iy5bad.onion",
+      "title": "Leakage List",
+      "slug": "http://kf6x3mjeqljqxjznaw65jixin7dpcunfxbbakwuitizytcpzn4iy5bad.onion/board/leak_list/",
+      "available": false,
+      "updated": "2022-08-24 13:04:21.218136",
+      "lastscrape": "2025-06-01 21:18:48.573481",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "7kstc545azxeahkduxmefgwqkrrhq3mzohkzqvrv7aekob7z3iwkqvyd.onion",
+      "title": "Leakage List",
+      "slug": "http://7kstc545azxeahkduxmefgwqkrrhq3mzohkzqvrv7aekob7z3iwkqvyd.onion/board/victim_list/",
+      "available": false,
+      "updated": "2023-03-13 04:44:42.106940",
+      "lastscrape": "2025-06-01 21:18:57.019548",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/icefire"
+}

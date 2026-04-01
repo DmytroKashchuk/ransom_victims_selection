@@ -1,0 +1,55 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ransomed",
+  "description": null,
+  "added_date": null,
+  "victims": 68,
+  "firstseen": "2023-08-21",
+  "lastseen": "2023-10-30",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ransomed.vc",
+      "title": null,
+      "slug": "https://ransomed.vc/",
+      "available": false,
+      "updated": "2023-09-07 12:50:16.467733",
+      "lastscrape": "2025-06-01 21:19:12.480208",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "k63fo4qmdnl4cbt54sso3g6s5ycw7gf7i6nvxl3wcf3u6la2mlawt5qd.onion",
+      "title": "404 Not Found",
+      "slug": "http://k63fo4qmdnl4cbt54sso3g6s5ycw7gf7i6nvxl3wcf3u6la2mlawt5qd.onion",
+      "available": false,
+      "updated": "2023-09-01 10:54:37.941797",
+      "lastscrape": "2025-06-01 21:19:26.740864",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "f6amq3izzsgtna4vw24rpyhy3ofwazlgex2zqdssavevvkklmtudxjad.onion",
+      "title": "Ransomedvc – Leading Agency In Digital Peace – Ran",
+      "slug": "http://f6amq3izzsgtna4vw24rpyhy3ofwazlgex2zqdssavevvkklmtudxjad.onion",
+      "available": false,
+      "updated": "2023-11-06 06:57:10.463564",
+      "lastscrape": "2025-06-01 21:19:47.409889",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "g6ocfx3bb3pvdfawbgrbt3fqoht5t6dwc3hfmmueo76hz46qepidnxid.onion",
+      "title": "Ransomed",
+      "slug": "http://g6ocfx3bb3pvdfawbgrbt3fqoht5t6dwc3hfmmueo76hz46qepidnxid.onion",
+      "available": false,
+      "updated": "2023-11-18 16:00:38.878868",
+      "lastscrape": "2025-06-01 21:19:57.935566",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ransomed"
+}

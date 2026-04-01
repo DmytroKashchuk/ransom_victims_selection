@@ -1,0 +1,50 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mallox",
+  "description": "This ransomware uses a combination of different crypto algorithms (ChaCha20, AES-128, Curve25519). The activity of this malware is dated to mid-June 2021. The extension of the encrypted files are set to the compromised company: .<target_company>",
+  "added_date": null,
+  "victims": 49,
+  "firstseen": "2022-11-04",
+  "lastseen": "2024-07-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Dropmefiles",
+      "File[.]io",
+      "Sendspace"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion",
+      "title": "Mallox | Data Leaks",
+      "slug": "http://wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion",
+      "available": false,
+      "updated": "2025-01-21 04:38:00.391648",
+      "lastscrape": "2025-06-01 21:19:12.344567",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion",
+      "title": "",
+      "slug": "http://wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion",
+      "available": false,
+      "updated": "2022-03-14 05:12:43.980524",
+      "lastscrape": "2025-06-01 21:19:23.172890",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 3,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/mallox"
+}

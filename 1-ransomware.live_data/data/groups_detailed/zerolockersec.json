@@ -1,0 +1,55 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "zerolockersec",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ghfuviaplse6nbeowu7ghhid5hdowutbwbrv77aqgwco2b2ntgj3auad.onion",
+      "title": "403 Forbidden",
+      "slug": "http://ghfuviaplse6nbeowu7ghhid5hdowutbwbrv77aqgwco2b2ntgj3auad.onion/",
+      "available": true,
+      "updated": "2026-02-18 18:01:28.826707",
+      "lastscrape": "2026-02-18 18:01:28.826707",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:28+00:00",
+        "start_url": "http://ghfuviaplse6nbeowu7ghhid5hdowutbwbrv77aqgwco2b2ntgj3auad.onion/",
+        "final_url": "http://ghfuviaplse6nbeowu7ghhid5hdowutbwbrv77aqgwco2b2ntgj3auad.onion/",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:06:32 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/zerolockersec"
+}

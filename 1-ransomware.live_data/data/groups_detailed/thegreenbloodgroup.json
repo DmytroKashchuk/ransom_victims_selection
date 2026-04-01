@@ -1,0 +1,54 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "thegreenbloodgroup",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "scbrksw5fgjtujc2ah42roo6bij2unr2tggfcynpbql5a7yp3s22taid.onion",
+      "title": "THE GREEN BLOOD GROUP",
+      "slug": "http://scbrksw5fgjtujc2ah42roo6bij2unr2tggfcynpbql5a7yp3s22taid.onion:8000",
+      "available": true,
+      "updated": "2026-02-18 19:02:07.948342",
+      "lastscrape": "2026-02-18 19:02:07.948342",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:08+00:00",
+        "start_url": "http://scbrksw5fgjtujc2ah42roo6bij2unr2tggfcynpbql5a7yp3s22taid.onion:8000",
+        "final_url": "http://scbrksw5fgjtujc2ah42roo6bij2unr2tggfcynpbql5a7yp3s22taid.onion:8000",
+        "status": 200,
+        "http_version": "HTTP/1.0",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "SimpleHTTP/0.6 Python/3.9.2",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "8472",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "SimpleHTTP/0.6 Python/3.9.2",
+          "date": "Wed, 18 Feb 2026 19:02:08 GMT",
+          "content-type": "text/html",
+          "content-length": "8472",
+          "last-modified": "Thu, 29 Jan 2026 23:32:52 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/thegreenbloodgroup"
+}

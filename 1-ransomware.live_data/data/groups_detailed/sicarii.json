@@ -1,0 +1,79 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "sicarii",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2026-01-05",
+  "lastseen": "2026-01-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "sicari7zpu3mtxqggde7mu3ywppntdqg22arcukvlaihjbfcb2rnktid.onion",
+      "title": "404 Not Found",
+      "slug": "http://sicari7zpu3mtxqggde7mu3ywppntdqg22arcukvlaihjbfcb2rnktid.onion/blog.php",
+      "available": false,
+      "updated": "2026-01-19 23:01:41.144352",
+      "lastscrape": "2026-02-18 19:00:59.832316",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:59+00:00",
+        "start_url": "http://sicari7zpu3mtxqggde7mu3ywppntdqg22arcukvlaihjbfcb2rnktid.onion/blog.php",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "sicari7zpu3mtxqggde7mu3ywppntdqg22arcukvlaihjbfcb2rnktid.onion",
+      "title": "403 Forbidden",
+      "slug": "http://sicari7zpu3mtxqggde7mu3ywppntdqg22arcukvlaihjbfcb2rnktid.onion",
+      "available": false,
+      "updated": "2026-01-19 23:02:43.295085",
+      "lastscrape": "2026-02-18 19:01:29.278067",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:29+00:00",
+        "start_url": "http://sicari7zpu3mtxqggde7mu3ywppntdqg22arcukvlaihjbfcb2rnktid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "sicarilxx2br6esqnhad4w26bcgb5j2snbbnhyo4b6t7kby2oy4x3jad.onion",
+      "title": "404 Not Found",
+      "slug": "http://sicarilxx2br6esqnhad4w26bcgb5j2snbbnhyo4b6t7kby2oy4x3jad.onion/blog.php",
+      "available": false,
+      "updated": "2026-01-19 23:03:47.070490",
+      "lastscrape": "2026-02-18 19:01:50.167537",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:50+00:00",
+        "start_url": "http://sicarilxx2br6esqnhad4w26bcgb5j2snbbnhyo4b6t7kby2oy4x3jad.onion/blog.php",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/sicarii"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ransombay",
+  "description": "Launched on April 24th, 2025 RansomBay is a new project operating under the DragonForce initiative",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mrbay3n14c2wxmhpro5tcdfjpqkeowfucbodic4ix6rzqtoss3ebhid.onion",
+      "title": "",
+      "slug": "http://mrbay3n14c2wxmhpro5tcdfjpqkeowfucbodic4ix6rzqtoss3ebhid.onion/news",
+      "available": false,
+      "updated": "2025-05-13 19:31:46.720676",
+      "lastscrape": "2025-06-12 20:00:05.009699",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ransombay"
+}

@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "termite",
+  "description": null,
+  "added_date": null,
+  "victims": 31,
+  "firstseen": "2023-05-11",
+  "lastseen": "2026-02-02",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "termiteuslbumdge2zmfmfcsrvmvsfe4gvyudc5j6cdnisnhtftvokid.onion",
+      "title": "Termite",
+      "slug": "http://termiteuslbumdge2zmfmfcsrvmvsfe4gvyudc5j6cdnisnhtftvokid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:30.807463",
+      "lastscrape": "2026-02-18 18:31:30.807463",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:30+00:00",
+        "start_url": "http://termiteuslbumdge2zmfmfcsrvmvsfe4gvyudc5j6cdnisnhtftvokid.onion",
+        "final_url": "http://termiteuslbumdge2zmfmfcsrvmvsfe4gvyudc5j6cdnisnhtftvokid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:31 GMT",
+          "content-type": "text/html",
+          "last-modified": "Thu, 29 Jan 2026 01:11:41 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"697ab3cd-1c6\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/termite"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "spook",
+  "description": null,
+  "added_date": null,
+  "victims": 35,
+  "firstseen": "2021-10-04",
+  "lastseen": "2021-10-19",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "spookuhvfyxzph54ikjfwf2mwmxt572krpom7reyayrmxbkizbvkpaid.onion",
+      "title": "Spook",
+      "slug": "http://spookuhvfyxzph54ikjfwf2mwmxt572krpom7reyayrmxbkizbvkpaid.onion/blog/",
+      "available": false,
+      "updated": "2021-10-26 02:30:31.814279",
+      "lastscrape": "2025-06-01 21:19:12.530892",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/spook"
+}

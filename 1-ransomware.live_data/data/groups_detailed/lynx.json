@@ -1,0 +1,325 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lynx",
+  "description": null,
+  "added_date": null,
+  "victims": 388,
+  "firstseen": "2023-05-22",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Restic"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "lynxblog.net",
+      "title": "Lynx",
+      "slug": "http://lynxblog.net/leaks",
+      "available": false,
+      "updated": "2025-05-26 19:31:20.920005",
+      "lastscrape": "2025-06-25 20:00:05.952998",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lynxch2k5xi35j7hlbmwl7d6u2oz4vp2wqp6qkwol624cod3d6iqiyqd.onion",
+      "title": "Lynx",
+      "slug": "http://lynxch2k5xi35j7hlbmwl7d6u2oz4vp2wqp6qkwol624cod3d6iqiyqd.onion",
+      "available": false,
+      "updated": "2025-05-09 03:01:51.697432",
+      "lastscrape": "2025-06-08 03:30:16.738321",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lynxchatly4zludmhmi75jrwhycnoqvkxb4prohxmyzf4euf5gjxroad.onion",
+      "title": "Lynx",
+      "slug": "http://lynxchatly4zludmhmi75jrwhycnoqvkxb4prohxmyzf4euf5gjxroad.onion/login",
+      "available": true,
+      "updated": "2026-02-18 19:01:16.018236",
+      "lastscrape": "2026-02-18 19:01:16.018236",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:16+00:00",
+        "start_url": "http://lynxchatly4zludmhmi75jrwhycnoqvkxb4prohxmyzf4euf5gjxroad.onion/login",
+        "final_url": "http://lynxchatly4zludmhmi75jrwhycnoqvkxb4prohxmyzf4euf5gjxroad.onion/login",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "802",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:01:16 GMT",
+          "content-type": "text/html",
+          "content-length": "802",
+          "last-modified": "Sun, 17 Nov 2024 08:37:16 GMT",
+          "connection": "keep-alive",
+          "etag": "\"6739ab3c-322\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lynxblogxstgzsarfyk2pvhdv45igghb4zmthnzmsipzeoduruz3xwqd.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogxstgzsarfyk2pvhdv45igghb4zmthnzmsipzeoduruz3xwqd.onion/leaks",
+      "available": false,
+      "updated": "2025-07-09 12:32:34.893603",
+      "lastscrape": "2025-08-08 13:00:08.783385",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lynxblogxutufossaeawlij3j3uikaloll5ko6grzhkwdclrjngrfoid.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogxutufossaeawlij3j3uikaloll5ko6grzhkwdclrjngrfoid.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:02:23.982212",
+      "lastscrape": "2026-02-18 19:02:23.982212",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:23+00:00",
+        "start_url": "http://lynxblogxutufossaeawlij3j3uikaloll5ko6grzhkwdclrjngrfoid.onion/leaks",
+        "final_url": "http://lynxblogxutufossaeawlij3j3uikaloll5ko6grzhkwdclrjngrfoid.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "803",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:02:24 GMT",
+          "content-type": "text/html",
+          "content-length": "803",
+          "last-modified": "Fri, 02 Aug 2024 17:40:05 GMT",
+          "connection": "keep-alive",
+          "etag": "\"66ad19f5-323\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lynxblogoxllth4b46cfwlop5pfj4s7dyv37yuy7qn2ftan6gd72hsad.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogoxllth4b46cfwlop5pfj4s7dyv37yuy7qn2ftan6gd72hsad.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:03:33.643376",
+      "lastscrape": "2026-02-18 19:03:33.643376",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:33+00:00",
+        "start_url": "http://lynxblogoxllth4b46cfwlop5pfj4s7dyv37yuy7qn2ftan6gd72hsad.onion/leaks",
+        "final_url": "http://lynxblogoxllth4b46cfwlop5pfj4s7dyv37yuy7qn2ftan6gd72hsad.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "803",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:03:34 GMT",
+          "content-type": "text/html",
+          "content-length": "803",
+          "last-modified": "Fri, 02 Aug 2024 17:40:05 GMT",
+          "connection": "keep-alive",
+          "etag": "\"66ad19f5-323\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lynxblogmx3rbiwg3rpj4nds25hjsnrwkpxt5gaznetfikz4gz2csyad.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogmx3rbiwg3rpj4nds25hjsnrwkpxt5gaznetfikz4gz2csyad.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:04:38.836813",
+      "lastscrape": "2026-02-18 19:04:38.836813",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:04:38+00:00",
+        "start_url": "http://lynxblogmx3rbiwg3rpj4nds25hjsnrwkpxt5gaznetfikz4gz2csyad.onion/leaks",
+        "final_url": "http://lynxblogmx3rbiwg3rpj4nds25hjsnrwkpxt5gaznetfikz4gz2csyad.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "803",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:04:39 GMT",
+          "content-type": "text/html",
+          "content-length": "803",
+          "last-modified": "Fri, 02 Aug 2024 17:40:05 GMT",
+          "connection": "keep-alive",
+          "etag": "\"66ad19f5-323\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lynxblogco7r37jt7p5wrmfxzqze7ghxw6rihzkqc455qluacwotciyd.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogco7r37jt7p5wrmfxzqze7ghxw6rihzkqc455qluacwotciyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:05:45.349410",
+      "lastscrape": "2026-02-18 19:05:45.349410",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:05:45+00:00",
+        "start_url": "http://lynxblogco7r37jt7p5wrmfxzqze7ghxw6rihzkqc455qluacwotciyd.onion",
+        "final_url": "http://lynxblogco7r37jt7p5wrmfxzqze7ghxw6rihzkqc455qluacwotciyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "803",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:05:45 GMT",
+          "content-type": "text/html",
+          "content-length": "803",
+          "last-modified": "Fri, 02 Aug 2024 17:40:05 GMT",
+          "connection": "keep-alive",
+          "etag": "\"66ad19f5-323\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lynxblogijy4jfoblgix2klxmkbgee4leoeuge7qt4fpfkj4zbi2sjyd.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogijy4jfoblgix2klxmkbgee4leoeuge7qt4fpfkj4zbi2sjyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:06:57.052100",
+      "lastscrape": "2026-02-18 19:06:57.052100",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:06:57+00:00",
+        "start_url": "http://lynxblogijy4jfoblgix2klxmkbgee4leoeuge7qt4fpfkj4zbi2sjyd.onion",
+        "final_url": "http://lynxblogijy4jfoblgix2klxmkbgee4leoeuge7qt4fpfkj4zbi2sjyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "803",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:06:57 GMT",
+          "content-type": "text/html",
+          "content-length": "803",
+          "last-modified": "Fri, 02 Aug 2024 17:40:05 GMT",
+          "connection": "keep-alive",
+          "etag": "\"66ad19f5-323\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lynxblogtwatfsrwj3oatpejwxk5bngqcd5f7s26iskagfu7ouaomjad.onion",
+      "title": "Lynx",
+      "slug": "http://lynxblogtwatfsrwj3oatpejwxk5bngqcd5f7s26iskagfu7ouaomjad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:08:10.199821",
+      "lastscrape": "2026-02-18 19:08:10.199821",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:08:10+00:00",
+        "start_url": "http://lynxblogtwatfsrwj3oatpejwxk5bngqcd5f7s26iskagfu7ouaomjad.onion",
+        "final_url": "http://lynxblogtwatfsrwj3oatpejwxk5bngqcd5f7s26iskagfu7ouaomjad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "803",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:08:11 GMT",
+          "content-type": "text/html",
+          "content-length": "803",
+          "last-modified": "Fri, 02 Aug 2024 17:40:05 GMT",
+          "connection": "keep-alive",
+          "etag": "\"66ad19f5-323\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/lynx"
+}

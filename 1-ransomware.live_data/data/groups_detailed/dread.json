@@ -1,0 +1,65 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dread",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion",
+      "title": "Frontpage - Dread",
+      "slug": "http://dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:13.839571",
+      "lastscrape": "2026-02-18 18:31:13.839571",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:13+00:00",
+        "start_url": "http://dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion",
+        "final_url": "https://dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 301,
+            "location": "https://dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion/"
+          }
+        ],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "strict-transport-security": "max-age=31536000; includeSubDomains; preload"
+          }
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:16 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "set-cookie": "dcap=gVvrnFlnheXdli4HDPIY9d2kWlXz9H3HdrbWGNOxdolY3n9PWAgesVO+AuDJVvaZ6d5DziR57e24IKU7VwEH5UOgMS2HCA6zUzmPT3IOiXyKpfT4favtW6zHDbygfoeRIM9v0W4IoX1kCtmEOI2VWqTvRMrM; Max-Age=30; Domain=dreadytofatroptsdj6io7l3xptbet6onoyno2yv7jicoxknyazubrad.onion; Path=/; HttpOnly; SameSite=Lax",
+          "refresh": "13",
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/dread"
+}

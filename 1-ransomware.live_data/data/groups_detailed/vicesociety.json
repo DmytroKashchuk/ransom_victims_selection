@@ -1,0 +1,103 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "vicesociety",
+  "description": "Vice Society ransomware appends the .v-society extension when encrypting Linux machines. Running a leak site on the darkweb, Possible relations with \"HelloKitty\"",
+  "added_date": null,
+  "victims": 189,
+  "firstseen": "2021-05-31",
+  "lastseen": "2023-06-20",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "RClone",
+      "WinSCP"
+    ],
+    "RMM-Tools": [
+      "PowerAdmin"
+    ],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner",
+      "Advanced Port Scanner"
+    ],
+    "Networking": [
+      "Proxychains"
+    ],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike",
+      "Impacket",
+      "PowerShell Empire",
+      "PowerSploit"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "Minidump",
+      "NTDS Utility (ntdsutil)",
+      "PsExec",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "4hzyuotli6maqa4u.onion",
+      "title": null,
+      "slug": "http://4hzyuotli6maqa4u.onion",
+      "available": false,
+      "updated": "2021-09-08 00:04:04.126984",
+      "lastscrape": "2025-06-01 21:18:19.560585",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "vsociethok6sbprvevl4dlwbqrzyhxcxaqpvcqt5belwvsuxaxsutyad.onion",
+      "title": "Vice Society - Official Site",
+      "slug": "http://vsociethok6sbprvevl4dlwbqrzyhxcxaqpvcqt5belwvsuxaxsutyad.onion",
+      "available": false,
+      "updated": "2023-12-14 20:28:50.804677",
+      "lastscrape": "2025-06-01 21:19:19.593643",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "ecdmr42a34qovoph557zotkfvth4fsz56twvwgiylstjup4r5bpc4oad.onion",
+      "title": "there is nothing...",
+      "slug": "http://ecdmr42a34qovoph557zotkfvth4fsz56twvwgiylstjup4r5bpc4oad.onion",
+      "available": false,
+      "updated": "2022-09-21 17:27:28.242874",
+      "lastscrape": "2025-06-01 21:19:27.852694",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "wmp2rvrkecyx72i3x7ejhyd3yr6fn5uqo7wfus7cz7qnwr6uzhcbrwad.onion",
+      "title": "Vice Society - Official Site",
+      "slug": "http://wmp2rvrkecyx72i3x7ejhyd3yr6fn5uqo7wfus7cz7qnwr6uzhcbrwad.onion/partners.html",
+      "available": false,
+      "updated": "2023-12-14 20:29:50.460147",
+      "lastscrape": "2025-06-01 21:19:38.794796",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "ssq4zimieeanazkzc5ld4v5hdibi2nzwzdibfh5n5w4pw5mcik76lzyd.onion",
+      "title": "Vice Society - Official Site",
+      "slug": "http://ssq4zimieeanazkzc5ld4v5hdibi2nzwzdibfh5n5w4pw5mcik76lzyd.onion/partners.html",
+      "available": false,
+      "updated": "2023-12-14 20:30:41.607807",
+      "lastscrape": "2025-06-01 21:19:44.842059",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "ml3mjpuhnmse4kjij7ggupenw34755y4uj7t742qf7jg5impt5ulhkid.onion",
+      "title": "Vice Society - Official Site",
+      "slug": "http://ml3mjpuhnmse4kjij7ggupenw34755y4uj7t742qf7jg5impt5ulhkid.onion/partners.html",
+      "available": false,
+      "updated": "2023-12-14 18:59:49.636506",
+      "lastscrape": "2025-06-01 21:19:50.177069",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/vicesociety"
+}

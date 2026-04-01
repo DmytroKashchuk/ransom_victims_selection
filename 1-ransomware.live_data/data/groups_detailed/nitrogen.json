@@ -1,0 +1,65 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "nitrogen",
+  "description": null,
+  "added_date": null,
+  "victims": 45,
+  "firstseen": "2023-03-29",
+  "lastseen": "2026-02-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "nitrogenczslprh3xyw6lh5xyjvmsz7ciljoqxxknd7uymkfetfhgvqd.onion",
+      "title": "NitroBlog",
+      "slug": "http://nitrogenczslprh3xyw6lh5xyjvmsz7ciljoqxxknd7uymkfetfhgvqd.onion",
+      "available": false,
+      "updated": "2026-02-18 16:01:28.896079",
+      "lastscrape": "2026-02-18 19:01:16.341256",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:16+00:00",
+        "start_url": "http://nitrogenczslprh3xyw6lh5xyjvmsz7ciljoqxxknd7uymkfetfhgvqd.onion",
+        "final_url": "http://nitrogenczslprh3xyw6lh5xyjvmsz7ciljoqxxknd7uymkfetfhgvqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": "Express",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "49302",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "x-powered-by": "Express",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "49302",
+          "etag": "W/\"c096-o6PI02tXDbbIK/D/UOmsfTpBU+0\"",
+          "date": "Wed, 18 Feb 2026 19:01:52 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "6lrsxvqscxtznb4fhux5u3vbslbanxjzxzgtokjtfwaitxe4pfgfebad.onion",
+      "title": "",
+      "slug": "6lrsxvqscxtznb4fhux5u3vbslbanxjzxzgtokjtfwaitxe4pfgfebad.onion",
+      "available": false,
+      "updated": "2025-05-17 12:01:51.687731",
+      "lastscrape": "2025-06-16 12:30:03.467567",
+      "type": "Files"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/nitrogen"
+}

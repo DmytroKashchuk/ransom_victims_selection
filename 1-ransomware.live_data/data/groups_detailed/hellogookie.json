@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "hellogookie",
+  "description": null,
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2024-04-19",
+  "lastseen": "2024-04-19",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "gookie256cvccntvenyxrvn7ht73bs6ss3oj2ocfkjt5y6vq6gfi2tad.onion",
+      "title": "HelloGookie",
+      "slug": "http://gookie256cvccntvenyxrvn7ht73bs6ss3oj2ocfkjt5y6vq6gfi2tad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:06:44.936340",
+      "lastscrape": "2025-06-01 21:18:39.119712",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/hellogookie"
+}

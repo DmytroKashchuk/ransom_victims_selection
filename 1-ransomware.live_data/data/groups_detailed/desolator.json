@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "desolator",
+  "description": null,
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2025-08-27",
+  "lastseen": "2025-08-31",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "po4tq2brx4rgwbdx4mac24fz34uuuf7oigosebp32n2462m2vxl6biqd.onion",
+      "title": "Wall of Shame - Non-Compliant Targets",
+      "slug": "http://po4tq2brx4rgwbdx4mac24fz34uuuf7oigosebp32n2462m2vxl6biqd.onion",
+      "available": false,
+      "updated": "2025-10-19 09:31:41.207034",
+      "lastscrape": "2025-11-18 10:00:49.632180",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-18T10:00:49+00:00",
+        "start_url": "http://po4tq2brx4rgwbdx4mac24fz34uuuf7oigosebp32n2462m2vxl6biqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/desolator"
+}

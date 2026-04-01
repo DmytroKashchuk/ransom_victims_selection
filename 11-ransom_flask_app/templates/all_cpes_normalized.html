@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}All CPEs (Normalized){% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#cpe-table {
+		font-size: .85rem;
+	}
+	.part-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-size: .78rem;
+		font-weight: 600;
+		min-width: 28px;
+		text-align: center;
+	}
+	.part-a { background: #cfe2ff; color: #084298; }
+	.part-h { background: #fff3cd; color: #664d03; }
+	.part-o { background: #d1e7dd; color: #0f5132; }
+	.dep-true  { color: #dc3545; font-weight: 600; }
+	.dep-false { color: #198754; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">All CPEs (Normalized)</h4>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Total CPEs</div>
+			<div class="stat-sub">filtered count</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-vendors">-</div>
+			<div class="stat-label">Distinct Vendors</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-products">-</div>
+			<div class="stat-label">Distinct Products</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-applications">-</div>
+			<div class="stat-label">Applications (a)</div>
+			<div class="stat-sub">part = a</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-hardware">-</div>
+			<div class="stat-label">Hardware (h)</div>
+			<div class="stat-sub">part = h</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-os">-</div>
+			<div class="stat-label">OS (o)</div>
+			<div class="stat-sub">part = o</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-deprecated">-</div>
+			<div class="stat-label">Deprecated</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-part">Part</label>
+			<select id="filter-part">
+				<option value="">All</option>
+				<option value="a">a — Application</option>
+				<option value="h">h — Hardware</option>
+				<option value="o">o — OS</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-vendor">Vendor</label>
+			<input type="text" id="filter-vendor" placeholder="Search vendor…">
+		</div>
+		<div class="form-group">
+			<label for="filter-product">Product</label>
+			<input type="text" id="filter-product" placeholder="Search product…">
+		</div>
+		<div class="form-group">
+			<label for="filter-title">Title</label>
+			<input type="text" id="filter-title" placeholder="Search title…">
+		</div>
+		<div class="form-group">
+			<label for="filter-deprecated">Deprecated</label>
+			<select id="filter-deprecated">
+				<option value="">All</option>
+				<option value="False">Active</option>
+				<option value="True">Deprecated</option>
+			</select>
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-primary btn-sm" id="btn-apply-filters">Apply</button>
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear</button>
+		</div>
+	</div>
+
+	<div id="cpe-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var fmtN = function(v) { return v == null ? "—" : Number(v).toLocaleString(); };
+
+	function partBadge(cell) {
+		var v = cell.getValue();
+		if (!v) return "";
+		var cls = { a: "part-a", h: "part-h", o: "part-o" }[v] || "";
+		var label = { a: "Application", h: "Hardware", o: "OS" }[v] || v;
+		return '<span class="part-badge ' + cls + '">' + v + ' — ' + label + '</span>';
+	}
+
+	function depFormatter(cell) {
+		var v = cell.getValue();
+		if (v === "True" || v === true) return '<span class="dep-true">Yes</span>';
+		return '<span class="dep-false">No</span>';
+	}
+
+	/* ── filter / sort state ──────────────────── */
+	var currentFilters = {};
+	var currentSort = { field: "vendor", dir: "asc" };
+
+	function buildAjaxUrl(url, config, params) {
+		var qs = [];
+		qs.push("page=" + params.page);
+		qs.push("size=" + params.size);
+		qs.push("sort_field=" + encodeURIComponent(currentSort.field));
+		qs.push("sort_dir=" + encodeURIComponent(currentSort.dir));
+		Object.keys(currentFilters).forEach(function(k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		return url + "?" + qs.join("&");
+	}
+
+	/* ── table ────────────────────────────────── */
+	var table = new Tabulator("#cpe-table", {
+		height: "60vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+
+		pagination: true,
+		paginationMode: "remote",
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		sortMode: "remote",
+		filterMode: "remote",
+
+		ajaxURL: "/api/all-cpes-normalized",
+		ajaxURLGenerator: buildAjaxUrl,
+		ajaxResponse: function(url, params, response) {
+			return response;
+		},
+
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "vendor", dir: "asc" }],
+
+		columns: [
+			{
+				title: "Part", field: "part", hozAlign: "center", width: 130,
+				formatter: partBadge
+			},
+			{
+				title: "Vendor", field: "vendor", minWidth: 140,
+				frozen: true
+			},
+			{
+				title: "Product", field: "product", minWidth: 160
+			},
+			{
+				title: "Title", field: "title", minWidth: 220
+			},
+			{
+				title: "Version", field: "version", minWidth: 100
+			},
+			{
+				title: "CPE 2.3 URI", field: "cpe23Uri", minWidth: 300
+			},
+			{
+				title: "Deprecated", field: "deprecated", hozAlign: "center", width: 100,
+				formatter: depFormatter
+			},
+			{
+				title: "Last Modified", field: "last_modified", minWidth: 160,
+				sorter: "string"
+			}
+		]
+	});
+
+	/* ── sort handling ────────────────────────── */
+	table.on("dataSorting", function(sorters) {
+		if (sorters.length) {
+			currentSort.field = sorters[0].field;
+			currentSort.dir = sorters[0].dir;
+		}
+	});
+
+	/* ── filter bar ───────────────────────────── */
+	function applyFilters() {
+		currentFilters = {};
+		var part = document.getElementById("filter-part").value;
+		var vendor = document.getElementById("filter-vendor").value.trim();
+		var product = document.getElementById("filter-product").value.trim();
+		var title = document.getElementById("filter-title").value.trim();
+		var dep = document.getElementById("filter-deprecated").value;
+
+		if (part)    currentFilters.part = part;
+		if (vendor)  currentFilters.vendor = vendor;
+		if (product) currentFilters.product = product;
+		if (title)   currentFilters.title = title;
+		if (dep)     currentFilters.deprecated = dep;
+
+		table.setPage(1);
+		loadStats();
+	}
+
+	function clearFilters() {
+		document.getElementById("filter-part").value = "";
+		document.getElementById("filter-vendor").value = "";
+		document.getElementById("filter-product").value = "";
+		document.getElementById("filter-title").value = "";
+		document.getElementById("filter-deprecated").value = "";
+		currentFilters = {};
+		table.setPage(1);
+		loadStats();
+	}
+
+	document.getElementById("btn-apply-filters").addEventListener("click", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", clearFilters);
+
+	document.querySelectorAll(".filter-bar input").forEach(function(el) {
+		el.addEventListener("keydown", function(e) {
+			if (e.key === "Enter") applyFilters();
+		});
+	});
+	document.getElementById("filter-part").addEventListener("change", applyFilters);
+	document.getElementById("filter-deprecated").addEventListener("change", applyFilters);
+
+	/* ── stat cards ───────────────────────────── */
+	function loadStats() {
+		var qs = [];
+		Object.keys(currentFilters).forEach(function(k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		var url = "/api/all-cpes-normalized/stats" + (qs.length ? "?" + qs.join("&") : "");
+		fetch(url)
+			.then(function(r) { return r.json(); })
+			.then(function(s) {
+				document.getElementById("card-total").textContent = fmtN(s.total);
+				document.getElementById("card-vendors").textContent = fmtN(s.distinct_vendors);
+				document.getElementById("card-products").textContent = fmtN(s.distinct_products);
+				document.getElementById("card-applications").textContent = fmtN(s.part_a);
+				document.getElementById("card-hardware").textContent = fmtN(s.part_h);
+				document.getElementById("card-os").textContent = fmtN(s.part_o);
+				document.getElementById("card-deprecated").textContent = fmtN(s.deprecated);
+			});
+	}
+	loadStats();
+});
+</script>
+{% endblock %}

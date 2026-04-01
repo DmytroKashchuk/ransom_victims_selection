@@ -1,0 +1,158 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "incransom",
+  "description": null,
+  "added_date": null,
+  "victims": 669,
+  "firstseen": "2023-08-06",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "Restic",
+      "RClone"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Advanced IP Scanner"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "incblog7vmuq7rktic73r4ha4j757m3ptym37tyvifzp2roedyyzzxid.onion",
+      "title": "INC Ransom",
+      "slug": "http://incblog7vmuq7rktic73r4ha4j757m3ptym37tyvifzp2roedyyzzxid.onion/blog/leaks",
+      "available": false,
+      "updated": "2024-08-22 06:07:49.499424",
+      "lastscrape": "2025-06-01 21:18:43.722077",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "incbackrlasjesgpfu5brktfjknbqoahe2hhmqfhasc5fb56mtukn4yd.onion",
+      "title": null,
+      "slug": "http://incbackrlasjesgpfu5brktfjknbqoahe2hhmqfhasc5fb56mtukn4yd.onion/api/blog/get-leaks",
+      "available": false,
+      "updated": "2024-08-22 06:07:57.966416",
+      "lastscrape": "2025-06-01 21:18:52.565459",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "incbackend.top",
+      "title": "Error Response Page",
+      "slug": "http://incbackend.top/api/blog/get-leaks",
+      "available": false,
+      "updated": "2024-08-22 06:08:01.327344",
+      "lastscrape": "2025-06-01 21:18:53.037935",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "incapt.blog",
+      "title": "INC Ransom",
+      "slug": "http://incapt.blog/blog/leaks",
+      "available": false,
+      "updated": "2024-08-22 06:08:05.164233",
+      "lastscrape": "2025-06-01 21:18:56.968919",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "incapt.su",
+      "title": "Error Response Page",
+      "slug": "http://incapt.su/blog/leaks",
+      "available": false,
+      "updated": "2024-08-22 05:47:03.091053",
+      "lastscrape": "2025-06-01 21:18:59.159466",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "incblog6qu4y4mm4zvw5nrmue6qbwtgjsxpw6b7ixzssu36tsajldoad.onion",
+      "title": "Disclosures",
+      "slug": "http://incblog6qu4y4mm4zvw5nrmue6qbwtgjsxpw6b7ixzssu36tsajldoad.onion/blog/disclosures",
+      "available": true,
+      "updated": "2026-02-18 18:31:12.223450",
+      "lastscrape": "2026-02-18 18:31:12.223450",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:12+00:00",
+        "start_url": "http://incblog6qu4y4mm4zvw5nrmue6qbwtgjsxpw6b7ixzssu36tsajldoad.onion/blog/disclosures",
+        "final_url": "http://incblog6qu4y4mm4zvw5nrmue6qbwtgjsxpw6b7ixzssu36tsajldoad.onion/blog/disclosures",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "448",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 18:31:12 GMT",
+          "content-type": "text/html",
+          "content-length": "448",
+          "last-modified": "Fri, 19 Apr 2024 18:34:56 GMT",
+          "connection": "keep-alive",
+          "etag": "\"6622b950-1c0\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "incbacg6bfwtrlzwdbqc55gsfl763s3twdtwhp27dzuik6s6rwdcityd.onion",
+      "title": "",
+      "slug": "http://incbacg6bfwtrlzwdbqc55gsfl763s3twdtwhp27dzuik6s6rwdcityd.onion/api/v1/blog/get/announcements?page=1&perPage=15",
+      "available": true,
+      "updated": "2026-02-18 18:32:14.409377",
+      "lastscrape": "2026-02-18 18:32:14.409377",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:14+00:00",
+        "start_url": "http://incbacg6bfwtrlzwdbqc55gsfl763s3twdtwhp27dzuik6s6rwdcityd.onion/api/v1/blog/get/announcements?page=1&perPage=15",
+        "final_url": "http://incbacg6bfwtrlzwdbqc55gsfl763s3twdtwhp27dzuik6s6rwdcityd.onion/api/v1/blog/get/announcements?page=1&perPage=15",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": "Express",
+          "via": null,
+          "cdn": null,
+          "content_type": "application/json; charset=utf-8",
+          "content_length": "25789",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "x-powered-by": "Express",
+          "access-control-allow-origin": "*",
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "25789",
+          "etag": "W/\"64bd-DgY0AN5l9b9mqErRK7agZIm/qb8\"",
+          "date": "Wed, 18 Feb 2026 18:32:14 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/incransom"
+}

@@ -1,0 +1,63 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "spacebears",
+  "description": null,
+  "added_date": null,
+  "victims": 115,
+  "firstseen": "2024-04-25",
+  "lastseen": "2026-02-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion",
+      "title": "Space Bears",
+      "slug": "http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/#list",
+      "available": true,
+      "updated": "2026-02-18 18:31:27.174212",
+      "lastscrape": "2026-02-18 18:31:27.174212",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:27+00:00",
+        "start_url": "http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/#list",
+        "final_url": "http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx/1.18.0 (Ubuntu)",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "cache-control": "no-cache, private",
+          "date": "Wed, 18 Feb 2026 18:31:27 GMT",
+          "set-cookie": "XSRF-TOKEN=eyJpdiI6IlpBbVJnRW44eldVTlUvV29wQ2x4Ymc9PSIsInZhbHVlIjoiYnJ0VlhiTVZrZTYvWC8xZ3UvcGdwSE9EclIxc1FPMFc1YzNlbEZXcXVxWUZ3MjlOK0N6ODdDSGFFRHpwMHNQVUhPZWtMSDV5WTM0M0wyZnY0c3ZOZkhjNmp1ZDhFNVNIUThCVE9RaVZYZUc1a0tDY25Bc3pmQUF2S01oa0hvQlkiLCJtYWMiOiJhZjcyYzEzMDE4ZjJjYWNlYTIxYmY1ZTkxODYxZmQyMDE1NjkwNzA4ZGViMjZmOTczYTU2YTY4MjUyZDc4MmVkIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 20:31:27 GMT; Max-Age=7200; path=/; samesite=lax, laravel_session=eyJpdiI6IlRBcFQ2Y2x5bG01T0dQNjZ5VklFTlE9PSIsInZhbHVlIjoiV3pwdlp5L2ozWVdjSkdVMU5jWjlCeVhBZmc1NDVZcFp5TGZ5TVYzYThMeUFMZlY1WW05djNJdDNSYUx1T0h1dis1R3hLRk83ZjlaT3R1T0oyS054UndDL3hsRmk0dGdBc0dkUUlHSUJqYVI5cW0rSWJJSmY1QTJ0bWRDbndZZEIiLCJtYWMiOiJkMDY4MTc1ZTk5MDk3ZmJlNzI1Nzg5OWI3NmFmNjE1ODJlMzVmYjI3N2YyMjk4ZTdiNzJlYTk1YTc5MTEwZDc3IiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 20:31:27 GMT; Max-Age=7200; path=/; httponly; samesite=lax",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block",
+          "x-content-type-options": "nosniff",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/spacebears"
+}

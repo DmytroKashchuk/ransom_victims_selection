@@ -1,0 +1,18 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "promptlock",
+  "description": "First known AI-powered ransomware. The PromptLock malware uses the gpt-oss:20b model from OpenAI locally via the Ollama API to generate malicious Lua scripts on the fly",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/promptlock"
+}

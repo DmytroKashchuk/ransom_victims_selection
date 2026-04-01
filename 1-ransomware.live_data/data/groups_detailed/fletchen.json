@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "fletchen",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "193.36.38.2:5000",
+      "title": "Bitcoin Tumbler (Bitcoin Mixer). Bitcoin Blender | JokerMix",
+      "slug": "http://193.36.38.2:5000/",
+      "available": false,
+      "updated": "2026-01-24 10:01:43.988678",
+      "lastscrape": "2026-02-18 19:00:57.708807",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:58+00:00",
+        "start_url": "http://193.36.38.2:5000/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Connection refused by destination host"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/fletchen"
+}

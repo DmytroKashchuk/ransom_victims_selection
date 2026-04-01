@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "suncrypt",
+  "description": "",
+  "added_date": null,
+  "victims": 32,
+  "firstseen": "2020-08-24",
+  "lastseen": "2022-06-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "x2miyuiwpib2imjr5ykyjngdu7v6vprkkhjltrk4qafymtawey4qzwid.onion",
+      "title": "News",
+      "slug": "http://x2miyuiwpib2imjr5ykyjngdu7v6vprkkhjltrk4qafymtawey4qzwid.onion/",
+      "available": false,
+      "updated": "2023-05-02 09:44:39.121130",
+      "lastscrape": "2025-06-01 21:19:12.534957",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "nbzzb6sa6xuura2z.onion",
+      "title": null,
+      "slug": "http://nbzzb6sa6xuura2z.onion",
+      "available": false,
+      "updated": "2021-09-08 00:03:26.377871",
+      "lastscrape": "2025-06-01 21:19:14.561549",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/suncrypt"
+}

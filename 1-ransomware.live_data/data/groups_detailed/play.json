@@ -1,0 +1,182 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "play",
+  "description": "Initially observed in June 2022, the Play ransomware (a.k.a PlayCrypt) operates through double extortion, targeting numerous organizations in Latin America. Its Initial Access method is quite similar to other ransomwares, involving attacks such as Phishing, Exposed Services to the Internet, and Valid Account compromises.<br> <br> On April 19, 2023, the security company Symantec published two new tools developed by the Play group. These tools allow the malicious actor to enumerate and exfiltrate data from the internal network. The post mentions the following: 'Play threat actors use the .NET infostealer to enumerate software and services via WMI, WinRM, Remote Registry, and Remote Service. The malware checks for the existence of security and backup software, as well as remote administration tools and other programs, saving the information in .CSV files that are compressed into a .ZIP file for later manual exfiltration by threat actors.'Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 1169,
+  "firstseen": "2022-11-26",
+  "lastseen": "2026-02-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "WinSCP"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "AdFind",
+      "WKTools"
+    ],
+    "Networking": [
+      "Plink"
+    ],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "WinPEAS"
+    ],
+    "DefenseEvasion": [
+      "GMER",
+      "IOBit",
+      "PowerTool"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion",
+      "title": "PLAY NEWS",
+      "slug": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion/index.php?page=13",
+      "available": true,
+      "updated": "2026-02-18 19:01:18.222886",
+      "lastscrape": "2026-02-18 19:01:18.222886",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:19+00:00",
+        "start_url": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion/index.php?page=13",
+        "final_url": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion/index.php?page=13",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.0",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.0",
+          "date": "Wed, 18 Feb 2026 19:01:23 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion",
+      "title": "PLAY NEWS",
+      "slug": "http://k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion/",
+      "available": true,
+      "updated": "2026-02-18 18:31:23.191865",
+      "lastscrape": "2026-02-18 18:31:23.191865",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:23+00:00",
+        "start_url": "http://k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion/",
+        "final_url": "http://k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.26.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.26.1",
+          "date": "Wed, 18 Feb 2026 18:31:28 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion",
+      "title": "PLAY NEWS",
+      "slug": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion/index.php?page=1",
+      "available": true,
+      "updated": "2026-02-18 18:32:36.296620",
+      "lastscrape": "2026-02-18 18:32:36.296620",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:36+00:00",
+        "start_url": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion/index.php?page=1",
+        "final_url": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion/index.php?page=1",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.0",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.0",
+          "date": "Wed, 18 Feb 2026 18:32:41 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "j75o7xvvsm4lpsjhkjvb4wl2q6ajegvabe6oswthuaubbykk4xkzgpid.onion",
+      "title": "PLAY NEWS",
+      "slug": "http://j75o7xvvsm4lpsjhkjvb4wl2q6ajegvabe6oswthuaubbykk4xkzgpid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:33:48.280935",
+      "lastscrape": "2026-02-18 18:33:48.280935",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:33:48+00:00",
+        "start_url": "http://j75o7xvvsm4lpsjhkjvb4wl2q6ajegvabe6oswthuaubbykk4xkzgpid.onion",
+        "final_url": "http://j75o7xvvsm4lpsjhkjvb4wl2q6ajegvabe6oswthuaubbykk4xkzgpid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.26.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.26.1",
+          "date": "Wed, 18 Feb 2026 18:33:53 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/play"
+}

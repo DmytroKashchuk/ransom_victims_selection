@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "aGl0bGVyCg",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "hitleransomware.cf",
+      "title": "Error Response Page",
+      "slug": "http://hitleransomware.cf",
+      "available": false,
+      "updated": "2022-10-30 18:20:23.972902",
+      "lastscrape": "2025-06-01 21:18:12.544409",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/agl0bgvycg"
+}

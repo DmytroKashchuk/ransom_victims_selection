@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "trisec",
+  "description": null,
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2024-02-16",
+  "lastseen": "2024-02-19",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "orfc3joknhrzscdbuxajypgrvlcawtuagbj7f44ugbosuvavg3dc3zid.onion",
+      "title": null,
+      "slug": "http://orfc3joknhrzscdbuxajypgrvlcawtuagbj7f44ugbosuvavg3dc3zid.onion/victim.html",
+      "available": false,
+      "updated": "2024-02-21 04:11:48.436072",
+      "lastscrape": "2025-06-01 21:19:07.963202",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "orfc3joknhrzscdbuxajypgrvlcawtuagbj7f44ugbosuvavg3dc3zid.onion",
+      "title": "Index of /",
+      "slug": "http://orfc3joknhrzscdbuxajypgrvlcawtuagbj7f44ugbosuvavg3dc3zid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:50:01.029819",
+      "lastscrape": "2025-06-01 21:19:15.261157",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "pkk4gbz7lsbgeja6s6iwsan2ce364sqioici65swwt65uhicke65uyid.onion",
+      "title": null,
+      "slug": "http://pkk4gbz7lsbgeja6s6iwsan2ce364sqioici65swwt65uhicke65uyid.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:30.458890",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/trisec"
+}

@@ -1,0 +1,61 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "anubis",
+  "description": null,
+  "added_date": null,
+  "victims": 54,
+  "firstseen": "2025-02-25",
+  "lastseen": "2026-02-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "om6q4a6cyipxvt7ioudxt24cw4oqu4yodmqzl25mqd2hgllymrgu4aqd.onion",
+      "title": "Anubis blog",
+      "slug": "http://om6q4a6cyipxvt7ioudxt24cw4oqu4yodmqzl25mqd2hgllymrgu4aqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:56.755046",
+      "lastscrape": "2026-02-18 18:01:56.755046",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:56+00:00",
+        "start_url": "http://om6q4a6cyipxvt7ioudxt24cw4oqu4yodmqzl25mqd2hgllymrgu4aqd.onion",
+        "final_url": "http://om6q4a6cyipxvt7ioudxt24cw4oqu4yodmqzl25mqd2hgllymrgu4aqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "cache-control": "no-cache, private",
+          "date": "Wed, 18 Feb 2026 18:01:57 GMT",
+          "set-cookie": "XSRF-TOKEN=eyJpdiI6ImZoUE5LVmRIb0Y0MHZ3anZackE1RGc9PSIsInZhbHVlIjoicEl2NFVpM1lqRHhBd01LcUJUUVlkcW5JcW1RMDZRVzF1em9NUVlXZ2xhODJUQjVLdGRsMHJCNmlGaHgyd0RGUWNCWUJrc1VkT2lkWHdhR0h4RVVPOGFSak9xbzRJSm9HOHZqUFNJVkpPQy83VkxKNUY3TFdJcWswZll1SUNpbmoiLCJtYWMiOiJlOGIxNjIzODJlMDhiMDdhMWZjN2E2YzFkNWIyMmNjMzkyZTVjNmQ3Y2QwODAyYjE5YWU5ZGMwNWQzMWEwMmExIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 20:01:57 GMT; Max-Age=7200; path=/; samesite=lax, laravel_session=eyJpdiI6Iks5OGxNR2YvSVVGZ0xjaUZLMTZSMlE9PSIsInZhbHVlIjoiQ1pDVXVjZXpVS0gwQ0I1dFlvUjBjaDVyc3V5VFNPWjJjTUpLTWJUZ090ODh6MGxtZVdVOWYvSDJwWEtteVVSK1lKdUtjeEkzODd2NHo2cGdSaGt5ak5xbjRWbkNHT1hVMTBqR1NjRzhzQlZRMkVhbm14bWMxMG5MajBoSVVFclciLCJtYWMiOiIwY2ZjOGI5NWY1MGRkMjUyZGNkNTkxN2Q0ZWRiYjE4MTA4OGY4MzEwNmE1ZDcyNDY2M2Q1OGU2NDQ4NmZmYTAwIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 20:01:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax",
+          "x-frame-options": "SAMEORIGIN",
+          "x-content-type-options": "nosniff",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/anubis"
+}

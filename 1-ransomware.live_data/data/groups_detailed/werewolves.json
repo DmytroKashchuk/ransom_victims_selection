@@ -1,0 +1,74 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "werewolves",
+  "description": null,
+  "added_date": null,
+  "victims": 26,
+  "firstseen": "2023-05-18",
+  "lastseen": "2024-03-04",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "werewolves.pro",
+      "title": "werewolves.pro",
+      "slug": "https://werewolves.pro",
+      "available": false,
+      "updated": "2025-09-07 09:01:15.126304",
+      "lastscrape": "2025-10-07 09:30:15.004762",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-10-07T09:30:15+00:00",
+        "start_url": "https://werewolves.pro",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "weerwolven.biz",
+      "title": "Unibet logga in & skapa konto med BankID – snabbt & säkert",
+      "slug": "https://weerwolven.biz",
+      "available": true,
+      "updated": "2026-02-18 18:31:21.579369",
+      "lastscrape": "2026-02-18 18:31:21.579369",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:21+00:00",
+        "start_url": "https://weerwolven.biz",
+        "final_url": "https://weerwolven.biz",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:22 GMT",
+          "server": "Apache",
+          "set-cookie": "__tad=1771439482.1112280; expires=Sat, 16 Feb 2036 18:31:22 GMT; Max-Age=315360000",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "close"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/werewolves"
+}

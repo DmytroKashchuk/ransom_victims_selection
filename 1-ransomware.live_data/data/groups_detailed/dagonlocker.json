@@ -1,0 +1,49 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dagonlocker",
+  "description": "",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Nbtscan",
+      "Seatbelt",
+      "ShareFinder",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "dgnh6p5uq234zry7qx7bh73hj5ht3jqisgfet6s7j7uyas5i46xfdkyd.onion",
+      "title": "The Chat",
+      "slug": "http://dgnh6p5uq234zry7qx7bh73hj5ht3jqisgfet6s7j7uyas5i46xfdkyd.onion",
+      "available": false,
+      "updated": "2022-11-10 20:33:25.006686",
+      "lastscrape": "2025-06-01 21:18:36.596471",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/dagonlocker"
+}

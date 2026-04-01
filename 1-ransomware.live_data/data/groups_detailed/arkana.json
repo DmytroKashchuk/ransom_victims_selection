@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "arkana",
+  "description": null,
+  "added_date": null,
+  "victims": 6,
+  "firstseen": "2025-03-24",
+  "lastseen": "2025-06-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ransomwvbabemdnwl7lzgeenyfmmhskaed6jcruwhkvapsia76vttzyd.onion",
+      "title": "Arkana Security",
+      "slug": "http://ransomwvbabemdnwl7lzgeenyfmmhskaed6jcruwhkvapsia76vttzyd.onion",
+      "available": false,
+      "updated": "2025-07-06 07:01:34.787931",
+      "lastscrape": "2025-08-05 07:30:10.347478",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "arkanabb66ee4nsdji6la2bu6bwqe3dbtsyf3rxrv6vhiehod7utagad.onion",
+      "title": "Arkana Security",
+      "slug": "http://arkanabb66ee4nsdji6la2bu6bwqe3dbtsyf3rxrv6vhiehod7utagad.onion",
+      "available": false,
+      "updated": "2025-07-06 06:31:30.927863",
+      "lastscrape": "2025-08-05 07:00:20.115076",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/arkana"
+}

@@ -1,0 +1,79 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "J",
+  "description": null,
+  "added_date": null,
+  "victims": 41,
+  "firstseen": "2025-02-17",
+  "lastseen": "2025-11-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion",
+      "title": "Home | J Blog",
+      "slug": "http://twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion/",
+      "available": false,
+      "updated": "2025-12-15 13:31:44.373975",
+      "lastscrape": "2026-01-14 14:00:40.133432",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-01-14T14:00:41+00:00",
+        "start_url": "http://twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion",
+      "title": "Posts | J Blog",
+      "slug": "http://twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion/posts/",
+      "available": false,
+      "updated": "2025-12-15 13:33:05.024228",
+      "lastscrape": "2026-01-14 14:00:44.323875",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-01-14T14:00:44+00:00",
+        "start_url": "http://twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion/posts/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "w4d5aqmdxkcsc2xwcz7w7jo6wdmvmakgy3y6mfmdtzmyvxe77cjkfbad.onion",
+      "title": "J",
+      "slug": "https://w4d5aqmdxkcsc2xwcz7w7jo6wdmvmakgy3y6mfmdtzmyvxe77cjkfbad.onion/",
+      "available": false,
+      "updated": "2026-01-21 18:01:40.225324",
+      "lastscrape": "2026-02-18 19:00:38.413600",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:38+00:00",
+        "start_url": "https://w4d5aqmdxkcsc2xwcz7w7jo6wdmvmakgy3y6mfmdtzmyvxe77cjkfbad.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/j"
+}

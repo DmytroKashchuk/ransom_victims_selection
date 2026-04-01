@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "kawa4096",
+  "description": null,
+  "added_date": null,
+  "victims": 17,
+  "firstseen": "2025-06-19",
+  "lastseen": "2025-07-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "kawasa2qo7345dt7ogxmx7qmn6z2hnwaoi3h5aeosupozkddqwp6lqqd.onion",
+      "title": "Kawa4096",
+      "slug": "http://kawasa2qo7345dt7ogxmx7qmn6z2hnwaoi3h5aeosupozkddqwp6lqqd.onion",
+      "available": false,
+      "updated": "2025-08-16 05:02:10.258673",
+      "lastscrape": "2025-09-15 05:30:34.224520",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-15T05:30:34+00:00",
+        "start_url": "http://kawasa2qo7345dt7ogxmx7qmn6z2hnwaoi3h5aeosupozkddqwp6lqqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/kawa4096"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "chort",
+  "description": null,
+  "added_date": null,
+  "victims": 7,
+  "firstseen": "2024-11-17",
+  "lastseen": "2024-11-22",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "hgxyonufefcglpekxma55fttev3lcfucrf7jvep2c3j6447cjroadead.onion",
+      "title": "Captcha",
+      "slug": "http://hgxyonufefcglpekxma55fttev3lcfucrf7jvep2c3j6447cjroadead.onion",
+      "available": false,
+      "updated": "2024-12-31 10:59:36.268315",
+      "lastscrape": "2025-06-01 21:18:43.894539",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/chort"
+}

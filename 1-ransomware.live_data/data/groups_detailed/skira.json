@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "skira",
+  "description": null,
+  "added_date": null,
+  "victims": 8,
+  "firstseen": "2025-03-06",
+  "lastseen": "2025-11-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion",
+      "title": "SKIRA TEAM - Hacking News Main Page",
+      "slug": "http://mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion/news.html",
+      "available": false,
+      "updated": "2025-12-01 17:31:37.229674",
+      "lastscrape": "2025-12-31 18:00:58.280231",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-31T18:00:58+00:00",
+        "start_url": "http://mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion/news.html",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion",
+      "title": "SKIRA TEAM",
+      "slug": "http://mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion",
+      "available": false,
+      "updated": "2025-12-01 17:32:41.208606",
+      "lastscrape": "2025-12-31 18:01:21.178180",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-31T18:01:21+00:00",
+        "start_url": "http://mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/skira"
+}

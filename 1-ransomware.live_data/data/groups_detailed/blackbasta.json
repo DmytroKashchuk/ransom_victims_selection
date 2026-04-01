@@ -1,0 +1,214 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blackbasta",
+  "description": "\"Black Basta\" is a new ransomware strain discovered during April 2022 - looks in dev since at least early February 2022 - and due to their ability to quickly amass new victims and the style of their negotiations, this is likely not a new operation but rather a rebrand of a previous top-tier ransomware gang that brought along their affiliates.\n",
+  "added_date": null,
+  "victims": 524,
+  "firstseen": "2022-04-26",
+  "lastseen": "2025-01-11",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Phishing: Spear phishing Attachment",
+          "technique_id": "T1566.001",
+          "technique_details": "Victims receive spear phishing emails with attached malicious zip files - typically password protected. That contains malicious doc including .doc, .pdf, .xls"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "System Services: Service Execution",
+          "technique_id": "T1569.002",
+          "technique_details": "Black Basta has installed and used PsExec to execute payloads on remote hosts."
+        },
+        {
+          "technique_name": "Windows Management Instrumentation",
+          "technique_id": "T1047",
+          "technique_details": "Utilizes Invoke-TotalExec to push out the ransomware binary."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter: PowerShell",
+          "technique_id": "T1059.001",
+          "technique_details": "Black Basta has encoded PowerShell scripts to download additional scripts."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Create Account",
+          "technique_id": "T1136",
+          "technique_details": "Black Basta threat actors created accounts with names such as temp, r, or admin."
+        },
+        {
+          "technique_name": "Account Manipulation",
+          "technique_id": "T1098",
+          "technique_details": "Added newly created accounts to the administrators' group to maintain elevated access."
+        },
+        {
+          "technique_name": "Create or Modify System Process: Windows Service",
+          "technique_id": "T1543.003",
+          "technique_details": "Creates benign-looking services for the ransomware binary."
+        },
+        {
+          "technique_name": "Hijack Execution Flow: DLL Search Order Hijacking",
+          "technique_id": "T1574.001",
+          "technique_details": "Black Basta used Qakbot, which has the ability to exploit Windows 7 Calculator to execute malicious payloads."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Domain Policy Modification: Group Policy Modification",
+          "technique_id": "T1484.001",
+          "technique_details": "Black Basta can modify group policy for privilege escalation and defense evasion."
+        },
+        {
+          "technique_name": "Hijack Execution Flow: DLL Search Order Hijacking",
+          "technique_id": "T1574.001",
+          "technique_details": "Black Basta used Qakbot, which has the ability to exploit Windows 7 Calculator to execute malicious payloads."
+        },
+        {
+          "technique_name": "Create or Modify System Process: Windows Service",
+          "technique_id": "T1543.003",
+          "technique_details": "Creates benign-looking services for the ransomware binary."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "Vendor": "ConnectWise",
+      "Product": "ScreenConnect",
+      "CVE": "CVE-2024-1709 & CVE-2024-1709",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "VMware",
+      "Product": "ESXi",
+      "CVE": "CVE-2024-37085 (\"ESX Admins\")",
+      "CVSS": 6.8,
+      "severity": "MEDIUM"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "Windows Error Reporting Service",
+      "CVE": "CVE-2024-26169",
+      "CVSS": 7.8,
+      "severity": "HIGH"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "MSDT",
+      "CVE": "CVE-2022-30190 (\"Follina\")",
+      "CVSS": 7.8,
+      "severity": "HIGH"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "Active Directory",
+      "CVE": "CVE-2021-42278 &  CVE-2021-42287 (\"NoPac\")",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "Print Spooler",
+      "CVE": "CVE-2021-1675 & CVE-2021-34527 (\"PrintNightmare\")",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "NetLogon",
+      "CVE": "CVE-2020-1472 (\"ZeroLogon\")",
+      "CVSS": 5.5,
+      "severity": "MEDIUM"
+    }
+  ],
+  "tools": {
+    "Exfiltration": [
+      "Qaz[.]im",
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "NetSupport",
+      "ScreenConnect",
+      "Splashtop",
+      "Supremo"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Bloodhound",
+      "PowerView",
+      "PSNmap",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Brute Ratel C4",
+      "Cobalt Strike",
+      "Metasploit",
+      "PowerSploit"
+    ],
+    "DefenseEvasion": [
+      "Backstab (Process Explorer driver)"
+    ],
+    "LOLBAS": [
+      "BITSAdmin",
+      "PsExec",
+      "Quick Assist"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion",
+      "title": "Black Basta Blog",
+      "slug": "http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/",
+      "available": false,
+      "updated": "2025-01-29 13:21:37.516788",
+      "lastscrape": "2025-06-01 21:18:21.372902",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "aazsbsgya565vlu2c6bzy6yfiebkcbtvvcytvolt33s77xypi7nypxyd.onion",
+      "title": "Chat Black Basta",
+      "slug": "https://aazsbsgya565vlu2c6bzy6yfiebkcbtvvcytvolt33s77xypi7nypxyd.onion/",
+      "available": false,
+      "updated": "2023-09-17 12:10:42.295392",
+      "lastscrape": "2025-06-01 21:19:21.402938",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "bastad5huzwkepdixedg2gekg7jk22ato24zyllp6lnjx7wdtyctgvyd.onion",
+      "title": "Chat Black Basta",
+      "slug": "https://bastad5huzwkepdixedg2gekg7jk22ato24zyllp6lnjx7wdtyctgvyd.onion/",
+      "available": false,
+      "updated": "2025-02-20 17:01:34.950042",
+      "lastscrape": "2025-06-01 21:19:34.509745",
+      "type": "Chat"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 5,
+  "has_ransomnote": true,
+  "ransomnotes_count": 5,
+  "url": "https://www.ransomware.live/group/blackbasta"
+}

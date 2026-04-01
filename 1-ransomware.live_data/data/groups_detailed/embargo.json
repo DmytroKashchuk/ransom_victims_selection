@@ -1,0 +1,70 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "embargo",
+  "description": null,
+  "added_date": null,
+  "victims": 32,
+  "firstseen": "2024-04-17",
+  "lastseen": "2025-12-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [
+      "s4killer (Minifilter Driver)"
+    ],
+    "LOLBAS": [
+      "BCDEdit",
+      "ServiceControl (sc.exe)"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "embargobe3n5okxyzqphpmk3moinoap2snz5k6765mvtkk7hhi544jid.onion",
+      "title": "EMBARGO",
+      "slug": "http://embargobe3n5okxyzqphpmk3moinoap2snz5k6765mvtkk7hhi544jid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:18.061676",
+      "lastscrape": "2026-02-18 19:01:18.061676",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:18+00:00",
+        "start_url": "http://embargobe3n5okxyzqphpmk3moinoap2snz5k6765mvtkk7hhi544jid.onion",
+        "final_url": "http://embargobe3n5okxyzqphpmk3moinoap2snz5k6765mvtkk7hhi544jid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:59:20 GMT",
+          "content-type": "text/html",
+          "last-modified": "Wed, 10 Dec 2025 02:20:43 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"6938d8fb-269\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/embargo"
+}

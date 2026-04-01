@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "meow",
+  "description": null,
+  "added_date": null,
+  "victims": 145,
+  "firstseen": "2023-09-04",
+  "lastseen": "2024-11-19",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "meow6xanhzfci2gbkn3lmbqq7xjjufskkdfocqdngt3ltvzgqpsg5mid.onion",
+      "title": "MEOW",
+      "slug": "http://meow6xanhzfci2gbkn3lmbqq7xjjufskkdfocqdngt3ltvzgqpsg5mid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:30:33.719364",
+      "lastscrape": "2025-06-01 21:37:58.037793",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "totos7fquprkecvcsl2jwy72v32glgkp2ejeqlnx5ynnxvbebgnletqd.onion",
+      "title": null,
+      "slug": "http://totos7fquprkecvcsl2jwy72v32glgkp2ejeqlnx5ynnxvbebgnletqd.onion/story/getAllStories",
+      "available": false,
+      "updated": "2024-10-13 19:07:08.799335",
+      "lastscrape": "2025-06-01 21:38:01.328833",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/meow"
+}

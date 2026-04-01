@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "malekteam",
+  "description": null,
+  "added_date": null,
+  "victims": 7,
+  "firstseen": "2023-12-24",
+  "lastseen": "2024-04-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "malekteam.ac",
+      "title": "Just a moment...",
+      "slug": "https://malekteam.ac",
+      "available": false,
+      "updated": "2024-12-31 10:26:44.897140",
+      "lastscrape": "2025-06-01 21:19:12.342431",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "195.14.123.2.",
+      "title": "Malek Team",
+      "slug": "http://195.14.123.2",
+      "available": false,
+      "updated": "2025-05-05 23:32:10.706524",
+      "lastscrape": "2025-06-05 00:00:05.762332",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/malekteam"
+}

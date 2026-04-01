@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cephalus",
+  "description": null,
+  "added_date": null,
+  "victims": 19,
+  "firstseen": "2025-06-28",
+  "lastseen": "2025-08-29",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "cephalus6oiypuwumqlwurvbmwsfglg424zjdmywfgqm4iehkqivsjyd.onion",
+      "title": "Cephalus",
+      "slug": "http://cephalus6oiypuwumqlwurvbmwsfglg424zjdmywfgqm4iehkqivsjyd.onion",
+      "available": false,
+      "updated": "2025-08-29 08:31:23.849543",
+      "lastscrape": "2025-09-28 09:00:55.255397",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-28T09:00:55+00:00",
+        "start_url": "http://cephalus6oiypuwumqlwurvbmwsfglg424zjdmywfgqm4iehkqivsjyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "46.17.42.64.",
+      "title": "Cephalus",
+      "slug": "http://46.17.42.64",
+      "available": false,
+      "updated": "2025-08-29 08:32:48.038171",
+      "lastscrape": "2025-09-28 09:02:10.448199",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-28T06:31:44+00:00",
+        "start_url": "http://46.17.42.64",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "TTL expired"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/cephalus"
+}

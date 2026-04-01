@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ShinySp1d3r",
+  "description": "Likely associated with the cybercrime group BlingLibra (ShinyHunters)",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz.onion",
+      "title": null,
+      "slug": "http://sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2026-02-18 19:00:50.855103",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:50+00:00",
+        "start_url": "http://sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/shinysp1d3r"
+}

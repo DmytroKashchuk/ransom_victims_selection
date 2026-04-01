@@ -1,0 +1,44 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "xinglocker",
+  "description": null,
+  "added_date": null,
+  "victims": 21,
+  "firstseen": "2021-04-29",
+  "lastseen": "2021-10-26",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Bloodhound",
+      "PowerView",
+      "ShareFinder"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "xingnewj6m4qytljhfwemngm7r7rogrindbq7wrfeepejgxc3bwci7qd.onion",
+      "title": "星Team News",
+      "slug": "http://xingnewj6m4qytljhfwemngm7r7rogrindbq7wrfeepejgxc3bwci7qd.onion/",
+      "available": false,
+      "updated": "2022-01-24 06:12:24.946416",
+      "lastscrape": "2025-06-01 21:19:12.566863",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/xinglocker"
+}

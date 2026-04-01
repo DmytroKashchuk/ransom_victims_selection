@@ -1,0 +1,101 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "benzona",
+  "description": null,
+  "added_date": null,
+  "victims": 14,
+  "firstseen": "2025-11-26",
+  "lastseen": "2026-01-30",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "benzona6x5ggng3hx52h4mak5sgx5vukrdlrrd3of54g2uppqog2joyd.onion",
+      "title": "Benzona Ransomware",
+      "slug": "http://benzona6x5ggng3hx52h4mak5sgx5vukrdlrrd3of54g2uppqog2joyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:04.661050",
+      "lastscrape": "2026-02-18 18:32:04.661050",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:04+00:00",
+        "start_url": "http://benzona6x5ggng3hx52h4mak5sgx5vukrdlrrd3of54g2uppqog2joyd.onion",
+        "final_url": "http://benzona6x5ggng3hx52h4mak5sgx5vukrdlrrd3of54g2uppqog2joyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.29.4",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "11475",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.29.4",
+          "date": "Wed, 18 Feb 2026 18:32:05 GMT",
+          "content-type": "text/html",
+          "content-length": "11475",
+          "last-modified": "Fri, 30 Jan 2026 15:55:28 GMT",
+          "connection": "keep-alive",
+          "etag": "\"697cd470-2cd3\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "rwsu75mtgj5oiz3alkfpnxnopcbiqed6wllyoffpuruuu6my6imjzuqd.onion",
+      "title": "Support Chat",
+      "slug": "http://rwsu75mtgj5oiz3alkfpnxnopcbiqed6wllyoffpuruuu6my6imjzuqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:33:10.785713",
+      "lastscrape": "2026-02-18 18:33:10.785713",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T18:33:10+00:00",
+        "start_url": "http://rwsu75mtgj5oiz3alkfpnxnopcbiqed6wllyoffpuruuu6my6imjzuqd.onion",
+        "final_url": "http://rwsu75mtgj5oiz3alkfpnxnopcbiqed6wllyoffpuruuu6my6imjzuqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "12532",
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "accept-ranges": "bytes",
+          "content-length": "12532",
+          "content-type": "text/html; charset=utf-8",
+          "last-modified": "Sat, 15 Nov 2025 09:03:36 GMT",
+          "referrer-policy": "strict-origin-when-cross-origin",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block",
+          "date": "Wed, 18 Feb 2026 18:33:11 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/benzona"
+}

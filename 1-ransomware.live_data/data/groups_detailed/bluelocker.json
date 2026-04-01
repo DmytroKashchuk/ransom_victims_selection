@@ -1,0 +1,130 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "bluelocker",
+  "description": "Blue Locker targets Pakistan’s vital energy sector, particularly Pakistan Petroleum",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+          "technique_id": "T1547.001",
+          "technique_details": "Achieves persistence through Registry Run Keys, ensuring execution after system reboot."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Create or Modify System Process",
+          "technique_id": "T1543",
+          "technique_details": "Modifies system services for persistence and privilege escalation."
+        },
+        {
+          "technique_name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+          "technique_id": "T1548.002",
+          "technique_details": "Bypasses UAC via registry manipulation, elevating privileges without user consent."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Deobfuscate/Decode Files or Information",
+          "technique_id": "T1140",
+          "technique_details": "Implements obfuscation and deobfuscation to evade detection by security tools and analysts."
+        },
+        {
+          "technique_name": "Indicator Removal: Timestomp",
+          "technique_id": "T1070.006",
+          "technique_details": "Timestomping technique is used to alter file timestamps, making it difficult to detect during forensic analysis."
+        },
+        {
+          "technique_name": "Impair Defenses: Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Disables UAC to avoid detection and remain persistent without being interrupted by security controls."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Query Registry",
+          "technique_id": "T1012",
+          "technique_details": "Performs registry queries to gather system configuration and installed software information."
+        },
+        {
+          "technique_name": "Process Discovery",
+          "technique_id": "T1057",
+          "technique_details": "Enumerates running processes to identify which processes to target for exploitation or injection."
+        },
+        {
+          "technique_name": "Account Discovery",
+          "technique_id": "T1087",
+          "technique_details": "Discovers user accounts for credential harvesting or lateral movement across systems."
+        },
+        {
+          "technique_name": "Virtualization/Sandbox Evasion",
+          "technique_id": "T1497",
+          "technique_details": "Detects virtualized or sandboxed environments to avoid detection during dynamic analysis."
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Explores file and directory structures to find valuable files for encryption or exfiltration."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0009",
+      "tactic_name": "Collection",
+      "techniques": [
+        {
+          "technique_name": "Data Staged",
+          "technique_id": "T1074",
+          "technique_details": "Prepares collected data in temporary or known directories before exfiltration or further exploitation."
+        },
+        {
+          "technique_name": "Input Capture",
+          "technique_id": "T1056",
+          "technique_details": "Uses raw input capture to steal user credentials or session data during active sessions."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "Inhibits system recovery by disabling or deleting backup systems, ensuring that victims cannot restore their encrypted files."
+        },
+        {
+          "technique_name": "Service Stop",
+          "technique_id": "T1489",
+          "technique_details": "Stops system services to ensure the encryption process is not interrupted and maximizes the damage."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/bluelocker"
+}

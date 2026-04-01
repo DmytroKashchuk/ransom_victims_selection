@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "raworld",
+  "description": "RA Group, also known as RA World, first surfaced in April 2023, utilizing a custom variant of the Babuk ransomware.",
+  "added_date": null,
+  "victims": 137,
+  "firstseen": "2023-04-27",
+  "lastseen": "2024-12-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [
+      "NPS"
+    ],
+    "CredentialTheft": [
+      "ProcDump"
+    ],
+    "Offsec": [
+      "Impacket"
+    ],
+    "DefenseEvasion": [
+      "Bluetooth Stack for Windows by Toshiba (toshdpdb.exe)"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "raworldw32b2qxevn3gp63pvibgixr4v75z62etlptg3u3pmajwra4ad.onion",
+      "title": "RA World",
+      "slug": "http://raworldw32b2qxevn3gp63pvibgixr4v75z62etlptg3u3pmajwra4ad.onion",
+      "available": false,
+      "updated": "2025-02-10 16:41:23.516712",
+      "lastscrape": "2025-06-01 21:19:12.494487",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "pa32ymaeu62yo5th5mraikgw5fcvznnsiiwti42carjliarodltmqcqd.onion",
+      "title": "RA World",
+      "slug": "http://pa32ymaeu62yo5th5mraikgw5fcvznnsiiwti42carjliarodltmqcqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:41:30.414388",
+      "lastscrape": "2025-06-01 21:19:30.776917",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/raworld"
+}

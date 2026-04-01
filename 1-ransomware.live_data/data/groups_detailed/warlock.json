@@ -1,0 +1,145 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "warlock",
+  "description": "The Warlock ransomware and operator(s) are believed to be attributed to Storm-2603, a China-based threat actor who is also known to have deployed LockBit ransomware. There's also a crossover between victims with Black Basta. Both are RaaS and have a long list of known and unknown affiliates. Having said that, this is possibly an affiliate (likely a cybergroup) of both of those groups. The Alliance & Association would technically be Encryptor Sharing, but this is realistically more of an \"Old Affiliate\" that created their own ransomware encryptor and operation.",
+  "added_date": null,
+  "victims": 78,
+  "firstseen": "2025-04-02",
+  "lastseen": "2025-11-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "Radmin"
+    ],
+    "DiscoveryEnum": [
+      "SecurityCheck"
+    ],
+    "Networking": [
+      "Cloudflared",
+      "OpenSSH",
+      "MinIO",
+      "VS Code Tunnel"
+    ],
+    "CredentialTheft": [
+      "Mimikatz",
+      "Veeam-Get-Creds"
+    ],
+    "Offsec": [
+      "Velociraptor"
+    ],
+    "DefenseEvasion": [
+      "VMTools AV Killer (BYOVD)"
+    ],
+    "LOLBAS": [
+      "Minidump"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "elqfbcx5nofwtqfookqml7ltx2g6q6tmddys6e25vgu3al2meim6cbqd.onion",
+      "title": "Warlock Client Leaked Data Show",
+      "slug": "http://elqfbcx5nofwtqfookqml7ltx2g6q6tmddys6e25vgu3al2meim6cbqd.onion",
+      "available": false,
+      "updated": "2025-06-11 05:01:22.484793",
+      "lastscrape": "2025-07-11 05:30:13.321939",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "zfytizegsze6uiswodhbaalyy5rawaytv2nzyzdkt3susbewviqqh7yd.onion",
+      "title": "WarLock Client Data Leak Show",
+      "slug": "http://zfytizegsze6uiswodhbaalyy5rawaytv2nzyzdkt3susbewviqqh7yd.onion",
+      "available": false,
+      "updated": "2026-01-23 15:01:42.010100",
+      "lastscrape": "2026-02-18 19:00:42.201583",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:42+00:00",
+        "start_url": "http://zfytizegsze6uiswodhbaalyy5rawaytv2nzyzdkt3susbewviqqh7yd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "ocwjy4ynmpbbzhumh2ama2vl3bc77lf5auqf7nf4k45lbmzoep2rbyid.onion",
+      "title": "",
+      "slug": "http://ocwjy4ynmpbbzhumh2ama2vl3bc77lf5auqf7nf4k45lbmzoep2rbyid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:05.400118",
+      "lastscrape": "2026-02-18 19:02:05.400118",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:05+00:00",
+        "start_url": "http://ocwjy4ynmpbbzhumh2ama2vl3bc77lf5auqf7nf4k45lbmzoep2rbyid.onion",
+        "final_url": "http://ocwjy4ynmpbbzhumh2ama2vl3bc77lf5auqf7nf4k45lbmzoep2rbyid.onion",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/plain; charset=utf-8",
+          "content_length": "33",
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "date": "Wed, 18 Feb 2026 19:02:06 GMT",
+          "content-length": "33"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "warlockhga5iw3t54ps5iytlilf7hlvxy7kwrkidspn4qoh64s4vsuyd.onion",
+      "title": "WarLock Client Data Leak Show",
+      "slug": "http://warlockhga5iw3t54ps5iytlilf7hlvxy7kwrkidspn4qoh64s4vsuyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:13.069794",
+      "lastscrape": "2026-02-18 19:03:13.069794",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:13+00:00",
+        "start_url": "http://warlockhga5iw3t54ps5iytlilf7hlvxy7kwrkidspn4qoh64s4vsuyd.onion",
+        "final_url": "http://warlockhga5iw3t54ps5iytlilf7hlvxy7kwrkidspn4qoh64s4vsuyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "11594",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "accept-ranges": "bytes",
+          "content-length": "11594",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 18 Feb 2026 19:03:13 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/warlock"
+}

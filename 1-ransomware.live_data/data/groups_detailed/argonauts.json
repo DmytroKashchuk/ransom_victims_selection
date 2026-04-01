@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "argonauts",
+  "description": null,
+  "added_date": null,
+  "victims": 13,
+  "firstseen": "2024-09-15",
+  "lastseen": "2024-12-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "jbmk7h6xlkedn2gg5yi76zca6y3jgdlp5wchlsrd7735tlnrmmvqe5ad.onion",
+      "title": "Argonauts",
+      "slug": "http://jbmk7h6xlkedn2gg5yi76zca6y3jgdlp5wchlsrd7735tlnrmmvqe5ad.onion",
+      "available": false,
+      "updated": "2025-03-27 19:31:29.154459",
+      "lastscrape": "2025-06-01 21:18:43.463715",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/argonauts"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "leaktheanalyst",
+  "description": null,
+  "added_date": null,
+  "victims": 20,
+  "firstseen": "2022-01-01",
+  "lastseen": "2022-03-29",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "leaktheanalyst.fireeye62c3da3fnosymmmcqcty7rl7cjucpbkzaz275a4qs5fgkzhad.onion",
+      "title": "#LeakTheAnalyst",
+      "slug": "http://leaktheanalyst.fireeye62c3da3fnosymmmcqcty7rl7cjucpbkzaz275a4qs5fgkzhad.onion/",
+      "available": false,
+      "updated": "2022-08-05 10:37:16.160568",
+      "lastscrape": "2025-06-01 21:18:48.528275",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/leaktheanalyst"
+}

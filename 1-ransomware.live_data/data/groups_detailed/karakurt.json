@@ -1,0 +1,94 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "karakurt",
+  "description": null,
+  "added_date": null,
+  "victims": 74,
+  "firstseen": "2022-12-11",
+  "lastseen": "2023-09-22",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "FileZilla",
+      "MEGA",
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [],
+    "Networking": [
+      "Ngrok"
+    ],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "omx5iqrdbsoitf3q4xexrqw5r5tfw7vp3vl3li3lfo7saabxazshnead.onion",
+      "title": "Chat",
+      "slug": "https://omx5iqrdbsoitf3q4xexrqw5r5tfw7vp3vl3li3lfo7saabxazshnead.onion",
+      "available": false,
+      "updated": "2024-12-31 10:09:39.155833",
+      "lastscrape": "2025-06-01 21:19:12.309567",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "3f7nxkjway3d223j27lyad7v5cgmyaifesycvmwq7i7cbs23lb6llryd.onion",
+      "title": "Magazine",
+      "slug": "https://3f7nxkjway3d223j27lyad7v5cgmyaifesycvmwq7i7cbs23lb6llryd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:09:44.555104",
+      "lastscrape": "2025-06-01 21:19:38.688631",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "karaleaks.com",
+      "title": "",
+      "slug": "https://karaleaks.com",
+      "available": true,
+      "updated": "2026-02-18 18:31:09.665667",
+      "lastscrape": "2026-02-18 18:31:09.665667",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:09+00:00",
+        "start_url": "https://karaleaks.com",
+        "final_url": "https://karaleaks.com",
+        "status": 429,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Cowboy",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": null,
+          "content_length": "17",
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "cache-control": "max-age=0, private, must-revalidate",
+          "connection": "close",
+          "content-length": "17",
+          "date": "Wed, 18 Feb 2026 18:31:09 GMT",
+          "server": "Cowboy",
+          "set-cookie": "sid=ff239556-0cf7-11f1-b1c5-e32de4b368c8; path=/; domain=.karaleaks.com; expires=Mon, 08 Mar 2094 21:45:17 GMT; max-age=2147483647; secure; HttpOnly"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/karakurt"
+}

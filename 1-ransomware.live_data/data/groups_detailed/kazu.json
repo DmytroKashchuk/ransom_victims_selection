@@ -1,0 +1,52 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "kazu",
+  "description": null,
+  "added_date": null,
+  "victims": 9,
+  "firstseen": "2025-11-06",
+  "lastseen": "2026-01-26",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "6czlbd2jfiy6765fbnbnzuwuqocg57ebvp3tbm35kib425k4qnmiiiqd.onion",
+      "title": "404 Not Found",
+      "slug": "http://6czlbd2jfiy6765fbnbnzuwuqocg57ebvp3tbm35kib425k4qnmiiiqd.onion/ransom.html",
+      "available": true,
+      "updated": "2026-02-18 18:31:58.190994",
+      "lastscrape": "2026-02-18 18:31:58.190994",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:58+00:00",
+        "start_url": "http://6czlbd2jfiy6765fbnbnzuwuqocg57ebvp3tbm35kib425k4qnmiiiqd.onion/ransom.html",
+        "final_url": "http://6czlbd2jfiy6765fbnbnzuwuqocg57ebvp3tbm35kib425k4qnmiiiqd.onion/ransom.html",
+        "status": 404,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache/2.4.65 (Debian)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=iso-8859-1",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:58 GMT",
+          "server": "Apache/2.4.65 (Debian)",
+          "content-type": "text/html; charset=iso-8859-1"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/kazu"
+}

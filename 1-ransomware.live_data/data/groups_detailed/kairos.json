@@ -1,0 +1,48 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "kairos",
+  "description": null,
+  "added_date": null,
+  "victims": 70,
+  "firstseen": "2024-06-26",
+  "lastseen": "2026-02-13",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "erqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion",
+      "title": null,
+      "slug": "http://erqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:58:27.926004",
+      "lastscrape": "2025-06-01 21:18:29.806491",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion",
+      "title": "Kairos",
+      "slug": "http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion",
+      "available": false,
+      "updated": "2026-02-18 12:31:31.142882",
+      "lastscrape": "2026-02-18 19:00:28.970686",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:28+00:00",
+        "start_url": "http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/kairos"
+}

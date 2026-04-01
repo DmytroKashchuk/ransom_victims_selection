@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cooming",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "z6mikrtphid5fmn52nbcbg25tj57sowlm3oc25g563yvsfmygkcxqbyd.onion",
+      "title": "CoomingProject announcement",
+      "slug": "http://z6mikrtphid5fmn52nbcbg25tj57sowlm3oc25g563yvsfmygkcxqbyd.onion",
+      "available": false,
+      "updated": "2022-02-04 23:26:54.456975",
+      "lastscrape": "2025-06-01 21:19:11.973279",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "teo7aj5mfgzxyeme.onion",
+      "title": null,
+      "slug": "http://teo7aj5mfgzxyeme.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:13.115581",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/cooming"
+}

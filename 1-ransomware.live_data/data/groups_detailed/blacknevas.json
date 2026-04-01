@@ -1,0 +1,93 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blacknevas",
+  "description": null,
+  "added_date": null,
+  "victims": 23,
+  "firstseen": "2023-04-24",
+  "lastseen": "2025-12-22",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion",
+      "title": "Clist",
+      "slug": "http://ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:52.167501",
+      "lastscrape": "2026-02-18 19:01:52.167501",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:52+00:00",
+        "start_url": "http://ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion",
+        "final_url": "http://ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "452",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:02:09 GMT",
+          "content-type": "text/html",
+          "content-length": "452",
+          "last-modified": "Sun, 30 Nov 2025 10:58:41 GMT",
+          "connection": "keep-alive",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion",
+      "title": "Clist",
+      "slug": "http://ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion/publications",
+      "available": true,
+      "updated": "2026-02-18 19:02:57.676657",
+      "lastscrape": "2026-02-18 19:02:57.676657",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:57+00:00",
+        "start_url": "http://ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion/publications",
+        "final_url": "http://ctyfftrjgtwdjzlgqh4avbd35sqrs6tde4oyam2ufbjch6oqpqtkdtid.onion/publications",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "452",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:03:15 GMT",
+          "content-type": "text/html",
+          "content-length": "452",
+          "last-modified": "Sun, 30 Nov 2025 10:58:41 GMT",
+          "connection": "keep-alive",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/blacknevas"
+}

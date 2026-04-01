@@ -1,0 +1,55 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "marketo",
+  "description": null,
+  "added_date": null,
+  "victims": 32,
+  "firstseen": "2021-12-07",
+  "lastseen": "2022-02-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "marketojbwagqnwx.onion",
+      "title": null,
+      "slug": "http://marketojbwagqnwx.onion",
+      "available": false,
+      "updated": "2021-09-08 00:01:21.604365",
+      "lastscrape": "2025-06-01 21:18:42.675086",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "g5sbltooh2okkcb2.onion",
+      "title": null,
+      "slug": "http://g5sbltooh2okkcb2.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:43.466108",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "fvki3hj7uxuirxpeop6chgqoczanmebutznt2mkzy6waov6w456vjuid.onion",
+      "title": "404 Not Found",
+      "slug": "http://fvki3hj7uxuirxpeop6chgqoczanmebutznt2mkzy6waov6w456vjuid.onion",
+      "available": false,
+      "updated": "2021-10-04 08:05:02.379137",
+      "lastscrape": "2025-06-01 21:18:52.397669",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "jvdamsif53dqjycuozlaye2s47p7xij4x6hzwzwhzrqmv36gkyzohhqd.onion",
+      "title": "502 Bad Gateway",
+      "slug": "http://jvdamsif53dqjycuozlaye2s47p7xij4x6hzwzwhzrqmv36gkyzohhqd.onion",
+      "available": false,
+      "updated": "2022-03-14 05:12:43.980524",
+      "lastscrape": "2025-06-01 21:18:57.104511",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/marketo"
+}

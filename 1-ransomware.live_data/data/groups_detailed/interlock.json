@@ -1,0 +1,129 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "interlock",
+  "description": null,
+  "added_date": null,
+  "victims": 96,
+  "firstseen": "2023-12-01",
+  "lastseen": "2026-02-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "AZCopy",
+      "WinSCP"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "ScreenConnect"
+    ],
+    "DiscoveryEnum": [
+      "Advanced Port Scanner",
+      "Azure Storage Explorer"
+    ],
+    "Networking": [
+      "PuTTY"
+    ],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [
+      "ProcessHacker",
+      "ThreatFire System Monitor driver (BYOVD)"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion",
+      "title": "Interlock",
+      "slug": "http://ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion/leaks.php",
+      "available": false,
+      "updated": "2026-02-18 17:30:07.335680",
+      "lastscrape": "2026-02-18 19:00:07.217185",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:07+00:00",
+        "start_url": "http://ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion/leaks.php",
+        "final_url": "http://ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion/leaks.php",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.24.0 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.24.0 (Ubuntu)",
+          "date": "Wed, 18 Feb 2026 19:00:10 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "set-cookie": "PHPSESSID=2pihptc062j2l0lsji8di5n1or; path=/",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion",
+      "title": "Interlock",
+      "slug": "http://ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion/support/step.php",
+      "available": true,
+      "updated": "2026-02-18 19:00:12.998543",
+      "lastscrape": "2026-02-18 19:00:12.998543",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:13+00:00",
+        "start_url": "http://ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion/support/step.php",
+        "final_url": "http://ebhmkoohccl45qesdbvrjqtyro2hmhkmh6vkyfyjjzfllm3ix72aqaid.onion/chat.php",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "/chat.php"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx/1.24.0 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.24.0 (Ubuntu)",
+          "date": "Wed, 18 Feb 2026 19:00:15 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "set-cookie": "PHPSESSID=7e8dmqfhs8jdm5np3tbssk5moi; path=/",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 4,
+  "url": "https://www.ransomware.live/group/interlock"
+}

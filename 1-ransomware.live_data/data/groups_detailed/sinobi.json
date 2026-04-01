@@ -1,0 +1,589 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "sinobi",
+  "description": null,
+  "added_date": null,
+  "victims": 255,
+  "firstseen": "2025-03-24",
+  "lastseen": "2026-02-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:42.284001",
+      "lastscrape": "2026-02-18 19:01:42.284001",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:42+00:00",
+        "start_url": "http://sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion",
+        "final_url": "http://sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:01:43 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:02:48.938194",
+      "lastscrape": "2026-02-18 19:02:48.938194",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:48+00:00",
+        "start_url": "http://sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion/leaks",
+        "final_url": "http://sinobi6ftrg27d6g4sjdt65malds6cfptlnjyw52rskakqjda6uvb7yd.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:02:49 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:53.121148",
+      "lastscrape": "2026-02-18 19:03:53.121148",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:53+00:00",
+        "start_url": "http://sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion",
+        "final_url": "http://sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:03:53 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:04:54.979642",
+      "lastscrape": "2026-02-18 19:04:54.979642",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:04:54+00:00",
+        "start_url": "http://sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion/leaks",
+        "final_url": "http://sinobi6rlec6f2bgn6rd72xo7hvds4a5ajiu2if4oub2sut7fg3gomqd.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:04:55 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi57mfegeov2naiufkidlkpze263jtbldokimfjqmk2mye6s4yqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi57mfegeov2naiufkidlkpze263jtbldokimfjqmk2mye6s4yqd.onion/login",
+      "available": true,
+      "updated": "2026-02-18 19:05:59.983400",
+      "lastscrape": "2026-02-18 19:05:59.983400",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:05:59+00:00",
+        "start_url": "http://sinobi57mfegeov2naiufkidlkpze263jtbldokimfjqmk2mye6s4yqd.onion/login",
+        "final_url": "http://sinobi57mfegeov2naiufkidlkpze263jtbldokimfjqmk2mye6s4yqd.onion/login",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "804",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:06:00 GMT",
+          "content-type": "text/html",
+          "content-length": "804",
+          "last-modified": "Sat, 21 Jun 2025 23:59:53 GMT",
+          "connection": "keep-alive",
+          "etag": "\"68574779-324\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:07:06.055973",
+      "lastscrape": "2026-02-18 19:07:06.055973",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:07:06+00:00",
+        "start_url": "http://sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion",
+        "final_url": "http://sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:07:06 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:08:11.687476",
+      "lastscrape": "2026-02-18 19:08:11.687476",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:08:11+00:00",
+        "start_url": "http://sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion",
+        "final_url": "http://sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:08:12 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:09:18.334080",
+      "lastscrape": "2026-02-18 19:09:18.334080",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:09:18+00:00",
+        "start_url": "http://sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion",
+        "final_url": "http://sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:09:19 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:10:22.517184",
+      "lastscrape": "2026-02-18 19:10:22.517184",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:10:22+00:00",
+        "start_url": "http://sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion",
+        "final_url": "http://sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:10:22 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:11:27.367119",
+      "lastscrape": "2026-02-18 19:11:27.367119",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:11:27+00:00",
+        "start_url": "http://sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion",
+        "final_url": "http://sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:11:27 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:12:30.337859",
+      "lastscrape": "2026-02-18 19:12:30.337859",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:12:30+00:00",
+        "start_url": "http://sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion/leaks",
+        "final_url": "http://sinobia6mw6ht2wcdjphessyzpy7ph2y4dyqbd74bgobgju4ybytmkqd.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:12:30 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:13:32.770191",
+      "lastscrape": "2026-02-18 19:13:32.770191",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:13:32+00:00",
+        "start_url": "http://sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion/leaks",
+        "final_url": "http://sinobi23i75c3znmqqxxyuzqvhxnjsar7actgvc4nqeuhgcn5yvz3zqd.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:13:33 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:14:36.984118",
+      "lastscrape": "2026-02-18 19:14:36.984118",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:14:36+00:00",
+        "start_url": "http://sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion/leaks",
+        "final_url": "http://sinobi7sukclb3ygtorysbtrodgdbnrmgbhov45rwzipubbzhiu5jvqd.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:14:37 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:15:39.978214",
+      "lastscrape": "2026-02-18 19:15:39.978214",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:15:39+00:00",
+        "start_url": "http://sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion/leaks",
+        "final_url": "http://sinobi7l3wet3uqn4cagjiessuomv75aw3bvgah4jpj43od7xndb7kad.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:15:40 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion",
+      "title": "Sinobi",
+      "slug": "http://sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 19:16:43.569504",
+      "lastscrape": "2026-02-18 19:16:43.569504",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:16:43+00:00",
+        "start_url": "http://sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion/leaks",
+        "final_url": "http://sinobi6ywgmmvg2gj2yygkb2hxbimaxpqkyk27wti5zjwhfcldhackid.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.27.5",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "805",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.27.5",
+          "date": "Wed, 18 Feb 2026 19:16:44 GMT",
+          "content-type": "text/html",
+          "content-length": "805",
+          "last-modified": "Sat, 21 Jun 2025 23:57:29 GMT",
+          "connection": "keep-alive",
+          "etag": "\"685746e9-325\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/sinobi"
+}

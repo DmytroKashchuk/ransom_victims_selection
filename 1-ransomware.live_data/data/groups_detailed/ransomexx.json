@@ -1,0 +1,74 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ransomexx",
+  "description": "RansomExx is a ransomware family that targeted multiple companies starting in mid-2020. It shares commonalities with Defray777.\n",
+  "added_date": null,
+  "victims": 83,
+  "firstseen": "2020-05-14",
+  "lastseen": "2025-03-07",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [
+      "LaZagne",
+      "Mimikatz",
+      "ProcDump"
+    ],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "BCDEdit",
+      "Windows Event Utility (wevtutil)"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion",
+      "title": "RansomEXX v2",
+      "slug": "http://rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion/",
+      "available": true,
+      "updated": "2026-02-18 19:01:17.024080",
+      "lastscrape": "2026-02-18 19:01:17.024080",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:17+00:00",
+        "start_url": "http://rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion/",
+        "final_url": "http://rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:18 GMT",
+          "content-type": "text/html",
+          "last-modified": "Fri, 07 Mar 2025 15:50:15 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"67cb15b7-39e6\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 5,
+  "url": "https://www.ransomware.live/group/ransomexx"
+}

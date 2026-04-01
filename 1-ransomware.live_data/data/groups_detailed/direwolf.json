@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "direwolf",
+  "description": null,
+  "added_date": null,
+  "victims": 71,
+  "firstseen": "2025-04-17",
+  "lastseen": "2026-01-13",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion",
+      "title": "DireWolf",
+      "slug": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:50.364870",
+      "lastscrape": "2026-02-18 18:31:50.364870",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:50+00:00",
+        "start_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion",
+        "final_url": "http://direwolfcdkv5whaz2spehizdg22jsuf5aeje4asmetpbt6ri4jnd4qd.onion",
+        "status": 404,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/plain",
+          "content_length": "18",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:50 GMT",
+          "content-type": "text/plain",
+          "content-length": "18",
+          "connection": "keep-alive",
+          "access-control-allow-headers": "Content-Type, Authorization",
+          "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/direwolf"
+}

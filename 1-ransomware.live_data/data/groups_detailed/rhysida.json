@@ -1,0 +1,166 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "rhysida",
+  "description": "Rhysida is a ransomware-as-a-service (RAAS) group that emerged in May 2023. The group utilizes a namesake ransomware through phishing attacks and Cobalt Strike to breach the targets' networks and deploy their payloads.<br> <br> The group threatens to publicly distribute exfiltrated data if the ransom is not paid, and it's worth mentioning that Rhysida is still in the early stages of development.<br> <br> The ransomware leaves PDF notes in the affected folders, instructing victims to contact the group through its portal, and payment is made via Bitcoin.<br> <br> After encryption, the ransomware appends the extension '.ryshida' to encrypted files.<BR>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 266,
+  "firstseen": "2023-06-05",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "WinSCP"
+    ],
+    "RMM-Tools": [
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [
+      "PowerView"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Impacket"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "NTDS Utility (ntdsutil)",
+      "PsExec",
+      "Windows Event Utility (wevtutil)",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion",
+      "title": "Rhysida",
+      "slug": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:29.543055",
+      "lastscrape": "2026-02-18 19:01:29.543055",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:30+00:00",
+        "start_url": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion",
+        "final_url": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:31 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion",
+      "title": "",
+      "slug": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion/archive.php",
+      "available": true,
+      "updated": "2026-02-18 19:02:54.777131",
+      "lastscrape": "2026-02-18 19:02:54.777131",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:54+00:00",
+        "start_url": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion/archive.php",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion",
+      "title": "",
+      "slug": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion/archive.php?auction",
+      "available": true,
+      "updated": "2026-02-18 19:05:15.200475",
+      "lastscrape": "2026-02-18 19:05:15.200475",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:05:15+00:00",
+        "start_url": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion/archive.php?auction",
+        "final_url": "http://rhysidafohrhyy2aszi7bm32tnjat5xri65fopcxkdfxhi4tidsg7cad.onion/archive.php?auction",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:05:15 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "rhysidafc6lm7qa2mkiukbezh7zuth3i4wof4mh2audkymscjm6yegad.onion",
+      "title": "Rhysida",
+      "slug": "http://rhysidafc6lm7qa2mkiukbezh7zuth3i4wof4mh2audkymscjm6yegad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:06:20.623982",
+      "lastscrape": "2026-02-18 19:06:20.623982",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:06:20+00:00",
+        "start_url": "http://rhysidafc6lm7qa2mkiukbezh7zuth3i4wof4mh2audkymscjm6yegad.onion",
+        "final_url": "http://rhysidafc6lm7qa2mkiukbezh7zuth3i4wof4mh2audkymscjm6yegad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:06:20 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/rhysida"
+}

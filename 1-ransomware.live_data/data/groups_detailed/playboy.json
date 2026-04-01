@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "playboy",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2024-10-28",
+  "lastseen": "2024-10-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "vlofmq2u3f5amxmnblvxaghy73aedwta74fyceywr6eeguw3cn6h6uad.onion",
+      "title": "PlayBoy",
+      "slug": "http://vlofmq2u3f5amxmnblvxaghy73aedwta74fyceywr6eeguw3cn6h6uad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:58:26.482008",
+      "lastscrape": "2025-06-01 21:19:12.593723",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/playboy"
+}

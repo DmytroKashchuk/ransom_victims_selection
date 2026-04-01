@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lorenz",
+  "description": "Tesorion describes Lorenz as a ransomware with design and implementation flaws, leading to impossible decryption with tools provided by the attackers. A free decryptor for 2021 versions was made available via the NoMoreRansom initiative. A new version of the malware was discovered in March 2022, for which again was provided a free decryptor, while the ransomware operators are not able to provide tools to decrypt affected files.\n",
+  "added_date": null,
+  "victims": 78,
+  "firstseen": "2020-01-12",
+  "lastseen": "2023-12-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion",
+      "title": "Lorenz",
+      "slug": "http://lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion/",
+      "available": false,
+      "updated": "2024-12-31 10:19:16.626264",
+      "lastscrape": "2025-06-01 21:18:50.534885",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion",
+      "title": "Lorenz",
+      "slug": "http://lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:19:21.915401",
+      "lastscrape": "2025-06-01 21:18:59.074266",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/lorenz"
+}

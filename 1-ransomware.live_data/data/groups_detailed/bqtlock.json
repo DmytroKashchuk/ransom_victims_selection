@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "bqtlock",
+  "description": null,
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2025-07-31",
+  "lastseen": "2025-10-11",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "yywhylvqeqynzik6ibocb53o2nat7lmzn5ynjpar3stndzcgmy6dkgid.onion",
+      "title": "BQTlock :: RaaS & Decryption Portal",
+      "slug": "http://yywhylvqeqynzik6ibocb53o2nat7lmzn5ynjpar3stndzcgmy6dkgid.onion",
+      "available": false,
+      "updated": "2025-08-21 17:01:41.050900",
+      "lastscrape": "2025-09-20 17:30:37.249233",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-20T17:30:37+00:00",
+        "start_url": "http://yywhylvqeqynzik6ibocb53o2nat7lmzn5ynjpar3stndzcgmy6dkgid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/bqtlock"
+}

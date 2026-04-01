@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "securotrop",
+  "description": null,
+  "added_date": null,
+  "victims": 30,
+  "firstseen": "2025-06-11",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "securo45z554mw7rgrt7wcgv5eenj2xmxyrsdj3fcjsvindu63s4bsid.onion",
+      "title": "",
+      "slug": "http://securo45z554mw7rgrt7wcgv5eenj2xmxyrsdj3fcjsvindu63s4bsid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:34.830035",
+      "lastscrape": "2026-02-18 18:01:34.830035",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:34+00:00",
+        "start_url": "http://securo45z554mw7rgrt7wcgv5eenj2xmxyrsdj3fcjsvindu63s4bsid.onion",
+        "final_url": "http://securo45z554mw7rgrt7wcgv5eenj2xmxyrsdj3fcjsvindu63s4bsid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": "298",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:01:36 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "content-length": "298",
+          "connection": "keep-alive",
+          "last-modified": "Fri, 14 Nov 2025 19:56:43 GMT",
+          "etag": "\"1c8-64393658f1c63-gzip\"",
+          "accept-ranges": "bytes",
+          "vary": "Accept-Encoding",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/securotrop"
+}

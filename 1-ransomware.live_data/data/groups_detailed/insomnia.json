@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "insomnia",
+  "description": null,
+  "added_date": null,
+  "victims": 22,
+  "firstseen": "2025-10-08",
+  "lastseen": "2026-01-23",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion",
+      "title": "Insomnia",
+      "slug": "http://i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:08.039743",
+      "lastscrape": "2026-02-18 18:32:08.039743",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:08+00:00",
+        "start_url": "http://i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion",
+        "final_url": "http://i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 18:32:08 GMT",
+          "content-type": "text/html",
+          "last-modified": "Wed, 18 Feb 2026 14:22:23 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"6995cb1f-717d\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/insomnia"
+}

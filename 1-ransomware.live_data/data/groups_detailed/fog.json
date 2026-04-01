@@ -1,0 +1,86 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "fog",
+  "description": "Fog, which uses the .flocked extension for encrypted files, was first observed in May in campaigns by Storm-0844, a threat actor known for distributing Akira. By June, Storm-0844 was deploying Fog more than Akira.",
+  "added_date": null,
+  "victims": 189,
+  "firstseen": "2021-12-20",
+  "lastseen": "2025-03-20",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [
+      "Advanced Port Scanner",
+      "SharpShares",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Powercat",
+      "Proxychains"
+    ],
+    "CredentialTheft": [
+      "DonPAPI",
+      "Veeam-Get-Creds"
+    ],
+    "Offsec": [
+      "Certipy",
+      "Impacket",
+      "Metasploit",
+      "NetExec",
+      "Orpheus",
+      "Sliver",
+      "Zer0dump"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "xql562evsy7njcsngacphc2erzjfecwotdkobn3m4uxu2gtqh26newid.onion",
+      "title": "500 Internal Server Error",
+      "slug": "http://xql562evsy7njcsngacphc2erzjfecwotdkobn3m4uxu2gtqh26newid.onion",
+      "available": false,
+      "updated": "2025-06-05 15:01:46.557790",
+      "lastscrape": "2025-07-05 15:30:10.127730",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "xbkv2qey6u3gd3qxcojynrt4h5sgrhkar6whuo74wo63hijnn677jnyd.onion",
+      "title": "Blog",
+      "slug": "http://xbkv2qey6u3gd3qxcojynrt4h5sgrhkar6whuo74wo63hijnn677jnyd.onion",
+      "available": false,
+      "updated": "2025-04-20 19:03:05.419727",
+      "lastscrape": "2025-06-01 21:19:31.853535",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "xbkv2qey6u3gd3qxcojynrt4h5sgrhkar6whuo74wo63hijnn677jnyd.onion",
+      "title": "Blog",
+      "slug": "http://xbkv2qey6u3gd3qxcojynrt4h5sgrhkar6whuo74wo63hijnn677jnyd.onion/posts",
+      "available": false,
+      "updated": "2025-04-20 19:04:06.676867",
+      "lastscrape": "2025-06-01 21:19:38.111860",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "xql562evsy7njcsngacphc2erzjfecwotdkobn3m4uxu2gtqh26newid.onion",
+      "title": "500 Internal Server Error",
+      "slug": "http://xql562evsy7njcsngacphc2erzjfecwotdkobn3m4uxu2gtqh26newid.onion/",
+      "available": false,
+      "updated": "2025-06-05 15:02:51.860455",
+      "lastscrape": "2025-07-05 15:30:26.016932",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 6,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/fog"
+}

@@ -1,0 +1,590 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lockbit3",
+  "description": "LockBit, also recognized as LockBit Black or Lockbit 3.0, is one of the largest Ransomware Groups in the world and has orchestrated extensive cyberattacks across various industries, impacting thousands of organizations globally with its relentless and adaptive strategies.",
+  "added_date": null,
+  "victims": 2017,
+  "firstseen": "2021-12-26",
+  "lastseen": "2025-12-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Anonfiles",
+      "FileZilla",
+      "FreeFileSync",
+      "File[.]io",
+      "MEGA",
+      "RClone",
+      "Sendspace",
+      "Temp[.]sh",
+      "Tempsend",
+      "Transfert-my-files",
+      "Transfer[.]sh",
+      "WinSCP"
+    ],
+    "RMM-Tools": [
+      "Action1",
+      "AnyDesk",
+      "FixMeIt",
+      "ScreenConnect",
+      "Splashtop",
+      "TeamViewer",
+      "ZohoAssist"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Advanced IP Scanner",
+      "Advanced Port Scanner",
+      "Bloodhound",
+      "Seatbelt",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Ligolo",
+      "Ngrok",
+      "Plink"
+    ],
+    "CredentialTheft": [
+      "Gosecretsdump",
+      "LaZagne",
+      "LostMyPassword",
+      "Mimikatz",
+      "NirSoft ExtPassword",
+      "PasswordFox",
+      "ProcDump",
+      "Veeam-Get-Creds"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "Impacket",
+      "Koadic",
+      "Metasploit",
+      "PowerShell Empire",
+      "ThunderShell"
+    ],
+    "DefenseEvasion": [
+      "Backstab (Process Explorer driver)",
+      "Defender Control",
+      "GMER",
+      "PCHunter",
+      "PowerTool",
+      "ProcessHacker",
+      "TDSSKiller"
+    ],
+    "LOLBAS": [
+      "BCDEdit",
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "lockbitapt2d73krlbewgv27tquljgxr33xbwwsp6rkyieto7u4ncead.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt2d73krlbewgv27tquljgxr33xbwwsp6rkyieto7u4ncead.onion",
+      "available": false,
+      "updated": "2024-02-25 01:59:21.000402",
+      "lastscrape": "2025-06-01 21:41:45.378789",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitapt2yfbt7lchxejug47kmqvqqxvvjpqkmevv4l3azl3gy6pyd.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt2yfbt7lchxejug47kmqvqqxvvjpqkmevv4l3azl3gy6pyd.onion",
+      "available": false,
+      "updated": "2024-02-25 01:59:49.310497",
+      "lastscrape": "2025-06-01 21:41:52.307192",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitapt34kvrip6xojylohhxrwsvpzdffgs5z4pbbsywnzsbdguqd.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt34kvrip6xojylohhxrwsvpzdffgs5z4pbbsywnzsbdguqd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:00:21.061257",
+      "lastscrape": "2025-06-01 21:42:03.111536",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitapt5x4zkjbcqmz6frdhecqqgadevyiwqxukksspnlidyvd7qd.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt5x4zkjbcqmz6frdhecqqgadevyiwqxukksspnlidyvd7qd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:00:52.914169",
+      "lastscrape": "2025-06-01 21:42:09.566115",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:01:32.172485",
+      "lastscrape": "2025-06-01 21:42:22.323384",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitapt72iw55njgnqpymggskg5yp75ry7rirtdg4m7i42artsbqd.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt72iw55njgnqpymggskg5yp75ry7rirtdg4m7i42artsbqd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:02:06.070764",
+      "lastscrape": "2025-06-01 21:42:26.186780",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitaptawjl6udhpd323uehekiyatj6ftcxmkwe5sezs4fqgpjpid.onion",
+      "title": "Title",
+      "slug": "http://lockbitaptawjl6udhpd323uehekiyatj6ftcxmkwe5sezs4fqgpjpid.onion",
+      "available": false,
+      "updated": "2024-02-25 02:02:39.610070",
+      "lastscrape": "2025-06-01 21:42:31.361395",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitaptbdiajqtplcrigzgdjprwugkkut63nbvy2d5r4w2agyekqd.onion",
+      "title": "Title",
+      "slug": "http://lockbitaptbdiajqtplcrigzgdjprwugkkut63nbvy2d5r4w2agyekqd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:03:11.803799",
+      "lastscrape": "2025-06-01 21:42:40.253547",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitaptc2iq4atewz2ise62q63wfktyrl4qtwuk5qax262kgtzjqd.onion",
+      "title": "Title",
+      "slug": "http://lockbitaptc2iq4atewz2ise62q63wfktyrl4qtwuk5qax262kgtzjqd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:03:40.788751",
+      "lastscrape": "2025-06-01 21:42:56.477388",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitapt72iw55njgnqpymggskg5yp75ry7rirtdg4m7i42artsbqd.onion",
+      "title": "Title",
+      "slug": "http://lockbitapt72iw55njgnqpymggskg5yp75ry7rirtdg4m7i42artsbqd.onion",
+      "available": false,
+      "updated": "2024-02-25 02:04:07.703580",
+      "lastscrape": "2025-06-01 21:42:56.741038",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitsupa7e3b4pkn4mgkgojrl5iqgx24clbzc4xm7i6jeetsia3qd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupa7e3b4pkn4mgkgojrl5iqgx24clbzc4xm7i6jeetsia3qd.onion",
+      "available": false,
+      "updated": "2024-02-19 20:10:51.497442",
+      "lastscrape": "2025-06-01 21:43:01.672387",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitsupdwon76nzykzblcplixwts4n4zoecugz2bxabtapqvmzqqd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupdwon76nzykzblcplixwts4n4zoecugz2bxabtapqvmzqqd.onion",
+      "available": false,
+      "updated": "2024-02-19 20:11:22.533807",
+      "lastscrape": "2025-06-01 21:43:07.857671",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitsupn2h6be2cnqpvncyhj4rgmnwn44633hnzzmtxdvjoqlp7yd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupn2h6be2cnqpvncyhj4rgmnwn44633hnzzmtxdvjoqlp7yd.onion",
+      "available": false,
+      "updated": "2024-02-19 20:12:01.149500",
+      "lastscrape": "2025-06-01 21:43:13.577998",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitsupo7vv5vcl3jxpsdviopwvasljqcstym6efhh6oze7c6xjad.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupo7vv5vcl3jxpsdviopwvasljqcstym6efhh6oze7c6xjad.onion",
+      "available": false,
+      "updated": "2024-02-19 20:12:32.474883",
+      "lastscrape": "2025-06-01 21:43:19.172344",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitsupqfyacidr6upt6nhhyipujvaablubuevxj6xy3frthvr3yd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupqfyacidr6upt6nhhyipujvaablubuevxj6xy3frthvr3yd.onion",
+      "available": false,
+      "updated": "2024-02-19 20:13:05.628072",
+      "lastscrape": "2025-06-01 21:43:22.626451",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitsupt7nr3fa6e7xyb73lk6bw6rcneqhoyblniiabj4uwvzapqd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupt7nr3fa6e7xyb73lk6bw6rcneqhoyblniiabj4uwvzapqd.onion",
+      "available": false,
+      "updated": "2024-02-19 20:13:36.377929",
+      "lastscrape": "2025-06-01 21:43:26.679431",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitsupuhswh4izvoucoxsbnotkmgq6durg7kficg6u33zfvq3oyd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupuhswh4izvoucoxsbnotkmgq6durg7kficg6u33zfvq3oyd.onion/form",
+      "available": false,
+      "updated": "2024-02-19 20:14:04.414796",
+      "lastscrape": "2025-06-01 21:43:30.306678",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitsupxcjntihbmat4rrh7ktowips2qzywh6zer5r3xafhviyhqd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupxcjntihbmat4rrh7ktowips2qzywh6zer5r3xafhviyhqd.onion/form",
+      "available": false,
+      "updated": "2024-02-19 18:52:01.453847",
+      "lastscrape": "2025-06-01 21:43:33.435676",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitsupq3g62dni2f36snrdb4n5qzqvovbtkt5xffw3draxk6gwqd.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsupq3g62dni2f36snrdb4n5qzqvovbtkt5xffw3draxk6gwqd.onion/form",
+      "available": false,
+      "updated": "2024-02-19 20:15:01.527302",
+      "lastscrape": "2025-06-01 21:43:40.139280",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitsup4yezcd5enk5unncx3zcy7kw6wllyqmiyhvanjj352jayid.onion",
+      "title": "LockBit LOGIN",
+      "slug": "http://lockbitsup4yezcd5enk5unncx3zcy7kw6wllyqmiyhvanjj352jayid.onion",
+      "available": false,
+      "updated": "2024-02-19 20:15:28.237400",
+      "lastscrape": "2025-06-01 21:43:44.432654",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbit7ouvrsdgtojeoj5hvu6bljqtghitekwpdy3b6y62ixtsu5jqd.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit7ouvrsdgtojeoj5hvu6bljqtghitekwpdy3b6y62ixtsu5jqd.onion",
+      "available": false,
+      "updated": "2026-02-06 21:01:24.549276",
+      "lastscrape": "2026-02-18 19:00:17.511992",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:17+00:00",
+        "start_url": "http://lockbit7ouvrsdgtojeoj5hvu6bljqtghitekwpdy3b6y62ixtsu5jqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbit6knrauo3qafoksvl742vieqbujxw7rd6ofzdtapjb4rrawqad.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit6knrauo3qafoksvl742vieqbujxw7rd6ofzdtapjb4rrawqad.onion",
+      "available": false,
+      "updated": "2026-02-06 21:02:38.285394",
+      "lastscrape": "2026-02-18 19:00:43.178940",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:43+00:00",
+        "start_url": "http://lockbit6knrauo3qafoksvl742vieqbujxw7rd6ofzdtapjb4rrawqad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbit4lahhluquhoka3t4spqym2m3dhe66d6lr337glmnlgg2nndad.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit4lahhluquhoka3t4spqym2m3dhe66d6lr337glmnlgg2nndad.onion",
+      "available": false,
+      "updated": "2026-02-06 22:01:28.735547",
+      "lastscrape": "2026-02-18 19:01:08.661573",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:08+00:00",
+        "start_url": "http://lockbit4lahhluquhoka3t4spqym2m3dhe66d6lr337glmnlgg2nndad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbit3olp7oetlc4tl5zydnoluphh7fvdt5oa6arcp2757r7xkutid.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit3olp7oetlc4tl5zydnoluphh7fvdt5oa6arcp2757r7xkutid.onion",
+      "available": false,
+      "updated": "2026-02-06 20:32:39.257783",
+      "lastscrape": "2026-02-18 19:01:29.341349",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:29+00:00",
+        "start_url": "http://lockbit3olp7oetlc4tl5zydnoluphh7fvdt5oa6arcp2757r7xkutid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbit435xk3ki62yun7z5nhwz6jyjdp2c64j5vge536if2eny3gtid.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit435xk3ki62yun7z5nhwz6jyjdp2c64j5vge536if2eny3gtid.onion",
+      "available": false,
+      "updated": "2026-02-06 20:34:02.746150",
+      "lastscrape": "2026-02-18 19:01:42.945533",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:43+00:00",
+        "start_url": "http://lockbit435xk3ki62yun7z5nhwz6jyjdp2c64j5vge536if2eny3gtid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbit3g3ohd3katajf6zaehxz4h4cnhmz5t735zpltywhwpc6oy3id.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit3g3ohd3katajf6zaehxz4h4cnhmz5t735zpltywhwpc6oy3id.onion",
+      "available": false,
+      "updated": "2026-02-06 22:05:35.563595",
+      "lastscrape": "2026-02-18 19:01:59.744373",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:59+00:00",
+        "start_url": "http://lockbit3g3ohd3katajf6zaehxz4h4cnhmz5t735zpltywhwpc6oy3id.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:32.257915",
+      "lastscrape": "2026-02-18 19:03:32.257915",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:32+00:00",
+        "start_url": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+        "final_url": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:03:32 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "set-cookie": "PHPSESSID=0djf1pfsufmmmeff1n8e448gqc; expires=Thu, 19 Feb 2026 07:03:32 GMT; Max-Age=43200; path=/; secure; HttpOnly; SameSite=Strict, PHPSESSID=0djf1pfsufmmmeff1n8e448gqc; expires=Tue, 18 Aug 2026 19:03:32 GMT; Max-Age=15638400; path=/; HttpOnly; SameSite=Lax",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ofj3oaltwaf67qtd7oafk5r44upm6wkc2jurpsdyih2c7mbrbshuwayd.onion",
+      "title": "504 Gateway Time-out",
+      "slug": "http://ofj3oaltwaf67qtd7oafk5r44upm6wkc2jurpsdyih2c7mbrbshuwayd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:12:41.174155",
+      "lastscrape": "2025-06-01 21:43:49.829646",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+      "title": "502 Bad Gateway",
+      "slug": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+      "available": false,
+      "updated": "2026-02-04 09:32:24.411893",
+      "lastscrape": "2026-02-06 13:36:14.768715",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-04T09:32:24+00:00",
+        "start_url": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+        "final_url": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+        "status": 502,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "150",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 04 Feb 2026 09:32:24 GMT",
+          "content-type": "text/html",
+          "content-length": "150",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "lockbitcuo23q7qrymbk6dsp2sadltspjvjxgcyp4elbnbr6tcnwq7qd.onion",
+      "title": "",
+      "slug": "http://lockbitcuo23q7qrymbk6dsp2sadltspjvjxgcyp4elbnbr6tcnwq7qd.onion",
+      "available": false,
+      "updated": "2025-02-09 08:23:01.007143",
+      "lastscrape": "2025-06-01 21:43:52.533391",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitw2ygzasbt35ffpdb46r4vkej6flm3siyabaxzdodwpiatfgqd.onion",
+      "title": "",
+      "slug": "http://lockbitw2ygzasbt35ffpdb46r4vkej6flm3siyabaxzdodwpiatfgqd.onion",
+      "available": false,
+      "updated": "2025-03-02 11:08:44.403082",
+      "lastscrape": "2025-06-01 21:44:22.577402",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbit23xxhej7swdop24cru7ks2w66pw7zgdkydqo6f7wfyfqo7oqd.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbit23xxhej7swdop24cru7ks2w66pw7zgdkydqo6f7wfyfqo7oqd.onion",
+      "available": false,
+      "updated": "2025-07-07 13:36:40.495862",
+      "lastscrape": "2025-08-06 14:03:30.266457",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbit7ixelt7gn3ynrs3dgqtsom6x6sd2ope4di7bu6e6exyhazeyd.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbit7ixelt7gn3ynrs3dgqtsom6x6sd2ope4di7bu6e6exyhazeyd.onion",
+      "available": false,
+      "updated": "2025-07-07 13:37:41.925634",
+      "lastscrape": "2025-08-06 14:03:32.498069",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitck6escin3p33v3f5uef3mr5fx335oyqon2uqoyxuraieuhiqd.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbitck6escin3p33v3f5uef3mr5fx335oyqon2uqoyxuraieuhiqd.onion",
+      "available": false,
+      "updated": "2025-07-07 13:38:44.942233",
+      "lastscrape": "2025-08-06 14:03:39.425921",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitfhzimjqx2v7p2vfu57fpdm5zh2vsbfk5jkjod3k5pszbek7ad.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbitfhzimjqx2v7p2vfu57fpdm5zh2vsbfk5jkjod3k5pszbek7ad.onion",
+      "available": false,
+      "updated": "2025-07-07 13:39:47.903321",
+      "lastscrape": "2025-08-06 14:03:42.165527",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbiti7ss2wzyizvyr2x46krnezl4xjeianvupnvazhbqtz32auqqd.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbiti7ss2wzyizvyr2x46krnezl4xjeianvupnvazhbqtz32auqqd.onion",
+      "available": false,
+      "updated": "2025-07-07 13:40:50.122713",
+      "lastscrape": "2025-08-06 14:03:44.355029",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitkwkmhfb2zr3ngduaa6sd6munslzkbtqhn5ifmwqml4sl7znad.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbitkwkmhfb2zr3ngduaa6sd6munslzkbtqhn5ifmwqml4sl7znad.onion",
+      "available": false,
+      "updated": "2025-07-07 13:41:52.299892",
+      "lastscrape": "2025-08-06 14:03:47.336185",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbitqfj7mmhrfa7lznj47ogknqanskj7hyk2vistn2ju5ufrhbpyd.onion",
+      "title": "Humanity check",
+      "slug": "http://lockbitqfj7mmhrfa7lznj47ogknqanskj7hyk2vistn2ju5ufrhbpyd.onion",
+      "available": false,
+      "updated": "2025-07-07 13:42:53.841797",
+      "lastscrape": "2025-08-06 14:03:52.091298",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+      "available": false,
+      "updated": "2026-01-16 11:09:19.479306",
+      "lastscrape": "2026-02-06 13:38:46.838924",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-03T13:35:23+00:00",
+        "start_url": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+        "final_url": "http://lockbit3753ekiocyo5epmpy6klmejchjtzddoekjlnt6mu3qh4de2id.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": "PHP/8.5.2",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Tue, 03 Feb 2026 13:35:25 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "x-powered-by": "PHP/8.5.2",
+          "set-cookie": "PHPSESSID=e8ca621121a8f8d00497b7d96e885f54; expires=Wed, 04 Feb 2026 01:38:07 GMT; Max-Age=43200; path=/; secure; HttpOnly; SameSite=Strict, PHPSESSID=e8ca621121a8f8d00497b7d96e885f54; expires=Mon, 03 Aug 2026 13:38:07 GMT; Max-Age=15638400; path=/; secure; HttpOnly; SameSite=Lax",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 45,
+  "has_ransomnote": true,
+  "ransomnotes_count": 5,
+  "url": "https://www.ransomware.live/group/lockbit3"
+}

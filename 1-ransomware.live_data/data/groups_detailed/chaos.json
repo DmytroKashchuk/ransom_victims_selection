@@ -1,0 +1,111 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "chaos",
+  "description": null,
+  "added_date": null,
+  "victims": 34,
+  "firstseen": "2025-02-19",
+  "lastseen": "2026-01-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion",
+      "title": "CHAOS",
+      "slug": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:35.936830",
+      "lastscrape": "2026-02-18 18:31:35.936830",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:35+00:00",
+        "start_url": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion",
+        "final_url": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion",
+        "status": 405,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "150",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'self' http: https: ws: wss: data: blob: 'unsafe-inline'; frame-ancestors 'self';",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "no-referrer-when-downgrade",
+            "permissions-policy": "interest-cohort=()",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:42 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "150",
+          "connection": "keep-alive",
+          "x-xss-protection": "1; mode=block",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer-when-downgrade",
+          "content-security-policy": "default-src 'self' http: https: ws: wss: data: blob: 'unsafe-inline'; frame-ancestors 'self';",
+          "permissions-policy": "interest-cohort=()"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion",
+      "title": "CHAOS — Not found",
+      "slug": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion/list",
+      "available": true,
+      "updated": "2026-02-18 18:32:39.488487",
+      "lastscrape": "2026-02-18 18:32:39.488487",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:39+00:00",
+        "start_url": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion/list",
+        "final_url": "http://hptqq2o2qjva7lcaaq67w36jihzivkaitkexorauw7b2yul2z6zozpqd.onion/list",
+        "status": 405,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "150",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'self' http: https: ws: wss: data: blob: 'unsafe-inline'; frame-ancestors 'self';",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "no-referrer-when-downgrade",
+            "permissions-policy": "interest-cohort=()",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:32:46 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "150",
+          "connection": "keep-alive",
+          "x-xss-protection": "1; mode=block",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "no-referrer-when-downgrade",
+          "content-security-policy": "default-src 'self' http: https: ws: wss: data: blob: 'unsafe-inline'; frame-ancestors 'self';",
+          "permissions-policy": "interest-cohort=()"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/chaos"
+}

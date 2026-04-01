@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+
+{% block title %}Vendor Odds Ratios{% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stats-bar {
+		font-size: .82rem;
+		color: #666;
+		margin-bottom: .5rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#or-table {
+		font-size: .85rem;
+	}
+	.or-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-size: .78rem;
+		font-weight: 600;
+		min-width: 28px;
+		text-align: center;
+	}
+	.or-high { background: #d1e7dd; color: #0f5132; }
+	.or-med  { background: #fff3cd; color: #664d03; }
+	.or-low  { background: #f8d7da; color: #842029; }
+	.p-sig   { color: #198754; font-weight: 600; }
+	.p-nosig { color: #999; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">Vendor &mdash; Odds Ratios</h4>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Vendors</div>
+			<div class="stat-sub">visible rows</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-max-or">-</div>
+			<div class="stat-label">Highest OR</div>
+			<div class="stat-sub" id="card-max-or-name"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-avg-or">-</div>
+			<div class="stat-label">Avg OR</div>
+			<div class="stat-sub">filtered mean</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-avg-vpct">-</div>
+			<div class="stat-label">Avg Victims %</div>
+			<div class="stat-sub">filtered mean</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-sig">-</div>
+			<div class="stat-label">Significant (p&lt;0.05)</div>
+			<div class="stat-sub" id="card-sig-pct"></div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-min-or">Min OR</label>
+			<input type="number" id="filter-min-or" placeholder="e.g. 5" step="0.5">
+		</div>
+		<div class="form-group">
+			<label for="filter-max-or">Max OR</label>
+			<input type="number" id="filter-max-or" placeholder="e.g. 50" step="0.5">
+		</div>
+		<div class="form-group">
+			<label for="filter-min-vpct">Min Victims %</label>
+			<input type="number" id="filter-min-vpct" placeholder="e.g. 10" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-min-a">Min Attacks (a)</label>
+			<input type="number" id="filter-min-a" placeholder="e.g. 100" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-sig">Significance</label>
+			<select id="filter-sig">
+				<option value="">All</option>
+				<option value="sig">Significant (p &lt; 0.05)</option>
+				<option value="nosig">Not Significant</option>
+			</select>
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear Filters</button>
+		</div>
+	</div>
+
+	<div class="stats-bar">
+		Showing <strong id="rowCount">0</strong> of <strong id="totalCount">0</strong> records
+	</div>
+
+	<div id="or-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var allData = [];
+	var fmt  = function(v, d) { d = d || 2; return v == null ? "—" : Number(v).toFixed(d); };
+	var fmtE = function(v) {
+		if (v == null) return "—";
+		var n = Number(v);
+		return n === 0 ? "0" : n < 0.0001 ? n.toExponential(2) : n.toFixed(6);
+	};
+
+	var table = new Tabulator("#or-table", {
+		height: "62vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "OR", dir: "desc" }],
+		columns: [
+			{
+				title: "Vendor", field: "vendor", minWidth: 180,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				frozen: true
+			},
+			{
+				title: "(a) Ransomed Using Tech", field: "a", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return Number(c.getValue()).toLocaleString(); }
+			},
+			{
+				title: "(b) Ransomed‑NoTech", field: "b", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return Number(c.getValue()).toLocaleString(); }
+			},
+			{
+				title: "(c) NoRansomed‑Tech", field: "c", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return Number(c.getValue()).toLocaleString(); }
+			},
+			{
+				title: "(d) NoRansomed NoTech", field: "d", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return Number(c.getValue()).toLocaleString(); }
+			},
+			{
+				title: "Victims %", field: "victims_pct", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Universe %", field: "universe_pct", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Odds Ratio", field: "OR", hozAlign: "center", minWidth: 110,
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(cell) {
+					var v = cell.getValue();
+					var cls = "or-med";
+					if (v >= 10) cls = "or-high";
+					else if (v < 2) cls = "or-low";
+					return '<span class="or-badge ' + cls + '">' + fmt(v) + '</span>';
+				}
+			},
+			{
+				title: "CI Low", field: "ci_lo", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "CI High", field: "ci_hi", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "p-value", field: "p", hozAlign: "right", minWidth: 115,
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(cell) {
+					var v = cell.getValue();
+					var sig = v < 0.05;
+					return '<span class="' + (sig ? 'p-sig' : 'p-nosig') + '">' + fmtE(v) + '</span>';
+				}
+			}
+		]
+	});
+
+	/* ── Card updates ────────────────────────────── */
+	function updateCards() {
+		var rows = table.getRows("active").map(function(r) { return r.getData(); });
+		var n = rows.length;
+		document.getElementById("rowCount").textContent = n;
+		document.getElementById("totalCount").textContent = allData.length;
+		document.getElementById("card-total").textContent = n;
+
+		if (n === 0) {
+			document.getElementById("card-max-or").textContent = "—";
+			document.getElementById("card-avg-or").textContent = "—";
+			document.getElementById("card-avg-vpct").textContent = "—";
+			document.getElementById("card-sig").textContent = "—";
+			document.getElementById("card-max-or-name").textContent = "";
+			document.getElementById("card-sig-pct").textContent = "";
+			return;
+		}
+
+		var maxOR = -Infinity, maxName = "";
+		var sumOR = 0, sumVpct = 0, sigCount = 0;
+		rows.forEach(function(r) {
+			if (r.OR > maxOR) { maxOR = r.OR; maxName = r.vendor; }
+			sumOR += r.OR;
+			sumVpct += r.victims_pct;
+			if (r.p < 0.05) sigCount++;
+		});
+
+		document.getElementById("card-max-or").textContent = fmt(maxOR);
+		document.getElementById("card-max-or-name").textContent = maxName;
+		document.getElementById("card-avg-or").textContent = fmt(sumOR / n);
+		document.getElementById("card-avg-vpct").textContent = fmt(sumVpct / n) + "%";
+		document.getElementById("card-sig").textContent = sigCount;
+		document.getElementById("card-sig-pct").textContent = ((sigCount / n) * 100).toFixed(1) + "% of filtered";
+	}
+
+	table.on("dataFiltered", function() { setTimeout(updateCards, 0); });
+
+	/* ── Fetch data ──────────────────────────────── */
+	fetch("{{ url_for('api_vendor_or') }}")
+		.then(function(res) { return res.json(); })
+		.then(function(data) {
+			allData = data;
+			table.setData(data).then(function() { updateCards(); });
+		})
+		.catch(function(err) {
+			document.getElementById("or-table").innerHTML =
+				'<div class="alert alert-danger">Failed to load data: ' + err + '</div>';
+		});
+
+	/* ── External filter bar ─────────────────────── */
+	function applyExternalFilters() {
+		var filters = [];
+		var minOR = parseFloat(document.getElementById("filter-min-or").value);
+		var maxOR = parseFloat(document.getElementById("filter-max-or").value);
+		var minVpct = parseFloat(document.getElementById("filter-min-vpct").value);
+		var minA = parseFloat(document.getElementById("filter-min-a").value);
+		var sig = document.getElementById("filter-sig").value;
+
+		if (!isNaN(minOR))   filters.push({ field: "OR", type: ">=", value: minOR });
+		if (!isNaN(maxOR))   filters.push({ field: "OR", type: "<=", value: maxOR });
+		if (!isNaN(minVpct)) filters.push({ field: "victims_pct", type: ">=", value: minVpct });
+		if (!isNaN(minA))    filters.push({ field: "a", type: ">=", value: minA });
+		if (sig === "sig")   filters.push({ field: "p", type: "<", value: 0.05 });
+		if (sig === "nosig") filters.push({ field: "p", type: ">=", value: 0.05 });
+
+		table.setFilter(filters);
+	}
+
+	document.getElementById("filter-min-or").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-max-or").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-min-vpct").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-min-a").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-sig").addEventListener("change", applyExternalFilters);
+
+	document.getElementById("btn-clear-filters").addEventListener("click", function() {
+		document.getElementById("filter-min-or").value = "";
+		document.getElementById("filter-max-or").value = "";
+		document.getElementById("filter-min-vpct").value = "";
+		document.getElementById("filter-min-a").value = "";
+		document.getElementById("filter-sig").value = "";
+		table.clearFilter(true);
+		table.clearHeaderFilter();
+	});
+});
+</script>
+{% endblock %}

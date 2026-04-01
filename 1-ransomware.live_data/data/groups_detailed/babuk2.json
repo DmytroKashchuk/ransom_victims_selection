@@ -1,0 +1,55 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "babuk2",
+  "description": "Babuk Locker 2.0, also known as Bjorka or SkyWave, after failing to make any profit from selling public databases on forums, decided to impersonate Babuk Ransomware group. He launched a blog where he claimed multiple public breaches from BreachForums as ransomware attacks",
+  "added_date": null,
+  "victims": 180,
+  "firstseen": "2021-02-01",
+  "lastseen": "2025-04-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "7dikawx73goypgfi4zyo5fcajxwb7agemmiwqax3p54aey4dwobcvcyd.onion",
+      "title": "Babuk - Leaks site",
+      "slug": "http://7dikawx73goypgfi4zyo5fcajxwb7agemmiwqax3p54aey4dwobcvcyd.onion/",
+      "available": false,
+      "updated": "2025-01-29 16:21:25.247171",
+      "lastscrape": "2025-06-01 21:18:18.216547",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "bxwu33iefqfc3rxigynn3ghvq4gdw3gxgxna5m4aa3o4vscdeeqhiqad.onion",
+      "title": "Babuk - Leaks site",
+      "slug": "http://bxwu33iefqfc3rxigynn3ghvq4gdw3gxgxna5m4aa3o4vscdeeqhiqad.onion/",
+      "available": false,
+      "updated": "2025-04-04 19:02:02.909767",
+      "lastscrape": "2025-06-01 21:18:29.803598",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "212.24.99.211.",
+      "title": "",
+      "slug": "http://212.24.99.211/",
+      "available": false,
+      "updated": "2025-05-06 06:01:10.028399",
+      "lastscrape": "2025-06-05 06:30:16.544298",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "5g2e.l.time4vps.cloud",
+      "title": "",
+      "slug": "http://5g2e.l.time4vps.cloud/",
+      "available": false,
+      "updated": "2025-05-06 05:31:44.653571",
+      "lastscrape": "2025-06-05 06:00:35.960561",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/babuk2"
+}

@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% block title %}CPE ↔ SWDB Merged{% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stats-bar {
+		font-size: .82rem;
+		color: #666;
+		margin-bottom: .5rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#merged-table {
+		font-size: .85rem;
+	}
+	.status-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-size: .78rem;
+		font-weight: 600;
+		min-width: 28px;
+		text-align: center;
+	}
+	.status-both     { background: #d1e7dd; color: #0f5132; }
+	.status-cpe-only { background: #cfe2ff; color: #084298; }
+	.status-swdb-only{ background: #fff3cd; color: #664d03; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">CPE ↔ SWDB Merged Vendors</h4>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Total Vendors</div>
+			<div class="stat-sub">visible rows</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-both">-</div>
+			<div class="stat-label">Both</div>
+			<div class="stat-sub">in CPE &amp; SWDB</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-cpe-only">-</div>
+			<div class="stat-label">CPE Only</div>
+			<div class="stat-sub">not in SWDB</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-swdb-only">-</div>
+			<div class="stat-label">SWDB Only</div>
+			<div class="stat-sub">not in CPE</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-total-cpe-products">-</div>
+			<div class="stat-label">CPE Products</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-total-swdb-products">-</div>
+			<div class="stat-label">SWDB Products</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-status">Match Status</label>
+			<select id="filter-status">
+				<option value="">All</option>
+				<option value="Both">Both</option>
+				<option value="CPE Only">CPE Only</option>
+				<option value="SWDB Only">SWDB Only</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-min-cpe">Min CPE Products</label>
+			<input type="number" id="filter-min-cpe" placeholder="e.g. 10" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-min-swdb">Min SWDB Products</label>
+			<input type="number" id="filter-min-swdb" placeholder="e.g. 1" step="1">
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear Filters</button>
+		</div>
+	</div>
+
+	<div class="stats-bar">
+		Showing <strong id="rowCount">0</strong> of <strong id="totalCount">0</strong> records
+	</div>
+
+	<div id="merged-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var allData = [];
+	var fmt = function(v) { return v == null ? "—" : Number(v).toLocaleString(); };
+
+	function statusFormatter(cell) {
+		var v = cell.getValue();
+		if (!v) return "";
+		var cls = {
+			"Both":      "status-both",
+			"CPE Only":  "status-cpe-only",
+			"SWDB Only": "status-swdb-only"
+		}[v] || "";
+		return '<span class="status-badge ' + cls + '">' + v + '</span>';
+	}
+
+	var table = new Tabulator("#merged-table", {
+		height: "62vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "CPE_Products", dir: "desc" }],
+		columns: [
+			{
+				title: "CPE Vendor", field: "CPE_VendorName", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				frozen: true
+			},
+			{
+				title: "SWDB Vendor", field: "SWDB_VendorName", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "CPE Products", field: "CPE_Products", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "SWDB Products", field: "SWDB_Products", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Match Status", field: "Match_Status", hozAlign: "center", minWidth: 120,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: statusFormatter
+			}
+		]
+	});
+
+	/* ── Card updates ────────────────────────────── */
+	function updateCards() {
+		var rows = table.getRows("active").map(function(r) { return r.getData(); });
+		var n = rows.length;
+		document.getElementById("rowCount").textContent = n;
+		document.getElementById("totalCount").textContent = allData.length;
+		document.getElementById("card-total").textContent = n.toLocaleString();
+
+		if (n === 0) {
+			["card-both","card-cpe-only","card-swdb-only","card-total-cpe-products","card-total-swdb-products"]
+				.forEach(function(id) { document.getElementById(id).textContent = "—"; });
+			return;
+		}
+
+		var both = 0, cpeOnly = 0, swdbOnly = 0, sumCpe = 0, sumSwdb = 0;
+		rows.forEach(function(r) {
+			var s = r.Match_Status;
+			if (s === "Both") both++;
+			else if (s === "CPE Only") cpeOnly++;
+			else if (s === "SWDB Only") swdbOnly++;
+			sumCpe  += (r.CPE_Products || 0);
+			sumSwdb += (r.SWDB_Products || 0);
+		});
+
+		document.getElementById("card-both").textContent = both.toLocaleString();
+		document.getElementById("card-cpe-only").textContent = cpeOnly.toLocaleString();
+		document.getElementById("card-swdb-only").textContent = swdbOnly.toLocaleString();
+		document.getElementById("card-total-cpe-products").textContent = sumCpe.toLocaleString();
+		document.getElementById("card-total-swdb-products").textContent = sumSwdb.toLocaleString();
+	}
+
+	table.on("dataFiltered", function() { setTimeout(updateCards, 0); });
+
+	/* ── Fetch data ──────────────────────────────── */
+	fetch("{{ url_for('api_cpe_swdb_merged') }}")
+		.then(function(res) { return res.json(); })
+		.then(function(data) {
+			allData = data;
+			table.setData(data).then(function() { updateCards(); });
+		})
+		.catch(function(err) {
+			document.getElementById("merged-table").innerHTML =
+				'<div class="alert alert-danger">Failed to load data: ' + err + '</div>';
+		});
+
+	/* ── External filter bar ─────────────────────── */
+	function applyExternalFilters() {
+		var filters = [];
+		var status = document.getElementById("filter-status").value;
+		var minCpe = parseFloat(document.getElementById("filter-min-cpe").value);
+		var minSwdb = parseFloat(document.getElementById("filter-min-swdb").value);
+
+		if (status)          filters.push({ field: "Match_Status", type: "=", value: status });
+		if (!isNaN(minCpe))  filters.push({ field: "CPE_Products", type: ">=", value: minCpe });
+		if (!isNaN(minSwdb)) filters.push({ field: "SWDB_Products", type: ">=", value: minSwdb });
+
+		table.setFilter(filters);
+	}
+
+	document.getElementById("filter-status").addEventListener("change", applyExternalFilters);
+	document.getElementById("filter-min-cpe").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-min-swdb").addEventListener("input", applyExternalFilters);
+
+	document.getElementById("btn-clear-filters").addEventListener("click", function() {
+		document.getElementById("filter-status").value = "";
+		document.getElementById("filter-min-cpe").value = "";
+		document.getElementById("filter-min-swdb").value = "";
+		table.clearFilter(true);
+		table.clearHeaderFilter();
+	});
+});
+</script>
+{% endblock %}

@@ -1,0 +1,143 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ralord",
+  "description": null,
+  "added_date": null,
+  "victims": 19,
+  "firstseen": "2025-03-22",
+  "lastseen": "2025-04-27",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ralordqe33mpufkpsr6zkdatktlu3t2uei4ught3sitxgtzfmqmbsuyd.onion",
+      "title": "New upgrade for Brand",
+      "slug": "http://ralordqe33mpufkpsr6zkdatktlu3t2uei4ught3sitxgtzfmqmbsuyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:20.753254",
+      "lastscrape": "2026-02-18 18:01:20.753254",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:20+00:00",
+        "start_url": "http://ralordqe33mpufkpsr6zkdatktlu3t2uei4ught3sitxgtzfmqmbsuyd.onion",
+        "final_url": "http://ralordqe33mpufkpsr6zkdatktlu3t2uei4ught3sitxgtzfmqmbsuyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:06:48 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Sun, 27 Apr 2025 19:42:28 GMT",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"680e88a4-3979\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ralord3htj7v2dkavss2hjzviviwgsf4anfdnihn5qcjl6eb5if3cuqd.onion",
+      "title": "New upgrade for Brand",
+      "slug": "http://ralord3htj7v2dkavss2hjzviviwgsf4anfdnihn5qcjl6eb5if3cuqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:02:59.218347",
+      "lastscrape": "2026-02-18 18:02:59.218347",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:03:12+00:00",
+        "start_url": "http://ralord3htj7v2dkavss2hjzviviwgsf4anfdnihn5qcjl6eb5if3cuqd.onion",
+        "final_url": "http://ralord3htj7v2dkavss2hjzviviwgsf4anfdnihn5qcjl6eb5if3cuqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:08:23 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Sun, 27 Apr 2025 19:42:28 GMT",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"680e88a4-3979\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ralordt7gywtkkkkq2suldao6mpibsb7cpjvdfezpzwgltyj2laiuuid.onion",
+      "title": "New upgrade for Brand",
+      "slug": "http://ralordt7gywtkkkkq2suldao6mpibsb7cpjvdfezpzwgltyj2laiuuid.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:05.409721",
+      "lastscrape": "2026-02-18 19:02:05.409721",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:05+00:00",
+        "start_url": "http://ralordt7gywtkkkkq2suldao6mpibsb7cpjvdfezpzwgltyj2laiuuid.onion",
+        "final_url": "http://ralordt7gywtkkkkq2suldao6mpibsb7cpjvdfezpzwgltyj2laiuuid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:07:18 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Sun, 27 Apr 2025 19:42:28 GMT",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"680e88a4-3979\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "novazzitmugtbjwuttc5hhsemkmvwh3iyt27oeeunu5mkw62qpfeykid.onion",
+      "title": "Nova Panel | Login",
+      "slug": "http://novazzitmugtbjwuttc5hhsemkmvwh3iyt27oeeunu5mkw62qpfeykid.onion",
+      "available": false,
+      "updated": "2025-07-11 21:31:45.762434",
+      "lastscrape": "2025-08-10 22:03:21.583382",
+      "type": "Admin"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/ralord"
+}

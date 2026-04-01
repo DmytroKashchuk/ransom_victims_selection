@@ -1,0 +1,75 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "nokoyawa",
+  "description": null,
+  "added_date": null,
+  "victims": 36,
+  "firstseen": "2022-12-09",
+  "lastseen": "2023-08-04",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "FileZilla"
+    ],
+    "RMM-Tools": [
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion",
+      "title": "NOKOYAWA Leaks",
+      "slug": "http://lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion/",
+      "available": false,
+      "updated": "2022-07-11 22:26:00.512463",
+      "lastscrape": "2025-06-01 21:18:50.840017",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "6yofnrq7evqrtz3tzi3dkbrdovtywd35lx3iqbc5dyh367nrdh4jgfyd.onion",
+      "title": "NOKOYAWA Leaks",
+      "slug": "http://6yofnrq7evqrtz3tzi3dkbrdovtywd35lx3iqbc5dyh367nrdh4jgfyd.onion/",
+      "available": false,
+      "updated": "2023-01-25 21:03:24.406177",
+      "lastscrape": "2025-06-01 21:18:55.521603",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "noko65rmtaiqyt2cw2h4jrxe3u56t2k7ov3nd22hoji4c5vnfib2i4yd.onion",
+      "title": null,
+      "slug": "http://noko65rmtaiqyt2cw2h4jrxe3u56t2k7ov3nd22hoji4c5vnfib2i4yd.onion/api/leaks/get",
+      "available": false,
+      "updated": "2023-10-08 08:17:23.902364",
+      "lastscrape": "2025-06-01 21:19:07.731195",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "nokoleakb76znymx443veg4n6fytx6spck6pc7nkr4dvfuygpub6jsid.onion",
+      "title": "Wall of Shame",
+      "slug": "http://nokoleakb76znymx443veg4n6fytx6spck6pc7nkr4dvfuygpub6jsid.onion",
+      "available": false,
+      "updated": "2023-10-08 08:17:50.784571",
+      "lastscrape": "2025-06-01 21:19:24.716018",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/nokoyawa"
+}

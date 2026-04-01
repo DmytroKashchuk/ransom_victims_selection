@@ -1,0 +1,61 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "kyber",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "kyblogtz6k3jtxnjjvluee5ec4g3zcnvyvbgsnq5thumphmqidkt7xid.onion",
+      "title": "CAPTCHA Verification",
+      "slug": "http://kyblogtz6k3jtxnjjvluee5ec4g3zcnvyvbgsnq5thumphmqidkt7xid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:01.662046",
+      "lastscrape": "2026-02-18 18:32:01.662046",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:01+00:00",
+        "start_url": "http://kyblogtz6k3jtxnjjvluee5ec4g3zcnvyvbgsnq5thumphmqidkt7xid.onion",
+        "final_url": "http://kyblogtz6k3jtxnjjvluee5ec4g3zcnvyvbgsnq5thumphmqidkt7xid.onion/verify-captcha",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "/verify-captcha"
+          }
+        ],
+        "fingerprint": {
+          "server": "gunicorn",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "6952",
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "gunicorn",
+          "date": "Wed, 18 Feb 2026 18:32:03 GMT",
+          "connection": "close",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "6952",
+          "vary": "Cookie",
+          "set-cookie": "session=.eJwNzMEKgzAMgOF3yXkw161N4nvs4qXUmiAoOtoKwvDdzfWH7_9D1CJ1hl7TWuUBOf1anlNscjboYaAvvcFyLRrbvshmcRRm54hDRq9OkkPOLww-jNR1RIQfRj_pZG6zTTzKauoJ1w2SjyE6.aZYFow.fy_eYMmFBv1O6WcMIphTzt3MKak; HttpOnly; Path=/"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/kyber"
+}

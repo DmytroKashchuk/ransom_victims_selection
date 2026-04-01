@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "bert",
+  "description": null,
+  "added_date": null,
+  "victims": 7,
+  "firstseen": "2025-04-04",
+  "lastseen": "2025-06-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "bertblogsoqmm4ow7nqyh5ik7etsmefdbf25stauecytvwy7tkgizhad.onion",
+      "title": "BERT",
+      "slug": "http://bertblogsoqmm4ow7nqyh5ik7etsmefdbf25stauecytvwy7tkgizhad.onion",
+      "available": false,
+      "updated": "2025-08-02 18:31:20.075425",
+      "lastscrape": "2025-09-01 19:00:30.821654",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-01T19:00:30+00:00",
+        "start_url": "http://bertblogsoqmm4ow7nqyh5ik7etsmefdbf25stauecytvwy7tkgizhad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/bert"
+}

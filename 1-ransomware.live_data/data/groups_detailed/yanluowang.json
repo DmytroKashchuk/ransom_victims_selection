@@ -1,0 +1,61 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "yanluowang",
+  "description": "According to PCrisk, Yanluowang is ransomware that encrypts (and renames) files, ends all running processes, stops services, and creates the README.txt file containing a ransom note. It appends the .yanluowang extension to filenames. Cybercriminals behind Yanluowang are targeting enterprise entities and organizations in the financial sector.Files encrypted by Yanluowang can be decrypted with this tool (it is possible to decrypt all files if the original file is larger than 3GB. If the original file is smaller than 3GB, then only smaller files can be decrypted).",
+  "added_date": null,
+  "victims": 6,
+  "firstseen": "2022-07-02",
+  "lastseen": "2022-08-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "LogMeIn",
+      "ScreenConnect",
+      "TeamViewer"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Cent Browser",
+      "S3 Browser",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Chisel"
+    ],
+    "CredentialTheft": [
+      "GrabChrome",
+      "GrabFF",
+      "KeeThief",
+      "Mimikatz",
+      "NirSoft WebBrowserPassView"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "Impacket"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "NTDS Utility (ntdsutil)",
+      "PsExec",
+      "Windows Event Utility (wevtutil)"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "jukswsxbh3jsxuddvidrjdvwuohtsy4kxg2axbppiyclomt2qciyfoad.onion",
+      "title": "Yanluowang",
+      "slug": "http://jukswsxbh3jsxuddvidrjdvwuohtsy4kxg2axbppiyclomt2qciyfoad.onion",
+      "available": false,
+      "updated": "2022-11-01 16:59:51.449368",
+      "lastscrape": "2025-06-01 21:18:46.501452",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/yanluowang"
+}

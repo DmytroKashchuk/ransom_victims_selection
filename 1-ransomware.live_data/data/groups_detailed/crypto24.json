@@ -1,0 +1,67 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "crypto24",
+  "description": null,
+  "added_date": null,
+  "victims": 38,
+  "firstseen": "2023-12-13",
+  "lastseen": "2026-02-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "j5o5y2feotmhvr7cbcp2j2ewayv5mn5zenl3joqwx67gtfchhezjznad.onion",
+      "title": "CRYPTO24 | Data Leak Site",
+      "slug": "http://j5o5y2feotmhvr7cbcp2j2ewayv5mn5zenl3joqwx67gtfchhezjznad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:48.028368",
+      "lastscrape": "2026-02-18 18:31:48.028368",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:48+00:00",
+        "start_url": "http://j5o5y2feotmhvr7cbcp2j2ewayv5mn5zenl3joqwx67gtfchhezjznad.onion",
+        "final_url": "http://j5o5y2feotmhvr7cbcp2j2ewayv5mn5zenl3joqwx67gtfchhezjznad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": "Express",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "same-origin"
+          }
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 18:31:48 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "x-powered-by": "Express",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "vary": "Origin",
+          "access-control-allow-credentials": "true",
+          "cache-control": "public, max-age=0",
+          "last-modified": "Sat, 31 Jan 2026 03:47:52 GMT",
+          "etag": "W/\"894-19c122a0e40\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/crypto24"
+}

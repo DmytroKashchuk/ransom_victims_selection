@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "insane",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2024-01-17",
+  "lastseen": "2024-01-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "nv5lbsrr4rxmewzmpe25nnalowe4ga7ki6yfvit3wlpu7dfc36pyh4ad.onion",
+      "title": "Going insane",
+      "slug": "http://nv5lbsrr4rxmewzmpe25nnalowe4ga7ki6yfvit3wlpu7dfc36pyh4ad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:09:23.588293",
+      "lastscrape": "2025-06-01 21:19:05.097892",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "gfksiwpsqudibondm6o2ipxymaonehq3l26qpgqr3nh4jvcyayvogcid.onion",
+      "title": "Going insane",
+      "slug": "http://gfksiwpsqudibondm6o2ipxymaonehq3l26qpgqr3nh4jvcyayvogcid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:09:28.316489",
+      "lastscrape": "2025-06-01 21:19:13.957035",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "r2ad4ayrgpf7og673lhrw5oqyvqg4em2fpialk7l7gxkasvqkqow4qad.onion",
+      "title": "Going insane",
+      "slug": "http://r2ad4ayrgpf7og673lhrw5oqyvqg4em2fpialk7l7gxkasvqkqow4qad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:09:33.879480",
+      "lastscrape": "2025-06-01 21:19:27.607388",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/insane"
+}

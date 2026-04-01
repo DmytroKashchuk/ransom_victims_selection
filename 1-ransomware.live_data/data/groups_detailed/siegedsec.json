@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "siegedsec",
+  "description": "Not a ransomware group but a hacktivist group that appeared coincidentally days before Russia’s invasion of Ukraine",
+  "added_date": null,
+  "victims": 19,
+  "firstseen": "2023-11-26",
+  "lastseen": "2023-12-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "nv5p2mmpctvyqdyyi5zwh4gnifq2uxdx4etvnmaheqlrw6ordrjwxryd.onion",
+      "title": null,
+      "slug": "http://nv5p2mmpctvyqdyyi5zwh4gnifq2uxdx4etvnmaheqlrw6ordrjwxryd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:46:40.237464",
+      "lastscrape": "2025-06-01 21:19:11.577289",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/siegedsec"
+}

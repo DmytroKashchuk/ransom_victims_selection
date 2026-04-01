@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "losttrust",
+  "description": null,
+  "added_date": null,
+  "victims": 53,
+  "firstseen": "2023-09-26",
+  "lastseen": "2023-09-26",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "hscr6cjzhgoybibuzn2xud7u4crehuoo4ykw3swut7m7irde74hdfzyd.onion",
+      "title": "LostTrust home",
+      "slug": "http://hscr6cjzhgoybibuzn2xud7u4crehuoo4ykw3swut7m7irde74hdfzyd.onion",
+      "available": false,
+      "updated": "2023-11-02 08:08:18.329910",
+      "lastscrape": "2025-06-01 21:18:42.601559",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/losttrust"
+}

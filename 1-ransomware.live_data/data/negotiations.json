@@ -1,0 +1,106 @@
+{
+    "client": "dmk6603@utulsa.edu",
+    "count": 25,
+    "groups": [
+        {
+            "group": "Akira",
+            "chats": 61
+        },
+        {
+            "group": "Avaddon",
+            "chats": 7
+        },
+        {
+            "group": "Avos",
+            "chats": 1
+        },
+        {
+            "group": "Babuk",
+            "chats": 2
+        },
+        {
+            "group": "BlackBasta",
+            "chats": 5
+        },
+        {
+            "group": "BlackMatter",
+            "chats": 2
+        },
+        {
+            "group": "Cloak",
+            "chats": 2
+        },
+        {
+            "group": "Conti",
+            "chats": 32
+        },
+        {
+            "group": "Darkside",
+            "chats": 5
+        },
+        {
+            "group": "Dragonforce",
+            "chats": 17
+        },
+        {
+            "group": "Hive",
+            "chats": 8
+        },
+        {
+            "group": "Hunters International",
+            "chats": 1
+        },
+        {
+            "group": "Mallox",
+            "chats": 3
+        },
+        {
+            "group": "Nightspire",
+            "chats": 4
+        },
+        {
+            "group": "NoEscape",
+            "chats": 2
+        },
+        {
+            "group": "Pear",
+            "chats": 1
+        },
+        {
+            "group": "Qilin",
+            "chats": 2
+        },
+        {
+            "group": "REvil",
+            "chats": 20
+        },
+        {
+            "group": "RansomHub",
+            "chats": 1
+        },
+        {
+            "group": "Ranzy",
+            "chats": 2
+        },
+        {
+            "group": "RunSomeWares",
+            "chats": 1
+        },
+        {
+            "group": "fog",
+            "chats": 6
+        },
+        {
+            "group": "lockbit3.0",
+            "chats": 45
+        },
+        {
+            "group": "mount-locker",
+            "chats": 1
+        },
+        {
+            "group": "trinity",
+            "chats": 14
+        }
+    ]
+}

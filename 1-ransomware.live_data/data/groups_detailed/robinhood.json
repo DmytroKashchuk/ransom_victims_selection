@@ -1,0 +1,54 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "robinhood",
+  "description": "",
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2021-12-06",
+  "lastseen": "2021-12-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "robinhoodleaks.tumblr.com",
+      "title": "Trending topics on Tumblr",
+      "slug": "https://robinhoodleaks.tumblr.com",
+      "available": true,
+      "updated": "2026-02-18 19:01:22.440476",
+      "lastscrape": "2026-02-18 19:01:22.440476",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:22+00:00",
+        "start_url": "https://robinhoodleaks.tumblr.com",
+        "final_url": "https://robinhoodleaks.tumblr.com",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "application/octet-stream",
+          "content_length": "11",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:23 GMT",
+          "content-type": "application/octet-stream",
+          "content-length": "11",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/robinhood"
+}

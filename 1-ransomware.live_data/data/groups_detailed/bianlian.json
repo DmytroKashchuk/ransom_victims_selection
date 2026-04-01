@@ -1,0 +1,164 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "bianlian",
+  "description": "BianLian ransomware operations began in late 2021. The group practices multi-pronged extortion, demanding payment for a decryptor, as well as the non-release of stolen data. The ransomware group hosts a public, TOR-based, blog to post victim identities and stolen data. Somewhat unique to BianLian at the time of their launch was their inclusion of an I2P mirror for their blog.",
+  "added_date": null,
+  "victims": 553,
+  "firstseen": "2022-07-14",
+  "lastseen": "2025-03-31",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "User Execution",
+          "technique_id": "T1204",
+          "technique_details": "An adversary may rely upon specific actions by a user in order to gain execution."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter",
+          "technique_id": "T1059",
+          "technique_details": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Virtualization/Sandbox Evasion",
+          "technique_id": "T1497",
+          "technique_details": "Adversaries may employ various means to detect and avoid virtualization and analysis environments."
+        },
+        {
+          "technique_name": "Software Packing",
+          "technique_id": "T1027.002",
+          "technique_details": "Adversaries may perform software packing or virtual machine software protection to conceal their code."
+        },
+        {
+          "technique_name": "Masquerading",
+          "technique_id": "T1036",
+          "technique_details": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "System Information Discovery",
+          "technique_id": "T1082",
+          "technique_details": "An adversary may attempt to get detailed information about the operating system and hardware, including version, patches, hotfixes, service packs, and architecture."
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Adversaries may enumerate files and directories or may search in specific locations of a host or network share for certain information within a file system."
+        },
+        {
+          "technique_name": "Security Software Discovery",
+          "technique_id": "T1518.001",
+          "technique_details": "Adversaries may attempt to get a listing of security software, configurations, defensive tools, and sensors that are installed on a system or in a cloud environment."
+        },
+        {
+          "technique_name": "Peripheral Device Discovery",
+          "technique_id": "T1120",
+          "technique_details": "Adversaries may attempt to gather information about attached peripheral devices and components connected to a computer system."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Adversaries may encrypt data on target systems or on large numbers of systems in a network to interrupt availability to system and network resources."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Replication Through Removable Media",
+          "technique_id": "T1091",
+          "technique_details": "Adversaries may move onto systems, possibly those on disconnected or air-gapped networks, by copying malware to removable media and taking advantage of Autorun features when the media is inserted into a system and executes."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "AmmyyAdmin",
+      "Atera",
+      "ScreenConnect",
+      "Splashtop",
+      "TeamViewer"
+    ],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner",
+      "Advanced Port Scanner",
+      "PingCastle",
+      "SharpShares",
+      "SoftPerfect NetScan",
+      "WKTools"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "RDP Recognizer"
+    ],
+    "Offsec": [
+      "Impacket"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion",
+      "title": "BianLian | Home",
+      "slug": "http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion",
+      "available": false,
+      "updated": "2025-04-02 09:31:13.440598",
+      "lastscrape": "2025-06-01 21:18:19.160799",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "bianlivemqbawcco4cx4a672k2fip3guyxudzurfqvdszafam3ofqgqd.onion",
+      "title": "BianLian | Home",
+      "slug": "http://bianlivemqbawcco4cx4a672k2fip3guyxudzurfqvdszafam3ofqgqd.onion",
+      "available": false,
+      "updated": "2025-04-03 08:31:28.212030",
+      "lastscrape": "2025-06-01 21:18:29.519034",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "bianliaoxoeriowgqohcly4a6sbkpc3se2yvxgidxomxlpuhx5ehrpad.onion",
+      "title": "",
+      "slug": "http://bianliaoxoeriowgqohcly4a6sbkpc3se2yvxgidxomxlpuhx5ehrpad.onion",
+      "available": false,
+      "updated": "2025-02-10 00:22:34.248851",
+      "lastscrape": "2025-06-01 21:18:36.546120",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/bianlian"
+}

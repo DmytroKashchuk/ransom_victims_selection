@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "qiulong",
+  "description": null,
+  "added_date": null,
+  "victims": 8,
+  "firstseen": "2024-04-19",
+  "lastseen": "2024-06-24",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "62brsjf2w77ihz5paods33cdgqnon54gjns5nmag3hmqv6fcwamtkmad.onion",
+      "title": null,
+      "slug": "http://62brsjf2w77ihz5paods33cdgqnon54gjns5nmag3hmqv6fcwamtkmad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:36:18.630858",
+      "lastscrape": "2025-06-01 21:18:24.399131",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/qiulong"
+}

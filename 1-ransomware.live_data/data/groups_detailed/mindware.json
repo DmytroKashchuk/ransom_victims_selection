@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mindware",
+  "description": "Ransomware, potential rebranding of win.sfile.\n",
+  "added_date": null,
+  "victims": 13,
+  "firstseen": "2022-05-05",
+  "lastseen": "2022-05-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "dfpc7yvle5kxmgg6sbcp5ytggy3oeob676bjgwcwhyr2pwcrmbvoilqd.onion",
+      "title": "DataLeakBlog",
+      "slug": "https://dfpc7yvle5kxmgg6sbcp5ytggy3oeob676bjgwcwhyr2pwcrmbvoilqd.onion/",
+      "available": false,
+      "updated": "2022-08-16 10:33:38.900675",
+      "lastscrape": "2025-06-01 21:19:12.377782",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/mindware"
+}

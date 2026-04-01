@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "bonacigroup",
+  "description": null,
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2021-10-04",
+  "lastseen": "2021-12-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "bonacifryrxr4siz6ptvokuihdzmjzpveruklxumflz5thmkgauty2qd.onion",
+      "title": "502 Bad Gateway",
+      "slug": "http://bonacifryrxr4siz6ptvokuihdzmjzpveruklxumflz5thmkgauty2qd.onion",
+      "available": false,
+      "updated": "2021-12-28 14:14:45.463150",
+      "lastscrape": "2025-06-01 21:18:20.852567",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/bonacigroup"
+}

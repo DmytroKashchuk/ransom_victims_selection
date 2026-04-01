@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "synack",
+  "description": "",
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2021-03-21",
+  "lastseen": "2021-03-21",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "xqkz2rmrqkeqf6sjbrb47jfwnqxcd4o2zvaxxzrpbh2piknms37rw2ad.onion",
+      "title": "end of game",
+      "slug": "http://xqkz2rmrqkeqf6sjbrb47jfwnqxcd4o2zvaxxzrpbh2piknms37rw2ad.onion/",
+      "updated": "2021-09-08 00:03:21.496917",
+      "lastscrape": "2025-06-01 21:19:12.536930",
+      "available": false,
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/synack"
+}

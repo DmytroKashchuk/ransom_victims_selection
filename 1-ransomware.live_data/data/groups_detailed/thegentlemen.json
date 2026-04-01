@@ -1,0 +1,58 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "thegentlemen",
+  "description": null,
+  "added_date": null,
+  "victims": 180,
+  "firstseen": "2023-02-28",
+  "lastseen": "2026-02-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "tezwsse5czllksjb7cwp65rvnk4oobmzti2znn42i43bjdfd2prqqkad.onion",
+      "title": "The Gentlemen",
+      "slug": "http://tezwsse5czllksjb7cwp65rvnk4oobmzti2znn42i43bjdfd2prqqkad.onion",
+      "available": false,
+      "updated": "2026-02-18 14:02:28.792172",
+      "lastscrape": "2026-02-18 19:01:42.086561",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T14:02:28+00:00",
+        "start_url": "http://tezwsse5czllksjb7cwp65rvnk4oobmzti2znn42i43bjdfd2prqqkad.onion",
+        "final_url": "http://tezwsse5czllksjb7cwp65rvnk4oobmzti2znn42i43bjdfd2prqqkad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 14:02:30 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "content-disposition": "inline; filename=index.html",
+          "last-modified": "Mon, 16 Feb 2026 12:23:42 GMT",
+          "cache-control": "no-cache",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/thegentlemen"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cryptbb",
+  "description": null,
+  "added_date": null,
+  "victims": 8,
+  "firstseen": "2022-04-03",
+  "lastseen": "2023-08-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "crypuglupv3bsqnbt5ruu5lgwrwoaojscwhuoccbmbzmcidft5kiccqd.onion",
+      "title": "Home",
+      "slug": "http://crypuglupv3bsqnbt5ruu5lgwrwoaojscwhuoccbmbzmcidft5kiccqd.onion",
+      "available": false,
+      "updated": "2023-09-20 03:17:28.330486",
+      "lastscrape": "2025-06-01 21:18:31.424207",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/cryptbb"
+}

@@ -1,0 +1,54 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "avaddon",
+  "description": "Avaddon is a ransomware malware targeting Windows systems often spread via malicious spam. The first known attack where Avaddon ransomware was distributed was in February 2020. Avaddon encrypts files using the extension .avdn and uses a TOR payment site for the ransom payment.",
+  "added_date": null,
+  "victims": 147,
+  "firstseen": "2021-02-01",
+  "lastseen": "2021-09-09",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Anonfiles",
+      "MEGA",
+      "ProtonMail",
+      "Sendspace"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz",
+      "SharpDump"
+    ],
+    "Offsec": [
+      "PowerShell Empire",
+      "PowerSploit"
+    ],
+    "DefenseEvasion": [
+      "GMER",
+      "PowerTool",
+      "TDSSKiller"
+    ],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "avaddongun7rngel.onion",
+      "title": null,
+      "slug": "http://avaddongun7rngel.onion",
+      "available": false,
+      "updated": "2021-09-08 00:04:04.125800",
+      "lastscrape": "2025-06-01 21:18:12.360722",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 7,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/avaddon"
+}

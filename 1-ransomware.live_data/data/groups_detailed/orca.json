@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "orca",
+  "description": null,
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2024-09-16",
+  "lastseen": "2025-05-07",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "orca66hwnpciepupe5626k2ib6dds6zizjwuuashz67usjps2wehz4id.onion",
+      "title": "Leaks",
+      "slug": "http://orca66hwnpciepupe5626k2ib6dds6zizjwuuashz67usjps2wehz4id.onion",
+      "available": false,
+      "updated": "2026-02-03 14:31:31.442261",
+      "lastscrape": "2026-02-18 19:00:25.026477",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:25+00:00",
+        "start_url": "http://orca66hwnpciepupe5626k2ib6dds6zizjwuuashz67usjps2wehz4id.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/orca"
+}

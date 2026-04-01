@@ -1,0 +1,230 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "devman",
+  "description": "Former RansomHub and INC Ransom affiliate.",
+  "added_date": null,
+  "victims": 187,
+  "firstseen": "2023-06-07",
+  "lastseen": "2026-02-03",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Exploitation of Remote Services",
+          "technique_id": "T1210",
+          "technique_details": "Use of the MS17-010 (EternalBlue) exploit."
+        },
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "Use of valid credentials (malharbi) to access systems."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "PowerShell",
+          "technique_id": "T1059.001",
+          "technique_details": "Execution of PowerShell commands to extract files."
+        },
+        {
+          "technique_name": "Exploitation for Client Execution",
+          "technique_id": "T1203",
+          "technique_details": "Command execution using MS17-010 via Metasploit."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "Maintaining access with created administrator account."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Exploitation for Privilege Escalation",
+          "technique_id": "T1068",
+          "technique_details": "Escalation to SYSTEM privileges."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Masquerading",
+          "technique_id": "T1036",
+          "technique_details": "Use of an innocuous name for the ransomware payload (iamdidy.e)."
+        },
+        {
+          "technique_name": "Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "No security tools detected on target systems."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "OS Credential Dumping",
+          "technique_id": "T1003",
+          "technique_details": "Implied by acquisition and use of admin credentials."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Remote System Discovery",
+          "technique_id": "T1018",
+          "technique_details": "Network mapping using CrackMapExec."
+        },
+        {
+          "technique_name": "Network Service Scanning",
+          "technique_id": "T1046",
+          "technique_details": "Scanning IP ranges and SMB services."
+        },
+        {
+          "technique_name": "System Information Discovery",
+          "technique_id": "T1082",
+          "technique_details": "Using tasklist and whoami to collect system info."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "SMB/Windows Admin Shares",
+          "technique_id": "T1021.002",
+          "technique_details": "Lateral movement through SMB confirmed by CME."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0009",
+      "tactic_name": "Collection",
+      "techniques": [
+        {
+          "technique_name": "Data from Local System",
+          "technique_id": "T1005",
+          "technique_details": "File extraction from local system using PowerShell."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration Over C2 Channel",
+          "technique_id": "T1041",
+          "technique_details": "Downloading files like notepad.exe via smbclient."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Encryption of files with .devman extension (changed at operator's request)."
+        },
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "Disabling backups and system recovery."
+        },
+        {
+          "technique_name": "Service Stop",
+          "technique_id": "T1489",
+          "technique_details": "Halting operations and rendering systems unavailable."
+        },
+        {
+          "technique_name": "Defacement",
+          "technique_id": "T1491",
+          "technique_details": "Ransom notes (ransom.txt) deployed across infected systems."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "qljmlmp4psnn3wqskkf3alqquatymo6hntficb4rhq5n76kuogcv7zyd.onion",
+      "title": "Devman's Place",
+      "slug": "http://qljmlmp4psnn3wqskkf3alqquatymo6hntficb4rhq5n76kuogcv7zyd.onion",
+      "available": false,
+      "updated": "2025-06-16 02:31:17.160523",
+      "lastscrape": "2025-07-16 03:00:28.239157",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "wugurgyscp5rxpihef5vl6b6m5ont3b6sezhl7boboso2enib2k3q6qd.onion",
+      "title": "DEVMAN 2.0 - Leaked Data",
+      "slug": "http://wugurgyscp5rxpihef5vl6b6m5ont3b6sezhl7boboso2enib2k3q6qd.onion",
+      "available": false,
+      "updated": "2025-09-29 08:01:36.101264",
+      "lastscrape": "2025-10-29 08:30:31.623945",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-10-29T08:30:32+00:00",
+        "start_url": "http://wugurgyscp5rxpihef5vl6b6m5ont3b6sezhl7boboso2enib2k3q6qd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "devmanblggk7ddrtqj3tsocnayow3bwnozab2s4yhv4shpv6ueitjzid.onion",
+      "title": "Devman Ransomware",
+      "slug": "http://devmanblggk7ddrtqj3tsocnayow3bwnozab2s4yhv4shpv6ueitjzid.onion",
+      "available": false,
+      "updated": "2026-02-16 06:31:39.150804",
+      "lastscrape": "2026-02-18 19:00:34.802365",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:35+00:00",
+        "start_url": "http://devmanblggk7ddrtqj3tsocnayow3bwnozab2s4yhv4shpv6ueitjzid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/devman"
+}

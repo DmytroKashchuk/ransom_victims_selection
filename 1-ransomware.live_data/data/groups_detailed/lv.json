@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lv",
+  "description": "LV ransomware group main message: \"Here are companies which didn't meet consumer data protection obligations. They rejected to fix their mistakes, they rejected to protect this data in the case when they could and had to ptotect it. These companies prefered to sell their private information, their employees' and customers' personal data\". Security researchers claim that the LV group is utilizing the REvil ransomware group malware. The LV group claim to have compromised the corporate network of Groupe Reorev.\n",
+  "added_date": null,
+  "victims": 63,
+  "firstseen": "2021-11-22",
+  "lastseen": "2022-11-27",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "rbvuetuneohce3ouxjlbxtimyyxokb4btncxjbo44fbgxqy7tskinwad.onion",
+      "title": null,
+      "slug": "http://rbvuetuneohce3ouxjlbxtimyyxokb4btncxjbo44fbgxqy7tskinwad.onion/api/posts/1",
+      "available": false,
+      "updated": "2024-12-31 10:19:28.908879",
+      "lastscrape": "2025-06-01 21:19:12.336863",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "4qbxi3i2oqmyzxsjg4fwe4aly3xkped52gq5orp6efpkeskvchqe27id.onion",
+      "title": "Start-maximized.com",
+      "slug": "http://4qbxi3i2oqmyzxsjg4fwe4aly3xkped52gq5orp6efpkeskvchqe27id.onion/",
+      "available": false,
+      "updated": "2021-12-02 13:09:34.120089",
+      "lastscrape": "2025-06-01 21:19:24.406546",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/lv"
+}

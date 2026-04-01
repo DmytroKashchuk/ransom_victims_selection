@@ -1,0 +1,54 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "moneymessage",
+  "description": null,
+  "added_date": null,
+  "victims": 29,
+  "firstseen": "2023-01-04",
+  "lastseen": "2026-01-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "blogvl7tjyjvsfthobttze52w36wwiz34hrfcmorgvdzb6hikucb7aqd.onion",
+      "title": "News",
+      "slug": "http://blogvl7tjyjvsfthobttze52w36wwiz34hrfcmorgvdzb6hikucb7aqd.onion/",
+      "available": true,
+      "updated": "2026-02-18 19:01:17.115436",
+      "lastscrape": "2026-02-18 19:01:17.115436",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:19+00:00",
+        "start_url": "http://blogvl7tjyjvsfthobttze52w36wwiz34hrfcmorgvdzb6hikucb7aqd.onion/",
+        "final_url": "http://blogvl7tjyjvsfthobttze52w36wwiz34hrfcmorgvdzb6hikucb7aqd.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.26.3",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.26.3",
+          "date": "Wed, 18 Feb 2026 19:01:19 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/moneymessage"
+}

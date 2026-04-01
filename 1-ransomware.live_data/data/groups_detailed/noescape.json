@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "noescape",
+  "description": null,
+  "added_date": null,
+  "victims": 126,
+  "firstseen": "2023-06-07",
+  "lastseen": "2023-11-26",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "noescapemsqxvizdxyl7f7rmg5cdjwp33pg2wpmiaaibilb4btwzttad.onion",
+      "title": "NoEscape",
+      "slug": "http://noescapemsqxvizdxyl7f7rmg5cdjwp33pg2wpmiaaibilb4btwzttad.onion",
+      "available": false,
+      "updated": "2023-12-09 09:40:16.480070",
+      "lastscrape": "2025-06-01 21:19:02.152909",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "noescaperjh3gg6oy7rck57fiefyuzmj7kmvojxgvlmwd5pdzizrb7ad.onion",
+      "title": "NoEscape",
+      "slug": "http://noescaperjh3gg6oy7rck57fiefyuzmj7kmvojxgvlmwd5pdzizrb7ad.onion",
+      "available": false,
+      "updated": "2023-12-09 12:37:08.863988",
+      "lastscrape": "2025-06-01 21:19:09.488557",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 2,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/noescape"
+}

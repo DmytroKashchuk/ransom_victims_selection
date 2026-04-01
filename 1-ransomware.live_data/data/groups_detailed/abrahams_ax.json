@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "Abrahams_Ax",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "abrahamm32umasogaqojib3ey2w2nwoafffrguq43tsyke4s3fz3w4yd.onion",
+      "title": "Database Error",
+      "slug": "http://abrahamm32umasogaqojib3ey2w2nwoafffrguq43tsyke4s3fz3w4yd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:38:10.231732",
+      "lastscrape": "2025-06-01 21:18:41.624891",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "abrahams-ax.se",
+      "title": "تبر ابراهیم – Abraham's Ax",
+      "slug": "http://abrahams-ax.se",
+      "available": false,
+      "updated": "2025-03-02 17:31:49.130034",
+      "lastscrape": "2025-06-01 21:19:11.962017",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/abrahams_ax"
+}

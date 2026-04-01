@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dAn0n",
+  "description": null,
+  "added_date": null,
+  "victims": 33,
+  "firstseen": "2024-03-26",
+  "lastseen": "2024-08-23",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "2c7nd54guzi6xhjyqrj5kdkrq2ngm2u3e6oy4nfhn3wm3r54ul2utiqd.onion",
+      "title": "dAn0n",
+      "slug": "http://2c7nd54guzi6xhjyqrj5kdkrq2ngm2u3e6oy4nfhn3wm3r54ul2utiqd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:55:00.248147",
+      "lastscrape": "2025-06-01 21:18:20.068738",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/dan0n"
+}

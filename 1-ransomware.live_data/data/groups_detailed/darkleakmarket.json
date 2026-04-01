@@ -1,0 +1,101 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "darkleakmarket",
+  "description": null,
+  "added_date": null,
+  "victims": 39,
+  "firstseen": "2021-09-09",
+  "lastseen": "2022-05-25",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "54rdhzjzc4ids4u4wata4zr4ywfon5wpz2ml4q3avelgadpvmdal2vqd.onion",
+      "title": "Dark Leak Market",
+      "slug": "http://54rdhzjzc4ids4u4wata4zr4ywfon5wpz2ml4q3avelgadpvmdal2vqd.onion/",
+      "available": false,
+      "updated": "2021-10-07 16:14:26.072845",
+      "lastscrape": "2025-06-01 21:18:23.358537",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "aby6efzmp7jzbwgidgqc6ghxi2vwpo6d7eaood5xuoxutrfofsmzcjqd.onion",
+      "title": "Onion Deep Drive Storage",
+      "slug": "http://aby6efzmp7jzbwgidgqc6ghxi2vwpo6d7eaood5xuoxutrfofsmzcjqd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:55:05.363056",
+      "lastscrape": "2025-06-01 21:19:23.391161",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "darklmmmfuonklpy6s3tmvk5mrcdi7iapaw6eka45esmoryiiuug6aid.onion",
+      "title": "Dark Leak Market",
+      "slug": "http://darklmmmfuonklpy6s3tmvk5mrcdi7iapaw6eka45esmoryiiuug6aid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:11.326184",
+      "lastscrape": "2026-02-18 18:31:11.326184",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:11+00:00",
+        "start_url": "http://darklmmmfuonklpy6s3tmvk5mrcdi7iapaw6eka45esmoryiiuug6aid.onion",
+        "final_url": "http://darklmmmfuonklpy6s3tmvk5mrcdi7iapaw6eka45esmoryiiuug6aid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "sameorigin",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:11 GMT",
+          "server": "Apache",
+          "set-cookie": "PHPSESSID=5tb3c9v57hfb5k4b7c0vm1t0pe; path=/; HttpOnly",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "sameorigin",
+          "x-xss-protection": "1; mode=block",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "darkleakyqmv62eweqwy4dnhaijg4m4dkburo73pzuqfdumcntqdokyd.onion",
+      "title": "Dark Leak Market",
+      "slug": "http://darkleakyqmv62eweqwy4dnhaijg4m4dkburo73pzuqfdumcntqdokyd.onion",
+      "available": false,
+      "updated": "2025-07-15 03:01:18.372519",
+      "lastscrape": "2025-08-14 03:30:31.772100",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-08-14T03:30:32+00:00",
+        "start_url": "http://darkleakyqmv62eweqwy4dnhaijg4m4dkburo73pzuqfdumcntqdokyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/darkleakmarket"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blacktor",
+  "description": null,
+  "added_date": null,
+  "victims": 4,
+  "firstseen": "2021-12-30",
+  "lastseen": "2021-12-30",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "bl4cktorpms2gybrcyt52aakcxt6yn37byb65uama5cimhifcscnqkid.onion",
+      "title": "Bl@ckt0r | Bug Hunter and Data Breacher Group",
+      "slug": "http://bl@ckt0r:bl@ckt0r@bl4cktorpms2gybrcyt52aakcxt6yn37byb65uama5cimhifcscnqkid.onion/0x00/data-breach.html",
+      "available": false,
+      "updated": "2023-01-07 21:07:34.528312",
+      "lastscrape": "2025-06-01 21:18:22.179269",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/blacktor"
+}

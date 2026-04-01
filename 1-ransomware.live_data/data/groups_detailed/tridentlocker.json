@@ -1,0 +1,85 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "tridentlocker",
+  "description": null,
+  "added_date": null,
+  "victims": 14,
+  "firstseen": "2025-11-09",
+  "lastseen": "2026-02-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion",
+      "title": "TridentLocker",
+      "slug": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion/articles",
+      "available": true,
+      "updated": "2026-02-18 19:02:01.210795",
+      "lastscrape": "2026-02-18 19:02:01.210795",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:01+00:00",
+        "start_url": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion/articles",
+        "final_url": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion/articles",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Kestrel",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 18 Feb 2026 19:01:02 GMT",
+          "server": "Kestrel"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion",
+      "title": "TridentLocker",
+      "slug": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:05.432428",
+      "lastscrape": "2026-02-18 19:03:05.432428",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:05+00:00",
+        "start_url": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion",
+        "final_url": "http://tridentfrdy6jydwywfx4vx422vnto7pktao2gyx2qdcwjanogq454ad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Kestrel",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "date": "Wed, 18 Feb 2026 19:02:05 GMT",
+          "server": "Kestrel"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/tridentlocker"
+}

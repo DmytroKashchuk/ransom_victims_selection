@@ -1,0 +1,185 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "BrainCipher",
+  "description": "Brain Cipher emerged in July 2024. Both Windows and Linux variants are available. Brain Cipher using the leaked build of LockBit Black for their operations. The group suspected to have exploited CVE-2023-28252 (Microsoft Windows CLFS Driver Privilege Escalation Vulnerability). The Ransom demand ranges from $150,000 to $1,00,0000. Demand to be paid with Monero (XMR) cryptocurrency. In 2025, they have shifted their new Negotiation portal to new server with vanity TOR Domain starting with 'brain'. ",
+  "added_date": null,
+  "victims": 44,
+  "firstseen": "2024-07-01",
+  "lastseen": "2025-10-29",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "User Execution",
+          "technique_id": "T1204.002",
+          "technique_details": "Executes a malicious file on the victim's system."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Impair Defenses: Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Disables Windows Defender (if it is running)."
+        },
+        {
+          "technique_name": "Indicator Removal: File Deletion",
+          "technique_id": "T1070.004",
+          "technique_details": "The ransomware self-deletes after execution."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Enumerates directories to encrypt files."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Uses data encryption as a means of extorting the victim."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "vkvsgl7lhipjirmz6j5ubp3w3bwvxgcdbpi3fsbqngfynetqtw4w5hyd.onion",
+      "title": "BrainCipher Dataleak",
+      "slug": "http://vkvsgl7lhipjirmz6j5ubp3w3bwvxgcdbpi3fsbqngfynetqtw4w5hyd.onion",
+      "available": false,
+      "updated": "2025-12-13 03:31:11.963143",
+      "lastscrape": "2026-01-12 04:00:15.655210",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-01-12T04:00:15+00:00",
+        "start_url": "http://vkvsgl7lhipjirmz6j5ubp3w3bwvxgcdbpi3fsbqngfynetqtw4w5hyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "mybmtbgd7aprdnw2ekxht5qap5daam2wch25coqerrq2zdioanob34ad.onion",
+      "title": "Brain Cipher Client Area",
+      "slug": "http://mybmtbgd7aprdnw2ekxht5qap5daam2wch25coqerrq2zdioanob34ad.onion",
+      "available": false,
+      "updated": "2024-12-31 09:51:29.254482",
+      "lastscrape": "2025-06-01 21:18:17.554921",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "brain4zoadgr6clxecixffvxjsw43cflyprnpfeak72nfh664kqqriyd.onion",
+      "title": "BrainCipher Client Area",
+      "slug": "http://brain4zoadgr6clxecixffvxjsw43cflyprnpfeak72nfh664kqqriyd.onion/",
+      "available": false,
+      "updated": "2025-10-03 20:33:16.358113",
+      "lastscrape": "2025-11-02 21:00:27.850407",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2025-11-02T21:00:27+00:00",
+        "start_url": "http://brain4zoadgr6clxecixffvxjsw43cflyprnpfeak72nfh664kqqriyd.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "77nrxelcwh47yikvpaz2rvtsten4sen2elybo5r5st6wlxsbitv255qd.onion",
+      "title": "BrainCipher Client Area",
+      "slug": "http://77nrxelcwh47yikvpaz2rvtsten4sen2elybo5r5st6wlxsbitv255qd.onion/",
+      "available": false,
+      "updated": "2025-05-18 10:01:52.806272",
+      "lastscrape": "2025-06-17 10:30:09.710723",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "p6wmotxzvg34tdmpwm4beqgrcyp5iys43snkccsahnw74la3k3xx6pad.onion",
+      "title": "BrainCipher Client Area",
+      "slug": "http://p6wmotxzvg34tdmpwm4beqgrcyp5iys43snkccsahnw74la3k3xx6pad.onion/",
+      "available": false,
+      "updated": "2025-05-18 10:01:52.806272",
+      "lastscrape": "2025-06-17 10:30:16.437479",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "zktnif5vckhmz5tyrukp5bamatbfhkxjnb23rspsanyzywcrx3bvtqad.onion",
+      "title": "BrainCipher Storage",
+      "slug": "http://zktnif5vckhmz5tyrukp5bamatbfhkxjnb23rspsanyzywcrx3bvtqad.onion/",
+      "available": false,
+      "updated": "2026-01-01 23:31:30.219460",
+      "lastscrape": "2026-02-01 00:00:11.483051",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-02-01T00:00:11+00:00",
+        "start_url": "http://zktnif5vckhmz5tyrukp5bamatbfhkxjnb23rspsanyzywcrx3bvtqad.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "4ldgw2wuidqu5ef3rzx4byonf3y7rdnh43jiw2z4sbtjiwic6gkov7yd.onion",
+      "title": "Not Found",
+      "slug": "http://4ldgw2wuidqu5ef3rzx4byonf3y7rdnh43jiw2z4sbtjiwic6gkov7yd.onion/",
+      "available": false,
+      "updated": "2025-11-12 09:34:05.359101",
+      "lastscrape": "2025-12-12 10:00:08.266129",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2025-12-12T10:00:08+00:00",
+        "start_url": "http://4ldgw2wuidqu5ef3rzx4byonf3y7rdnh43jiw2z4sbtjiwic6gkov7yd.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "cuuhrxbg52c5agytmtjpwfu7mrs4xtaitc4mukkiy2kqdxeqbcmuhaid.onion",
+      "title": "BrainCipher Storage",
+      "slug": "http://cuuhrxbg52c5agytmtjpwfu7mrs4xtaitc4mukkiy2kqdxeqbcmuhaid.onion/",
+      "available": false,
+      "updated": "2025-05-18 10:02:55.081830",
+      "lastscrape": "2025-06-17 10:30:19.106551",
+      "type": "Files"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/braincipher"
+}

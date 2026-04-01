@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "linkc",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2025-01-29",
+  "lastseen": "2025-01-29",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "iywqjjaf2zioehzzauys3sktbcdmuzm2fsjkqsblnm7dt6axjfpoxwid.onion",
+      "title": "Linkc Pub",
+      "slug": "http://iywqjjaf2zioehzzauys3sktbcdmuzm2fsjkqsblnm7dt6axjfpoxwid.onion",
+      "available": false,
+      "updated": "2025-04-26 18:32:12.322838",
+      "lastscrape": "2025-06-01 21:18:42.223356",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/linkc"
+}

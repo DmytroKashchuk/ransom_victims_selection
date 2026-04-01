@@ -1,0 +1,107 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "handala",
+  "description": "Not a Ransomware Group",
+  "added_date": null,
+  "victims": 127,
+  "firstseen": "2024-04-05",
+  "lastseen": "2026-01-25",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "handala.to",
+      "title": "",
+      "slug": "https://handala.to/",
+      "available": false,
+      "updated": "2025-05-27 11:31:36.427890",
+      "lastscrape": "2025-06-26 12:00:04.838079",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "handala-hack.to",
+      "title": "Handala Hack Team – Free Palestine",
+      "slug": "https://handala-hack.to/",
+      "available": true,
+      "updated": "2026-02-18 18:31:10.208830",
+      "lastscrape": "2026-02-18 18:31:10.208830",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:10+00:00",
+        "start_url": "https://handala-hack.to/",
+        "final_url": "https://handala-hack.to/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "ddos-guard",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "content-security-policy": "upgrade-insecure-requests;"
+          }
+        },
+        "headers": {
+          "server": "ddos-guard",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=60",
+          "set-cookie": "__ddg8_=RbSIUVGlepGyNyu6; Domain=.handala-hack.to; Path=/; Expires=Wed, 18-Feb-2026 18:51:10 GMT, __ddg10_=1771439470; Domain=.handala-hack.to; Path=/; Expires=Wed, 18-Feb-2026 18:51:10 GMT, __ddg9_=192.42.116.192; Domain=.handala-hack.to; Path=/; Expires=Wed, 18-Feb-2026 18:51:10 GMT, __ddg1_=nFE0STM28MTCyrJLrt32; Domain=.handala-hack.to; HttpOnly; Path=/; Expires=Thu, 18-Feb-2027 18:31:10 GMT",
+          "content-security-policy": "upgrade-insecure-requests;",
+          "content-type": "text/html; charset=UTF-8",
+          "link": "<https://handala-hack.to/wp-json/>; rel=\"https://api.w.org/\"",
+          "date": "Wed, 18 Feb 2026 18:31:11 GMT",
+          "alt-svc": "h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "vmjfieomxhnfjba57sd6jjws2ogvowjgxhhfglsikqvvrnrajbmpxqqd.onion",
+      "title": "",
+      "slug": "http://vmjfieomxhnfjba57sd6jjws2ogvowjgxhhfglsikqvvrnrajbmpxqqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:14.612891",
+      "lastscrape": "2026-02-18 18:32:14.612891",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:14+00:00",
+        "start_url": "http://vmjfieomxhnfjba57sd6jjws2ogvowjgxhhfglsikqvvrnrajbmpxqqd.onion",
+        "final_url": "http://vmjfieomxhnfjba57sd6jjws2ogvowjgxhhfglsikqvvrnrajbmpxqqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "0",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:32:15 GMT",
+          "content-type": "text/html",
+          "content-length": "0",
+          "last-modified": "Mon, 22 Jul 2024 12:11:00 GMT",
+          "connection": "keep-alive",
+          "etag": "\"669e4c54-0\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/handala"
+}

@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cryp70n1c0d3",
+  "description": null,
+  "added_date": null,
+  "victims": 11,
+  "firstseen": "2021-12-18",
+  "lastseen": "2021-12-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "7k4yyskpz3rxq5nyokf6ztbpywzbjtdfanweup3skctcxopmt7tq7eid.onion",
+      "title": "|*| CRYP70N1C0D3 Team |*|",
+      "slug": "http://7k4yyskpz3rxq5nyokf6ztbpywzbjtdfanweup3skctcxopmt7tq7eid.onion/databases.html",
+      "available": false,
+      "updated": "2026-02-18 16:01:24.660577",
+      "lastscrape": "2026-02-18 19:00:13.310511",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:13+00:00",
+        "start_url": "http://7k4yyskpz3rxq5nyokf6ztbpywzbjtdfanweup3skctcxopmt7tq7eid.onion/databases.html",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/cryp70n1c0d3"
+}

@@ -1,0 +1,46 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mamona",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "owt3kwkxod2pvxlv3uljzskfhebhrhoedrh5gqrxyyd6rrco4frzj5ad.onion",
+      "title": "DragonForce | Oops...",
+      "slug": "http://owt3kwkxod2pvxlv3uljzskfhebhrhoedrh5gqrxyyd6rrco4frzj5ad.onion",
+      "available": false,
+      "updated": "2025-03-19 16:31:21.778692",
+      "lastscrape": "2025-06-01 21:19:12.638665",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "owt3kwkxod2pvxlv3uljzskfhebhrhoedrh5gqrxyyd6rrco4frzj5ad.onion",
+      "title": "",
+      "slug": "http://owt3kwkxod2pvxlv3uljzskfhebhrhoedrh5gqrxyyd6rrco4frzj5ad.onion/api/posts",
+      "available": false,
+      "updated": "2025-03-19 16:32:23.311254",
+      "lastscrape": "2025-06-01 21:19:24.327824",
+      "type": "API"
+    },
+    {
+      "fqdn": "bdhjur3agrogoxvwobbzpptkxhyewnjrhzqj4ug2dyfhf3dopyvvurid.onion",
+      "title": "",
+      "slug": "http://bdhjur3agrogoxvwobbzpptkxhyewnjrhzqj4ug2dyfhf3dopyvvurid.onion",
+      "available": false,
+      "updated": "2025-03-19 16:32:23.311254",
+      "lastscrape": "2025-06-01 21:19:30.028642",
+      "type": "Chat"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/mamona"
+}

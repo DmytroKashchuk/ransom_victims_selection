@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ms13089",
+  "description": null,
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2025-12-18",
+  "lastseen": "2026-01-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "msleakjir7pxbe6onlqe5uwgvdmy6nq4mnwfy7ojswbhnleenm77vgad.onion",
+      "title": "MS13-089 Blog",
+      "slug": "http://msleakjir7pxbe6onlqe5uwgvdmy6nq4mnwfy7ojswbhnleenm77vgad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:02:19.591459",
+      "lastscrape": "2026-02-18 19:02:19.591459",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:19+00:00",
+        "start_url": "http://msleakjir7pxbe6onlqe5uwgvdmy6nq4mnwfy7ojswbhnleenm77vgad.onion",
+        "final_url": "http://msleakjir7pxbe6onlqe5uwgvdmy6nq4mnwfy7ojswbhnleenm77vgad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.18.0 (Ubuntu)",
+          "date": "Wed, 18 Feb 2026 19:02:20 GMT",
+          "content-type": "text/html",
+          "last-modified": "Fri, 23 Jan 2026 08:54:47 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"69733757-22e6\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ms13089"
+}

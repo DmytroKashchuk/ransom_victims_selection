@@ -1,0 +1,355 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "nightspire",
+  "description": null,
+  "added_date": null,
+  "victims": 145,
+  "firstseen": "2025-02-17",
+  "lastseen": "2026-02-14",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "WinSCP"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [
+      "Everything.exe"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "nspireyzmvapgiwgtuoznlafqvlyz7ey6himtgn5bdvdcowfyto3yryd.onion",
+      "title": "NightSpire",
+      "slug": "http://nspireyzmvapgiwgtuoznlafqvlyz7ey6himtgn5bdvdcowfyto3yryd.onion/",
+      "available": false,
+      "updated": "2025-04-27 13:01:46.719013",
+      "lastscrape": "2025-06-01 21:19:00.775026",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "nspireyzmvapgiwgtuoznlafqvlyz7ey6himtgn5bdvdcowfyto3yryd.onion",
+      "title": "Index of /data",
+      "slug": "http://nspireyzmvapgiwgtuoznlafqvlyz7ey6himtgn5bdvdcowfyto3yryd.onion/data/",
+      "available": false,
+      "updated": "2025-04-27 13:02:49.447836",
+      "lastscrape": "2025-06-01 21:19:06.286972",
+      "type": "Files"
+    },
+    {
+      "fqdn": "nspireyzmvapgiwgtuoznlafqvlyz7ey6himtgn5bdvdcowfyto3yryd.onion",
+      "title": "NightSpire",
+      "slug": "http://nspireyzmvapgiwgtuoznlafqvlyz7ey6himtgn5bdvdcowfyto3yryd.onion/database",
+      "available": false,
+      "updated": "2025-04-27 12:02:40.786898",
+      "lastscrape": "2025-06-01 21:19:14.138682",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion",
+      "title": "404 Not Found",
+      "slug": "http://a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion/database",
+      "available": true,
+      "updated": "2026-02-18 18:31:32.138873",
+      "lastscrape": "2026-02-18 18:31:32.138873",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:32+00:00",
+        "start_url": "http://a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion/database",
+        "final_url": "http://a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion/database",
+        "status": 404,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:36:34 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion",
+      "title": "NightSpire",
+      "slug": "http://a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:33:16.821000",
+      "lastscrape": "2026-02-18 18:33:16.821000",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:33:16+00:00",
+        "start_url": "http://a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion",
+        "final_url": "http://a2lyiiaq4n74tlgz4fk3ft4akolapfrzk772dk24iq32cznjsmzpanqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:38:19 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "nspirebcv4sy3yydtaercuut34hwc4fsxqqv4b4ye4xmo6qp3vxhulqd.onion",
+      "title": "RaaS Service Started | NightSpire",
+      "slug": "http://nspirebcv4sy3yydtaercuut34hwc4fsxqqv4b4ye4xmo6qp3vxhulqd.onion/",
+      "available": false,
+      "updated": "2026-01-29 15:33:39.872283",
+      "lastscrape": "2026-02-18 19:00:37.144494",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:37+00:00",
+        "start_url": "http://nspirebcv4sy3yydtaercuut34hwc4fsxqqv4b4ye4xmo6qp3vxhulqd.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "nspirebcv4sy3yydtaercuut34hwc4fsxqqv4b4ye4xmo6qp3vxhulqd.onion",
+      "title": "Database | NightSpire",
+      "slug": "http://nspirebcv4sy3yydtaercuut34hwc4fsxqqv4b4ye4xmo6qp3vxhulqd.onion/database",
+      "available": false,
+      "updated": "2026-01-29 15:34:50.405110",
+      "lastscrape": "2026-02-18 19:01:02.965508",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:03+00:00",
+        "start_url": "http://nspirebcv4sy3yydtaercuut34hwc4fsxqqv4b4ye4xmo6qp3vxhulqd.onion/database",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "nspiremkiq44zcxjbgvab4mdedyh2pzj5kzbmvftcugq3mczx3dqogid.onion",
+      "title": "RaaS Service Started | NightSpire",
+      "slug": "http://nspiremkiq44zcxjbgvab4mdedyh2pzj5kzbmvftcugq3mczx3dqogid.onion/",
+      "available": false,
+      "updated": "2026-01-29 15:35:57.406691",
+      "lastscrape": "2026-02-18 19:01:22.190454",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:22+00:00",
+        "start_url": "http://nspiremkiq44zcxjbgvab4mdedyh2pzj5kzbmvftcugq3mczx3dqogid.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "nspiremkiq44zcxjbgvab4mdedyh2pzj5kzbmvftcugq3mczx3dqogid.onion",
+      "title": "Database | NightSpire",
+      "slug": "http://nspiremkiq44zcxjbgvab4mdedyh2pzj5kzbmvftcugq3mczx3dqogid.onion/database",
+      "available": false,
+      "updated": "2026-01-29 15:37:05.953249",
+      "lastscrape": "2026-02-18 19:01:40.098642",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:40+00:00",
+        "start_url": "http://nspiremkiq44zcxjbgvab4mdedyh2pzj5kzbmvftcugq3mczx3dqogid.onion/database",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "nspire7lugml7ybqyjaaxtsgrs4qn3fcon3lrjbih6wamttvdm5ke4qd.onion",
+      "title": "Verify human - NightSpire",
+      "slug": "http://nspire7lugml7ybqyjaaxtsgrs4qn3fcon3lrjbih6wamttvdm5ke4qd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:03:01.830003",
+      "lastscrape": "2026-02-18 19:03:01.830003",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:03:01+00:00",
+        "start_url": "http://nspire7lugml7ybqyjaaxtsgrs4qn3fcon3lrjbih6wamttvdm5ke4qd.onion",
+        "final_url": "http://nspire7lugml7ybqyjaaxtsgrs4qn3fcon3lrjbih6wamttvdm5ke4qd.onion/captcha/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "/captcha/"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "3424",
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "same-origin",
+            "cross-origin-opener-policy": "same-origin"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:03:03 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "3424",
+          "connection": "keep-alive",
+          "cross-origin-opener-policy": "same-origin",
+          "referrer-policy": "same-origin",
+          "set-cookie": "csrftoken=m6CJrPaglFdswwrufj0oYbO08O2padXg; expires=Wed, 17 Feb 2027 19:03:02 GMT; Max-Age=31449600; Path=/; SameSite=Lax, sessionid=47flz8ootxxq4cjn9bmhv1e5jdw0c309; expires=Wed, 18 Feb 2026 20:03:02 GMT; HttpOnly; Max-Age=3600; Path=/; SameSite=Lax",
+          "vary": "Cookie",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+      "title": "Nightspire Blog",
+      "slug": "http://nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+      "available": true,
+      "updated": "2026-02-18 19:04:08.942932",
+      "lastscrape": "2026-02-18 19:04:08.942932",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:04:08+00:00",
+        "start_url": "http://nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+        "final_url": "http://nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:04:09 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "host": "nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+          "cache-control": "no-cache, private",
+          "x-ratelimit-limit": "25",
+          "x-ratelimit-remaining": "24",
+          "set-cookie": "XSRF-TOKEN=eyJpdiI6IlpHbnk5RlhxRWJHcE4vbzlNRTFkNnc9PSIsInZhbHVlIjoibU9NQ0tHM3ROQ0V3cmZHWWVxaE9jVVBDSGkzbnZIY2FRKy9RbEhKYTF1cUJIMXowNDRwbUxaZDFjRUgzRE1XbnNVTmM0NFI4NHlaREdLNk9DcGhuWnRZeDdzWTBsNXFDWlR0M1BzQnVTckRoVGRvMFhhNkxuenFVMEhud0s1T00iLCJtYWMiOiI3NjhkMzQxNTNhYTkxZDUxZDA2OWZkMmU5ODE4MjFmODU4YjdlNzIzYmU3ZjY1ZGQyNjZjMDg2NWY2ZjQ4NDJkIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 21:04:09 GMT; Max-Age=7200; path=/; samesite=lax, default=eyJpdiI6ImVwN1VSNWxXZUxtdFBONnBpQzhtcEE9PSIsInZhbHVlIjoidlBxYXlIaytMSjhOVkFuaDRjb0xLMmR1YW9yU2lpVGZRQzdiSjNia1J1VElFK0xnSXNFT2ZPMmZlVmI1QUJoTzAzYlhSbXcxR1BhNk9GWUhyMENWYk1waWZZelg5dlR4bnZRY1dWR2NacnRGSFc0WEo1OE5LZE5LaUQ3MlpscjUiLCJtYWMiOiJlZjYxOWIxMWJjMGZjNGJjZTczZTdhZTQwM2RkMjk4YzU3ODhhNzE0MTEwMmQ2NWM3ZWZmMjJlZmY2ZDUxYWJiIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 21:04:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+      "title": "Nightspire Blog",
+      "slug": "http://nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion/database",
+      "available": true,
+      "updated": "2026-02-18 19:05:12.185515",
+      "lastscrape": "2026-02-18 19:05:12.185515",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:05:12+00:00",
+        "start_url": "http://nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion/database",
+        "final_url": "http://nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion/database",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:05:12 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "host": "nspirep7orjq73k2x2fwh2mxgh74vm2now6cdbnnxjk2f5wn34bmdxad.onion",
+          "cache-control": "no-cache, private",
+          "x-ratelimit-limit": "25",
+          "x-ratelimit-remaining": "24",
+          "set-cookie": "XSRF-TOKEN=eyJpdiI6InkxRFM4M0FDeEI4djlLc0tCOFdyMEE9PSIsInZhbHVlIjoiQklaSVlTdlUxRWl0dTk4aFJBMHVVQjZtZXl4Qlk3QVZoSWY4bGhGSHlJM1pPNWsrelBuNTJObEVkdThISnFLSkl6WThzRkRGVWJTNTcyZzdwcjBGQnVDQitraFIyeW0yM2xIQXVGTFVIZWUzRHgxQ0xnaU9zUTRCWVBFWEI1OHkiLCJtYWMiOiJiNWFhNDQ1MWE0OTFkNTQxMWEwYzZlZTg1NjZiODNiMGJiMjQzZjViOTc5ODYwY2YxNzU1Nzc2OGFiN2U5NjQxIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 21:05:12 GMT; Max-Age=7200; path=/; samesite=lax, default=eyJpdiI6Ik5WZkoyUnNmL0szUW5oZVRVeDhxZkE9PSIsInZhbHVlIjoiUUI2VWZqWFhoQ0srNWhLVFRpaU5TVEx4bnAxS0hCdHVPYWIzaTBDMXhEQUhCeHR5VGMwQlBpbXB2bmc3NzhCakFrYXZUYlFVdlNNaEM2aUNWcEV0eXBVZkVmbmExQXRDZ3VDVk5aTjVLR2RuNlBtMllZdkVtTUdiME9nUnlseEEiLCJtYWMiOiI3YzczYzUxOWZhODBkMWNmNmQ2MzlhZmNlZjhmMjcyNWIwOWNkZTk1MGU5NDFjYzI5NWY2YjgyYmQ3MGM1NzQzIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 21:05:12 GMT; Max-Age=7200; path=/; httponly; samesite=lax",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 4,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/nightspire"
+}

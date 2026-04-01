@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ranzy",
+  "description": "Ranzy Locker, Former known as ThunderX. The group hosting a data leak site in the darknet where they posting sensitive information of victims who do not pay the ransom. ThunderX was launched at the end of August 2020. Soon after launching, weaknesses were found in the code, that allowed decrypting the files that the malware encrypted. The group has fixed the code and publish a new version, then released it under the name Ranzy Locker. The Tor onion URL used by the Ranzy Leak site is the same as the one used by Ako Ransomware. The use of the same URL could indicate that both groups merged, or they are cooperating similarly to the Maze cartel.\n",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "UFile"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "37rckgo66iydpvgpwve7b2el5q2zhjw4tv4lmyewufnpx4lhkekxkoqd.onion",
+      "title": null,
+      "slug": "http://37rckgo66iydpvgpwve7b2el5q2zhjw4tv4lmyewufnpx4lhkekxkoqd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:30.027101",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 2,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/ranzy"
+}

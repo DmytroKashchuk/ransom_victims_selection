@@ -1,0 +1,87 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "obscura",
+  "description": null,
+  "added_date": null,
+  "victims": 33,
+  "firstseen": "2025-07-16",
+  "lastseen": "2026-01-11",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion",
+      "title": "Obscura Leaks Blog",
+      "slug": "http://obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:57.359428",
+      "lastscrape": "2026-02-18 18:31:57.359428",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:57+00:00",
+        "start_url": "http://obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion",
+        "final_url": "http://obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:57 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion",
+      "title": "Obscura Leaks Blog",
+      "slug": "http://obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion/leaks",
+      "available": true,
+      "updated": "2026-02-18 18:32:59.316162",
+      "lastscrape": "2026-02-18 18:32:59.316162",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:59+00:00",
+        "start_url": "http://obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion/leaks",
+        "final_url": "http://obscurad3aphckihv7wptdxvdnl5emma6t3vikcf3c5oiiqndq6y6xad.onion/leaks",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:32:59 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/obscura"
+}

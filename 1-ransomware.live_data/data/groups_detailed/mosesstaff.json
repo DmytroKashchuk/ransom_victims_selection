@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mosesstaff",
+  "description": "Cybereason Nocturnus describes Moses Staff as an Iranian hacker group, first spotted in October 2021. Their motivation appears to be to harm Israeli companies by leaking sensitive, stolen data.",
+  "added_date": null,
+  "victims": 16,
+  "firstseen": "2021-12-18",
+  "lastseen": "2021-12-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mosesstaffm7hptp.onion",
+      "title": null,
+      "slug": "http://mosesstaffm7hptp.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:50.842488",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "moses-staff.se",
+      "title": "Database Error",
+      "slug": "https://moses-staff.se/activities/",
+      "available": false,
+      "updated": "2025-05-03 12:01:09.692478",
+      "lastscrape": "2025-06-02 12:30:33.324381",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/mosesstaff"
+}

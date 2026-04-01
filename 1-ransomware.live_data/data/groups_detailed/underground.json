@@ -1,0 +1,68 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "underground",
+  "description": null,
+  "added_date": null,
+  "victims": 26,
+  "firstseen": "2023-05-30",
+  "lastseen": "2025-08-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "undgrddapc4reaunnrdrmnagvdelqfvmgycuvilgwb5uxm25sxawaoqd.onion",
+      "title": "SignIn | Chat",
+      "slug": "http://undgrddapc4reaunnrdrmnagvdelqfvmgycuvilgwb5uxm25sxawaoqd.onion",
+      "available": false,
+      "updated": "2023-09-30 11:26:11.319439",
+      "lastscrape": "2025-06-01 21:19:12.550893",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "47glxkuxyayqrvugfumgsblrdagvrah7gttfscgzn56eyss5wg3uvmqd.onion",
+      "title": "All data | Underground store",
+      "slug": "http://47glxkuxyayqrvugfumgsblrdagvrah7gttfscgzn56eyss5wg3uvmqd.onion",
+      "available": false,
+      "updated": "2026-02-18 17:01:31.107092",
+      "lastscrape": "2026-02-18 19:01:14.691846",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T17:01:31+00:00",
+        "start_url": "http://47glxkuxyayqrvugfumgsblrdagvrah7gttfscgzn56eyss5wg3uvmqd.onion",
+        "final_url": "https://47glxkuxyayqrvugfumgsblrdagvrah7gttfscgzn56eyss5wg3uvmqd.onion/",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 301,
+            "location": "https://47glxkuxyayqrvugfumgsblrdagvrah7gttfscgzn56eyss5wg3uvmqd.onion/"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "146",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 17:01:33 GMT",
+          "content-type": "text/html",
+          "content-length": "146",
+          "connection": "keep-alive"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/underground"
+}

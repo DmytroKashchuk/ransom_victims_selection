@@ -1,0 +1,124 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blackshrantac",
+  "description": null,
+  "added_date": null,
+  "victims": 43,
+  "firstseen": "2025-09-17",
+  "lastseen": "2026-01-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "b2ykcy2gcug4gnccm6hnrb5xapnresmyjjqgvhafaypppwgo4feixwyd.onion",
+      "title": "BlackShrantac",
+      "slug": "http://b2ykcy2gcug4gnccm6hnrb5xapnresmyjjqgvhafaypppwgo4feixwyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:58.801805",
+      "lastscrape": "2026-02-18 18:31:58.801805",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:58+00:00",
+        "start_url": "http://b2ykcy2gcug4gnccm6hnrb5xapnresmyjjqgvhafaypppwgo4feixwyd.onion",
+        "final_url": "http://b2ykcy2gcug4gnccm6hnrb5xapnresmyjjqgvhafaypppwgo4feixwyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:59 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "jvkpexgkuaw5toiph7fbgucycvnafaqmfvakymfh5pdxepvahw3xryqd.onion",
+      "title": "Black Shrantac",
+      "slug": "http://jvkpexgkuaw5toiph7fbgucycvnafaqmfvakymfh5pdxepvahw3xryqd.onion",
+      "available": false,
+      "updated": "2026-01-15 02:02:45.085354",
+      "lastscrape": "2026-02-14 02:30:26.758574",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-14T02:30:26+00:00",
+        "start_url": "http://jvkpexgkuaw5toiph7fbgucycvnafaqmfvakymfh5pdxepvahw3xryqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "shrantacpxim7z6m6pnszi52bb2tp23sntby3hklt36rezdja7bdjsyd.onion",
+      "title": "BlackShrantac",
+      "slug": "http://shrantacpxim7z6m6pnszi52bb2tp23sntby3hklt36rezdja7bdjsyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:33:03.618191",
+      "lastscrape": "2026-02-18 18:33:03.618191",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:33:03+00:00",
+        "start_url": "http://shrantacpxim7z6m6pnszi52bb2tp23sntby3hklt36rezdja7bdjsyd.onion",
+        "final_url": "http://shrantacpxim7z6m6pnszi52bb2tp23sntby3hklt36rezdja7bdjsyd.onion/captcha-verify",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "http://shrantacpxim7z6m6pnszi52bb2tp23sntby3hklt36rezdja7bdjsyd.onion/captcha-verify"
+          }
+        ],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "cache-control": "no-cache, private",
+          "date": "Wed, 18 Feb 2026 18:33:05 GMT",
+          "set-cookie": "XSRF-TOKEN=eyJpdiI6Imxmd1B0ZzkyZXdGbGEvZDJoaHpsY1E9PSIsInZhbHVlIjoicy9XWjhyNWk4Z0lxZ2tRczNOdGNWQ01mYzR0bTJNRi9DY29ERTlZQm9ZT0xpK2kzYjNSYWNzODJTMnlCTExEZWRNSjJxQjZyNndLU3lUVEVtNmd5dWxKcW8zbFQzdDZQWXNPTnV5VXVRWGN6bVkrcjFYYXd3ZTZwcVZTRDE2REsiLCJtYWMiOiI4OGNmNzdjYmJmNzdmOGE4NTI4YTQ5NDNmYTY0ZDIyMjYxYzY1Njk3MTI1NDQ1ZWNiYjkxN2I5MjIyZDNhZDM0IiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 20:33:05 GMT; Max-Age=7200; path=/; samesite=lax, site_session=eyJpdiI6IlhMbmhRNmU3MHg3Z09Ea29vbWZMa3c9PSIsInZhbHVlIjoiei9JT3hDYmx2V25ld0xPRkRtY3d4RXhLWDdYWlBJQUZvSHFxbVU3UW9KVWJlVzRCUTZTekNKU1BHYTFqZGVwWEQ5cmJKV3huWVZCdWwvbnE0RWZBSUFua1F6UXluUEhDRStTaDUvc0NhdkQyMVVhQlljSkZFVkxCRXJkTDJMMjAiLCJtYWMiOiJmZGM2NTVlNjQ1YjEzYzhjNDVmZTYwM2ZjYTU1MzBkOTkwZDFkZGNhODE3ZTc2YzFlY2NiYTJjY2U3MmM1N2QwIiwidGFnIjoiIn0%3D; expires=Wed, 18 Feb 2026 20:33:05 GMT; Max-Age=7200; path=/; httponly; samesite=lax",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/blackshrantac"
+}

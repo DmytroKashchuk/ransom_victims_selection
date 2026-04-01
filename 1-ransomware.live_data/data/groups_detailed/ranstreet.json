@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ranstreet",
+  "description": null,
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2023-12-21",
+  "lastseen": "2023-12-21",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ransekgbpijp56bflufgxptwn5hej2rztx423v6sim2zrzz7xetnr2qd.onion",
+      "title": "RANSTREET | STORMOUS Ransomware",
+      "slug": "http://ransekgbpijp56bflufgxptwn5hej2rztx423v6sim2zrzz7xetnr2qd.onion",
+      "available": false,
+      "updated": "2023-12-27 03:56:46.716662",
+      "lastscrape": "2025-06-01 21:19:12.491926",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ranstreet"
+}

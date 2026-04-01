@@ -1,0 +1,304 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "safepay",
+  "description": "",
+  "added_date": null,
+  "victims": 436,
+  "firstseen": "2023-11-10",
+  "lastseen": "2026-02-07",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "The threat actor accessed the endpoint via Remote Desktop Protocol (RDP) using valid credentials."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Command and Scripting Interpreter",
+          "technique_id": "T1059",
+          "technique_details": "Utilized PowerShell scripts, such as ShareFinder.ps1, to execute commands on the compromised system."
+        },
+        {
+          "technique_name": "Windows Management Instrumentation",
+          "technique_id": "T1047",
+          "technique_details": "Employed WMI commands to execute processes on remote systems."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "Maintained access through the use of compromised valid accounts."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "Escalated privileges by leveraging valid domain accounts."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Disabled Windows Defender using a sequence of LOLBin commands to evade detection."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "OS Credential Dumping",
+          "technique_id": "T1003",
+          "technique_details": "Employed tools like lsassy.py to dump credentials from the operating system."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Domain Trust Discovery",
+          "technique_id": "T1482",
+          "technique_details": "Conducted domain trust discovery using commands like 'net group domain admins /domain' and 'nltest.exe'."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Remote Services",
+          "technique_id": "T1021",
+          "technique_details": "Moved laterally within the network using Remote Desktop Protocol (RDP) and Windows Management Instrumentation (WMI)."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0009",
+      "tactic_name": "Collection",
+      "techniques": [
+        {
+          "technique_name": "Archive Collected Data",
+          "technique_id": "T1560",
+          "technique_details": "Archived files using WinRAR with specific command-line options to prepare data for exfiltration."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration Over Web Service",
+          "technique_id": "T1567.002",
+          "technique_details": "Utilized MEGASync to exfiltrate data over a web service."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Encrypted files and appended the '.safepay' extension, leaving a ransom note named 'readme_safepay.txt'."
+        },
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "Deleted volume shadow copies to inhibit system recovery."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "nz4z6ruzcekriti5cjjiiylzvrmysyqwibxztk6voem4trtx7gstpjid.onion",
+      "title": "SAFEPAY",
+      "slug": "http://nz4z6ruzcekriti5cjjiiylzvrmysyqwibxztk6voem4trtx7gstpjid.onion",
+      "available": false,
+      "updated": "2025-06-17 12:01:16.904634",
+      "lastscrape": "2025-07-17 12:30:14.943057",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "cqkrkmmivhakl3fwgxscurduu3znmroablt7jskxszkctixyseij5gad.onion",
+      "title": "SAFEPAY",
+      "slug": "http://cqkrkmmivhakl3fwgxscurduu3znmroablt7jskxszkctixyseij5gad.onion",
+      "available": false,
+      "updated": "2024-12-31 11:00:48.508697",
+      "lastscrape": "2025-06-01 21:19:25.078308",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "nj5qix45sxnl4h4og6hcgwengg2oqloj3c2rhc6dpwiofx3jbivcs6qd.onion",
+      "title": null,
+      "slug": "http://nj5qix45sxnl4h4og6hcgwengg2oqloj3c2rhc6dpwiofx3jbivcs6qd.onion",
+      "available": false,
+      "updated": "2024-12-31 11:00:51.839043",
+      "lastscrape": "2025-06-01 21:19:32.069764",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "j3dp6okmaklajrsk6zljl5sfa2vpui7j2w6cwmhmmqhab6frdfbphhid.onion",
+      "title": "SAFEPAY",
+      "slug": "http://j3dp6okmaklajrsk6zljl5sfa2vpui7j2w6cwmhmmqhab6frdfbphhid.onion",
+      "available": false,
+      "updated": "2025-09-13 07:01:24.265314",
+      "lastscrape": "2025-10-13 07:30:25.827213",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-10-13T07:30:25+00:00",
+        "start_url": "http://j3dp6okmaklajrsk6zljl5sfa2vpui7j2w6cwmhmmqhab6frdfbphhid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+      "title": "Safepay Blog",
+      "slug": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:29.537676",
+      "lastscrape": "2026-02-18 19:01:29.537676",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:30+00:00",
+        "start_url": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+        "final_url": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "strict-transport-security": "max-age=0, max-age=0",
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "same-origin",
+            "cross-origin-opener-policy": "same-origin",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:31 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block",
+          "referrer-policy": "same-origin",
+          "x-frame-options": "DENY",
+          "cache-control": "no-store, no-cache, must-revalidate, max-age=0",
+          "pragma": "no-cache",
+          "expires": "0",
+          "strict-transport-security": "max-age=0, max-age=0",
+          "vary": "Cookie",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "csrftoken=9sP9QJ3TVR6Q38u6Ppbo9SEBRgaaVGdU; expires=Wed, 17 Feb 2027 19:01:31 GMT; Max-Age=31449600; Path=/; SameSite=Lax",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+      "title": "Safepay Blog",
+      "slug": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+      "available": false,
+      "updated": "2025-11-04 23:32:30.914528",
+      "lastscrape": "2025-12-07 04:33:49.268172",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-04T23:32:30+00:00",
+        "start_url": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+        "final_url": "http://safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "strict-transport-security": "max-age=0, max-age=0",
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "same-origin",
+            "cross-origin-opener-policy": "same-origin",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Tue, 04 Nov 2025 23:32:31 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "connection": "keep-alive",
+          "x-content-type-options": "nosniff",
+          "x-xss-protection": "1; mode=block",
+          "referrer-policy": "same-origin",
+          "x-frame-options": "DENY",
+          "cache-control": "no-store, no-cache, must-revalidate, max-age=0",
+          "pragma": "no-cache",
+          "expires": "0",
+          "strict-transport-security": "max-age=0, max-age=0",
+          "vary": "Cookie",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "csrftoken=mPJ92xrx9dOeTAW30LKi2VelCFrmFR9y; expires=Tue, 03 Nov 2026 23:32:31 GMT; Max-Age=31449600; Path=/; SameSite=Lax",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/safepay"
+}

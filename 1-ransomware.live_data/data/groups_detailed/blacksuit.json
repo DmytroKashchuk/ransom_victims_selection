@@ -1,0 +1,231 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "blacksuit",
+  "description": "According to Trend Micro, this ransomware has significant code overlap with Royal Ransomware.",
+  "added_date": null,
+  "victims": 184,
+  "firstseen": "2023-06-12",
+  "lastseen": "2025-05-29",
+  "ttps": [
+    {
+      "tactic_id": "TA0042",
+      "tactic_name": "Resource Development",
+      "techniques": [
+        {
+          "technique_name": "Acquire Access",
+          "technique_id": "T1650",
+          "technique_details": "BlackSuit actors may leverage brokers to gain initial access."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Remote Services: Remote Desktop Protocol",
+          "technique_id": "T1021.001",
+          "technique_details": "BlackSuit actors use RDP compromise as a secondary initial access vector."
+        },
+        {
+          "technique_name": "External Remote Services",
+          "technique_id": "T1133",
+          "technique_details": "BlackSuit actors gain initial access through a variety of RMM software."
+        },
+        {
+          "technique_name": "Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "technique_details": "BlackSuit actors gain initial access through public-facing applications."
+        },
+        {
+          "technique_name": "Phishing",
+          "technique_id": "T1566",
+          "technique_details": "BlackSuit criminals often obtain initial access to victim networks through phishing."
+        },
+        {
+          "technique_name": "Phishing: Spear phishing Attachment",
+          "technique_id": "T1566.001",
+          "technique_details": "BlackSuit agents have used malicious PDF document attachments in phishing campaigns."
+        },
+        {
+          "technique_name": "Phishing: Spear phishing Link",
+          "technique_id": "T1566.002",
+          "technique_details": "Actors gain initial access through malvertising links via emails and public websites."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "BlackSuit actors used a legitimate administrator account to gain access privileges to the domain controller."
+        },
+        {
+          "technique_name": "Valid Accounts: Domain Accounts",
+          "technique_id": "T1078.002",
+          "technique_details": "BlackSuit actors used encrypted files to create new administrator user accounts."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Remote Services: Remote Desktop Protocol",
+          "technique_id": "T1021.001",
+          "technique_details": "BlackSuit actors used valid accounts to move laterally through the domain controller using RDP."
+        },
+        {
+          "technique_name": "Indicator Removal: Clear Windows Event Logs",
+          "technique_id": "T1070.001",
+          "technique_details": "BlackSuit actors deleted shadow files and system and security logs after exfiltration."
+        },
+        {
+          "technique_name": "Automated Collection",
+          "technique_id": "T1119",
+          "technique_details": "BlackSuit actors used registry keys to extract and collect files automatically."
+        },
+        {
+          "technique_name": "Domain Policy Modification: Group Policy Modification",
+          "technique_id": "T1484.001",
+          "technique_details": "BlackSuit actors modified Group Policy Objects to bypass antivirus protocols."
+        },
+        {
+          "technique_name": "Impair Defenses: Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "BlackSuit actors disabled antivirus protocols."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Ingress Tool Transfer",
+          "technique_id": "T1105",
+          "technique_details": "BlackSuit actors used C2 infrastructure to download various tools."
+        },
+        {
+          "technique_name": "Protocol Tunneling",
+          "technique_id": "T1572",
+          "technique_details": "BlackSuit actors used an encrypted SSH tunnel to communicate within the C2 infrastructure."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "BlackSuit actors encrypted data to identify which files were being used or locked by other applications."
+        },
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "BlackSuit actors encrypted data to identify which files were being used or locked by other applications."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Bublup",
+      "RClone",
+      "Temp[.]sh"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "LogMeIn",
+      "MobaXterm"
+    ],
+    "DiscoveryEnum": [
+      "AdFind",
+      "Advanced IP Scanner",
+      "SharpHound",
+      "SharpShares",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Chisel",
+      "Cloudflared",
+      "OpenSSH"
+    ],
+    "CredentialTheft": [
+      "AccountRestore",
+      "Mimikatz",
+      "NirSoft Dialupass",
+      "NirSoft IEPassView (iepv)",
+      "NirSoft MailPassView",
+      "NirSoft Netpass",
+      "NirSoft RouterPassView"
+    ],
+    "Offsec": [
+      "Brute Ratel C4",
+      "Cobalt Strike",
+      "Rubeus"
+    ],
+    "DefenseEvasion": [
+      "Eraser",
+      "GMER",
+      "Inno Setup",
+      "PowerTool"
+    ],
+    "LOLBAS": [
+      "attrib",
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion",
+      "title": "This Site Has Been Seized",
+      "slug": "http://weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:25.743715",
+      "lastscrape": "2026-02-18 18:31:25.743715",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:25+00:00",
+        "start_url": "http://weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion",
+        "final_url": "http://weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "525",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:32 GMT",
+          "content-type": "text/html",
+          "content-length": "525",
+          "last-modified": "Mon, 21 Jul 2025 20:33:25 GMT",
+          "connection": "keep-alive",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/blacksuit"
+}

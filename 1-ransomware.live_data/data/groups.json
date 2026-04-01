@@ -1,0 +1,1601 @@
+{
+    "client": "dmk6603@utulsa.edu",
+    "count": 319,
+    "groups": [
+        {
+            "group": "0apt",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "0mega",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "8base",
+            "altname": null,
+            "victims": 455
+        },
+        {
+            "group": "abrahams_ax",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "abyss",
+            "altname": null,
+            "victims": 86
+        },
+        {
+            "group": "adminlocker",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "againstthewest",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "agl0bgvycg",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "akira",
+            "altname": null,
+            "victims": 1321
+        },
+        {
+            "group": "ako",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "alphalocker",
+            "altname": null,
+            "victims": 30
+        },
+        {
+            "group": "alphv",
+            "altname": "blackcat",
+            "victims": 731
+        },
+        {
+            "group": "anubis",
+            "altname": null,
+            "victims": 54
+        },
+        {
+            "group": "apos",
+            "altname": null,
+            "victims": 16
+        },
+        {
+            "group": "apt73",
+            "altname": "bashe",
+            "victims": 78
+        },
+        {
+            "group": "arcusmedia",
+            "altname": null,
+            "victims": 98
+        },
+        {
+            "group": "argonauts",
+            "altname": null,
+            "victims": 13
+        },
+        {
+            "group": "arkana",
+            "altname": null,
+            "victims": 6
+        },
+        {
+            "group": "arvinclub",
+            "altname": null,
+            "victims": 35
+        },
+        {
+            "group": "atomsilo",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "avaddon",
+            "altname": null,
+            "victims": 147
+        },
+        {
+            "group": "avos",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "avoslocker",
+            "altname": null,
+            "victims": 70
+        },
+        {
+            "group": "aware",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "aztroteam",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "babuk",
+            "altname": null,
+            "victims": 8
+        },
+        {
+            "group": "babuk2",
+            "altname": "Satanlock",
+            "victims": 180
+        },
+        {
+            "group": "babyduck",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "beast",
+            "altname": "GIGAKICK",
+            "victims": 59
+        },
+        {
+            "group": "benzona",
+            "altname": null,
+            "victims": 14
+        },
+        {
+            "group": "bert",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "bianlian",
+            "altname": null,
+            "victims": 553
+        },
+        {
+            "group": "blackbasta",
+            "altname": null,
+            "victims": 524
+        },
+        {
+            "group": "blackbyte",
+            "altname": null,
+            "victims": 147
+        },
+        {
+            "group": "blacklock",
+            "altname": null,
+            "victims": 64
+        },
+        {
+            "group": "blackmatter",
+            "altname": null,
+            "victims": 32
+        },
+        {
+            "group": "blacknevas",
+            "altname": "Trial Recovery",
+            "victims": 23
+        },
+        {
+            "group": "blackout",
+            "altname": null,
+            "victims": 9
+        },
+        {
+            "group": "blackshadow",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "blackshrantac",
+            "altname": null,
+            "victims": 43
+        },
+        {
+            "group": "blacksuit",
+            "altname": null,
+            "victims": 184
+        },
+        {
+            "group": "blacktor",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "bluebox",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "bluelocker",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "bluesky",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "bonacigroup",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "bqtlock",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "braincipher",
+            "altname": null,
+            "victims": 44
+        },
+        {
+            "group": "bravox",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "brotherhood",
+            "altname": null,
+            "victims": 18
+        },
+        {
+            "group": "cactus",
+            "altname": null,
+            "victims": 248
+        },
+        {
+            "group": "cephalus",
+            "altname": null,
+            "victims": 19
+        },
+        {
+            "group": "chaos",
+            "altname": null,
+            "victims": 34
+        },
+        {
+            "group": "cheers",
+            "altname": null,
+            "victims": 15
+        },
+        {
+            "group": "chilelocker",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "chort",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "cicada3301",
+            "altname": null,
+            "victims": 75
+        },
+        {
+            "group": "ciphbit",
+            "altname": null,
+            "victims": 38
+        },
+        {
+            "group": "cloak",
+            "altname": null,
+            "victims": 159
+        },
+        {
+            "group": "clop",
+            "altname": null,
+            "victims": 1251
+        },
+        {
+            "group": "coinbasecartel",
+            "altname": null,
+            "victims": 75
+        },
+        {
+            "group": "contfr",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "conti",
+            "altname": null,
+            "victims": 351
+        },
+        {
+            "group": "cooming",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "crazyhunter",
+            "altname": null,
+            "victims": 10
+        },
+        {
+            "group": "crosslock",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "cry0",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "crylock",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "cryp70n1c0d3",
+            "altname": null,
+            "victims": 11
+        },
+        {
+            "group": "cryptbb",
+            "altname": null,
+            "victims": 8
+        },
+        {
+            "group": "cryptnet",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "crypto24",
+            "altname": null,
+            "victims": 38
+        },
+        {
+            "group": "cuba",
+            "altname": null,
+            "victims": 105
+        },
+        {
+            "group": "cyclops",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "d4rk4rmy",
+            "altname": null,
+            "victims": 18
+        },
+        {
+            "group": "dagonlocker",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "daixin",
+            "altname": null,
+            "victims": 21
+        },
+        {
+            "group": "dan0n",
+            "altname": null,
+            "victims": 33
+        },
+        {
+            "group": "darkangels",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "darkbit",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "darkleakmarket",
+            "altname": null,
+            "victims": 39
+        },
+        {
+            "group": "darkpower",
+            "altname": null,
+            "victims": 10
+        },
+        {
+            "group": "darkrace",
+            "altname": null,
+            "victims": 10
+        },
+        {
+            "group": "darkside",
+            "altname": null,
+            "victims": 10
+        },
+        {
+            "group": "darkvault",
+            "altname": null,
+            "victims": 55
+        },
+        {
+            "group": "datacarry",
+            "altname": null,
+            "victims": 16
+        },
+        {
+            "group": "datakeeper",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "dataleak",
+            "altname": null,
+            "victims": 6
+        },
+        {
+            "group": "desolator",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "devman",
+            "altname": "Devman 2.0",
+            "victims": 187
+        },
+        {
+            "group": "diavol",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "direwolf",
+            "altname": null,
+            "victims": 71
+        },
+        {
+            "group": "dispossessor",
+            "altname": null,
+            "victims": 344
+        },
+        {
+            "group": "donex",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "donutleaks",
+            "altname": null,
+            "victims": 42
+        },
+        {
+            "group": "doppelpaymer",
+            "altname": null,
+            "victims": 25
+        },
+        {
+            "group": "dragonforce",
+            "altname": null,
+            "victims": 371
+        },
+        {
+            "group": "dragonransomware",
+            "altname": null,
+            "victims": 39
+        },
+        {
+            "group": "dread",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "dunghill",
+            "altname": "darkangel",
+            "victims": 19
+        },
+        {
+            "group": "ech0raix",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "eldorado",
+            "altname": null,
+            "victims": 114
+        },
+        {
+            "group": "embargo",
+            "altname": null,
+            "victims": 32
+        },
+        {
+            "group": "entropy",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "ep918",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "everest",
+            "altname": null,
+            "victims": 333
+        },
+        {
+            "group": "exorcist",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "fletchen",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "flocker",
+            "altname": null,
+            "victims": 59
+        },
+        {
+            "group": "fog",
+            "altname": null,
+            "victims": 189
+        },
+        {
+            "group": "frag",
+            "altname": null,
+            "victims": 30
+        },
+        {
+            "group": "freecivilian",
+            "altname": null,
+            "victims": 14
+        },
+        {
+            "group": "fsteam",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "funksec",
+            "altname": null,
+            "victims": 172
+        },
+        {
+            "group": "gdlockersec",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "genesis",
+            "altname": null,
+            "victims": 45
+        },
+        {
+            "group": "global",
+            "altname": null,
+            "victims": 32
+        },
+        {
+            "group": "grief",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "groove",
+            "altname": null,
+            "victims": 13
+        },
+        {
+            "group": "gunra",
+            "altname": null,
+            "victims": 20
+        },
+        {
+            "group": "hades",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "handala",
+            "altname": null,
+            "victims": 127
+        },
+        {
+            "group": "haron",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "hellcat",
+            "altname": null,
+            "victims": 20
+        },
+        {
+            "group": "helldown",
+            "altname": null,
+            "victims": 37
+        },
+        {
+            "group": "hellogookie",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "hellokitty",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "hive",
+            "altname": null,
+            "victims": 208
+        },
+        {
+            "group": "holyghost",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "hotarus",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "hunters",
+            "altname": null,
+            "victims": 307
+        },
+        {
+            "group": "icefire",
+            "altname": null,
+            "victims": 11
+        },
+        {
+            "group": "imncrew",
+            "altname": null,
+            "victims": 12
+        },
+        {
+            "group": "incransom",
+            "altname": null,
+            "victims": 669
+        },
+        {
+            "group": "insane",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "insomnia",
+            "altname": null,
+            "victims": 22
+        },
+        {
+            "group": "interlock",
+            "altname": null,
+            "victims": 96
+        },
+        {
+            "group": "j",
+            "altname": null,
+            "victims": 41
+        },
+        {
+            "group": "kairos",
+            "altname": null,
+            "victims": 70
+        },
+        {
+            "group": "karakurt",
+            "altname": null,
+            "victims": 74
+        },
+        {
+            "group": "karma",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "kawa4096",
+            "altname": "KaWaLocker",
+            "victims": 17
+        },
+        {
+            "group": "kazu",
+            "altname": null,
+            "victims": 9
+        },
+        {
+            "group": "kelvinsecurity",
+            "altname": null,
+            "victims": 26
+        },
+        {
+            "group": "killsec",
+            "altname": null,
+            "victims": 266
+        },
+        {
+            "group": "knight",
+            "altname": null,
+            "victims": 48
+        },
+        {
+            "group": "kraken",
+            "altname": null,
+            "victims": 25
+        },
+        {
+            "group": "kryptos",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "kyber",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "la_piovra",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "leaktheanalyst",
+            "altname": null,
+            "victims": 20
+        },
+        {
+            "group": "lilith",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "linkc",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "lockbit",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "lockbit2",
+            "altname": null,
+            "victims": 1006
+        },
+        {
+            "group": "lockbit3",
+            "altname": null,
+            "victims": 2017
+        },
+        {
+            "group": "lockbit3_fs",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "lockbit5",
+            "altname": null,
+            "victims": 135
+        },
+        {
+            "group": "lockdata",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "lolnek",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "lorenz",
+            "altname": null,
+            "victims": 78
+        },
+        {
+            "group": "losttrust",
+            "altname": null,
+            "victims": 53
+        },
+        {
+            "group": "lunalock",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "lv",
+            "altname": null,
+            "victims": 63
+        },
+        {
+            "group": "lynx",
+            "altname": null,
+            "victims": 388
+        },
+        {
+            "group": "madcat",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "madliberator",
+            "altname": null,
+            "victims": 16
+        },
+        {
+            "group": "malas",
+            "altname": null,
+            "victims": 171
+        },
+        {
+            "group": "malekteam",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "mallox",
+            "altname": null,
+            "victims": 49
+        },
+        {
+            "group": "mamona",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "marketo",
+            "altname": null,
+            "victims": 32
+        },
+        {
+            "group": "maze",
+            "altname": null,
+            "victims": 60
+        },
+        {
+            "group": "mbc",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "medusa",
+            "altname": null,
+            "victims": 518
+        },
+        {
+            "group": "medusalocker",
+            "altname": null,
+            "victims": 51
+        },
+        {
+            "group": "meow",
+            "altname": null,
+            "victims": 145
+        },
+        {
+            "group": "metaencryptor",
+            "altname": null,
+            "victims": 31
+        },
+        {
+            "group": "midas",
+            "altname": null,
+            "victims": 44
+        },
+        {
+            "group": "mindware",
+            "altname": null,
+            "victims": 13
+        },
+        {
+            "group": "minteye",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "mogilevich",
+            "altname": null,
+            "victims": 9
+        },
+        {
+            "group": "moneymessage",
+            "altname": "ThreatLabz",
+            "victims": 29
+        },
+        {
+            "group": "monti",
+            "altname": null,
+            "victims": 110
+        },
+        {
+            "group": "morpheus",
+            "altname": null,
+            "victims": 13
+        },
+        {
+            "group": "mosesstaff",
+            "altname": null,
+            "victims": 16
+        },
+        {
+            "group": "mountlocker",
+            "altname": null,
+            "victims": 19
+        },
+        {
+            "group": "ms13089",
+            "altname": "ms13-089",
+            "victims": 3
+        },
+        {
+            "group": "mydecryptor",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "n3tworm",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "nasirsecurity",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "nefilim",
+            "altname": null,
+            "victims": 15
+        },
+        {
+            "group": "nemty",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "netwalker",
+            "altname": null,
+            "victims": 26
+        },
+        {
+            "group": "nevada",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "nightsky",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "nightspire",
+            "altname": null,
+            "victims": 145
+        },
+        {
+            "group": "nitrogen",
+            "altname": null,
+            "victims": 45
+        },
+        {
+            "group": "noescape",
+            "altname": null,
+            "victims": 126
+        },
+        {
+            "group": "nokoyawa",
+            "altname": null,
+            "victims": 36
+        },
+        {
+            "group": "noname",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "nova",
+            "altname": null,
+            "victims": 93
+        },
+        {
+            "group": "obscura",
+            "altname": null,
+            "victims": 33
+        },
+        {
+            "group": "onepercent",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "onyx",
+            "altname": null,
+            "victims": 28
+        },
+        {
+            "group": "orca",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "orion",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "osiris",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "pandora",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "pay2key",
+            "altname": null,
+            "victims": 7
+        },
+        {
+            "group": "payload",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "payloadbin",
+            "altname": null,
+            "victims": 29
+        },
+        {
+            "group": "payoutsking",
+            "altname": "Payouts King",
+            "victims": 60
+        },
+        {
+            "group": "pear",
+            "altname": "Pure Extraction And Ransom",
+            "victims": 57
+        },
+        {
+            "group": "play",
+            "altname": null,
+            "victims": 1169
+        },
+        {
+            "group": "playboy",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "projectrelic",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "prolock",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "prometheus",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "promptlock",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "pysa",
+            "altname": null,
+            "victims": 311
+        },
+        {
+            "group": "qilin",
+            "altname": null,
+            "victims": 1475
+        },
+        {
+            "group": "qiulong",
+            "altname": null,
+            "victims": 8
+        },
+        {
+            "group": "qlocker",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "quantum",
+            "altname": null,
+            "victims": 68
+        },
+        {
+            "group": "rabbithole",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "radar",
+            "altname": null,
+            "victims": 23
+        },
+        {
+            "group": "radiant",
+            "altname": null,
+            "victims": 8
+        },
+        {
+            "group": "ragnarlocker",
+            "altname": null,
+            "victims": 128
+        },
+        {
+            "group": "ragnarok",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "ralord",
+            "altname": null,
+            "victims": 19
+        },
+        {
+            "group": "ramp",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "rancoz",
+            "altname": null,
+            "victims": 6
+        },
+        {
+            "group": "ranion",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "ransombay",
+            "altname": "",
+            "victims": 0
+        },
+        {
+            "group": "ransomcartel",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "ransomcortex",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "ransomed",
+            "altname": null,
+            "victims": 68
+        },
+        {
+            "group": "ransomexx",
+            "altname": null,
+            "victims": 83
+        },
+        {
+            "group": "ransomhouse",
+            "altname": null,
+            "victims": 183
+        },
+        {
+            "group": "ransomhub",
+            "altname": null,
+            "victims": 844
+        },
+        {
+            "group": "ranstreet",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "ranzy",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "raworld",
+            "altname": "ragroup",
+            "victims": 137
+        },
+        {
+            "group": "raznatovic",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "rebornvc",
+            "altname": "RansomedVC2",
+            "victims": 3
+        },
+        {
+            "group": "redalert",
+            "altname": null,
+            "victims": 6
+        },
+        {
+            "group": "redransomware",
+            "altname": null,
+            "victims": 16
+        },
+        {
+            "group": "revil",
+            "altname": null,
+            "victims": 98
+        },
+        {
+            "group": "reynolds",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "rhysida",
+            "altname": null,
+            "victims": 266
+        },
+        {
+            "group": "robinhood",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "rook",
+            "altname": null,
+            "victims": 9
+        },
+        {
+            "group": "royal",
+            "altname": null,
+            "victims": 211
+        },
+        {
+            "group": "rransom",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "runsomewares",
+            "altname": null,
+            "victims": 6
+        },
+        {
+            "group": "sabbath",
+            "altname": null,
+            "victims": 17
+        },
+        {
+            "group": "safepay",
+            "altname": null,
+            "victims": 436
+        },
+        {
+            "group": "sarcoma",
+            "altname": null,
+            "victims": 140
+        },
+        {
+            "group": "satanlockv2",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "secp0",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "securotrop",
+            "altname": null,
+            "victims": 30
+        },
+        {
+            "group": "sensayq",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "shadow",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "shaoleaks",
+            "altname": null,
+            "victims": 4
+        },
+        {
+            "group": "shinyhunters",
+            "altname": null,
+            "victims": 54
+        },
+        {
+            "group": "shinysp1d3r",
+            "altname": "ShinySpider",
+            "victims": 0
+        },
+        {
+            "group": "sicarii",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "siegedsec",
+            "altname": null,
+            "victims": 19
+        },
+        {
+            "group": "silent",
+            "altname": "",
+            "victims": 6
+        },
+        {
+            "group": "silentransomgroup",
+            "altname": "leakeddata",
+            "victims": 84
+        },
+        {
+            "group": "sinobi",
+            "altname": null,
+            "victims": 255
+        },
+        {
+            "group": "skira",
+            "altname": null,
+            "victims": 8
+        },
+        {
+            "group": "slug",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "snatch",
+            "altname": null,
+            "victims": 142
+        },
+        {
+            "group": "solidbit",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "spacebears",
+            "altname": null,
+            "victims": 115
+        },
+        {
+            "group": "sparta",
+            "altname": null,
+            "victims": 16
+        },
+        {
+            "group": "spook",
+            "altname": null,
+            "victims": 35
+        },
+        {
+            "group": "stormous",
+            "altname": null,
+            "victims": 165
+        },
+        {
+            "group": "sugar",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "suncrypt",
+            "altname": null,
+            "victims": 32
+        },
+        {
+            "group": "synack",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "teamxxx",
+            "altname": null,
+            "victims": 12
+        },
+        {
+            "group": "tengu",
+            "altname": null,
+            "victims": 42
+        },
+        {
+            "group": "termite",
+            "altname": null,
+            "victims": 31
+        },
+        {
+            "group": "thegentlemen",
+            "altname": null,
+            "victims": 180
+        },
+        {
+            "group": "thegreenbloodgroup",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "threeam",
+            "altname": "3Am",
+            "victims": 64
+        },
+        {
+            "group": "toufan",
+            "altname": null,
+            "victims": 117
+        },
+        {
+            "group": "tridentlocker",
+            "altname": null,
+            "victims": 14
+        },
+        {
+            "group": "trigona",
+            "altname": null,
+            "victims": 49
+        },
+        {
+            "group": "trinity",
+            "altname": null,
+            "victims": 18
+        },
+        {
+            "group": "trisec",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "u-bomb",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "underground",
+            "altname": null,
+            "victims": 26
+        },
+        {
+            "group": "unknown",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "unsafe",
+            "altname": null,
+            "victims": 14
+        },
+        {
+            "group": "valencialeaks",
+            "altname": null,
+            "victims": 5
+        },
+        {
+            "group": "vanhelsing",
+            "altname": null,
+            "victims": 8
+        },
+        {
+            "group": "vanirgroup",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "vect",
+            "altname": null,
+            "victims": 2
+        },
+        {
+            "group": "vendetta",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "vfokx",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "vicesociety",
+            "altname": null,
+            "victims": 189
+        },
+        {
+            "group": "walocker",
+            "altname": null,
+            "victims": 1
+        },
+        {
+            "group": "wannacry",
+            "altname": null,
+            "victims": 33
+        },
+        {
+            "group": "warlock",
+            "altname": null,
+            "victims": 78
+        },
+        {
+            "group": "werewolves",
+            "altname": null,
+            "victims": 26
+        },
+        {
+            "group": "weyhro",
+            "altname": null,
+            "victims": 14
+        },
+        {
+            "group": "worldleaks",
+            "altname": null,
+            "victims": 123
+        },
+        {
+            "group": "x001xs",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "xinglocker",
+            "altname": null,
+            "victims": 21
+        },
+        {
+            "group": "xinof",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "yanluowang",
+            "altname": null,
+            "victims": 6
+        },
+        {
+            "group": "yurei",
+            "altname": null,
+            "victims": 3
+        },
+        {
+            "group": "zeon",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "zerolockersec",
+            "altname": null,
+            "victims": 0
+        },
+        {
+            "group": "zerotolerance",
+            "altname": null,
+            "victims": 1
+        }
+    ]
+}

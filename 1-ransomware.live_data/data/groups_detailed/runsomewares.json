@@ -1,0 +1,57 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "RunSomeWares",
+  "description": null,
+  "added_date": null,
+  "victims": 6,
+  "firstseen": "2024-06-22",
+  "lastseen": "2025-07-10",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "rnsmwareartse3m4hjsumjf222pnka6gad26cqxqmbjvevhbnym5p6ad.onion",
+      "title": "Run Some Wares",
+      "slug": "http://rnsmwareartse3m4hjsumjf222pnka6gad26cqxqmbjvevhbnym5p6ad.onion",
+      "available": false,
+      "updated": "2025-12-24 08:01:19.010556",
+      "lastscrape": "2026-01-23 08:30:31.671876",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-01-23T08:30:31+00:00",
+        "start_url": "http://rnsmwareartse3m4hjsumjf222pnka6gad26cqxqmbjvevhbnym5p6ad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "oow7rehrxlzpy6vh3hezl2khstkpa6s7wx3iit74tr6xbjibupld5iad.onion",
+      "title": "404 Not Found",
+      "slug": "http://oow7rehrxlzpy6vh3hezl2khstkpa6s7wx3iit74tr6xbjibupld5iad.onion",
+      "available": false,
+      "updated": "2025-04-19 08:31:10.689239",
+      "lastscrape": "2025-06-01 21:19:24.981040",
+      "type": "Files"
+    },
+    {
+      "fqdn": "nidzkoszg57upoq7wcalm2xxeh4i6uumh36axsnqnj3i7lep5uhkehyd.onion",
+      "title": "404 Not Found",
+      "slug": "http://nidzkoszg57upoq7wcalm2xxeh4i6uumh36axsnqnj3i7lep5uhkehyd.onion",
+      "available": false,
+      "updated": "2025-04-19 07:33:00.557193",
+      "lastscrape": "2025-06-01 21:19:38.008349",
+      "type": "Files"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 1,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/runsomewares"
+}

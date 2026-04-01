@@ -1,0 +1,76 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "kraken",
+  "description": null,
+  "added_date": null,
+  "victims": 25,
+  "firstseen": "2024-02-12",
+  "lastseen": "2025-11-13",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "krakenccj3wr23452a4ibkbkuph4d6soyx2xgjoogtuamc3m7u7wemad.onion",
+      "title": "Kraken leak blog",
+      "slug": "http://krakenccj3wr23452a4ibkbkuph4d6soyx2xgjoogtuamc3m7u7wemad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:35.707237",
+      "lastscrape": "2026-02-18 18:31:35.707237",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:35+00:00",
+        "start_url": "http://krakenccj3wr23452a4ibkbkuph4d6soyx2xgjoogtuamc3m7u7wemad.onion",
+        "final_url": "http://krakenccj3wr23452a4ibkbkuph4d6soyx2xgjoogtuamc3m7u7wemad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "12844",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self';form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'none';script-src-attr 'none';style-src 'self' 'unsafe-inline'",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "no-referrer",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "x-xss-protection": "0"
+          }
+        },
+        "headers": {
+          "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self';form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'none';script-src-attr 'none';style-src 'self' 'unsafe-inline'",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "12844",
+          "etag": "W/\"322c-IjMckm54kQZCWrFP3JMq4677EJ8\"",
+          "date": "Wed, 18 Feb 2026 18:31:36 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/kraken"
+}

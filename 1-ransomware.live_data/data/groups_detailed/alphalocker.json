@@ -1,0 +1,85 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "alphalocker",
+  "description": null,
+  "added_date": null,
+  "victims": 30,
+  "firstseen": "2024-01-24",
+  "lastseen": "2025-11-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion",
+      "title": "",
+      "slug": "http://mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion",
+      "available": true,
+      "updated": "2026-02-18 18:01:27.896470",
+      "lastscrape": "2026-02-18 18:01:27.896470",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:01:27+00:00",
+        "start_url": "http://mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion",
+        "final_url": "http://mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=iso-8859-1",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:01:36 GMT",
+          "server": "nginx",
+          "content-type": "text/html; charset=iso-8859-1"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion",
+      "title": "Blog",
+      "slug": "http://mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion/blog_1",
+      "available": true,
+      "updated": "2026-02-18 18:02:34.101904",
+      "lastscrape": "2026-02-18 18:02:34.101904",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:02:34+00:00",
+        "start_url": "http://mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion/blog_1",
+        "final_url": "http://mydatae2d63il5oaxxangwnid5loq2qmtsol2ozr6vtb7yfm5ypzo6id.onion/blog_1",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=iso-8859-1",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:02:39 GMT",
+          "server": "nginx",
+          "content-type": "text/html; charset=iso-8859-1"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/alphalocker"
+}

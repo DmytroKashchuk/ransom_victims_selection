@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "vect",
+  "description": null,
+  "added_date": null,
+  "victims": 2,
+  "firstseen": "2026-01-05",
+  "lastseen": "2026-01-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "bu7zr6fotni3qxxoxlcmpikwtp5mjzy7jkxt7akflnm2kwkbdtgtjuid.onion",
+      "title": "VECT RANSOMWARE // DATA ARCHIVE",
+      "slug": "http://bu7zr6fotni3qxxoxlcmpikwtp5mjzy7jkxt7akflnm2kwkbdtgtjuid.onion",
+      "available": false,
+      "updated": "2026-01-21 18:01:50.495495",
+      "lastscrape": "2026-02-18 19:01:07.091330",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:07+00:00",
+        "start_url": "http://bu7zr6fotni3qxxoxlcmpikwtp5mjzy7jkxt7akflnm2kwkbdtgtjuid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/vect"
+}

@@ -1,0 +1,352 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "clop",
+  "description": "The ransomware group known as Cl0p is a variant of a previously known strain dubbed CryptoMix. It is worth noting that this variant was delivered as the final payload in a phishing campaign in 2019 and was exclusively financially motivated, with attacks carried out by the threat actors TA505.<br> <br> At that time, malicious actors sent phishing emails that led to a macro-enabled document that would drop a loader called 'Get2.' After gaining an initial foothold in the system or infrastructure, the actors began using reconnaissance, lateral movement, and exfiltration techniques to prepare for the deployment of the ransomware.<br> <br> After the execution of the ransomware, Cl0p appends the extension '.clop' to the end of files, or other types of extensions such as '.CIIp, .Cllp, and .C_L_O_P,' as well as different versions of the ransom note that were also observed after encryption. Depending on the variant, any of the ransom text files were created with names like 'ClopReadMe.txt, README_README.txt, Cl0pReadMe.txt, and READ_ME_!!!.TXT.'<br> <br> The Clop operation has shifted from delivering its final payload via phishing and has begun initiating attacks using vulnerabilities that resulted in the exploitation and infection of victims' infrastructures.<BR>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 1251,
+  "firstseen": "2020-03-13",
+  "lastseen": "2026-02-14",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Phishing: Spear-phishing attachment",
+          "technique_id": "T1566.001",
+          "technique_details": "Arrives via phishing emails that have Get2 Loader, which will download the SDBot and FlawedAmmy RAT."
+        },
+        {
+          "technique_name": "Exploit public-facing application",
+          "technique_id": "T1190",
+          "technique_details": "Arrives via any the following exploits: CVE-2021-27101, CVE-2021-27102, CVE-2021-27103, CVE-2021-27104, CVE-2021-35211."
+        },
+        {
+          "technique_name": "Valid accounts",
+          "technique_id": "T1078",
+          "technique_details": "Have been reported to make use of compromised accounts to access victims via RDP."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Native API",
+          "technique_id": "T1106",
+          "technique_details": "Uses native API to execute various commands/routines."
+        },
+        {
+          "technique_name": "Command and scripting interpreter",
+          "technique_id": "T1059",
+          "technique_details": "Uses various scripting interpreters like PowerShell, Windows command shell and Visual Basic (macro in documents)."
+        },
+        {
+          "technique_name": "User execution",
+          "technique_id": "T1204",
+          "technique_details": "User execution is needed to carry out the payload from the spear-phishing link/attachments."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Boot or logon autostart execution",
+          "technique_id": "T1547",
+          "technique_details": "Creates registry run entries to execute the ransomware as a service."
+        },
+        {
+          "technique_name": "Create or modify system process: Windows service",
+          "technique_id": "T1543.003",
+          "technique_details": "Creates a service to execute the ransomware."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Domain Policy modification: Group Policy modification",
+          "technique_id": "T1484.001",
+          "technique_details": "Uses stolen credentials to access the AD servers to gain administrator privilege and attack other machines within the network."
+        },
+        {
+          "technique_name": "Exploitation for privilege escalation",
+          "technique_id": "T1068",
+          "technique_details": "Makes use of CVE-2021-27102 to escalate privilege."
+        },
+        {
+          "technique_name": "Hijack execution flow",
+          "technique_id": "T1574",
+          "technique_details": "UAC bypass."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Masquerading: invalid code signature",
+          "technique_id": "T1036.001",
+          "technique_details": "Makes use of the following digital signatures: DVERI, FADO, TOV."
+        },
+        {
+          "technique_name": "Impair defenses: disable or modify tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Disables security-related software by terminating them."
+        },
+        {
+          "technique_name": "Deobfuscate/Decode files or information",
+          "technique_id": "T1140",
+          "technique_details": "The tool used for exfiltration has a part of its malware trace removal, and it drops a base-64 encoded file."
+        },
+        {
+          "technique_name": "Indicator removal on host: file deletion",
+          "technique_id": "T1070.004",
+          "technique_details": "Deletes traces of itself in the infected machine."
+        },
+        {
+          "technique_name": "Process injection: DLL injection",
+          "technique_id": "T1055.001",
+          "technique_details": "To deliver other tools and payload, a tool has the capability to inject its downloaded payload."
+        },
+        {
+          "technique_name": "Indirect command execution",
+          "technique_id": "T1202",
+          "technique_details": "A startup script runs just before the system gets to the login screen via startup registry."
+        },
+        {
+          "technique_name": "Indicator removal on host: clear Windows event logs",
+          "technique_id": "T1070.001",
+          "technique_details": "Clears the Event Viewer log files."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "File and directory discovery",
+          "technique_id": "T1083",
+          "technique_details": "Searches for specific files and the directory related to its encryption."
+        },
+        {
+          "technique_name": "Remote system discovery",
+          "technique_id": "T1018",
+          "technique_details": "Makes use of tools for network scans."
+        },
+        {
+          "technique_name": "Process discovery",
+          "technique_id": "T1057",
+          "technique_details": "Discovers certain processes for process termination."
+        },
+        {
+          "technique_name": "System information discovery",
+          "technique_id": "T1082",
+          "technique_details": "Identifies keyboard layout and other system information."
+        },
+        {
+          "technique_name": "Query registry",
+          "technique_id": "T1012",
+          "technique_details": "Queries certain registries as part of its routine."
+        },
+        {
+          "technique_name": "Security software discovery",
+          "technique_id": "T1063",
+          "technique_details": "Discovers security software for reconnaissance and termination."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Lateral tool transfer",
+          "technique_id": "T1570",
+          "technique_details": "Can make use of RDP to transfer the ransomware or tools within the network."
+        },
+        {
+          "technique_name": "Remote services: SMB/Windows admin shares",
+          "technique_id": "T1021.002",
+          "technique_details": "Drops a copy of the payload to the compromised AD and then creates a service on the target machine to execute the copy of the payload."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0009",
+      "tactic_name": "Collection",
+      "techniques": [
+        {
+          "technique_name": "Data from local system",
+          "technique_id": "T1005",
+          "technique_details": "Might make use of RDP to manually search for valuable files or information."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Application Layer Protocol",
+          "technique_id": "T1071",
+          "technique_details": "Uses http/s to communicate to its C&C server."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration over web service",
+          "technique_id": "T1567",
+          "technique_details": "DEWMODE web shell extracts list of available files from a MySQL database on the FTA and lists these files and corresponding their metadata. These will then be downloaded using the DEWMODE web shell."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data encrypted for impact",
+          "technique_id": "T1486",
+          "technique_details": "Uses a combination of Salsa20, AES, and ECDH to encrypt the files and key."
+        },
+        {
+          "technique_name": "Inhibit system recovery",
+          "technique_id": "T1490",
+          "technique_details": "Deletes shadow copies."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "Vendor": "Accellion",
+      "Product": "Accellion File Transfer Appliance",
+      "CVE": "CVE-2021-27101, CVE-2021-27102, CVE-2021-27103, CVE-2021-27104",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Cleo",
+      "Product": "Cleo VLTrader, Harmony, LexiCom",
+      "CVE": "CVE-2024-55956",
+      "CVSS": 9.8,
+      "severity": "CRITICAL"
+    },
+    {
+      "Vendor": "Fortra",
+      "Product": "GoAnywhere Managed File Transfer",
+      "CVE": "CVE-2023-0669",
+      "CVSS": 7.2,
+      "severity": "HIGH"
+    },
+    {
+      "Vendor": "Oracle",
+      "Product": "E-Business",
+      "CVE": "CVE-2025-61882",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Progress Software",
+      "Product": "MOVEit",
+      "CVE": "CVE-2023-34362",
+      "CVSS": 9.8,
+      "severity": "CRITICAL"
+    },
+    {
+      "Vendor": "PaperCut",
+      "Product": "PaperCut Application Server",
+      "CVE": "CVE-2023-27350 & CVE-2023-27351",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "SolarWinds",
+      "Product": "SolarWinds Serv-U FTP",
+      "CVE": "CVE-2021-35211",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    }
+  ],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ekbgzchl6x2ias37.onion",
+      "title": null,
+      "slug": "http://ekbgzchl6x2ias37.onion",
+      "available": false,
+      "updated": "2021-09-08 00:04:19.844737",
+      "lastscrape": "2025-06-01 21:18:12.965811",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion",
+      "title": "DDOS Protection",
+      "slug": "http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/",
+      "available": true,
+      "updated": "2026-02-18 19:01:11.012625",
+      "lastscrape": "2026-02-18 19:01:11.012625",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:11+00:00",
+        "start_url": "http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/",
+        "final_url": "http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 19:01:15 GMT",
+          "content-type": "text/html",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "set-cookie": "dcap=2BF479485C3AF230E59AAFC7E3C51CF86BA1D4CF0EFFC80E03FE84FB4D6D30462B4209991ACCD9EAF06FB36562CC33A8; Max-Age=120; Domain=santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion; Path=/; HttpOnly; SameSite=Lax",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "SAMEORIGIN",
+          "x-xss-protection": "1; mode=block"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "toznnag5o3ambca56s2yacteu7q7x2avrfherzmz4nmujrjuib4iusad.onion",
+      "title": "TORRENT | CL0P^_- LEAKS",
+      "slug": "http://toznnag5o3ambca56s2yacteu7q7x2avrfherzmz4nmujrjuib4iusad.onion",
+      "available": false,
+      "updated": "2024-12-31 09:54:02.888829",
+      "lastscrape": "2025-06-01 21:19:13.004494",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 4,
+  "url": "https://www.ransomware.live/group/clop"
+}

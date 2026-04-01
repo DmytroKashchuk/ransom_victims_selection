@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "payloadbin",
+  "description": "",
+  "added_date": null,
+  "victims": 29,
+  "firstseen": "2021-09-09",
+  "lastseen": "2022-01-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "vbmisqjshn4yblehk2vbnil53tlqklxsdaztgphcilto3vdj4geao5qd.onion",
+      "title": "Payload.bin",
+      "slug": "http://vbmisqjshn4yblehk2vbnil53tlqklxsdaztgphcilto3vdj4geao5qd.onion/",
+      "available": false,
+      "updated": "2022-08-28 20:21:15.593472",
+      "lastscrape": "2025-06-01 21:19:12.436468",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/payloadbin"
+}

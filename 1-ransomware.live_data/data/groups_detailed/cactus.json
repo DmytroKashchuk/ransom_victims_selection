@@ -1,0 +1,266 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cactus",
+  "description": "The CACTUS ransomware is said to have emerged around March 2023. The group became known for exploiting vulnerabilities to gain initial access and maintain a presence within the organization's infrastructure.<br> <br> There is little known information about the ransomware group, except that it emerged on the mentioned date and, following encryption, a text file named 'cAcTuS.readme.txt' would be created. Additionally, encrypted files were altered to the '.cts1' extension, and data exfiltration and victim extortion were conducted through the use of the service known as Tox.<br>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 248,
+  "firstseen": "2023-07-03",
+  "lastseen": "2025-03-17",
+  "ttps": [
+    {
+      "tactic_id": "TA0042",
+      "tactic_name": "Resource Development",
+      "techniques": [
+        {
+          "technique_name": "Malvertising",
+          "technique_id": "T1538.008",
+          "technique_details": "The threat actor was identified by Microsoft as responsible for the Danabot campaign via malvertising for final delivery of Ransomware Cactus."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "technique_details": "The group exploits vulnerabilities in VPN applications."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Scheduled Task/Job: Scheduled Task",
+          "technique_id": "T1053.005",
+          "technique_details": "The group uses task scheduling for file execution for C2 communication and uses ransomware payload persistence."
+        },
+        {
+          "technique_name": "Software Deployment Tools",
+          "technique_id": "T1072",
+          "technique_details": "Actors attempt to gain access and use a set of third-party software installed on the network for lateral movement."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "System Network Connections Discovery",
+          "technique_id": "T1049",
+          "technique_details": "Actors use tools to scan the organization's infrastructure systems."
+        },
+        {
+          "technique_name": "Account Discovery: Domain Account",
+          "technique_id": "T1087.002",
+          "technique_details": "Actors use scripts to identify domain accounts of connected users through Windows event logs."
+        },
+        {
+          "technique_name": "Remote System Discovery",
+          "technique_id": "T1018",
+          "technique_details": "Actors attempt to obtain a list of other systems, hosts, IPs, and any other identifier for lateral movement."
+        },
+        {
+          "technique_name": "Account Discovery",
+          "technique_id": "T1087",
+          "technique_details": "Actors attempt to obtain a list of accounts, user names, and valid email addresses for later access."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Remote Access Software",
+          "technique_id": "T1219",
+          "technique_details": "Actors use RDP connection to access other devices on the internal network."
+        },
+        {
+          "technique_name": "Proxy",
+          "technique_id": "T1090",
+          "technique_details": "Actors use connection proxy to route network traffic between systems to avoid detection by security solutions."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "The group uses modification and disabling of security tools to avoid possible malware and access detection."
+        },
+        {
+          "technique_name": "Obfuscated Files or Information",
+          "technique_id": "T1027",
+          "technique_details": "The group uses file obfuscation techniques to avoid detection by defenses."
+        },
+        {
+          "technique_name": "Obfuscated Files or Information: Software Packing",
+          "technique_id": "T1027.002",
+          "technique_details": "Actors use packing in ransomware payload to avoid detection by defenses."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Create Account",
+          "technique_id": "T1136",
+          "technique_details": "The group creates a service/system account to launch the ransomware."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "Credentials from Web Browsers",
+          "technique_id": "T1555.003",
+          "technique_details": "The group searches for key files from users' browsers to locate stored passwords to proceed with the attack and access other accounts."
+        },
+        {
+          "technique_name": "OS Credential Dumping",
+          "technique_id": "T1003.001",
+          "technique_details": "The group performs LSASS memory dump to identify credentials."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Remote Services: SSH",
+          "technique_id": "T1021.004",
+          "technique_details": "The group uses initial access to set up an SSH tunnel to C2."
+        },
+        {
+          "technique_name": "Remote Desktop Protocol",
+          "technique_id": "T1021.001",
+          "technique_details": "Cactus actors use valid accounts to log into devices via RDP."
+        },
+        {
+          "technique_name": "Lateral Tool Transfer",
+          "technique_id": "T1570",
+          "technique_details": "Actors use tools or other files between systems to prepare files and encrypt data."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration to Cloud Storage",
+          "technique_id": "T1567.002",
+          "technique_details": "Actors exfiltrate data to a cloud storage service through tools such as Rclone and others."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Actors use ransomware payload to encrypt data and change extensions."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Splashtop",
+      "SuperOps"
+    ],
+    "DiscoveryEnum": [
+      "Nmap",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Chisel"
+    ],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "cactusbloguuodvqjmnzlwetjlpj6aggc6iocwhuupb47laukux7ckid.onion",
+      "title": "500: Internal Server Error",
+      "slug": "https://cactusbloguuodvqjmnzlwetjlpj6aggc6iocwhuupb47laukux7ckid.onion",
+      "available": false,
+      "updated": "2025-04-07 20:31:33.706188",
+      "lastscrape": "2025-06-01 21:18:20.232128",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "cactus5dqnqkppa5ayckiyk6dttpqwczdqphv5mxh4dkk5ct544q5aad.onion",
+      "title": "",
+      "slug": "https://cactus5dqnqkppa5ayckiyk6dttpqwczdqphv5mxh4dkk5ct544q5aad.onion",
+      "available": false,
+      "updated": "2025-04-08 11:31:41.884401",
+      "lastscrape": "2025-06-01 21:19:20.274536",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "sonarmsng5vzwqezlvtu2iiwwdn3dxkhotftikhowpfjuzg7p3ca5eid.onion",
+      "title": "Sonar - Encrypted communications",
+      "slug": "http://sonarmsng5vzwqezlvtu2iiwwdn3dxkhotftikhowpfjuzg7p3ca5eid.onion/contact/Cactus_Support",
+      "available": true,
+      "updated": "2026-02-18 19:01:13.382023",
+      "lastscrape": "2026-02-18 19:01:13.382023",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:13+00:00",
+        "start_url": "http://sonarmsng5vzwqezlvtu2iiwwdn3dxkhotftikhowpfjuzg7p3ca5eid.onion/contact/Cactus_Support",
+        "final_url": "http://sonarmsng5vzwqezlvtu2iiwwdn3dxkhotftikhowpfjuzg7p3ca5eid.onion/contact/Cactus_Support",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:01:42 GMT",
+          "content-type": "text/html",
+          "connection": "keep-alive",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 6,
+  "url": "https://www.ransomware.live/group/cactus"
+}

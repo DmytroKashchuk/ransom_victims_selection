@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "sabbath",
+  "description": null,
+  "added_date": null,
+  "victims": 17,
+  "firstseen": "2021-11-22",
+  "lastseen": "2022-02-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "54bb47h5qu4k7l4d7v5ix3i6ak6elysn3net4by4ihmvrhu7cvbskoqd.onion",
+      "title": "BLOG",
+      "slug": "http://54bb47h5qu4k7l4d7v5ix3i6ak6elysn3net4by4ihmvrhu7cvbskoqd.onion/blog",
+      "available": false,
+      "updated": "2021-11-13 03:45:10.144430",
+      "lastscrape": "2025-06-01 21:18:25.183457",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "54bb47h.blog",
+      "title": null,
+      "slug": "http://54bb47h.blog",
+      "available": false,
+      "updated": "2022-04-13 03:32:39.807348",
+      "lastscrape": "2025-06-01 21:19:25.215578",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/sabbath"
+}

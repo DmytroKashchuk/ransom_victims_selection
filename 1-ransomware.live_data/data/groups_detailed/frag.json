@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "frag",
+  "description": null,
+  "added_date": null,
+  "victims": 30,
+  "firstseen": "2024-09-24",
+  "lastseen": "2025-06-12",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "34o4m3f26ucyeddzpf53bksy76wd737nf2fytslovwd3viac3by5chad.onion",
+      "title": "Frag Blog",
+      "slug": "http://34o4m3f26ucyeddzpf53bksy76wd737nf2fytslovwd3viac3by5chad.onion/leaks",
+      "available": false,
+      "updated": "2025-09-12 03:01:31.718859",
+      "lastscrape": "2025-10-12 03:30:26.900459",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-10-12T03:30:27+00:00",
+        "start_url": "http://34o4m3f26ucyeddzpf53bksy76wd737nf2fytslovwd3viac3by5chad.onion/leaks",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/frag"
+}

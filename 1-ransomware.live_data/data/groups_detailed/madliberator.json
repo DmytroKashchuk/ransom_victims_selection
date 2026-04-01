@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "madliberator",
+  "description": null,
+  "added_date": null,
+  "victims": 16,
+  "firstseen": "2024-06-13",
+  "lastseen": "2024-10-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "k67ivvik3dikqi4gy4ua7xa6idijl4si7k5ad5lotbaeirfcsx4sgbid.onion",
+      "title": "MADDLL32 - LEAKED FILES",
+      "slug": "http://k67ivvik3dikqi4gy4ua7xa6idijl4si7k5ad5lotbaeirfcsx4sgbid.onion",
+      "available": false,
+      "updated": "2024-12-31 10:26:06.659118",
+      "lastscrape": "2025-06-01 21:41:09.275037",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/madliberator"
+}

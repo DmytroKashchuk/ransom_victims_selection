@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ContFR",
+  "description": "RAAS - Ransomware intégré à un fichier PDF, à faire ouvrir à vos victimes ou à insérer vous-même, Windows et Mac, ne fonctionne pas sur Linux. Tableau de vitcimes et récupération de données possible depuis votre espace abonné. Configuration de votre ransomware à votre première connexion, puis modification possible selon votre formule.",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "zprxx7sfc26rufggreanowmme5qqouqegr2efnko6erycquwvpq5egid.onion",
+      "title": "ContFR - RAAS",
+      "slug": "http://zprxx7sfc26rufggreanowmme5qqouqegr2efnko6erycquwvpq5egid.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:23.464392",
+      "lastscrape": "2026-02-18 18:31:23.464392",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:37+00:00",
+        "start_url": "http://zprxx7sfc26rufggreanowmme5qqouqegr2efnko6erycquwvpq5egid.onion",
+        "final_url": "http://zprxx7sfc26rufggreanowmme5qqouqegr2efnko6erycquwvpq5egid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.18.0",
+          "date": "Wed, 18 Feb 2026 18:31:38 GMT",
+          "content-type": "text/html",
+          "last-modified": "Wed, 25 Sep 2024 10:11:19 GMT",
+          "connection": "keep-alive",
+          "etag": "W/\"66f3e1c7-2653\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/contfr"
+}

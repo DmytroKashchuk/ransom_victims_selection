@@ -1,0 +1,94 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ransomhouse",
+  "description": null,
+  "added_date": null,
+  "victims": 183,
+  "firstseen": "2021-06-01",
+  "lastseen": "2025-12-19",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "xw7au5pnwtl6lozbsudkmyd32n6gnqdngitjdppybudan3x3pjgpmpid.onion",
+      "title": "©RansomHouse",
+      "slug": "http://xw7au5pnwtl6lozbsudkmyd32n6gnqdngitjdppybudan3x3pjgpmpid.onion/",
+      "available": false,
+      "updated": "2022-10-01 13:32:27.851016",
+      "lastscrape": "2025-06-01 21:19:12.485019",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion",
+      "title": "",
+      "slug": "http://zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion/a",
+      "available": true,
+      "updated": "2026-02-18 19:01:16.422988",
+      "lastscrape": "2026-02-18 19:01:16.422988",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:16+00:00",
+        "start_url": "http://zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion/a",
+        "final_url": "http://zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion/a",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "application/json; charset=utf-8",
+          "content_length": "136451",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "x-frame-options": "SAMEORIGIN",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "no-referrer",
+            "x-xss-protection": "0"
+          }
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 19:01:24 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "136451",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+          "x-dns-prefetch-control": "off",
+          "expect-ct": "max-age=0",
+          "x-frame-options": "SAMEORIGIN",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "x-download-options": "noopen",
+          "x-content-type-options": "nosniff",
+          "x-permitted-cross-domain-policies": "none",
+          "referrer-policy": "no-referrer",
+          "x-xss-protection": "0",
+          "access-control-allow-origin": "*",
+          "x-ratelimit-limit": "100000",
+          "x-ratelimit-remaining": "99999",
+          "x-ratelimit-reset": "1771441285",
+          "etag": "W/\"21503-3e2EvntLBLEoBg7wQgFO1aPkkjA\""
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "secxrosqawaefsio3biv2dmi2c5yunf3t7ilwf54czq3v4bi7w6mbfad.onion",
+      "title": "Ransomhouse ©",
+      "slug": "http://secxrosqawaefsio3biv2dmi2c5yunf3t7ilwf54czq3v4bi7w6mbfad.onion",
+      "available": false,
+      "updated": "2023-01-14 21:31:42.540293",
+      "lastscrape": "2025-06-01 21:19:31.508115",
+      "type": "Chat"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/ransomhouse"
+}

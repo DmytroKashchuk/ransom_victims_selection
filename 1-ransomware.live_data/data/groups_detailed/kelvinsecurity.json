@@ -1,0 +1,52 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "kelvinsecurity",
+  "description": null,
+  "added_date": null,
+  "victims": 26,
+  "firstseen": "2022-04-01",
+  "lastseen": "2022-05-24",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "kelvinsecteamcyber.wixsite.com",
+      "title": "403 Forbidden",
+      "slug": "https://kelvinsecteamcyber.wixsite.com/my-site/items",
+      "available": true,
+      "updated": "2026-02-18 18:31:10.254485",
+      "lastscrape": "2026-02-18 18:31:10.254485",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:10+00:00",
+        "start_url": "https://kelvinsecteamcyber.wixsite.com/my-site/items",
+        "final_url": "https://kelvinsecteamcyber.wixsite.com/my-site/items",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": null,
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "glb-x-seen-by": "c56vgGFQtAF3oPKx02gjqFiB5QmpRe2J37zq9nDD6cs=",
+          "transfer-encoding": "chunked",
+          "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/kelvinsecurity"
+}

@@ -1,0 +1,52 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "IMNCrew",
+  "description": null,
+  "added_date": null,
+  "victims": 12,
+  "firstseen": "2025-05-05",
+  "lastseen": "2025-09-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "Restic"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [
+      "LaZagne"
+    ],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "imncrewwfkbjkhr2oylerfm5qtbzfphhmpcfag43xc2kfgvluqtlgoid.onion",
+      "title": "IMN Crew#",
+      "slug": "http://imncrewwfkbjkhr2oylerfm5qtbzfphhmpcfag43xc2kfgvluqtlgoid.onion",
+      "available": false,
+      "updated": "2025-10-27 08:31:56.208924",
+      "lastscrape": "2025-11-26 09:00:48.123113",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-26T09:00:48+00:00",
+        "start_url": "http://imncrewwfkbjkhr2oylerfm5qtbzfphhmpcfag43xc2kfgvluqtlgoid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/imncrew"
+}

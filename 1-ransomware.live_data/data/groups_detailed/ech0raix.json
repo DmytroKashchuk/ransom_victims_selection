@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ech0raix",
+  "description": "The QNAPCrypt ransomware works similarly to other ransomware, including encrypting all files and delivering a ransom note. However, there are several important differences:1. The ransom note was included solely as a text file, without any message on the screen—naturally, because it is a server and not an endpoint.2. Every victim is provided with a different, unique Bitcoin wallet—this could help the attackers avoid being traced.3. Once a victim is compromised, the malware requests a wallet address and a public RSA key from the command and control server (C&C) before file encryption.",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "veqlxhq7ub5qze3qy56zx2cig2e6tzsgxdspkubwbayqije6oatma6id.onion",
+      "title": "404 page not found",
+      "slug": "http://veqlxhq7ub5qze3qy56zx2cig2e6tzsgxdspkubwbayqije6oatma6id.onion",
+      "available": false,
+      "updated": "2023-01-07 21:20:54.200771",
+      "lastscrape": "2025-06-01 21:19:12.154747",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "7zvu7njrx7q734kvk435ntuf37gfll2pu46fmrfoweczwpk2rhp444yd.onion",
+      "title": "",
+      "slug": "http://7zvu7njrx7q734kvk435ntuf37gfll2pu46fmrfoweczwpk2rhp444yd.onion",
+      "available": false,
+      "updated": "2025-07-02 10:01:14.062935",
+      "lastscrape": "2025-08-01 10:30:08.677735",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/ech0raix"
+}

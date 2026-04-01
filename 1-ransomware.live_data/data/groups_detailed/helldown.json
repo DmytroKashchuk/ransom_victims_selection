@@ -1,0 +1,56 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "helldown",
+  "description": null,
+  "added_date": null,
+  "victims": 37,
+  "firstseen": "2024-08-05",
+  "lastseen": "2024-11-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "TeamViewer"
+    ],
+    "DiscoveryEnum": [
+      "Advanced Port Scanner"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [],
+    "DefenseEvasion": [
+      "HRSword"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "onyxcgfg4pjevvp5h34zvhaj45kbft3dg5r33j5vu3nyp7xic3vrzvad.onion",
+      "title": "Helldown Leaks",
+      "slug": "http://onyxcgfg4pjevvp5h34zvhaj45kbft3dg5r33j5vu3nyp7xic3vrzvad.onion",
+      "available": false,
+      "updated": "2024-12-31 10:06:36.868761",
+      "lastscrape": "2025-06-01 21:19:01.631061",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "onyxcym4mjilrsptk5uo2dhesbwntuban55mvww2olk5ygqafhu3i3yd.onion",
+      "title": "Helldown Leaks",
+      "slug": "http://onyxcym4mjilrsptk5uo2dhesbwntuban55mvww2olk5ygqafhu3i3yd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:06:40.211767",
+      "lastscrape": "2025-06-01 21:19:10.016544",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/helldown"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ElDorado",
+  "description": "In September The El Dorado ransomware group have been rebrand as BlackLock ",
+  "added_date": null,
+  "victims": 114,
+  "firstseen": "2023-10-19",
+  "lastseen": "2025-01-24",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "dataleakypypu7uwblm5kttv726l3iripago6p336xjnbstkjwrlnlid.onion",
+      "title": "DragonForce | Oops...",
+      "slug": "http://dataleakypypu7uwblm5kttv726l3iripago6p336xjnbstkjwrlnlid.onion",
+      "available": false,
+      "updated": "2025-03-28 19:31:11.758699",
+      "lastscrape": "2025-06-01 21:18:33.268860",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/eldorado"
+}

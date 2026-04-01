@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dispossessor",
+  "description": "This is not a ransomware group but a data broker",
+  "added_date": null,
+  "victims": 344,
+  "firstseen": "2020-02-03",
+  "lastseen": "2024-08-11",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "dispossessor.com",
+      "title": "Just a moment...",
+      "slug": "https://dispossessor.com",
+      "available": false,
+      "updated": "2024-06-03 03:00:38.741333",
+      "lastscrape": "2025-06-01 21:19:12.120585",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "e27z5kd2rjsern2gpgukhcioysqlfquxgf7rxpvcwepxl4lfc736piyd.onion",
+      "title": "Dispossessor.com",
+      "slug": "http://e27z5kd2rjsern2gpgukhcioysqlfquxgf7rxpvcwepxl4lfc736piyd.onion/dashboard",
+      "available": false,
+      "updated": "2024-12-31 09:57:42.129758",
+      "lastscrape": "2025-06-01 21:19:24.304566",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/dispossessor"
+}

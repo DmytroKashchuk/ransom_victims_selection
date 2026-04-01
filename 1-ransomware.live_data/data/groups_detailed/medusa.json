@@ -1,0 +1,349 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "medusa",
+  "description": null,
+  "added_date": null,
+  "victims": 518,
+  "firstseen": "2023-01-11",
+  "lastseen": "2026-02-13",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "Initial access through brute force or compromised credentials of legitimate RDP accounts."
+        },
+        {
+          "technique_name": "Phishing",
+          "technique_id": "T1566",
+          "technique_details": "Initial access through phishing email attachments."
+        },
+        {
+          "technique_name": "External Remote Services",
+          "technique_id": "T1133",
+          "technique_details": "Accesses the victim's network via an RDP service."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Command and Scripting Interpreter",
+          "technique_id": "T1059",
+          "technique_details": "Uses a series of Windows commands, such as bcdedit.exe and vssadmin."
+        },
+        {
+          "technique_name": "Windows Management Instrumentation",
+          "technique_id": "T1047",
+          "technique_details": "Uses a series of Windows commands, such as bcdedit.exe and vssadmin."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Impair Defenses",
+          "technique_id": "T1562",
+          "technique_details": "Employs Windows Management Instrumentation (WMIC) command-line to delete shadow copies."
+        },
+        {
+          "technique_name": "Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "Terminates services or processes related to antivirus/security tools."
+        },
+        {
+          "technique_name": "Safe Mode Boot",
+          "technique_id": "T1562.009",
+          "technique_details": "Abuses Safe Mode to evade endpoint detection."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "Brute Force",
+          "technique_id": "T1110",
+          "technique_details": "Uses brute force on local RDP account passwords."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "Queries specified files, folders, and file extensions."
+        },
+        {
+          "technique_name": "Network Share Discovery",
+          "technique_id": "T1135",
+          "technique_details": "Enumerates network shares."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Remote Services",
+          "technique_id": "T1021",
+          "technique_details": "Uses remote services for login and lateral movement via RDP and SMB."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Ingress Tool Transfer",
+          "technique_id": "T1105",
+          "technique_details": "Uses certutil to download malicious files."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration Over C2 Channel",
+          "technique_id": "T1045",
+          "technique_details": "Transfers data to attacker-controlled servers via an existing command-and-control (C2) channel."
+        },
+        {
+          "technique_name": "Exfiltration Over Web Service",
+          "technique_id": "T1567",
+          "technique_details": "Exfiltrates data using web services like cloud services (e.g., Google Drive, Dropbox, etc.)."
+        },
+        {
+          "technique_name": "Exfiltration Over Alternative Protocol",
+          "technique_id": "T1048",
+          "technique_details": "Exfiltrates data using alternative protocols, such as FTP/SFTP, to avoid detection by traditional methods."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "Deletes shadow copies and disables the Windows System Restore feature."
+        },
+        {
+          "technique_name": "Service Stop",
+          "technique_id": "T1489",
+          "technique_details": "Terminates processes and services related to database servers, email servers, and backups."
+        },
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "Uses the AES-256 algorithm to encrypt files on the computer."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "Vendor": "SimpleHelp",
+      "Product": "SimpleHelp RMM",
+      "CVE": "CVE-2024-57727",
+      "CVSS": 7.5,
+      "severity": "HIGH"
+    }
+  ],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "eHorus",
+      "HCL BigFix",
+      "N-Able",
+      "PDQ Deploy",
+      "ScreenConnect",
+      "SimpleHelp",
+      "Splashtop"
+    ],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner",
+      "Navicat",
+      "PDQ Inventory",
+      "RoboCopy",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [
+      "Cloudflared",
+      "FRP",
+      "Ligolo",
+      "PuTTY",
+      "RevSocks"
+    ],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [],
+    "DefenseEvasion": [
+      "EDRSandBlast",
+      "KillAV",
+      "ThrottleStop driver"
+    ],
+    "LOLBAS": [
+      "BITSAdmin",
+      "Process Explorer",
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "medusaxko7jxtrojdkxo66j7ck4q5tgktf7uqsqyfry4ebnxlcbkccyd.onion",
+      "title": "Human Verify",
+      "slug": "http://medusaxko7jxtrojdkxo66j7ck4q5tgktf7uqsqyfry4ebnxlcbkccyd.onion/",
+      "available": false,
+      "updated": "2024-03-01 12:41:40.767894",
+      "lastscrape": "2025-06-01 21:19:12.357732",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "medusakxxtp3uo7vusntvubnytaph4d3amxivbggl3hnhpk2nmus34yd.onion",
+      "title": "Medusa Chat",
+      "slug": "http://medusakxxtp3uo7vusntvubnytaph4d3amxivbggl3hnhpk2nmus34yd.onion",
+      "available": false,
+      "updated": "2024-05-27 17:15:56.012955",
+      "lastscrape": "2025-06-01 21:19:22.741080",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd.onion",
+      "title": "Human Verify",
+      "slug": "http://xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd.onion",
+      "available": false,
+      "updated": "2024-05-30 14:49:04.356222",
+      "lastscrape": "2025-01-28 10:02:49.488420",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "dlmfciajg5s4vliyo5dhs5jyzhi2xr2fnkebul46lpf4xudtqiue4nid.onion",
+      "title": "503 Service Temporarily Unavailable",
+      "slug": "http://dlmfciajg5s4vliyo5dhs5jyzhi2xr2fnkebul46lpf4xudtqiue4nid.onion",
+      "available": false,
+      "updated": "2024-06-03 16:33:33.207964",
+      "lastscrape": "2025-06-01 21:19:31.295465",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "kyfiw76eol6ph2mq7pi5e5tdvce37bicddhai62qhdc5ja6jdchz4qqd.onion",
+      "title": "Human Verify",
+      "slug": "http://kyfiw76eol6ph2mq7pi5e5tdvce37bicddhai62qhdc5ja6jdchz4qqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:28:08.352872",
+      "lastscrape": "2025-06-01 21:19:39.247170",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "s7lmmhlt3iwnwirxvgjidl6omcblvw2rg75txjfduy73kx5brlmiulad.onion",
+      "title": "Human Verify",
+      "slug": "http://s7lmmhlt3iwnwirxvgjidl6omcblvw2rg75txjfduy73kx5brlmiulad.onion",
+      "available": false,
+      "updated": "2026-02-05 04:01:15.226005",
+      "lastscrape": "2026-02-18 19:00:13.923031",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:14+00:00",
+        "start_url": "http://s7lmmhlt3iwnwirxvgjidl6omcblvw2rg75txjfduy73kx5brlmiulad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "45.9.148.39",
+      "title": null,
+      "slug": "http://45.9.148.39:8001",
+      "available": false,
+      "updated": "2024-12-31 10:29:09.632289",
+      "lastscrape": "2025-06-01 21:20:10.067832",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "cx5u7zxbvrfyoj6ughw76oa264ucuuizmmzypwum6ear7pct4yc723qd.onion",
+      "title": "Human Verify",
+      "slug": "http://cx5u7zxbvrfyoj6ughw76oa264ucuuizmmzypwum6ear7pct4yc723qd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:29:13.067244",
+      "lastscrape": "2025-06-01 21:20:27.910291",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd.onion",
+      "title": "Human Verify",
+      "slug": "http://xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:48.829384",
+      "lastscrape": "2026-02-18 18:31:48.829384",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:48+00:00",
+        "start_url": "http://xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd.onion",
+        "final_url": "http://xfv4jzckytb4g3ckwemcny3ihv4i5p4lqzdpi624cxisu35my5fwi5qd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache/2.4.52 (Ubuntu)",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:49 GMT",
+          "server": "Apache/2.4.52 (Ubuntu)",
+          "set-cookie": "PHPSESSID=k7giei86p1beljfik8g97hgbod; path=/",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "hupxs7ps7md24kpz4lwsbra64abgxjx3pcc2wuca5ibawf2g5hlpfyqd.onion",
+      "title": null,
+      "slug": "http://hupxs7ps7md24kpz4lwsbra64abgxjx3pcc2wuca5ibawf2g5hlpfyqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:29:52.534381",
+      "lastscrape": "2025-06-01 21:20:38.516432",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/medusa"
+}

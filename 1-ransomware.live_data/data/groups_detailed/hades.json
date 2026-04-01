@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "hades",
+  "description": "According to PCrisk, Hades Locker is an updated version of WildFire Locker ransomware that infiltrates systems and encrypts a variety of data types using AES encryption. Hades Locker appends the names of encrypted files with the .~HL[5_random_characters] (first 5 characters of encryption password) extension.",
+  "added_date": null,
+  "victims": 1,
+  "firstseen": "2020-12-15",
+  "lastseen": "2020-12-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ixltdyumdlthrtgx.onion",
+      "title": null,
+      "slug": "http://ixltdyumdlthrtgx.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:36.908600",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/hades"
+}

@@ -1,0 +1,85 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lockbit",
+  "description": "",
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2020-10-21",
+  "lastseen": "2021-08-23",
+  "ttps": [],
+  "vulnerabilities": [
+    {
+      "Vendor": "Apache",
+      "Product": "Log4j",
+      "CVE": "CVE-2021-44228 (\"Log4Shell\")",
+      "CVSS": 10.0,
+      "severity": "CRITICAL"
+    },
+    {
+      "Vendor": "Citrix",
+      "Product": "NetScaler ADC & Gateway",
+      "CVE": "CVE-2023-4966 (\"Citrixbleed\")",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Fortinet",
+      "Product": "FortiOS",
+      "CVE": "CVE-2018-13379",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Fortra",
+      "Product": "GoAnywhere Managed File Transfer",
+      "CVE": "CVE-2023-0669",
+      "CVSS": 7.2,
+      "severity": "HIGH"
+    },
+    {
+      "Vendor": "F5",
+      "Product": "iControl REST",
+      "CVE": "CVE-2021-22986",
+      "CVSS": 9.8,
+      "severity": "CRITICAL"
+    },
+    {
+      "Vendor": "PaperCut",
+      "Product": "PaperCut Application Server",
+      "CVE": "CVE-2023–27350 & CVE-2023–27351",
+      "CVSS": null,
+      "severity": "UNKNOWN"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "NetLogon",
+      "CVE": "CVE-2020-1472 (\"ZeroLogon\")",
+      "CVSS": 5.5,
+      "severity": "MEDIUM"
+    },
+    {
+      "Vendor": "Windows",
+      "Product": "Remote Desktop Services",
+      "CVE": "CVE-2019-0708 (\"BlueKeep\")",
+      "CVSS": 9.8,
+      "severity": "CRITICAL"
+    }
+  ],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "lockbitkodidilol.onion",
+      "title": null,
+      "slug": "http://lockbitkodidilol.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:42.406910",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 5,
+  "url": "https://www.ransomware.live/group/lockbit"
+}

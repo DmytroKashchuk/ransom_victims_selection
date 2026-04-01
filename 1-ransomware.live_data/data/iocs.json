@@ -1,0 +1,535 @@
+{
+    "client": "dmk6603@utulsa.edu",
+    "filter_type": null,
+    "count": 76,
+    "groups": [
+        {
+            "group": "0apt",
+            "ioc_types": {
+                "md5": 4
+            }
+        },
+        {
+            "group": "Ailock",
+            "ioc_types": {
+                "sha256": 1,
+                "md5": 1
+            }
+        },
+        {
+            "group": "Akira",
+            "ioc_types": {
+                "sha256": 37,
+                "btc": 7,
+                "md5": 321
+            }
+        },
+        {
+            "group": "Anubis",
+            "ioc_types": {
+                "md5": 25,
+                "twitter": 1,
+                "ip": 4
+            }
+        },
+        {
+            "group": "Arkana",
+            "ioc_types": {
+                "session": 1
+            }
+        },
+        {
+            "group": "Bashe",
+            "ioc_types": {
+                "ip": 1
+            }
+        },
+        {
+            "group": "Beast",
+            "ioc_types": {
+                "sha256": 1,
+                "session": 1,
+                "tox": 1,
+                "mail": 8,
+                "ip": 1
+            }
+        },
+        {
+            "group": "Benzona",
+            "ioc_types": {
+                "sha256": 1,
+                "pgp": 9,
+                "md5": 1,
+                "tox": 1,
+                "ip": 1
+            }
+        },
+        {
+            "group": "Bert",
+            "ioc_types": {
+                "md5": 9,
+                "ip": 2
+            }
+        },
+        {
+            "group": "Bianlian",
+            "ioc_types": {
+                "md5": 8,
+                "ip": 191
+            }
+        },
+        {
+            "group": "Blacklock",
+            "ioc_types": {
+                "md5": 1
+            }
+        },
+        {
+            "group": "Blacknevas",
+            "ioc_types": {
+                "sha256": 28
+            }
+        },
+        {
+            "group": "BlackShrantac",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "Blacksuit",
+            "ioc_types": {
+                "ip": 1
+            }
+        },
+        {
+            "group": "Bluebox",
+            "ioc_types": {
+                "email": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Bluelocker",
+            "ioc_types": {
+                "sha256": 4,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Bqtlock",
+            "ioc_types": {
+                "telegram": 5,
+                "xmr": 1,
+                "twitter": 1
+            }
+        },
+        {
+            "group": "BrainCipher",
+            "ioc_types": {
+                "email": 3,
+                "md5": 12
+            }
+        },
+        {
+            "group": "Cactus",
+            "ioc_types": {
+                "md5": 51
+            }
+        },
+        {
+            "group": "Cephalus",
+            "ioc_types": {
+                "ip": 1
+            }
+        },
+        {
+            "group": "Chaos",
+            "ioc_types": {
+                "sha256": 3,
+                "md5": 3,
+                "ip": 3
+            }
+        },
+        {
+            "group": "Cloak",
+            "ioc_types": {
+                "md5": 1
+            }
+        },
+        {
+            "group": "Crazyhunter",
+            "ioc_types": {
+                "telegram": 2,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Cry0",
+            "ioc_types": {
+                "tox": 1,
+                "ip": 1
+            }
+        },
+        {
+            "group": "Crypto24",
+            "ioc_types": {
+                "email": 1,
+                "ip": 1
+            }
+        },
+        {
+            "group": "D4rk4rmy",
+            "ioc_types": {
+                "tox": 2
+            }
+        },
+        {
+            "group": "Datacarry",
+            "ioc_types": {
+                "sha256": 2,
+                "email": 1,
+                "session": 1,
+                "md5": 1,
+                "ip": 2
+            }
+        },
+        {
+            "group": "Devman",
+            "ioc_types": {
+                "tox": 1,
+                "twitter": 1,
+                "ip": 3
+            }
+        },
+        {
+            "group": "DragonForce",
+            "ioc_types": {
+                "md5": 22,
+                "tox": 1,
+                "ip": 1
+            }
+        },
+        {
+            "group": "Fog",
+            "ioc_types": {
+                "md5": 54
+            }
+        },
+        {
+            "group": "Frag",
+            "ioc_types": {
+                "email": 2
+            }
+        },
+        {
+            "group": "GDLockrSec",
+            "ioc_types": {
+                "tox": 1,
+                "twitter": 1
+            }
+        },
+        {
+            "group": "Ghostsec",
+            "ioc_types": {
+                "sha256": 4,
+                "url": 5,
+                "ip": 1
+            }
+        },
+        {
+            "group": "Global",
+            "ioc_types": {
+                "session": 1
+            }
+        },
+        {
+            "group": "GunRa",
+            "ioc_types": {
+                "md5": 4,
+                "ip": 1
+            }
+        },
+        {
+            "group": "HelloKitty",
+            "ioc_types": {
+                "md5": 54
+            }
+        },
+        {
+            "group": "Insomnia",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "Interlock",
+            "ioc_types": {
+                "sha256": 3,
+                "md5": 9,
+                "url": 4,
+                "ip": 3
+            }
+        },
+        {
+            "group": "J",
+            "ioc_types": {
+                "md5": 6
+            }
+        },
+        {
+            "group": "Kawa4096",
+            "ioc_types": {
+                "sha256": 1,
+                "email": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Lockbit3",
+            "ioc_types": {
+                "md5": 16,
+                "ip": 10
+            }
+        },
+        {
+            "group": "Lockbit5",
+            "ioc_types": {
+                "md5": 13
+            }
+        },
+        {
+            "group": "Lunalock",
+            "ioc_types": {
+                "email": 1
+            }
+        },
+        {
+            "group": "Lynx",
+            "ioc_types": {
+                "md5": 19
+            }
+        },
+        {
+            "group": "Medusa",
+            "ioc_types": {
+                "telegram": 1,
+                "email": 2,
+                "md5": 18,
+                "tox": 3
+            }
+        },
+        {
+            "group": "Medusalocker",
+            "ioc_types": {
+                "sha256": 19,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Minteye",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "ms13089",
+            "ioc_types": {
+                "email": 1
+            }
+        },
+        {
+            "group": "Nightspire",
+            "ioc_types": {
+                "telegram": 2,
+                "email": 4,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Nitrogen",
+            "ioc_types": {
+                "md5": 6,
+                "tox": 4
+            }
+        },
+        {
+            "group": "Nova",
+            "ioc_types": {
+                "session": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Obscura",
+            "ioc_types": {
+                "sha256": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Payload",
+            "ioc_types": {
+                "sha256": 1
+            }
+        },
+        {
+            "group": "Payoutsking",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "Pear",
+            "ioc_types": {
+                "email": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Promptlock",
+            "ioc_types": {
+                "sha1": 6
+            }
+        },
+        {
+            "group": "Qilin",
+            "ioc_types": {
+                "ftp": 2,
+                "md5": 60,
+                "ip": 8
+            }
+        },
+        {
+            "group": "Radar",
+            "ioc_types": {
+                "session": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "RaLord",
+            "ioc_types": {
+                "session": 1,
+                "md5": 2,
+                "tox": 2,
+                "ip": 1
+            }
+        },
+        {
+            "group": "RaWorld",
+            "ioc_types": {
+                "md5": 210,
+                "tox": 1,
+                "ip": 1
+            }
+        },
+        {
+            "group": "Rhysida",
+            "ioc_types": {
+                "md5": 28
+            }
+        },
+        {
+            "group": "Satanlockv2",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "Securotrop",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "shinyhunters",
+            "ioc_types": {
+                "telegram": 4,
+                "email": 1
+            }
+        },
+        {
+            "group": "ShinySp1d3r",
+            "ioc_types": {
+                "sha256": 3
+            }
+        },
+        {
+            "group": "Sicarii",
+            "ioc_types": {
+                "pgp": 18,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Skira",
+            "ioc_types": {
+                "session": 1
+            }
+        },
+        {
+            "group": "Teamxxx",
+            "ioc_types": {
+                "ip": 1
+            }
+        },
+        {
+            "group": "Termite",
+            "ioc_types": {
+                "md5": 2,
+                "sha-256": 2,
+                "sha-1": 2,
+                "ip": 2
+            }
+        },
+        {
+            "group": "TheGentlemen",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "Thegreenbloodgroup",
+            "ioc_types": {
+                "email": 1,
+                "tox": 1
+            }
+        },
+        {
+            "group": "Toufan",
+            "ioc_types": {
+                "tox": 1
+            }
+        },
+        {
+            "group": "Trigona",
+            "ioc_types": {
+                "md5": 117
+            }
+        },
+        {
+            "group": "VanHelsing",
+            "ioc_types": {
+                "btc": 2,
+                "md5": 7,
+                "tox": 1,
+                "ip": 2
+            }
+        },
+        {
+            "group": "Warlock",
+            "ioc_types": {
+                "sha256": 1,
+                "tox": 3
+            }
+        },
+        {
+            "group": "Weyhro",
+            "ioc_types": {
+                "tox": 1,
+                "ip": 2
+            }
+        }
+    ]
+}

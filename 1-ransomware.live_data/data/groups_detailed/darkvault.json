@@ -1,0 +1,66 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "darkvault",
+  "description": null,
+  "added_date": null,
+  "victims": 55,
+  "firstseen": "2024-02-08",
+  "lastseen": "2025-01-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "tx23pk4zw5qynq3tmfk2jz5zbel63p4nwvkheswze7r6gzxhzcbseyad.onion",
+      "title": "DarkVault",
+      "slug": "http://tx23pk4zw5qynq3tmfk2jz5zbel63p4nwvkheswze7r6gzxhzcbseyad.onion",
+      "available": true,
+      "updated": "2026-02-18 18:02:04.984373",
+      "lastscrape": "2026-02-18 18:02:04.984373",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:02:05+00:00",
+        "start_url": "http://tx23pk4zw5qynq3tmfk2jz5zbel63p4nwvkheswze7r6gzxhzcbseyad.onion",
+        "final_url": "http://tx23pk4zw5qynq3tmfk2jz5zbel63p4nwvkheswze7r6gzxhzcbseyad.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:07:12 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Tue, 09 Jan 2024 19:55:28 GMT",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"659da4b0-1c20\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "mdhby62yvvg6sd5jmx5gsyucs7ynb5j45lvvdh4dsymg43puitu7tfid.onion",
+      "title": "DarkVault BLOG",
+      "slug": "http://mdhby62yvvg6sd5jmx5gsyucs7ynb5j45lvvdh4dsymg43puitu7tfid.onion",
+      "available": false,
+      "updated": "2025-01-16 18:03:09.415541",
+      "lastscrape": "2025-06-01 21:19:25.478450",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/darkvault"
+}

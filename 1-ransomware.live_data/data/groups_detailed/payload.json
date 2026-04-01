@@ -1,0 +1,103 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "payload",
+  "description": null,
+  "added_date": null,
+  "victims": 2,
+  "firstseen": "2026-02-17",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "payloadrz5yw227brtbvdqpnlhq3rdcdekdnn3rgucbcdeawq2v6vuyd.onion",
+      "title": "Payload | Captcha",
+      "slug": "http://payloadrz5yw227brtbvdqpnlhq3rdcdekdnn3rgucbcdeawq2v6vuyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:32:06.810004",
+      "lastscrape": "2026-02-18 18:32:06.810004",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:06+00:00",
+        "start_url": "http://payloadrz5yw227brtbvdqpnlhq3rdcdekdnn3rgucbcdeawq2v6vuyd.onion",
+        "final_url": "http://payloadrz5yw227brtbvdqpnlhq3rdcdekdnn3rgucbcdeawq2v6vuyd.onion/gate",
+        "status": 405,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "/gate"
+          }
+        ],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/plain; charset=utf-8",
+          "content_length": "19",
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:32:07 GMT",
+          "content-type": "text/plain; charset=utf-8",
+          "content-length": "19",
+          "connection": "keep-alive",
+          "x-content-type-options": "nosniff"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "payloadynyvabjacbun4uwhmxc7yvdzorycslzmnleguxjn7glahsvqd.onion",
+      "title": "Payload Rescue | Login",
+      "slug": "http://payloadynyvabjacbun4uwhmxc7yvdzorycslzmnleguxjn7glahsvqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:33:10.058561",
+      "lastscrape": "2026-02-18 18:33:10.058561",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T18:33:10+00:00",
+        "start_url": "http://payloadynyvabjacbun4uwhmxc7yvdzorycslzmnleguxjn7glahsvqd.onion",
+        "final_url": "http://payloadynyvabjacbun4uwhmxc7yvdzorycslzmnleguxjn7glahsvqd.onion/login",
+        "status": 405,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "/login"
+          }
+        ],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/plain; charset=utf-8",
+          "content_length": "19",
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "content-type": "text/plain; charset=utf-8",
+          "x-content-type-options": "nosniff",
+          "date": "Wed, 18 Feb 2026 18:33:10 GMT",
+          "content-length": "19"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/payload"
+}

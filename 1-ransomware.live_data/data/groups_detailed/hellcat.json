@@ -1,0 +1,137 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "hellcat",
+  "description": null,
+  "added_date": null,
+  "victims": 20,
+  "firstseen": "2024-10-25",
+  "lastseen": "2025-04-07",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "hellcakbszllztlyqbjzwcbdhfrodx55wq77kmftp4bhnhsnn5r3odad.onion",
+      "title": "DDoS Protection",
+      "slug": "http://hellcakbszllztlyqbjzwcbdhfrodx55wq77kmftp4bhnhsnn5r3odad.onion",
+      "available": false,
+      "updated": "2025-05-25 19:01:36.646338",
+      "lastscrape": "2025-06-24 19:30:09.525069",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "hellcakbszllztlyqbjzwcbdhfrodx55wq77kmftp4bhnhsnn5r3odad.onion",
+      "title": "404 Not Found",
+      "slug": "http://hellcakbszllztlyqbjzwcbdhfrodx55wq77kmftp4bhnhsnn5r3odad.onion/api2.php?action=victims",
+      "available": false,
+      "updated": "2025-05-25 19:02:38.031525",
+      "lastscrape": "2025-06-24 19:30:16.048696",
+      "type": "API"
+    },
+    {
+      "fqdn": "hellcatdcy653ma43t2ryf2ztw5yfanqsbfmapndbqvteh5itctoijyd.onion",
+      "title": "HellCat - Blog",
+      "slug": "http://hellcatdcy653ma43t2ryf2ztw5yfanqsbfmapndbqvteh5itctoijyd.onion",
+      "available": false,
+      "updated": "2025-10-04 05:31:18.706807",
+      "lastscrape": "2025-11-03 06:00:27.612314",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-03T05:30:33+00:00",
+        "start_url": "http://hellcatdcy653ma43t2ryf2ztw5yfanqsbfmapndbqvteh5itctoijyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "hellcatdnrsu4i5uctbklunpfyv2ppiioh5sb3leu4dfgizinrve3gqd.onion",
+      "title": "HellCat - Blog",
+      "slug": "http://hellcatdnrsu4i5uctbklunpfyv2ppiioh5sb3leu4dfgizinrve3gqd.onion",
+      "available": false,
+      "updated": "2025-10-04 05:01:33.970792",
+      "lastscrape": "2025-11-03 05:02:19.546565",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-03T05:02:19+00:00",
+        "start_url": "http://hellcatdnrsu4i5uctbklunpfyv2ppiioh5sb3leu4dfgizinrve3gqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "hellcatdohzngkuh7zruzhi2wojrawbnzbyzljtkw6iluv5ussfer4id.onion",
+      "title": "HellCat - Blog",
+      "slug": "http://hellcatdohzngkuh7zruzhi2wojrawbnzbyzljtkw6iluv5ussfer4id.onion",
+      "available": false,
+      "updated": "2025-10-04 05:32:23.990553",
+      "lastscrape": "2025-11-03 06:01:28.297161",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-03T06:01:28+00:00",
+        "start_url": "http://hellcatdohzngkuh7zruzhi2wojrawbnzbyzljtkw6iluv5ussfer4id.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "hellcatdue7rasyoi4oh6t3fhra5bpcj5t6xmrm4vjicfqdvrl24ijid.onion",
+      "title": "HellCat - Blog",
+      "slug": "http://hellcatdue7rasyoi4oh6t3fhra5bpcj5t6xmrm4vjicfqdvrl24ijid.onion",
+      "available": false,
+      "updated": "2025-10-04 05:02:37.626066",
+      "lastscrape": "2025-11-03 05:31:20.951265",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-03T05:31:20+00:00",
+        "start_url": "http://hellcatdue7rasyoi4oh6t3fhra5bpcj5t6xmrm4vjicfqdvrl24ijid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "hellcatj6xgvho4qxnr2nbzzthsqel577i5wvzcpfjgavbo3d5l657id.onion",
+      "title": null,
+      "slug": "http://hellcatj6xgvho4qxnr2nbzzthsqel577i5wvzcpfjgavbo3d5l657id.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2026-02-18 19:00:26.483015",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:26+00:00",
+        "start_url": "http://hellcatj6xgvho4qxnr2nbzzthsqel577i5wvzcpfjgavbo3d5l657id.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/hellcat"
+}

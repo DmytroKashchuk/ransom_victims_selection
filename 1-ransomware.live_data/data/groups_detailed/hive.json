@@ -1,0 +1,83 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "hive",
+  "description": "Hive is a strain of ransomware that was first discovered in June 2021. Hive was designed to be used by Ransomware-as-a-service providers, to enable novice cyber-criminals to launch ransomware attacks on healthcare providers, energy providers, charities, and retailers across the globe.\nIn 2022 there was a switch from GoLang to Rust.\n",
+  "added_date": null,
+  "victims": 208,
+  "firstseen": "2021-08-14",
+  "lastseen": "2023-01-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "PrivatLab",
+      "RClone",
+      "Sendspace",
+      "UFile"
+    ],
+    "RMM-Tools": [
+      "Atera",
+      "ScreenConnect",
+      "Splashtop"
+    ],
+    "DiscoveryEnum": [
+      "Advanced IP Scanner",
+      "Bloodhound",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "Cobalt Strike",
+      "Impacket",
+      "Metasploit",
+      "Meterpreter",
+      "PowerShell Empire"
+    ],
+    "DefenseEvasion": [
+      "GMER",
+      "PCHunter"
+    ],
+    "LOLBAS": [
+      "BCDEdit",
+      "BITSAdmin",
+      "Windows Event Utility (wevtutil)",
+      "WMIC"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "hiveleakdbtnp76ulyhi52eag6c6tyc3xw7ez7iqy6wc34gd2nekazyd.onion",
+      "title": "This domain has been seized",
+      "slug": "http://hiveleakdbtnp76ulyhi52eag6c6tyc3xw7ez7iqy6wc34gd2nekazyd.onion/",
+      "available": false,
+      "updated": "2023-01-27 04:45:15.412468",
+      "lastscrape": "2025-06-01 21:18:38.636262",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "hivecust6vhekztbqgdnkks64ucehqacge3dij3gyrrpdp57zoq3ooqd.onion",
+      "title": "This domain has been seized",
+      "slug": "http://hivecust6vhekztbqgdnkks64ucehqacge3dij3gyrrpdp57zoq3ooqd.onion",
+      "available": false,
+      "updated": "2023-01-27 06:47:23.067192",
+      "lastscrape": "2025-06-01 21:18:49.282000",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "hiveapi4nyabjdfz2hxdsr7otrcv6zq6m4rk5i2w7j64lrtny4b7vjad.onion",
+      "title": "This domain has been seized",
+      "slug": "http://hiveapi4nyabjdfz2hxdsr7otrcv6zq6m4rk5i2w7j64lrtny4b7vjad.onion/v1/companies/disclosed",
+      "available": false,
+      "updated": "2023-01-27 06:47:49.450432",
+      "lastscrape": "2025-06-01 21:18:54.323024",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 8,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/hive"
+}

@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "rancoz",
+  "description": null,
+  "added_date": null,
+  "victims": 6,
+  "firstseen": "2023-05-05",
+  "lastseen": "2023-09-03",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "ze677xuzard4lx4iul2yzf5ks4gqqzoulgj5u4n5n4bbbsxjbfr7eayd.onion",
+      "title": "Rancoz | Blog",
+      "slug": "http://ze677xuzard4lx4iul2yzf5ks4gqqzoulgj5u4n5n4bbbsxjbfr7eayd.onion",
+      "available": false,
+      "updated": "2023-10-17 08:23:26.696091",
+      "lastscrape": "2025-06-01 21:19:12.478352",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/rancoz"
+}

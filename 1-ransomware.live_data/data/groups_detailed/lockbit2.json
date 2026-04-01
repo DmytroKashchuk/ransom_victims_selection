@@ -1,0 +1,64 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lockbit2",
+  "description": null,
+  "added_date": null,
+  "victims": 1006,
+  "firstseen": "2021-09-09",
+  "lastseen": "2022-06-28",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "zqaflhty5hyziovsxgqvj2mrz5e5rs6oqxzb54zolccfnvtn5w2johad.onion",
+      "title": "LOCKFILE",
+      "slug": "http://zqaflhty5hyziovsxgqvj2mrz5e5rs6oqxzb54zolccfnvtn5w2johad.onion",
+      "available": false,
+      "updated": "2021-11-21 19:05:47.855300",
+      "lastscrape": "2025-06-01 21:19:12.325412",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "yq43odyrmzqvyezdindg2tokgogf3pn6bcdtvgczpz5a74tdxjbtk2yd.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://yq43odyrmzqvyezdindg2tokgogf3pn6bcdtvgczpz5a74tdxjbtk2yd.onion",
+      "available": false,
+      "updated": "2022-06-17 16:10:31.959577",
+      "lastscrape": "2025-06-01 21:19:56.475696",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "oyarbnujct53bizjguvolxou3rmuda2vr72osyexngbdkhqebwrzsnad.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://oyarbnujct53bizjguvolxou3rmuda2vr72osyexngbdkhqebwrzsnad.onion",
+      "available": false,
+      "updated": "2022-06-17 16:10:49.901832",
+      "lastscrape": "2025-06-01 21:20:04.547429",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitaptstzf3er2lz6ku3xuifafq2yh5lmiqj5ncur6rtlmkteiqd.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbitaptstzf3er2lz6ku3xuifafq2yh5lmiqj5ncur6rtlmkteiqd.onion",
+      "available": false,
+      "updated": "2022-06-17 16:11:05.604998",
+      "lastscrape": "2025-06-01 21:20:34.585750",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "lockbitaptq7ephv2oigdncfhtwhpqgwmqojnxqdyhprxxfpcllqdxad.onion",
+      "title": "LockBit BLOG",
+      "slug": "http://lockbitaptq7ephv2oigdncfhtwhpqgwmqojnxqdyhprxxfpcllqdxad.onion",
+      "available": false,
+      "updated": "2022-06-17 16:11:23.690568",
+      "lastscrape": "2025-06-01 21:20:41.316230",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 5,
+  "url": "https://www.ransomware.live/group/lockbit2"
+}

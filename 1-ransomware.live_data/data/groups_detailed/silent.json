@@ -1,0 +1,59 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "silent",
+  "description": "Unlike many other groups, Silent claims to operate with a high level of anonymity and discretion. According to their own statement, they avoid public negotiations and encrypt minimal data. Instead, their focus is on stealing valuable confidential corporate information — and either selling it to competitors, on the dark web, or publishing it selectively.",
+  "added_date": null,
+  "victims": 6,
+  "firstseen": "2025-03-27",
+  "lastseen": "2025-05-04",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "silentbgdghp3zeldwpumnwabglreql7jcffhx5vqkvtf2lshc4n5zid.onion",
+      "title": "Silent Blog",
+      "slug": "http://silentbgdghp3zeldwpumnwabglreql7jcffhx5vqkvtf2lshc4n5zid.onion",
+      "available": false,
+      "updated": "2025-11-20 22:31:40.815668",
+      "lastscrape": "2025-12-20 23:00:24.576538",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-20T23:00:24+00:00",
+        "start_url": "http://silentbgdghp3zeldwpumnwabglreql7jcffhx5vqkvtf2lshc4n5zid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "oyhxnbth6rtj7gbpfvzucjnne6bjpqzkbkvvnolvtmyiutzthct3udqd.onion",
+      "title": null,
+      "slug": "http://oyhxnbth6rtj7gbpfvzucjnne6bjpqzkbkvvnolvtmyiutzthct3udqd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2026-02-18 19:00:34.809782",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:35+00:00",
+        "start_url": "http://oyhxnbth6rtj7gbpfvzucjnne6bjpqzkbkvvnolvtmyiutzthct3udqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/silent"
+}

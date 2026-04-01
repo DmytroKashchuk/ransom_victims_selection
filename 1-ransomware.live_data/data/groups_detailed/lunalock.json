@@ -1,0 +1,79 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "lunalock",
+  "description": null,
+  "added_date": null,
+  "victims": 2,
+  "firstseen": "2025-09-02",
+  "lastseen": "2025-09-13",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion",
+      "title": "Welcome to LunaLock | LunaLock",
+      "slug": "http://lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion",
+      "available": false,
+      "updated": "2026-02-05 17:32:10.078478",
+      "lastscrape": "2026-02-18 19:00:48.929158",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:49+00:00",
+        "start_url": "http://lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "lunachataclss7bvlhk5zxs6pqpunxljeqhrn2bfl6wkhlwqxvgwgayd.onion",
+      "title": "Enter Support ID",
+      "slug": "http://lunachataclss7bvlhk5zxs6pqpunxljeqhrn2bfl6wkhlwqxvgwgayd.onion",
+      "available": false,
+      "updated": "2026-02-05 17:33:17.416554",
+      "lastscrape": "2026-02-18 19:00:55.452198",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:55+00:00",
+        "start_url": "http://lunachataclss7bvlhk5zxs6pqpunxljeqhrn2bfl6wkhlwqxvgwgayd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    },
+    {
+      "fqdn": "lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion",
+      "title": "Victims | LunaLock",
+      "slug": "http://lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion/victim/",
+      "available": false,
+      "updated": "2026-02-05 17:34:26.157301",
+      "lastscrape": "2026-02-18 19:01:01.195714",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:01+00:00",
+        "start_url": "http://lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion/victim/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "General SOCKS server failure"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/lunalock"
+}

@@ -1,0 +1,96 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "pear",
+  "description": "Pure Extraction And Ransom (PEAR) Team is the community of highly responsible and strictly disciplined members. We are a private team and have nothing common with any other threat actors. We've been monitoring this field for a long-long time. So, we understand all the processes and know well how it all works.",
+  "added_date": null,
+  "victims": 57,
+  "firstseen": "2023-08-18",
+  "lastseen": "2026-02-06",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "peargxn3oki34c4savcbcfqofjjwjnnyrlrbszfv6ujlx36mhrh57did.onion",
+      "title": "PEAR",
+      "slug": "http://peargxn3oki34c4savcbcfqofjjwjnnyrlrbszfv6ujlx36mhrh57did.onion",
+      "available": true,
+      "updated": "2026-02-18 19:01:49.019543",
+      "lastscrape": "2026-02-18 19:01:49.019543",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:49+00:00",
+        "start_url": "http://peargxn3oki34c4savcbcfqofjjwjnnyrlrbszfv6ujlx36mhrh57did.onion",
+        "final_url": "http://peargxn3oki34c4savcbcfqofjjwjnnyrlrbszfv6ujlx36mhrh57did.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 19:02:08 GMT",
+          "content-type": "text/html",
+          "last-modified": "Tue, 17 Feb 2026 13:21:06 GMT",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5",
+          "etag": "W/\"69946b42-d4762\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "pearsmob5sn44ismokiusuld34pnfwi6ctgin3qbvonpoob4lh3rmtqd.onion",
+      "title": "PEAR",
+      "slug": "http://pearsmob5sn44ismokiusuld34pnfwi6ctgin3qbvonpoob4lh3rmtqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:56.736781",
+      "lastscrape": "2026-02-18 18:31:56.736781",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:56+00:00",
+        "start_url": "http://pearsmob5sn44ismokiusuld34pnfwi6ctgin3qbvonpoob4lh3rmtqd.onion",
+        "final_url": "http://pearsmob5sn44ismokiusuld34pnfwi6ctgin3qbvonpoob4lh3rmtqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.22.1",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx/1.22.1",
+          "date": "Wed, 18 Feb 2026 18:31:57 GMT",
+          "content-type": "text/html",
+          "last-modified": "Tue, 17 Feb 2026 13:21:06 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5",
+          "etag": "W/\"69946b42-d4762\"",
+          "content-encoding": "gzip"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 1,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/pear"
+}

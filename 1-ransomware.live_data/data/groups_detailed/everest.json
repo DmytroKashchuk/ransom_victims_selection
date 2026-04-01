@@ -1,0 +1,79 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "everest",
+  "description": "Everest ransom group collects and analyzes information about their victims. They specialize in customer privacy data, financial information, databases, credit card information, and more. The Everest ransom group leaks the victim's data to the darknet and they announced that any victim that will not contact them will suffer from a data leak and they will not delete hist files for future usage.",
+  "added_date": null,
+  "victims": 333,
+  "firstseen": "2021-09-09",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [
+      "AnyDesk",
+      "Atera",
+      "Splashtop"
+    ],
+    "DiscoveryEnum": [
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "ProcDump"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "Metasploit",
+      "Meterpreter"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion",
+      "title": "",
+      "slug": "http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/",
+      "available": true,
+      "updated": "2026-02-18 18:31:17.763268",
+      "lastscrape": "2026-02-18 18:31:17.763268",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:17+00:00",
+        "start_url": "http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/",
+        "final_url": "http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Microsoft-IIS/10.0",
+          "x_powered_by": "PHP/8.2.28",
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "0",
+          "set_cookie_present": true,
+          "security_headers": {}
+        },
+        "headers": {
+          "cache-control": "no-store, no-cache, must-revalidate",
+          "pragma": "no-cache",
+          "content-length": "0",
+          "content-type": "text/html; charset=utf-8",
+          "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+          "server": "Microsoft-IIS/10.0",
+          "x-powered-by": "PHP/8.2.28",
+          "set-cookie": "PHPSESSID=e1paplqfrukdq0mvevdu24nlri; path=/, token_user=8xzT7ouLqBf0rDgAkXWiIhv94le2KpR; expires=Fri, 20 Mar 2026 18:31:18 GMT; Max-Age=2592000; path=/",
+          "date": "Wed, 18 Feb 2026 18:31:18 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/everest"
+}

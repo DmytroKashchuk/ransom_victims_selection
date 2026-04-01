@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Ransomware Analytics{% endblock %}
+
+{% block extra_head %}
+<style>
+	.hero {
+		padding: 4rem 0 2rem;
+		text-align: center;
+	}
+	.hero h1 {
+		font-weight: 700;
+		color: #333;
+	}
+	.hero p {
+		color: #666;
+		font-size: 1.05rem;
+	}
+	.dash-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: 1.25rem 1.5rem;
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		transition: box-shadow .15s;
+	}
+	.dash-card:hover {
+		box-shadow: 0 4px 16px rgba(0,0,0,.08);
+		color: inherit;
+	}
+	.dash-card h5 {
+		font-weight: 600;
+		font-size: 1rem;
+		margin-bottom: .35rem;
+	}
+	.dash-card p {
+		font-size: .85rem;
+		color: #888;
+		margin: 0;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="hero">
+		<h1>Ransomware Victim Analysis</h1>
+		<p class="lead mb-4">Explore odds-ratio data across technology categories, vendors, and products.</p>
+	</div>
+
+	<div class="row g-3 justify-content-center">
+		<div class="col-md-4">
+			<a href="{{ url_for('category_or') }}" class="dash-card">
+				<h5>Category Odds Ratios</h5>
+				<p>Technology categories and their association with ransomware victimization.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('vendor_or') }}" class="dash-card">
+				<h5>Vendor Odds Ratios</h5>
+				<p>Technology vendors and their association with ransomware victimization.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('product_or') }}" class="dash-card">
+				<h5>Product Odds Ratios</h5>
+				<p>Individual products and their association with ransomware victimization.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('group_category_or') }}" class="dash-card">
+				<h5>Group × Category OR</h5>
+				<p>Odds ratios by ransomware group and technology category with adjusted p-values.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('group_vendor_or') }}" class="dash-card">
+				<h5>Group × Vendor OR</h5>
+				<p>Odds ratios by ransomware group and technology vendor with adjusted p-values.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('group_product_or') }}" class="dash-card">
+				<h5>Group × Product OR</h5>
+				<p>Odds ratios by ransomware group and individual product with adjusted p-values.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('tech_cve_summary') }}" class="dash-card">
+				<h5>Tech CVE Summary</h5>
+				<p>CVE counts by product with severity breakdown (critical, high, medium, low).</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('tech_cve_results') }}" class="dash-card">
+				<h5>Tech CVE Results</h5>
+				<p>Individual CVE records (~896K rows) with severity, base score, and descriptions.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('tech_cve_normalized_summary') }}" class="dash-card">
+				<h5>Tech CVE Summary (Normalized)</h5>
+				<p>CVE counts by product with severity breakdown — normalized CPE mapping.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('tech_cve_normalized_results') }}" class="dash-card">
+				<h5>Tech CVE Results (Normalized)</h5>
+				<p>Individual CVE records (~878K rows) with severity, base score — normalized CPE mapping.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('all_cpes_normalized') }}" class="dash-card">
+				<h5>All CPEs (Normalized)</h5>
+				<p>Full CPE dictionary (~1.6M entries) with part, vendor, product, and deprecation status.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cpe_swdb_merged') }}" class="dash-card">
+				<h5>CPE ↔ SWDB Merged</h5>
+				<p>Vendor-level merge of CPE dictionary and SWDB — match status and product counts.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cve_summary_teyyub') }}" class="dash-card">
+				<h5>CVE Summary (Teyyub)</h5>
+				<p>Product-level CVE &amp; KVE counts with market share across categories and classes.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cve_exposure') }}" class="dash-card">
+				<h5>CVE Exposure</h5>
+				<p>Organizational exposure per CVE — total sites &amp; enterprises running affected products.</p>
+			</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,162 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "toufan",
+  "description": "Pro-Palestinian Group",
+  "added_date": null,
+  "victims": 117,
+  "firstseen": "2023-12-17",
+  "lastseen": "2023-12-27",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "t.me/CyberToufanBackup",
+      "title": "Telegram: Contact @CyberToufanBackup",
+      "slug": "https://t.me/CyberToufanBackup",
+      "available": false,
+      "updated": "2024-12-31 10:48:42.699474",
+      "lastscrape": "2025-06-01 21:19:12.552573",
+      "type": "Telegram"
+    },
+    {
+      "fqdn": "t.me/CyberToufan02",
+      "title": "Telegram: Contact @CyberToufan02",
+      "slug": "https://t.me/CyberToufan02",
+      "available": false,
+      "updated": "2026-02-18 06:01:22.616112",
+      "lastscrape": "2026-02-18 19:01:14.019886",
+      "type": "Telegram",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:14+00:00",
+        "start_url": "https://t.me/CyberToufan02",
+        "final_url": "https://t.me/CyberToufan02",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "3672",
+          "set_cookie_present": true,
+          "security_headers": {
+            "content-security-policy": "frame-ancestors https://web.telegram.org",
+            "strict-transport-security": "max-age=35768000",
+            "x-frame-options": "ALLOW-FROM https://web.telegram.org"
+          }
+        },
+        "headers": {
+          "server": "nginx/1.18.0",
+          "date": "Wed, 18 Feb 2026 19:01:14 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "3672",
+          "connection": "keep-alive",
+          "set-cookie": "stel_ssid=9f99d64e4ddb335670_5358988731257845550; expires=Thu, 19 Feb 2026 19:01:14 GMT; path=/; samesite=None; secure; HttpOnly",
+          "pragma": "no-cache",
+          "cache-control": "no-store",
+          "x-frame-options": "ALLOW-FROM https://web.telegram.org",
+          "content-security-policy": "frame-ancestors https://web.telegram.org",
+          "content-encoding": "gzip",
+          "strict-transport-security": "max-age=35768000"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "toufanleaks.org",
+      "title": "Cyber Toufan",
+      "slug": "https://toufanleaks.org",
+      "available": true,
+      "updated": "2026-02-18 18:32:14.774664",
+      "lastscrape": "2026-02-18 18:32:14.774664",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:32:14+00:00",
+        "start_url": "https://toufanleaks.org",
+        "final_url": "https://toufanleaks.org",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "cloudflare",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": "9cff9b261e48fcd5-FRA",
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:32:15 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "server": "cloudflare",
+          "cf-edge-cache": "cache,platform=wordpress",
+          "link": "<https://toufanleaks.org/index.php?rest_route=/>; rel=\"https://api.w.org/\"",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "cf-cache-status": "DYNAMIC",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=yxrFln5Y6tNsOZKx5H2mYGXlMXaWVU8eT6z%2FFjtHjrtcFeZaQtVJG8AIjsRz6UP%2FYLdutTrLUMSbY7WqesbFFkQgu8DYxZ8EuljC1Nf0Ow%3D%3D\"}]}",
+          "content-encoding": "br",
+          "cf-ray": "9cff9b261e48fcd5-FRA",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "t.me/CyberToufan",
+      "title": "Telegram: Contact @CyberToufan",
+      "slug": "https://t.me/CyberToufan",
+      "available": false,
+      "updated": "2026-02-18 09:32:15.330780",
+      "lastscrape": "2026-02-18 19:02:16.413877",
+      "type": "Telegram",
+      "http": {
+        "fetched_at": "2026-02-18T19:02:16+00:00",
+        "start_url": "https://t.me/CyberToufan",
+        "final_url": "https://t.me/CyberToufan",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx/1.18.0",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "3670",
+          "set_cookie_present": true,
+          "security_headers": {
+            "content-security-policy": "frame-ancestors https://web.telegram.org",
+            "strict-transport-security": "max-age=35768000",
+            "x-frame-options": "ALLOW-FROM https://web.telegram.org"
+          }
+        },
+        "headers": {
+          "server": "nginx/1.18.0",
+          "date": "Wed, 18 Feb 2026 19:02:16 GMT",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "3670",
+          "connection": "keep-alive",
+          "set-cookie": "stel_ssid=89f514e74156734075_1035124508098996687; expires=Thu, 19 Feb 2026 19:02:16 GMT; path=/; samesite=None; secure; HttpOnly",
+          "pragma": "no-cache",
+          "cache-control": "no-store",
+          "x-frame-options": "ALLOW-FROM https://web.telegram.org",
+          "content-security-policy": "frame-ancestors https://web.telegram.org",
+          "content-encoding": "gzip",
+          "strict-transport-security": "max-age=35768000"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/toufan"
+}

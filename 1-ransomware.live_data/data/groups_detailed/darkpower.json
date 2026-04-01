@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "darkpower",
+  "description": null,
+  "added_date": null,
+  "victims": 10,
+  "firstseen": "2023-03-11",
+  "lastseen": "2023-03-11",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "powerj7kmpzkdhjg4szvcxxgktgk36ezpjxvtosylrpey7svpmrjyuyd.onion",
+      "title": " Dark Power Ransomware",
+      "slug": "http://powerj7kmpzkdhjg4szvcxxgktgk36ezpjxvtosylrpey7svpmrjyuyd.onion/",
+      "available": false,
+      "updated": "2023-03-15 06:44:24.214561",
+      "lastscrape": "2025-06-01 21:19:12.061494",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/darkpower"
+}

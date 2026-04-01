@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cryptnet",
+  "description": " According to OALabs, this ransomware has the following features: * Files are encrypted with AES CBC using a generated 256 bit key and IV.* The generated AES keys are encrypted using a hard coded RSA key and appended to the encrypted files.",
+  "added_date": null,
+  "victims": 2,
+  "firstseen": "2023-04-19",
+  "lastseen": "2023-04-19",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "cryptr3fmuv4di5uiczofjuypopr63x2gltlsvhur2ump4ebru2xd3yd.onion",
+      "title": "CryptNet RECOVERY",
+      "slug": "http://cryptr3fmuv4di5uiczofjuypopr63x2gltlsvhur2ump4ebru2xd3yd.onion/login",
+      "available": false,
+      "updated": "2023-10-17 19:48:43.395861",
+      "lastscrape": "2025-06-01 21:18:33.050229",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "blog6zw62uijolee7e6aqqnqaszs3ckr5iphzdzsazgrpvtqtjwqryid.onion",
+      "title": "CryptNet NEWS",
+      "slug": "http://blog6zw62uijolee7e6aqqnqaszs3ckr5iphzdzsazgrpvtqtjwqryid.onion/",
+      "available": false,
+      "updated": "2023-10-17 19:49:07.615510",
+      "lastscrape": "2025-06-01 21:18:38.862320",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/cryptnet"
+}

@@ -1,0 +1,105 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "worldleaks",
+  "description": "World Leaks emerged in January 2025 as a rebrand of the Hunters International ransomware operation, shifting its focus from file encryption to solely stealing sensitive data and threatening to leak it unless a ransom is paid",
+  "added_date": null,
+  "victims": 123,
+  "firstseen": "2022-06-23",
+  "lastseen": "2026-02-16",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion",
+      "title": "Loading...",
+      "slug": "https://worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion",
+      "available": false,
+      "updated": "2026-02-18 17:30:08.436292",
+      "lastscrape": "2026-02-18 19:00:07.222055",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:07+00:00",
+        "start_url": "https://worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion",
+        "final_url": "https://worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'none'; script-src 'self' 'unsafe-hashes' 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc=' 'sha256-bHHpU0ohh976Lk0953oujR9+/Admyoa24DZa8pcG9h8='; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'self'; form-action 'self'",
+            "strict-transport-security": "max-age=31536000",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "no-referrer"
+          }
+        },
+        "headers": {
+          "content-type": "text/html",
+          "strict-transport-security": "max-age=31536000",
+          "content-security-policy": "default-src 'none'; script-src 'self' 'unsafe-hashes' 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc=' 'sha256-bHHpU0ohh976Lk0953oujR9+/Admyoa24DZa8pcG9h8='; connect-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'self'; form-action 'self'",
+          "referrer-policy": "no-referrer",
+          "x-content-type-options": "nosniff",
+          "cache-control": "max-age=31536000",
+          "vary": "accept-encoding",
+          "content-encoding": "br",
+          "date": "Wed, 18 Feb 2026 19:00:08 GMT"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion",
+      "title": "(no title)",
+      "slug": "https://worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion/api/companies",
+      "available": true,
+      "updated": "2026-02-18 19:00:12.186707",
+      "lastscrape": "2026-02-18 19:00:12.186707",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:00:17+00:00",
+        "start_url": "https://worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion/api/companies",
+        "final_url": "https://worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion/api/companies",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": null,
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "application/jsonl",
+          "content_length": "0",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'none'",
+            "strict-transport-security": "max-age=31536000",
+            "x-content-type-options": "nosniff"
+          }
+        },
+        "headers": {
+          "content-type": "application/jsonl",
+          "vary": "accept-encoding",
+          "content-encoding": "br",
+          "x-content-type-options": "nosniff",
+          "strict-transport-security": "max-age=31536000",
+          "content-security-policy": "default-src 'none'",
+          "content-length": "0",
+          "date": "Wed, 18 Feb 2026 19:00:17 GMT"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/worldleaks"
+}

@@ -1,0 +1,61 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "monti",
+  "description": null,
+  "added_date": null,
+  "victims": 110,
+  "firstseen": "2022-12-07",
+  "lastseen": "2025-05-07",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "PSCP",
+      "WinSCP"
+    ],
+    "RMM-Tools": [
+      "Action1",
+      "AnyDesk"
+    ],
+    "DiscoveryEnum": [
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz",
+      "Veeam-Get-Creds"
+    ],
+    "Offsec": [],
+    "DefenseEvasion": [
+      "Avast Anti-Rootkit driver",
+      "GMER"
+    ],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "4s4lnfeujzo67fy2jebz2dxskez2gsqj2jeb35m75ktufxensdicqxad.onion",
+      "title": "404 Not Found",
+      "slug": "http://4s4lnfeujzo67fy2jebz2dxskez2gsqj2jeb35m75ktufxensdicqxad.onion/",
+      "available": false,
+      "updated": "2022-10-10 17:13:45.969944",
+      "lastscrape": "2025-06-01 21:41:19.303042",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion",
+      "title": "MONTI - Leaks site",
+      "slug": "http://mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion",
+      "available": false,
+      "updated": "2025-05-17 08:31:53.706525",
+      "lastscrape": "2025-06-16 09:00:12.788841",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/monti"
+}

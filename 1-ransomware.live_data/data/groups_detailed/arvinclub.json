@@ -1,0 +1,37 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "arvinclub",
+  "description": null,
+  "added_date": null,
+  "victims": 35,
+  "firstseen": "2021-09-09",
+  "lastseen": "2023-10-15",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "3kp6j22pz3zkv76yutctosa6djpj4yib2icvdqxucdaxxedumhqicpad.onion",
+      "title": "Arvin Club – آزادی برای اتصال",
+      "slug": "http://3kp6j22pz3zkv76yutctosa6djpj4yib2icvdqxucdaxxedumhqicpad.onion/",
+      "available": false,
+      "updated": "2022-08-01 20:10:19.375136",
+      "lastscrape": "2025-06-01 21:18:22.089962",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "arvinc7prj6ln5wpd6yydfqulsyepoc7aowngpznbn3lrap2aib6teid.onion",
+      "title": "Arvin | Blog",
+      "slug": "http://arvinc7prj6ln5wpd6yydfqulsyepoc7aowngpznbn3lrap2aib6teid.onion",
+      "available": false,
+      "updated": "2023-11-06 03:07:49.455449",
+      "lastscrape": "2025-06-01 21:18:53.362375",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/arvinclub"
+}

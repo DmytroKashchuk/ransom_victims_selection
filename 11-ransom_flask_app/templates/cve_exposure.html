@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+
+{% block title %}CVE Exposure{% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#exposure-table {
+		font-size: .85rem;
+	}
+	.sev-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-size: .78rem;
+		font-weight: 600;
+		min-width: 28px;
+		text-align: center;
+	}
+	.sev-critical { background: #f8d7da; color: #842029; }
+	.sev-high     { background: #fff3cd; color: #664d03; }
+	.sev-medium   { background: #cfe2ff; color: #084298; }
+	.sev-low      { background: #d1e7dd; color: #0f5132; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">CVE Exposure &mdash; Organizations Running Affected Products</h4>
+	<p class="text-muted mb-3" style="font-size:.88rem;">
+		Each row shows a CVE and the <strong>total number of organizations (sites &amp; enterprises)</strong>
+		running at least one product affected by that CVE, based on install data.
+	</p>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">CVEs</div>
+			<div class="stat-sub">with exposure data</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-critical">-</div>
+			<div class="stat-label">Critical</div>
+			<div class="stat-sub">severity count</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-high">-</div>
+			<div class="stat-label">High</div>
+			<div class="stat-sub">severity count</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-max-sites">-</div>
+			<div class="stat-label">Max Sites Exposed</div>
+			<div class="stat-sub" id="card-max-sites-cve"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-avg-sites">-</div>
+			<div class="stat-label">Avg Sites / CVE</div>
+			<div class="stat-sub">all CVEs</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-avg-ent">-</div>
+			<div class="stat-label">Avg Enterprises / CVE</div>
+			<div class="stat-sub">all CVEs</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-severity">Severity</label>
+			<select id="filter-severity">
+				<option value="">All</option>
+				<option value="CRITICAL">Critical</option>
+				<option value="HIGH">High</option>
+				<option value="MEDIUM">Medium</option>
+				<option value="LOW">Low</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-cve">CVE ID</label>
+			<input type="text" id="filter-cve" placeholder="e.g. CVE-2024…">
+		</div>
+		<div class="form-group">
+			<label for="filter-products">Product</label>
+			<input type="text" id="filter-products" placeholder="Search product…">
+		</div>
+		<div class="form-group">
+			<label for="filter-min-sites">Min Sites</label>
+			<input type="number" id="filter-min-sites" placeholder="e.g. 10000" step="1000">
+		</div>
+		<div class="form-group">
+			<label for="filter-match">Match Method</label>
+			<select id="filter-match">
+				<option value="">All</option>
+				<option value="virtualMatchString">virtualMatchString</option>
+				<option value="keyword_vendor_product">keyword_vendor_product</option>
+				<option value="keyword_product_only">keyword_product_only</option>
+			</select>
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-primary btn-sm" id="btn-apply-filters">Apply</button>
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear</button>
+		</div>
+	</div>
+
+	<div id="exposure-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var fmtN = function(v) { return v == null ? "—" : Number(v).toLocaleString(); };
+
+	function sevBadge(cell) {
+		var v = cell.getValue();
+		if (!v) return '<span style="color:#ccc">—</span>';
+		var cls = {
+			CRITICAL: "sev-critical",
+			HIGH:     "sev-high",
+			MEDIUM:   "sev-medium",
+			LOW:      "sev-low"
+		}[v] || "";
+		return '<span class="sev-badge ' + cls + '">' + v + '</span>';
+	}
+
+	/* ── current filter / sort state ──────────── */
+	var currentFilters = {};
+	var currentSort = { field: "total_sites", dir: "desc" };
+
+	function buildAjaxUrl(url, config, params) {
+		var qs = [];
+		qs.push("page=" + params.page);
+		qs.push("size=" + params.size);
+		qs.push("sort_field=" + encodeURIComponent(currentSort.field));
+		qs.push("sort_dir=" + encodeURIComponent(currentSort.dir));
+		Object.keys(currentFilters).forEach(function(k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		return url + "?" + qs.join("&");
+	}
+
+	/* ── table ────────────────────────────────── */
+	var table = new Tabulator("#exposure-table", {
+		height: "60vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+
+		pagination: true,
+		paginationMode: "remote",
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		sortMode: "remote",
+		filterMode: "remote",
+
+		ajaxURL: "/api/cve-exposure",
+		ajaxURLGenerator: buildAjaxUrl,
+		ajaxResponse: function(url, params, response) {
+			return response;
+		},
+
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "total_sites", dir: "desc" }],
+
+		columns: [
+			{
+				title: "CVE ID", field: "cve_id", minWidth: 150,
+				frozen: true
+			},
+			{
+				title: "Severity", field: "severity", hozAlign: "center",
+				formatter: sevBadge
+			},
+			{
+				title: "Base Score", field: "base_score", hozAlign: "right",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					return v != null && v !== "" ? Number(v).toFixed(1) : "—";
+				}
+			},
+			{
+				title: "Total Sites", field: "total_sites", hozAlign: "right",
+				sorter: "number",
+				formatter: function(c) { return fmtN(c.getValue()); }
+			},
+			{
+				title: "Total Enterprises", field: "total_enterprises", hozAlign: "right",
+				sorter: "number",
+				formatter: function(c) { return fmtN(c.getValue()); }
+			},
+			{
+				title: "# Products", field: "num_products", hozAlign: "right",
+				sorter: "number",
+				formatter: function(c) { return fmtN(c.getValue()); }
+			},
+			{
+				title: "Published", field: "published_date", minWidth: 110,
+				sorter: "string"
+			},
+			{
+				title: "Affected Products", field: "products", minWidth: 300,
+				formatter: "textarea"
+			},
+			{
+				title: "Match Method", field: "match_method", minWidth: 160
+			},
+			{
+				title: "Description", field: "description", minWidth: 300,
+				formatter: "textarea"
+			}
+		]
+	});
+
+	/* ── sort handling ────────────────────────── */
+	table.on("dataSorting", function(sorters) {
+		if (sorters.length) {
+			currentSort.field = sorters[0].field;
+			currentSort.dir = sorters[0].dir;
+		}
+	});
+
+	/* ── filter bar ───────────────────────────── */
+	function applyFilters() {
+		currentFilters = {};
+		var sev = document.getElementById("filter-severity").value;
+		var cve = document.getElementById("filter-cve").value.trim();
+		var prod = document.getElementById("filter-products").value.trim();
+		var minSites = document.getElementById("filter-min-sites").value.trim();
+
+		if (sev)      currentFilters.severity = sev;
+		if (cve)      currentFilters.cve_id = cve;
+		if (prod)     currentFilters.products = prod;
+		/* min-sites is a "contains" filter on server, so we handle it client-side
+		   by passing it as a special param — actually let's use the filter_total_sites
+		   but since the server does substring matching, we'll need a numeric filter.
+		   We'll pass it as a special query param. */
+		if (minSites) currentFilters.total_sites = minSites;
+		var match = document.getElementById("filter-match").value;
+		if (match)    currentFilters.match_method = match;
+
+		table.setPage(1);
+		loadStats();
+	}
+
+	function clearFilters() {
+		document.getElementById("filter-severity").value = "";
+		document.getElementById("filter-cve").value = "";
+		document.getElementById("filter-products").value = "";
+		document.getElementById("filter-min-sites").value = "";
+		document.getElementById("filter-match").value = "";
+		currentFilters = {};
+		table.setPage(1);
+		loadStats();
+	}
+
+	document.getElementById("btn-apply-filters").addEventListener("click", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", clearFilters);
+
+	document.querySelectorAll(".filter-bar input").forEach(function(el) {
+		el.addEventListener("keydown", function(e) {
+			if (e.key === "Enter") applyFilters();
+		});
+	});
+	document.getElementById("filter-severity").addEventListener("change", applyFilters);
+	document.getElementById("filter-match").addEventListener("change", applyFilters);
+
+	/* ── stat cards (reload on every filter change) ── */
+	function loadStats() {
+		var qs = [];
+		Object.keys(currentFilters).forEach(function(k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		var url = "/api/cve-exposure/stats" + (qs.length ? "?" + qs.join("&") : "");
+		fetch(url)
+			.then(function(r) { return r.json(); })
+			.then(function(s) {
+				document.getElementById("card-total").textContent = fmtN(s.total_cves);
+				document.getElementById("card-critical").textContent = fmtN(s.critical);
+				document.getElementById("card-high").textContent = fmtN(s.high);
+				document.getElementById("card-max-sites").textContent = fmtN(s.max_sites);
+				document.getElementById("card-max-sites-cve").textContent = s.max_sites_cve;
+				document.getElementById("card-avg-sites").textContent = fmtN(s.avg_sites);
+				document.getElementById("card-avg-ent").textContent = fmtN(s.avg_enterprises);
+			});
+	}
+	loadStats();
+});
+</script>
+{% endblock %}

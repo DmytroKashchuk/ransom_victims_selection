@@ -1,0 +1,67 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "cloak",
+  "description": null,
+  "added_date": null,
+  "victims": 159,
+  "firstseen": "2023-08-24",
+  "lastseen": "2026-02-03",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "cloak7jpvcb73rtx2ff7kaw2kholu7bdiivxpzbhlny4ybz75dpxckqd.onion",
+      "title": "403 Forbidden",
+      "slug": "http://cloak7jpvcb73rtx2ff7kaw2kholu7bdiivxpzbhlny4ybz75dpxckqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:10.258366",
+      "lastscrape": "2026-02-18 18:31:10.258366",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:10+00:00",
+        "start_url": "http://cloak7jpvcb73rtx2ff7kaw2kholu7bdiivxpzbhlny4ybz75dpxckqd.onion",
+        "final_url": "http://cloak7jpvcb73rtx2ff7kaw2kholu7bdiivxpzbhlny4ybz75dpxckqd.onion",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=utf-8",
+          "content_length": "213",
+          "set_cookie_present": false,
+          "security_headers": {
+            "content-security-policy": "default-src 'self'; script-src 'self' 'nonce-qlGiSLV3X5EXAKtFLhbYz6EIGkcXp4OW'; style-src 'self' 'nonce-qlGiSLV3X5EXAKtFLhbYz6EIGkcXp4OW'; img-src 'self'",
+            "x-frame-options": "DENY",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "permissions-policy": "browsing-topics=()",
+            "x-xss-protection": "1; mode=block"
+          }
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:10 GMT",
+          "connection": "close",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "213",
+          "x-xss-protection": "1; mode=block",
+          "permissions-policy": "browsing-topics=()",
+          "x-frame-options": "DENY",
+          "x-content-type-options": "nosniff",
+          "content-security-policy": "default-src 'self'; script-src 'self' 'nonce-qlGiSLV3X5EXAKtFLhbYz6EIGkcXp4OW'; style-src 'self' 'nonce-qlGiSLV3X5EXAKtFLhbYz6EIGkcXp4OW'; img-src 'self'",
+          "referrer-policy": "strict-origin-when-cross-origin"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 2,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/cloak"
+}

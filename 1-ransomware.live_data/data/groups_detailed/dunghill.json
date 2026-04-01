@@ -1,0 +1,48 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "dunghill",
+  "description": null,
+  "added_date": null,
+  "victims": 19,
+  "firstseen": "2023-04-10",
+  "lastseen": "2025-07-01",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "p66slxmtum2ox4jpayco6ai3qfehd5urgrs4oximjzklxcol264driqd.onion",
+      "title": "Dunghill Leak - Details",
+      "slug": "http://p66slxmtum2ox4jpayco6ai3qfehd5urgrs4oximjzklxcol264driqd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:59:18.354645",
+      "lastscrape": "2025-06-01 21:19:10.914151",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "nsalewdnfclsowcal6kn5csm4ryqmfpijznxwictukhrgvz2vbmjjjyd.onion",
+      "title": "Dunghill Leak - Details",
+      "slug": "http://nsalewdnfclsowcal6kn5csm4ryqmfpijznxwictukhrgvz2vbmjjjyd.onion",
+      "available": false,
+      "updated": "2025-07-21 11:31:21.878456",
+      "lastscrape": "2025-08-20 12:00:15.358391",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-08-20T12:00:15+00:00",
+        "start_url": "http://nsalewdnfclsowcal6kn5csm4ryqmfpijznxwictukhrgvz2vbmjjjyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/dunghill"
+}

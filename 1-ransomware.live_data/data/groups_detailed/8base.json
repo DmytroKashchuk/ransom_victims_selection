@@ -1,0 +1,292 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "8base",
+  "description": "The 8base Ransomware group made its first appearance in early March 2022, remaining somewhat quiet after the attacks. This group operates like other ransomware actors, engaging in double extortion. <BR> However, in mid-May and June 2023, the ransomware operation saw a spike in activity against organizations from various sectors, listing 131 organizations in just 3 months.<BR> The 8base data leak site was created and made available in March 2023, claiming honesty and simplicity in its discourse.<BR> VMware published a report on 8base, drawing some similarities with the ransomware group `RansomHouse`, pointing out resemblances such as the website used by 8base and the ransom notes presented in its attacks.<BR> Interestingly, the 8base Ransomware group does not have its own ransomware developed by the group. Instead, the actors took advantage of other leaked ransomware builders to customize the ransom note and present it to the victim organization as 8base's operation.<BR>Source : https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 455,
+  "firstseen": "2022-04-03",
+  "lastseen": "2025-02-01",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Scheduled Task/Job",
+          "technique_id": "T1053"
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter",
+          "technique_id": "T1059"
+        },
+        {
+          "technique_name": "Shared Modules",
+          "technique_id": "T1129"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Scheduled Task/Job",
+          "technique_id": "T1053"
+        },
+        {
+          "technique_name": "Boot or Logon Autostart Execution",
+          "technique_id": "T1547"
+        },
+        {
+          "technique_name": "Registry Run Keys/Startup Folder",
+          "technique_id": "T1547.001"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Scheduled Task/Job",
+          "technique_id": "T1053"
+        },
+        {
+          "technique_name": "Boot or Logon Autostart Execution",
+          "technique_id": "T1547"
+        },
+        {
+          "technique_name": "Registry Run Keys/Startup Files",
+          "technique_id": "T1547.001"
+        },
+        {
+          "technique_name": "Token Impersonation/Theft",
+          "technique_id": "T1134.001"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Obfuscated Files or Information",
+          "technique_id": "T1027"
+        },
+        {
+          "technique_name": "Modify Registry",
+          "technique_id": "T1112"
+        },
+        {
+          "technique_name": "Indirect Command Execution",
+          "technique_id": "T1202"
+        },
+        {
+          "technique_name": "Software Packing",
+          "technique_id": "T1027.002"
+        },
+        {
+          "technique_name": "Masquerading",
+          "technique_id": "T1036"
+        },
+        {
+          "technique_name": "Hidden Files and Directories",
+          "technique_id": "T1564.001"
+        },
+        {
+          "technique_name": "File Deletion",
+          "technique_id": "T1070.004"
+        },
+        {
+          "technique_name": "Virtualization/Sandbox Evasion",
+          "technique_id": "T1497"
+        },
+        {
+          "technique_name": "Disable or Modify Tools",
+          "technique_id": "T1562.001"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "OS Credential Dumping",
+          "technique_id": "T1003"
+        },
+        {
+          "technique_name": "Input Capture",
+          "technique_id": "T1056"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Process Discovery",
+          "technique_id": "T1057"
+        },
+        {
+          "technique_name": "Network Share Discovery",
+          "technique_id": "T1135"
+        },
+        {
+          "technique_name": "System Information Discovery",
+          "technique_id": "T1082"
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083"
+        },
+        {
+          "technique_name": "Virtualization/Sandbox Evasion",
+          "technique_id": "T1497"
+        },
+        {
+          "technique_name": "Security Software Discovery",
+          "technique_id": "T1518.001"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0008",
+      "tactic_name": "Lateral Movement",
+      "techniques": [
+        {
+          "technique_name": "Taint Shared Content",
+          "technique_id": "T1080"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0009",
+      "tactic_name": "Collection",
+      "techniques": [
+        {
+          "technique_name": "Data from Local System",
+          "technique_id": "T1005"
+        },
+        {
+          "technique_name": "Data Staged",
+          "technique_id": "T1074"
+        },
+        {
+          "technique_name": "Input Capture",
+          "technique_id": "T1056"
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490"
+        },
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486"
+        },
+        {
+          "technique_name": "Data Destruction",
+          "technique_id": "T1485"
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "RClone"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [
+      "LaZagne",
+      "Mimikatz",
+      "NirSoft VNCPassView",
+      "NirSoft WebBrowserPassView",
+      "PasswordFox",
+      "ProcDump"
+    ],
+    "Offsec": [],
+    "DefenseEvasion": [
+      "GMER",
+      "PCHunter",
+      "ProcessHacker"
+    ],
+    "LOLBAS": [
+      "PsExec"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "basemmnnqwxevlymli5bs36o5ynti55xojzvn246spahniugwkff2pad.onion",
+      "title": "Home",
+      "slug": "http://basemmnnqwxevlymli5bs36o5ynti55xojzvn246spahniugwkff2pad.onion/",
+      "available": false,
+      "updated": "2023-11-03 15:01:36.958704",
+      "lastscrape": "2025-06-01 21:38:16.192404",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "xb6q2aggycmlcrjtbjendcnnwpmmwbosqaugxsqb4nx6cmod3emy7sad.onion",
+      "title": "This site has been seized",
+      "slug": "http://xb6q2aggycmlcrjtbjendcnnwpmmwbosqaugxsqb4nx6cmod3emy7sad.onion",
+      "available": false,
+      "updated": "2025-10-31 07:31:10.722816",
+      "lastscrape": "2025-11-30 08:00:09.049364",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-30T08:00:09+00:00",
+        "start_url": "http://xb6q2aggycmlcrjtbjendcnnwpmmwbosqaugxsqb4nx6cmod3emy7sad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "92.118.36.204.",
+      "title": "Home",
+      "slug": "http://92.118.36.204",
+      "available": false,
+      "updated": "2024-12-31 09:37:19.514287",
+      "lastscrape": "2025-06-01 21:39:53.567456",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "xfycpauc22t5jsmfjcaz2oydrrrfy75zuk6chr32664bsscq4fgyaaqd.onion",
+      "title": "This site has been seized",
+      "slug": "http://xfycpauc22t5jsmfjcaz2oydrrrfy75zuk6chr32664bsscq4fgyaaqd.onion",
+      "available": false,
+      "updated": "2025-10-31 07:32:15.839377",
+      "lastscrape": "2025-11-30 08:00:32.465893",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-11-30T08:00:32+00:00",
+        "start_url": "http://xfycpauc22t5jsmfjcaz2oydrrrfy75zuk6chr32664bsscq4fgyaaqd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/8base"
+}

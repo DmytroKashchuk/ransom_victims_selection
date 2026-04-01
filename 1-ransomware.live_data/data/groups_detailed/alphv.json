@@ -1,0 +1,283 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "alphv",
+  "description": "The operators of the ALPHV/BlackCat ransomware began their activity in December 2021, making posts on Dark Web forums to promote their affiliate program, offering other actors the opportunity to engage in a 'new type of ransomware family' developed from scratch using the Rust programming language.<BR> <BR> Some clear evidence indicates that the actors behind this new ransomware are not new to cybercrime, and there were links to other affiliate programs such as DarkSide, BlackMatter, and REvil. (After several attacks against large companies, these groups faced pressure and arrests, necessitating the termination of their operations).<BR> <BR> As a security measure, the operators of ALPHV implemented the requirement for the execution of the ransomware payload by providing an 'access token,' which is supplied by the owners of the Ransomware-as-a-Service to the affiliate. This token is added to the victim's ransom note so that they can contact the threat actor responsible for encrypting the data.<BR> <BR> ALPHV affiliates employ double and triple extortion techniques, meaning the publication of the company's name on leak sites, threats of data leakage, and lastly, threats of DDoS attacks against the organization.<BR>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 731,
+  "firstseen": "2021-09-09",
+  "lastseen": "2024-03-03",
+  "ttps": [
+    {
+      "tactic_id": "TA0001",
+      "tactic_name": "Initial Access",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "In some attacks, threat actors utilized ProxyShell vulnerabilities (CVE-2021-34473, CVE-2021-34523, CVE-2021-31207)."
+        },
+        {
+          "technique_name": "External Remote Services",
+          "technique_id": "T1133",
+          "technique_details": "As an initial attack vector, insecure RDP and VPNs were exploited."
+        },
+        {
+          "technique_name": "Exploit Public-Facing Application",
+          "technique_id": "T1190",
+          "technique_details": "BlackCat affiliates may purchase access to victims' network infrastructure on underground forums."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Native API",
+          "technique_id": "T1106",
+          "technique_details": "BlackCat uses native API."
+        },
+        {
+          "technique_name": "Scheduled Task/Job",
+          "technique_id": "T1053",
+          "technique_details": "When deploying ransomware on the victim's network infrastructure, BlackCat affiliates may leverage group policies, resulting in the creation of a scheduled task (on each host) initiating the ransomware."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter: Windows Command Shell",
+          "technique_id": "T1059.003",
+          "technique_details": "LockBit affiliates use batch scripts to execute malicious commands."
+        },
+        {
+          "technique_name": "Command and Scripting Interpreter: PowerShell",
+          "technique_id": "T1059.001",
+          "technique_details": "To disrupt IIS, delete volume shadow copies, disable recovery, clear Windows event logs, etc., BlackCat ransomware utilizes command shell to execute appropriate commands."
+        },
+        {
+          "technique_name": "System Services: Service Execution",
+          "technique_id": "T1569.002",
+          "technique_details": "BlackCat Ransomware for Windows can self-propagate on the local network using legitimate PsExec utility (contained within its body), which creates a temporary system service."
+        },
+        {
+          "technique_name": "Windows Management Instrumentation",
+          "technique_id": "T1072",
+          "technique_details": "Adversaries may use wmic to gather information and execute various commands, including deleting volume shadow copies. They may also use Impacket's wmiexec module to execute commands and move laterally across the network."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "Legitimate accounts obtained by adversaries may be used to ensure persistence in the compromised infrastructure."
+        },
+        {
+          "technique_name": "Server Software Component",
+          "technique_id": "T1547",
+          "technique_details": "Successful exploitation of ProxyShell vulnerabilities allowed adversaries to place a web shell on a vulnerable Microsoft Exchange server."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0004",
+      "tactic_name": "Privilege Escalation",
+      "techniques": [
+        {
+          "technique_name": "Access Token Manipulation: Create Process with Token",
+          "technique_id": "T1134.002",
+          "technique_details": "To escalate privileges, BlackCat ransomware may initiate its process using stolen authentication data and the CreateProcessWithLogonW function."
+        },
+        {
+          "technique_name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+          "technique_id": "T1548.002",
+          "technique_details": "To bypass UAC, BlackCat ransomware may elevate privileges using the ICMLuaUtil COM interface, as well as utilize the Masquerade PEB method."
+        },
+        {
+          "technique_name": "Valid Accounts",
+          "technique_id": "T1078",
+          "technique_details": "To escalate privileges, BlackCat may use stolen legitimate accounts specified in configuration data."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Obfuscated Files or Information",
+          "technique_id": "T1027",
+          "technique_details": "BlackCat ransomware uses obfuscation."
+        },
+        {
+          "technique_name": "Impair Defenses: Disable or Modify Tools",
+          "technique_id": "T1562.001",
+          "technique_details": "To avoid detection, adversaries terminate processes and services related to security software and antivirus."
+        },
+        {
+          "technique_name": "Indicator Removal: Clear Windows Event Logs",
+          "technique_id": "T1070.001",
+          "technique_details": "Using wevtutil, BlackCat can clear all Windows event logs on a compromised host."
+        },
+        {
+          "technique_name": "Deobfuscate/Decode Files or Information",
+          "technique_id": "T1140",
+          "technique_details": "BlackCat decrypts configuration data, as well as decrypts and unpacks legitimate PsExec utility and an additional BAT file contained within the ransomware body."
+        },
+        {
+          "technique_name": "Virtualization/Sandbox Evasion",
+          "technique_id": "T1497",
+          "technique_details": "For anti-analysis (including in a sandbox), ALPHV MORPH checks the access token value of the command line parameter. Its value must contain the correct first 16 characters used to decrypt BlackCat's configuration data."
+        },
+        {
+          "technique_name": "Masquerading",
+          "technique_id": "T1036",
+          "technique_details": "Adversaries use a renamed SoftPerfect Network Scanner executable to svchost.exe."
+        },
+        {
+          "technique_name": "Modify Registry",
+          "technique_id": "T1112",
+          "technique_details": "To propagate, BlackCat uses PsExec to modify the MaxMpxCt system registry parameter to increase the number of failed network requests for each client."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0006",
+      "tactic_name": "Credential Access",
+      "techniques": [
+        {
+          "technique_name": "Credentials from Password Stores",
+          "technique_id": "T1555",
+          "technique_details": "Adversaries may use NirSoft utilities to extract authentication data from web browsers and other storage spaces."
+        },
+        {
+          "technique_name": "Unsecured Credentials",
+          "technique_id": "T1552",
+          "technique_details": "Adversaries may use NirSoft utilities to obtain authentication data from registry and file."
+        },
+        {
+          "technique_name": "OS Credential Dumping: LSASS Memory",
+          "technique_id": "T1003.001",
+          "technique_details": "Adversaries may dump the LSASS process to obtain authentication data using legitimate tools (procdump, comsvcs.dll)."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Destruction",
+          "technique_id": "T1485",
+          "technique_details": "If credentials to access a victim's chat leak, BlackCat affiliates can delete encryption keys, rendering file decryption impossible."
+        },
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "BlackCat encrypts the content of files on the local system as well as on available network resources."
+        },
+        {
+          "technique_name": "Service Stop",
+          "technique_id": "T1489",
+          "technique_details": "BlackCat stops security, backup, database, email, and other specified services in the configuration."
+        },
+        {
+          "technique_name": "Inhibit System Recovery",
+          "technique_id": "T1490",
+          "technique_details": "BlackCat deletes Windows volume shadow copies using vssadmin and wmic, disables recovery in the Windows boot menu using bccedit, and empties the Recycle Bin. BlackCat can stop backup services and destroy virtual machine snapshots."
+        },
+        {
+          "technique_name": "Network Denial of Service",
+          "technique_id": "T1498",
+          "technique_details": "If the victim refuses to pay the ransom, BlackCat may conduct DDoS attacks against the victim's infrastructure."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0010",
+      "tactic_name": "Exfiltration",
+      "techniques": [
+        {
+          "technique_name": "Exfiltration Over C2 Channel",
+          "technique_id": "T1041",
+          "technique_details": "When using Cobalt Strike, attackers can send collected information through the Cobalt Strike server communication channels."
+        },
+        {
+          "technique_name": "Automated Exfiltration",
+          "technique_id": "T1020",
+          "technique_details": "After access is obtained, files from target hosts are automatically uploaded to the legitimate cloud storage service MEGA using the Rclone utility."
+        },
+        {
+          "technique_name": "Data Transfer Size Limits",
+          "technique_id": "T1030",
+          "technique_details": "To avoid exceeding data size limits and triggering security controls, stolen data may be sent in fixed-size blocks."
+        },
+        {
+          "technique_name": "Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol",
+          "technique_id": "T1048.002",
+          "technique_details": "Attackers may use the ExMatter exfiltration tool, which sends stolen data to specified SFTP and WebDav resources in the ExMatter configuration."
+        },
+        {
+          "technique_name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+          "technique_id": "T1567.002",
+          "technique_details": "Attackers use the Rclone sync utility to upload stolen data to the legitimate cloud storage service MEGA."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "alphvmmm27o3abo3r2mlmjrpdmzle3rykajqc5xsj7j7ejksbpsa36ad.onion",
+      "title": "THIS WEBSITE HAS BEEN SEIZED",
+      "slug": "http://alphvmmm27o3abo3r2mlmjrpdmzle3rykajqc5xsj7j7ejksbpsa36ad.onion",
+      "available": false,
+      "updated": "2023-12-19 13:35:41.925565",
+      "lastscrape": "2025-06-01 21:18:20.692831",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "alphvmmm27o3abo3r2mlmjrpdmzle3rykajqc5xsj7j7ejksbpsa36ad.onion",
+      "title": "THIS WEBSITE HAS BEEN SEIZED",
+      "slug": "http://alphvmmm27o3abo3r2mlmjrpdmzle3rykajqc5xsj7j7ejksbpsa36ad.onion/api/blog/all/0/12",
+      "available": false,
+      "updated": "2023-12-19 13:36:52.682689",
+      "lastscrape": "2025-06-01 21:18:31.113653",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "2cuqgeerjdba2rhdiviezodpu3lc4qz2sjf4qin6f7std2evleqlzjid.onion",
+      "title": null,
+      "slug": "http://2cuqgeerjdba2rhdiviezodpu3lc4qz2sjf4qin6f7std2evleqlzjid.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:36.809977",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "vqifktlreqpudvulhbzmc5gocbeawl67uvs2pttswemdorbnhaddohyd.onion",
+      "title": " ",
+      "slug": "http://vqifktlreqpudvulhbzmc5gocbeawl67uvs2pttswemdorbnhaddohyd.onion/search",
+      "available": false,
+      "updated": "2023-06-07 03:03:37.412117",
+      "lastscrape": "2025-06-01 21:19:27.529759",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "alphvuzxyxv6ylumd2ngp46xzq3pw6zflomrghvxeuks6kklberrbmyd.onion",
+      "title": "THIS WEBSITE HAS BEEN SEIZED",
+      "slug": "http://alphvuzxyxv6ylumd2ngp46xzq3pw6zflomrghvxeuks6kklberrbmyd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:41:05.180234",
+      "lastscrape": "2025-06-01 21:19:35.323613",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 4,
+  "url": "https://www.ransomware.live/group/alphv"
+}

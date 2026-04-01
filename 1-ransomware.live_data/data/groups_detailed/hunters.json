@@ -1,0 +1,206 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "hunters",
+  "description": "In mid-October 2023, just a few days before the Europol operation, the source code of the Ransomware Hive was sold, along with its website and older versions developed in Golang and C (although this purchase has only been reported by the actors without concrete evidence). The buyer of this new source code was the group Hunters International, who claimed to have fixed the bugs in the Ransomware Hive that were responsible for preventing file decryption in some cases. The group also stated that file encryption would not be their primary focus; instead, they would use data theft as a method to pressure victims during extortion attempts.",
+  "added_date": null,
+  "victims": 307,
+  "firstseen": "2021-09-09",
+  "lastseen": "2025-05-27",
+  "ttps": [
+    {
+      "tactic_id": "TA0002",
+      "tactic_name": "Execution",
+      "techniques": [
+        {
+          "technique_name": "Native API",
+          "technique_id": "T1106",
+          "technique_details": "The threat actor utilizes the application programming interface to execute malicious behaviors."
+        },
+        {
+          "technique_name": "Shared Modules",
+          "technique_id": "T1129",
+          "technique_details": "The threat actor executes payloads by loading shared modules."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0003",
+      "tactic_name": "Persistence",
+      "techniques": [
+        {
+          "technique_name": "Boot or Logon Autostart Execution",
+          "technique_id": "T1547",
+          "technique_details": "The threat actor may set system configurations to automatically execute malware during system startup or login."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0005",
+      "tactic_name": "Defense Evasion",
+      "techniques": [
+        {
+          "technique_name": "Obfuscated Files or Information",
+          "technique_id": "T1027",
+          "technique_details": "The threat actor utilizes obfuscation on files used for their attack, encrypting, encoding, or obfuscating their content."
+        },
+        {
+          "technique_name": "Impair Defenses",
+          "technique_id": "T1562",
+          "technique_details": "The actor may maliciously modify victim environment components to hinder or disable defense mechanisms."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0007",
+      "tactic_name": "Discovery",
+      "techniques": [
+        {
+          "technique_name": "Process Discovery",
+          "technique_id": "T1057",
+          "technique_details": "The threat actor may attempt to gather information about running processes on a system."
+        },
+        {
+          "technique_name": "System Information Discovery",
+          "technique_id": "T1082",
+          "technique_details": "The actor may try to obtain detailed information about the operating system and hardware, including version, patches, hotfixes, and other details."
+        },
+        {
+          "technique_name": "File and Directory Discovery",
+          "technique_id": "T1083",
+          "technique_details": "The threat actor may enumerate files and directories or search specific locations on a host or network share for certain information within a file system."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0011",
+      "tactic_name": "Command and Control",
+      "techniques": [
+        {
+          "technique_name": "Application Layer Protocol",
+          "technique_id": "T1071",
+          "technique_details": "The threat actor can communicate using OSI application layer protocols to avoid network detection/filtering, blending in with existing traffic."
+        },
+        {
+          "technique_name": "Application Layer Protocol: Web Protocols",
+          "technique_id": "T1071.001",
+          "technique_details": "The threat actor can communicate using web traffic associated application layer protocols to avoid detection."
+        }
+      ]
+    },
+    {
+      "tactic_id": "TA0040",
+      "tactic_name": "Impact",
+      "techniques": [
+        {
+          "technique_name": "Data Encrypted for Impact",
+          "technique_id": "T1486",
+          "technique_details": "The threat actor can encrypt data on the target system or on a large number of systems to disrupt system availability."
+        }
+      ]
+    }
+  ],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "hunters55rdxciehoqzwv7vgyv6nt37tbwax2reroyzxhou7my5ejyid.onion",
+      "title": "HUNTERS INTERNATIONAL",
+      "slug": "https://hunters55rdxciehoqzwv7vgyv6nt37tbwax2reroyzxhou7my5ejyid.onion/",
+      "available": false,
+      "updated": "2025-07-17 04:31:47.826501",
+      "lastscrape": "2025-08-16 05:00:16.134790",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-08-16T05:00:16+00:00",
+        "start_url": "https://hunters55rdxciehoqzwv7vgyv6nt37tbwax2reroyzxhou7my5ejyid.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "hunters33mmcwww7ek7q5ndahul6nmzmrsumfs6aenicbqon6mxfiqyd.onion",
+      "title": "HUNTERS INTERNATIONAL",
+      "slug": "https://hunters33mmcwww7ek7q5ndahul6nmzmrsumfs6aenicbqon6mxfiqyd.onion/login",
+      "available": false,
+      "updated": "2025-07-17 04:33:02.524545",
+      "lastscrape": "2025-08-16 05:00:40.411470",
+      "type": "Chat",
+      "http": {
+        "fetched_at": "2025-08-16T05:00:41+00:00",
+        "start_url": "https://hunters33mmcwww7ek7q5ndahul6nmzmrsumfs6aenicbqon6mxfiqyd.onion/login",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "hunters55atbdusuladzv7vzv6a423bkh6ksl2uftwrxyuarbzlfh7yd.onion",
+      "title": "HUNTERS INTERNATIONAL",
+      "slug": "http://hunters55atbdusuladzv7vzv6a423bkh6ksl2uftwrxyuarbzlfh7yd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:08:11.052164",
+      "lastscrape": "2025-06-01 21:40:50.275177",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "huntersinternational.org",
+      "title": "Attention Required! | Cloudflare",
+      "slug": "https://huntersinternational.org/",
+      "available": true,
+      "updated": "2026-02-18 18:31:10.131699",
+      "lastscrape": "2026-02-18 18:31:10.131699",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:10+00:00",
+        "start_url": "https://huntersinternational.org/",
+        "final_url": "https://huntersinternational.org/",
+        "status": 403,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "cloudflare",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": "9cff99941de5970c-AMS",
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {
+            "x-frame-options": "SAMEORIGIN",
+            "referrer-policy": "same-origin"
+          }
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:10 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "connection": "keep-alive",
+          "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+          "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+          "referrer-policy": "same-origin",
+          "x-frame-options": "SAMEORIGIN",
+          "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=C%2FhFsBA%2BgmikKfOcer4QKa09cnT6Zcev%2BfM5qKfWXpBtqkTo%2BrL0yOl5h6Ae48Srvq%2FDRiOPX6ppQZQ21wcpPPBiyDN8nVByXBlZFH1dIJW0xrAUXaz20Q%3D%3D\"}]}",
+          "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+          "content-encoding": "br",
+          "server": "cloudflare",
+          "cf-ray": "9cff99941de5970c-AMS",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/hunters"
+}

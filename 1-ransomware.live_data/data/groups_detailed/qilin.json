@@ -1,0 +1,128 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "qilin",
+  "description": "Qilin ransomware was first observed in July of 2022. Qilin Ransomware is written in Golang and supports multiple encryption modes; all of which are controlled by the operator. Qilin actors practice double extortion – demanding payment for a decryptor, as well as for the non-release of stolen data.",
+  "added_date": null,
+  "victims": 1475,
+  "firstseen": "2022-10-08",
+  "lastseen": "2026-02-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "EasyUpload.io"
+    ],
+    "RMM-Tools": [
+      "NetSupport",
+      "ScreenConnect"
+    ],
+    "DiscoveryEnum": [
+      "Nmap",
+      "Nping"
+    ],
+    "Networking": [
+      "Proxychains"
+    ],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Cobalt Strike",
+      "Evilginx",
+      "NetExec"
+    ],
+    "DefenseEvasion": [
+      "EDRSandBlast",
+      "PCHunter",
+      "PowerTool",
+      "Toshiba power management driver (BYOVD)",
+      "Updater for Carbon Black’s Cloud Sensor AV (upd.exe)",
+      "YDArk",
+      "Zemana Anti-Rootkit driver"
+    ],
+    "LOLBAS": [
+      "fsutil",
+      "PsExec",
+      "WinRM"
+    ]
+  },
+  "locations": [
+    {
+      "fqdn": "ozsxj4hwxub7gio347ac7tyqqozvfioty37skqilzo2oqfs4cw2mgtyd.onion",
+      "title": "Qilin",
+      "slug": "http://ozsxj4hwxub7gio347ac7tyqqozvfioty37skqilzo2oqfs4cw2mgtyd.onion",
+      "available": false,
+      "updated": "2023-02-17 11:10:34.395118",
+      "lastscrape": "2025-06-01 21:19:12.446919",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "kbsqoivihgdmwczmxkbovk7ss2dcynitwhhfu5yw725dboqo5kthfaad.onion",
+      "title": "DDOS Protection",
+      "slug": "http://kbsqoivihgdmwczmxkbovk7ss2dcynitwhhfu5yw725dboqo5kthfaad.onion",
+      "available": false,
+      "updated": "2025-05-10 12:31:12.093790",
+      "lastscrape": "2025-06-09 13:00:11.731509",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion",
+      "title": "Qilin blog",
+      "slug": "http://ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:39.499655",
+      "lastscrape": "2026-02-18 18:31:39.499655",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:39+00:00",
+        "start_url": "http://ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion",
+        "final_url": "http://ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "Apache",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": true,                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:31:40 GMT",
+          "server": "Apache",
+          "set-cookie": "_csrf-blog=0c5835a6dae8db6562b356b447fd5928b63db6d27e7ea3cd5a9ccce4caca90d3a%3A2%3A%7Bi%3A0%3Bs%3A10%3A%22_csrf-blog%22%3Bi%3A1%3Bs%3A32%3A%224GOR_3CREESWlj19FYK4H-1CvgHzHaAH%22%3B%7D; path=/; HttpOnly; SameSite=Lax",
+          "content-type": "text/html; charset=UTF-8"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ji57fr53anp7wb44tbbnp72qcgbhqywy4jmbncawdcrejj5amuvh3zqd.onion",
+      "title": "Sign In",
+      "slug": "http://ji57fr53anp7wb44tbbnp72qcgbhqywy4jmbncawdcrejj5amuvh3zqd.onion/site/login",
+      "available": false,
+      "updated": "2025-08-12 21:32:58.032611",
+      "lastscrape": "2025-09-11 22:00:18.857808",
+      "type": "Admin",
+      "http": {
+        "fetched_at": "2025-09-11T22:00:18+00:00",
+        "start_url": "http://ji57fr53anp7wb44tbbnp72qcgbhqywy4jmbncawdcrejj5amuvh3zqd.onion/site/login",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": true,
+  "negotiation_count": 2,
+  "has_ransomnote": true,
+  "ransomnotes_count": 3,
+  "url": "https://www.ransomware.live/group/qilin"
+}

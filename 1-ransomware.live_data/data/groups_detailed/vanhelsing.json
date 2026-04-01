@@ -1,0 +1,82 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "VanHelsing",
+  "description": null,
+  "added_date": null,
+  "victims": 8,
+  "firstseen": "2025-03-12",
+  "lastseen": "2025-04-05",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "vanhelqmjstkvlhrjwzgjzpq422iku6wlggiz5y5r3rmfdeiaj3ljaid.onion",
+      "title": "VanHelsing Chat",
+      "slug": "http://vanhelqmjstkvlhrjwzgjzpq422iku6wlggiz5y5r3rmfdeiaj3ljaid.onion",
+      "available": false,
+      "updated": "2025-05-13 05:01:46.167293",
+      "lastscrape": "2025-06-12 05:30:48.753054",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "vanhelsokskrlaacilyfmtuqqa5haikubsjaokw47f3pt3uoivh6cgad.onion",
+      "title": "VanHelsing Chat",
+      "slug": "http://vanhelsokskrlaacilyfmtuqqa5haikubsjaokw47f3pt3uoivh6cgad.onion",
+      "available": false,
+      "updated": "2025-05-13 04:31:53.635752",
+      "lastscrape": "2025-06-12 05:01:34.176056",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "vanhelxjo52qr2ixcmtjayqqrcodkuh36n7uq7q7xj23ggotyr3y72yd.onion",
+      "title": "VanHelsing Blog",
+      "slug": "http://vanhelxjo52qr2ixcmtjayqqrcodkuh36n7uq7q7xj23ggotyr3y72yd.onion",
+      "available": false,
+      "updated": "2025-05-14 21:01:46.058095",
+      "lastscrape": "2025-06-13 21:30:08.731144",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "vanhelvuuo4k3xsiq626zkqvp6kobc2abry5wowxqysibmqs5yjh4uqd.onion",
+      "title": "VanHelsing Blog",
+      "slug": "http://vanhelvuuo4k3xsiq626zkqvp6kobc2abry5wowxqysibmqs5yjh4uqd.onion",
+      "available": false,
+      "updated": "2025-05-14 21:02:52.238825",
+      "lastscrape": "2025-06-13 21:30:15.472605",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "vanhelwmbf2bwzw7gmseg36qqm4ekc5uuhqbsew4eihzcahyq7sukzad.onion",
+      "title": "VanHelsing Blog",
+      "slug": "http://vanhelwmbf2bwzw7gmseg36qqm4ekc5uuhqbsew4eihzcahyq7sukzad.onion",
+      "available": false,
+      "updated": "2025-05-14 21:03:57.336536",
+      "lastscrape": "2025-06-13 21:30:19.387261",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "vanheltarnbfjhuvggbncniap56dscnzz5yf6yjmxqivqmb5r2gmllad.onion",
+      "title": "VanHelsing Chat",
+      "slug": "http://vanheltarnbfjhuvggbncniap56dscnzz5yf6yjmxqivqmb5r2gmllad.onion",
+      "available": false,
+      "updated": "2025-05-13 04:36:21.262766",
+      "lastscrape": "2025-06-12 05:01:53.734734",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "vanhelcbxqt4tqie6fuevfng2bsdtxgc7xslo2yo7nitaacdfrlpxnqd.onion",
+      "title": "VanHelsing Chat",
+      "slug": "http://vanhelcbxqt4tqie6fuevfng2bsdtxgc7xslo2yo7nitaacdfrlpxnqd.onion",
+      "available": false,
+      "updated": "2025-05-13 04:37:38.543209",
+      "lastscrape": "2025-06-12 05:01:57.286615",
+      "type": "Chat"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/vanhelsing"
+}

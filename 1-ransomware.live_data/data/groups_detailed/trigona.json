@@ -1,0 +1,80 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "trigona",
+  "description": "According to PCrisk, Trigona is ransomware that encrypts files and appends the ._locked extension to filenames. Also, it drops the how_to_decrypt.hta file that opens a ransom note. An example of how Trigona renames files: it renames 1.jpg to 1.jpg._locked, 2.png to 2.png._locked, and so forth.It embeds the encrypted decryption key, the campaign ID, and the victim ID in the encrypted files.",
+  "added_date": null,
+  "victims": 49,
+  "firstseen": "2023-04-11",
+  "lastseen": "2024-03-30",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA",
+      "RClone"
+    ],
+    "RMM-Tools": [
+      "AnyDesk",
+      "LogMeIn",
+      "ScreenConnect",
+      "Splashtop",
+      "TeamViewer"
+    ],
+    "DiscoveryEnum": [
+      "Advanced Port Scanner",
+      "SoftPerfect NetScan"
+    ],
+    "Networking": [],
+    "CredentialTheft": [
+      "Mimikatz"
+    ],
+    "Offsec": [
+      "Cobalt Strike"
+    ],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "3x55o3u2b7cjs54eifja5m3ottxntlubhjzt6k6htp5nrocjmsxxh7ad.onion",
+      "title": "Trigona is Gone",
+      "slug": "http://3x55o3u2b7cjs54eifja5m3ottxntlubhjzt6k6htp5nrocjmsxxh7ad.onion/",
+      "available": false,
+      "updated": "2023-10-18 06:56:41.411123",
+      "lastscrape": "2025-06-01 21:18:23.840373",
+      "type": "Chat"
+    },
+    {
+      "fqdn": "6n5tfadusp4sarzuxntz34q4ohspiaya2mc6aw6uhlusfqfsdomavyyd.onion",
+      "title": "Blog",
+      "slug": "http://6n5tfadusp4sarzuxntz34q4ohspiaya2mc6aw6uhlusfqfsdomavyyd.onion",
+      "available": false,
+      "updated": "2023-06-26 10:51:25.916052",
+      "lastscrape": "2025-06-01 21:18:30.107471",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "trigonax2zb3fw34rbaap4cqep76zofxs53zakrdgcxzq6xzt24l5lqd.onion",
+      "title": "Trigona is Gone",
+      "slug": "http://trigonax2zb3fw34rbaap4cqep76zofxs53zakrdgcxzq6xzt24l5lqd.onion",
+      "available": false,
+      "updated": "2023-10-18 06:57:12.690803",
+      "lastscrape": "2025-06-01 21:19:26.252017",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "krsbhaxbki6jr4zvwblvkaqzjkircj7cxf46qt3na5o5sj2hpikbupqd.onion",
+      "title": "Blog",
+      "slug": "http://krsbhaxbki6jr4zvwblvkaqzjkircj7cxf46qt3na5o5sj2hpikbupqd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:49:20.850757",
+      "lastscrape": "2025-06-01 21:19:34.113547",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/trigona"
+}

@@ -1,0 +1,75 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "ramp",
+  "description": null,
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "wavbeudogz6byhnardd2lkp2jafims3j7tj6k6qnywchn2csngvtffqd.onion",
+      "title": null,
+      "slug": "http://wavbeudogz6byhnardd2lkp2jafims3j7tj6k6qnywchn2csngvtffqd.onion",
+      "available": false,
+      "updated": "2021-05-01 00:00:00.000000",
+      "lastscrape": "2025-06-01 21:19:12.470210",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "rampjcdlqvgkoz5oywutpo6ggl7g6tvddysustfl6qzhr5osr24xxqqd.onion",
+      "title": "This Site Has Been Seized",
+      "slug": "http://rampjcdlqvgkoz5oywutpo6ggl7g6tvddysustfl6qzhr5osr24xxqqd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:31:20.080776",
+      "lastscrape": "2026-02-18 18:31:20.080776",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:31:20+00:00",
+        "start_url": "http://rampjcdlqvgkoz5oywutpo6ggl7g6tvddysustfl6qzhr5osr24xxqqd.onion",
+        "final_url": "http://rampjcdlqvgkoz5oywutpo6ggl7g6tvddysustfl6qzhr5osr24xxqqd.onion",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html",
+          "content_length": "525",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 18:31:20 GMT",
+          "content-type": "text/html",
+          "content-length": "525",
+          "last-modified": "Tue, 27 Jan 2026 15:01:38 GMT",
+          "connection": "keep-alive",
+          "etag": "\"6978d352-20d\"",
+          "accept-ranges": "bytes"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "ramp4u5iz4xx75vmt6nk5xfrs5mrmtokzszqxhhkjqlk7pbwykaz7zid.onion",
+      "title": null,
+      "slug": "http://ramp4u5iz4xx75vmt6nk5xfrs5mrmtokzszqxhhkjqlk7pbwykaz7zid.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:19:34.803986",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/ramp"
+}

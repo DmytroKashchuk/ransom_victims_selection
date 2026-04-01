@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "exorcist",
+  "description": "According to PCrisk, Exorcist is a ransomware-type malicious program. Systems infected with this malware experience data encryption and users receive ransom demands for decryption. During the encryption process, all compromised files are appended with an extension consisting of a ransom string of characters.For example, a file originally named \"1.jpg\" could appear as something similar to \"1.jpg.rnyZoV\" following encryption. After this process is complete, Exorcist ransomware changes the desktop wallpaper and drops HTML applications - \"[random-string]-decrypt.hta\" (e.g. \"rnyZoV-decrypt.hta\") - into affected folders. These files contain identical ransom messages.",
+  "added_date": null,
+  "victims": 0,
+  "firstseen": null,
+  "lastseen": null,
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "7iulpt5i6whht6zo2r52f7vptxtjxs3vfcdxxazllikrtqpupn4epnqd.onion",
+      "title": null,
+      "slug": "http://7iulpt5i6whht6zo2r52f7vptxtjxs3vfcdxxazllikrtqpupn4epnqd.onion",
+      "available": false,
+      "updated": null,
+      "lastscrape": "2025-06-01 21:18:26.102498",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/exorcist"
+}

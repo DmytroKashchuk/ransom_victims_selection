@@ -1,0 +1,39 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "mountlocker",
+  "description": null,
+  "added_date": null,
+  "victims": 19,
+  "firstseen": "2021-02-07",
+  "lastseen": "2022-02-08",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [
+      "MEGA"
+    ],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [],
+    "DefenseEvasion": [],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "mountnewsokhwilx.onion",
+      "title": null,
+      "slug": "http://mountnewsokhwilx.onion",
+      "available": false,
+      "updated": "2021-09-08 00:06:32.505748",
+      "lastscrape": "2025-06-01 21:18:50.844475",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/mountlocker"
+}

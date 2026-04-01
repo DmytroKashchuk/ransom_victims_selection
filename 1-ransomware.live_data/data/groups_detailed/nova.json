@@ -1,0 +1,240 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "nova",
+  "description": "Nova (formerly RALord) is a ransomware-as-a-service (RaaS) group that encrypts victims’files and uses double-extortion tactics to pressure organizations into paying for decryption and data non-disclosure.",
+  "added_date": null,
+  "victims": 93,
+  "firstseen": "2025-03-22",
+  "lastseen": "2026-02-17",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion",
+      "title": "Update Links - Nova GBlog",
+      "slug": "http://novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion/",
+      "available": false,
+      "updated": "2026-02-18 17:01:47.252461",
+      "lastscrape": "2026-02-18 19:01:28.289335",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T19:01:29+00:00",
+        "start_url": "http://novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion/",
+        "final_url": "http://novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion/",
+        "status": 200,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "nginx",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "text/html; charset=UTF-8",
+          "content_length": null,
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "server": "nginx",
+          "date": "Wed, 18 Feb 2026 19:06:53 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "last-modified": "Sat, 07 Jun 2025 14:05:54 GMT",
+          "connection": "keep-alive",
+          "vary": "Accept-Encoding",
+          "etag": "W/\"68444742-6b9e\"",
+          "content-encoding": "br"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "novatd4577pzlvdyy42slydhrhru7fpcflbbxlajcmbfrgzyeis6d3id.onion",
+      "title": "",
+      "slug": "http://novatd4577pzlvdyy42slydhrhru7fpcflbbxlajcmbfrgzyeis6d3id.onion",
+      "available": false,
+      "updated": "2025-11-21 03:02:52.534786",
+      "lastscrape": "2025-12-21 03:30:27.701967",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-21T03:30:28+00:00",
+        "start_url": "http://novatd4577pzlvdyy42slydhrhru7fpcflbbxlajcmbfrgzyeis6d3id.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "novag4k2te3mstt2xq5irywlpaw6edgkpiwgg4t2q7eecisj2qqtvbid.onion",
+      "title": "",
+      "slug": "http://novag4k2te3mstt2xq5irywlpaw6edgkpiwgg4t2q7eecisj2qqtvbid.onion",
+      "available": false,
+      "updated": "2025-11-21 03:03:55.934926",
+      "lastscrape": "2025-12-21 03:30:46.806623",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-21T03:30:46+00:00",
+        "start_url": "http://novag4k2te3mstt2xq5irywlpaw6edgkpiwgg4t2q7eecisj2qqtvbid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "novaoddh3vxylxqpsfdjprliknbzgbkv6nkazpzu3cvykrgpyzuywryd.onion",
+      "title": "",
+      "slug": "http://novaoddh3vxylxqpsfdjprliknbzgbkv6nkazpzu3cvykrgpyzuywryd.onion",
+      "available": false,
+      "updated": "2025-11-21 03:04:58.419589",
+      "lastscrape": "2025-12-21 03:30:55.721094",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-21T03:30:55+00:00",
+        "start_url": "http://novaoddh3vxylxqpsfdjprliknbzgbkv6nkazpzu3cvykrgpyzuywryd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "leak7y2247fj7dbb35rpfyxuyaqtwbshiwxp6h35ttzlhrxmhvi4fead.onion",
+      "title": "",
+      "slug": "http://leak7y2247fj7dbb35rpfyxuyaqtwbshiwxp6h35ttzlhrxmhvi4fead.onion",
+      "available": false,
+      "updated": "2025-11-21 03:06:01.433885",
+      "lastscrape": "2025-12-21 03:31:08.820016",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-12-21T03:31:08+00:00",
+        "start_url": "http://leak7y2247fj7dbb35rpfyxuyaqtwbshiwxp6h35ttzlhrxmhvi4fead.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "novaxtychr6ohlc4zr5its73p6i7unpuhpwoodtzrg2y4w4seytatlid.onion",
+      "title": "Nova Blog",
+      "slug": "http://novaxtychr6ohlc4zr5its73p6i7unpuhpwoodtzrg2y4w4seytatlid.onion",
+      "available": false,
+      "updated": "2025-10-01 06:37:32.035775",
+      "lastscrape": "2025-10-31 07:00:38.284421",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-10-31T07:00:38+00:00",
+        "start_url": "http://novaxtychr6ohlc4zr5its73p6i7unpuhpwoodtzrg2y4w4seytatlid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "pifk3xu3vad6cuxsjll4qjomyaaaoyvnyqppro75pazadzctrrvpdnyd.onion",
+      "title": "Nova Blog",
+      "slug": "http://pifk3xu3vad6cuxsjll4qjomyaaaoyvnyqppro75pazadzctrrvpdnyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:34:19.344913",
+      "lastscrape": "2026-02-18 18:34:19.344913",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2026-02-18T18:34:19+00:00",
+        "start_url": "http://pifk3xu3vad6cuxsjll4qjomyaaaoyvnyqppro75pazadzctrrvpdnyd.onion",
+        "final_url": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion/",
+        "status": 405,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [
+          {
+            "status": 302,
+            "location": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion/"
+          }
+        ],
+        "fingerprint": {
+          "server": "uvicorn",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "application/json",
+          "content_length": "31",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:34:19 GMT",
+          "server": "uvicorn",
+          "allow": "GET",
+          "content-length": "31",
+          "content-type": "application/json",
+          "access-control-allow-origin": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion",
+          "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "access-control-allow-headers": "*",
+          "access-control-allow-credentials": "true"
+        },
+        "error": null
+      }
+    },
+    {
+      "fqdn": "novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion",
+      "title": "Nova Blog",
+      "slug": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion",
+      "available": true,
+      "updated": "2026-02-18 18:35:33.279574",
+      "lastscrape": "2026-02-18 18:35:33.279574",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2026-02-18T18:35:33+00:00",
+        "start_url": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion",
+        "final_url": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion",
+        "status": 405,
+        "http_version": "HTTP/1.1",
+        "redirect_chain": [],
+        "fingerprint": {
+          "server": "uvicorn",
+          "x_powered_by": null,
+          "via": null,
+          "cdn": null,
+          "content_type": "application/json",
+          "content_length": "31",
+          "set_cookie_present": false,
+          "security_headers": {}
+        },
+        "headers": {
+          "date": "Wed, 18 Feb 2026 18:35:33 GMT",
+          "server": "uvicorn",
+          "allow": "GET",
+          "content-length": "31",
+          "content-type": "application/json",
+          "access-control-allow-origin": "http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion",
+          "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "access-control-allow-headers": "*",
+          "access-control-allow-credentials": "true"
+        },
+        "error": null
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 1,
+  "url": "https://www.ransomware.live/group/nova"
+}

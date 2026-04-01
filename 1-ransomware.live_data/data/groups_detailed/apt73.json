@@ -1,0 +1,184 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "apt73",
+  "description": "A new ransomware group is said to have emerged in mid-April 2024, under the name 'APT73.' It's worth noting that the group reportedly self-proclaimed as an APT, which stands for 'Advanced Persistent Threat' in the cybersecurity field.<br> <br> According to research, much of the available information about the aforementioned group came from another ransomware group known as LockBit.<BR>Source: https://github.com/crocodyli/ThreatActors-TTPs",
+  "added_date": null,
+  "victims": 78,
+  "firstseen": "2024-04-05",
+  "lastseen": "2025-02-25",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "eraleignews.com",
+      "title": "APT73",
+      "slug": "http://eraleignews.com",
+      "available": false,
+      "updated": "2024-04-24 12:44:54.955458",
+      "lastscrape": "2025-06-01 21:18:13.704272",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "wn6vonooq6fggjdgyocp7bioykmfjket7sbp47cwhgubvowwd7ws5pyd.onion",
+      "title": "APT73",
+      "slug": "http://wn6vonooq6fggjdgyocp7bioykmfjket7sbp47cwhgubvowwd7ws5pyd.onion",
+      "available": false,
+      "updated": "2024-12-31 09:41:13.242146",
+      "lastscrape": "2025-06-01 21:19:13.736973",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "fleqwmg7xnanypt5km2m75l72q7nlcvlp2m4sdmgjxorsn6tb3zyp3qd.onion",
+      "title": "APT73",
+      "slug": "http://fleqwmg7xnanypt5km2m75l72q7nlcvlp2m4sdmgjxorsn6tb3zyp3qd.onion/",
+      "available": false,
+      "updated": "2024-12-31 09:41:17.970752",
+      "lastscrape": "2025-06-01 21:19:26.704514",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "apt73grpjgjwykrenq7vnjejue76vosdzptdvmonv7vyqnsyokrw57ad.onion",
+      "title": "APT73",
+      "slug": "http://apt73grpjgjwykrenq7vnjejue76vosdzptdvmonv7vyqnsyokrw57ad.onion",
+      "available": false,
+      "updated": "2024-12-31 09:41:23.210971",
+      "lastscrape": "2025-06-01 21:19:38.680238",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "bashe4aec32kr6zbifwd5x6xgjsmhg4tbowrbx4pneqhc5mqooyifpid.onion",
+      "title": "",
+      "slug": "http://bashe4aec32kr6zbifwd5x6xgjsmhg4tbowrbx4pneqhc5mqooyifpid.onion",
+      "available": false,
+      "updated": "2025-08-08 05:01:05.952489",
+      "lastscrape": "2025-09-07 05:30:11.695456",
+      "type": "Files",
+      "http": {
+        "fetched_at": "2025-09-07T05:30:11+00:00",
+        "start_url": "http://bashe4aec32kr6zbifwd5x6xgjsmhg4tbowrbx4pneqhc5mqooyifpid.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "basheqtvzqwz4vp6ks5lm2ocq7i6tozqgf6vjcasj4ezmsy4bkpshhyd.onion",
+      "title": "BASHE",
+      "slug": "http://basheqtvzqwz4vp6ks5lm2ocq7i6tozqgf6vjcasj4ezmsy4bkpshhyd.onion",
+      "available": false,
+      "updated": "2025-08-08 05:02:08.245057",
+      "lastscrape": "2025-09-07 05:30:39.789170",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-07T05:30:40+00:00",
+        "start_url": "http://basheqtvzqwz4vp6ks5lm2ocq7i6tozqgf6vjcasj4ezmsy4bkpshhyd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "basherq53eniermxovo3bkduw5qqq5bkqcml3qictfmamgvmzovykyqd.onion",
+      "title": "BASHE",
+      "slug": "http://basherq53eniermxovo3bkduw5qqq5bkqcml3qictfmamgvmzovykyqd.onion/",
+      "available": false,
+      "updated": "2025-08-08 05:03:11.517707",
+      "lastscrape": "2025-09-07 05:31:00.451219",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-07T05:31:00+00:00",
+        "start_url": "http://basherq53eniermxovo3bkduw5qqq5bkqcml3qictfmamgvmzovykyqd.onion/",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "basherykagbxoaiaxkgqhmhd5gbmedwb3di4ig3ouovziagosv4n77qd.onion",
+      "title": "BASHE",
+      "slug": "http://basherykagbxoaiaxkgqhmhd5gbmedwb3di4ig3ouovziagosv4n77qd.onion",
+      "available": false,
+      "updated": "2025-08-08 05:04:16.433186",
+      "lastscrape": "2025-09-07 05:31:16.926391",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-07T05:31:16+00:00",
+        "start_url": "http://basherykagbxoaiaxkgqhmhd5gbmedwb3di4ig3ouovziagosv4n77qd.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "basherykagbxoaiaxkgqhmhd5gbmedwb3di4ig3ouovziagosv4n77qd.onion",
+      "title": "BASHE",
+      "slug": "http://basherykagbxoaiaxkgqhmhd5gbmedwb3di4ig3ouovziagosv4n77qd.onion",
+      "available": false,
+      "updated": "2025-07-01 15:32:17.368983",
+      "lastscrape": "2025-07-31 16:00:34.448759",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "bashete63b3gcijfofpw6fmn3rwnmyi5aclp55n6awcfbexivexbhyad.onion",
+      "title": "BASHE",
+      "slug": "http://bashete63b3gcijfofpw6fmn3rwnmyi5aclp55n6awcfbexivexbhyad.onion",
+      "available": false,
+      "updated": "2025-08-08 05:05:24.522159",
+      "lastscrape": "2025-09-07 05:31:34.188094",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-07T05:31:34+00:00",
+        "start_url": "http://bashete63b3gcijfofpw6fmn3rwnmyi5aclp55n6awcfbexivexbhyad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    },
+    {
+      "fqdn": "bashex7mokreyoxl6wlswxl4foi7okgs7or7aergnuiockuoq35yt3ad.onion",
+      "title": "BASHE",
+      "slug": "http://bashex7mokreyoxl6wlswxl4foi7okgs7or7aergnuiockuoq35yt3ad.onion",
+      "available": false,
+      "updated": "2025-08-08 05:06:29.059302",
+      "lastscrape": "2025-09-07 05:31:45.333782",
+      "type": "DLS",
+      "http": {
+        "fetched_at": "2025-09-07T05:31:45+00:00",
+        "start_url": "http://bashex7mokreyoxl6wlswxl4foi7okgs7or7aergnuiockuoq35yt3ad.onion",
+        "final_url": null,
+        "status": null,
+        "http_version": null,
+        "redirect_chain": [],
+        "fingerprint": {},
+        "headers": {},
+        "error": "Host unreachable"
+      }
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/apt73"
+}

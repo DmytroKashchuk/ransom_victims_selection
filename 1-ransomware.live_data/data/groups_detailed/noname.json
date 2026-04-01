@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "noname",
+  "description": null,
+  "added_date": null,
+  "victims": 3,
+  "firstseen": "2023-09-11",
+  "lastseen": "2023-09-12",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "noname2j6zkgnt7ftxsjju5tfd3s45s4i3egq5bqtl72kgum4ldc6qyd.onion",
+      "title": "NO-NAME Blog Since 2020 – 2023",
+      "slug": "http://noname2j6zkgnt7ftxsjju5tfd3s45s4i3egq5bqtl72kgum4ldc6qyd.onion",
+      "available": false,
+      "updated": "2024-12-31 10:32:48.548115",
+      "lastscrape": "2025-06-01 21:18:57.638885",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": true,
+  "ransomnotes_count": 2,
+  "url": "https://www.ransomware.live/group/noname"
+}

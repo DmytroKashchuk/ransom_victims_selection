@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+
+{% block title %}CVE Summary (Teyyub){% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stats-bar {
+		font-size: .82rem;
+		color: #666;
+		margin-bottom: .5rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#teyyub-table {
+		font-size: .85rem;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">CVE Summary (Teyyub)</h4>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Products</div>
+			<div class="stat-sub">visible rows</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-with-cves">-</div>
+			<div class="stat-label">With CVEs</div>
+			<div class="stat-sub" id="card-with-cves-pct"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-total-cves">-</div>
+			<div class="stat-label">Total CVEs</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-with-kves">-</div>
+			<div class="stat-label">With KVEs</div>
+			<div class="stat-sub" id="card-with-kves-pct"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-total-kves">-</div>
+			<div class="stat-label">Total KVEs</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-avg-market">-</div>
+			<div class="stat-label">Avg Market Share</div>
+			<div class="stat-sub">filtered mean</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-category">Category</label>
+			<select id="filter-category">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-class">Class</label>
+			<select id="filter-class">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-min-cves">Min CVEs</label>
+			<input type="number" id="filter-min-cves" placeholder="e.g. 1" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-min-kves">Min KVEs</label>
+			<input type="number" id="filter-min-kves" placeholder="e.g. 1" step="1">
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear Filters</button>
+		</div>
+	</div>
+
+	<div class="stats-bar">
+		Showing <strong id="rowCount">0</strong> of <strong id="totalCount">0</strong> records
+	</div>
+
+	<div id="teyyub-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var allData = [];
+	var fmt = function(v) { return v == null ? "—" : Number(v).toLocaleString(); };
+
+	/* Parse "93.26%" → 93.26  (returns null for blanks) */
+	function parseMarketShare(val) {
+		if (val == null || val === "") return null;
+		var s = String(val).replace("%", "").trim();
+		var n = parseFloat(s);
+		return isNaN(n) ? null : n;
+	}
+
+	var table = new Tabulator("#teyyub-table", {
+		height: "62vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "CVE_count", dir: "desc" }],
+		columns: [
+			{
+				title: "Vendor", field: "VendorName", minWidth: 140,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				frozen: true
+			},
+			{
+				title: "Product", field: "Product", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Category", field: "ProductCategory", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Series", field: "ProductSeries", minWidth: 180,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Class", field: "Class", minWidth: 120,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Subclass", field: "Subclass", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "CVEs", field: "CVE_count", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					return (v != null && v !== "") ? fmt(v) : '<span style="color:#ccc">0</span>';
+				}
+			},
+			{
+				title: "KVEs", field: "KVE_count", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					return (v != null && v !== "") ? fmt(v) : '<span style="color:#ccc">0</span>';
+				}
+			},
+			{
+				title: "Market Share", field: "MarketShare", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: function(a, b) {
+					var na = parseMarketShare(a), nb = parseMarketShare(b);
+					na = na == null ? -1 : na;
+					nb = nb == null ? -1 : nb;
+					return na - nb;
+				},
+				formatter: function(c) {
+					var v = c.getValue();
+					if (v == null || v === "") return '<span style="color:#ccc">—</span>';
+					return String(v);
+				}
+			}
+		]
+	});
+
+	/* ── Card updates ────────────────────────────── */
+	function updateCards() {
+		var rows = table.getRows("active").map(function(r) { return r.getData(); });
+		var n = rows.length;
+		document.getElementById("rowCount").textContent = n;
+		document.getElementById("totalCount").textContent = allData.length;
+		document.getElementById("card-total").textContent = n.toLocaleString();
+
+		if (n === 0) {
+			document.getElementById("card-with-cves").textContent = "—";
+			document.getElementById("card-with-cves-pct").textContent = "";
+			document.getElementById("card-total-cves").textContent = "—";
+			document.getElementById("card-with-kves").textContent = "—";
+			document.getElementById("card-with-kves-pct").textContent = "";
+			document.getElementById("card-total-kves").textContent = "—";
+			document.getElementById("card-avg-market").textContent = "—";
+			return;
+		}
+
+		var sumCves = 0, withCves = 0, sumKves = 0, withKves = 0;
+		var sumMarket = 0, countMarket = 0;
+		rows.forEach(function(r) {
+			var cve = Number(r.CVE_count) || 0;
+			var kve = Number(r.KVE_count) || 0;
+			sumCves += cve;
+			sumKves += kve;
+			if (cve > 0) withCves++;
+			if (kve > 0) withKves++;
+			var ms = parseMarketShare(r.MarketShare);
+			if (ms !== null) { sumMarket += ms; countMarket++; }
+		});
+
+		document.getElementById("card-with-cves").textContent = withCves.toLocaleString();
+		document.getElementById("card-with-cves-pct").textContent = ((withCves / n) * 100).toFixed(1) + "% of filtered";
+		document.getElementById("card-total-cves").textContent = sumCves.toLocaleString();
+		document.getElementById("card-with-kves").textContent = withKves.toLocaleString();
+		document.getElementById("card-with-kves-pct").textContent = ((withKves / n) * 100).toFixed(1) + "% of filtered";
+		document.getElementById("card-total-kves").textContent = sumKves.toLocaleString();
+		document.getElementById("card-avg-market").textContent = countMarket > 0
+			? (sumMarket / countMarket).toFixed(2) + "%"
+			: "—";
+	}
+
+	table.on("dataFiltered", function() { setTimeout(updateCards, 0); });
+
+	/* ── Populate dropdown filters ───────────────── */
+	function populateDropdowns(data) {
+		var categories = [], classes = [];
+		data.forEach(function(r) {
+			if (r.ProductCategory && categories.indexOf(r.ProductCategory) === -1) categories.push(r.ProductCategory);
+			if (r.Class && classes.indexOf(r.Class) === -1) classes.push(r.Class);
+		});
+		categories.sort();
+		classes.sort();
+
+		var catSel = document.getElementById("filter-category");
+		categories.forEach(function(c) {
+			var opt = document.createElement("option");
+			opt.value = c; opt.textContent = c;
+			catSel.appendChild(opt);
+		});
+
+		var clsSel = document.getElementById("filter-class");
+		classes.forEach(function(c) {
+			var opt = document.createElement("option");
+			opt.value = c; opt.textContent = c;
+			clsSel.appendChild(opt);
+		});
+	}
+
+	/* ── Custom filters ──────────────────────────── */
+	function customFilter(data) {
+		var cat = document.getElementById("filter-category").value;
+		var cls = document.getElementById("filter-class").value;
+		var minCves = document.getElementById("filter-min-cves").value;
+		var minKves = document.getElementById("filter-min-kves").value;
+
+		if (cat && data.ProductCategory !== cat) return false;
+		if (cls && data.Class !== cls) return false;
+		if (minCves !== "" && (Number(data.CVE_count) || 0) < Number(minCves)) return false;
+		if (minKves !== "" && (Number(data.KVE_count) || 0) < Number(minKves)) return false;
+		return true;
+	}
+
+	function applyFilters() { table.setFilter(customFilter); }
+
+	document.getElementById("filter-category").addEventListener("change", applyFilters);
+	document.getElementById("filter-class").addEventListener("change", applyFilters);
+	document.getElementById("filter-min-cves").addEventListener("input", applyFilters);
+	document.getElementById("filter-min-kves").addEventListener("input", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", function() {
+		document.getElementById("filter-category").value = "";
+		document.getElementById("filter-class").value = "";
+		document.getElementById("filter-min-cves").value = "";
+		document.getElementById("filter-min-kves").value = "";
+		table.clearFilter();
+	});
+
+	/* ── Load data ───────────────────────────────── */
+	fetch("/api/cve-summary-teyyub")
+		.then(function(r) { return r.json(); })
+		.then(function(data) {
+			allData = data;
+			table.setData(data);
+			populateDropdowns(data);
+		});
+});
+</script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "crazyhunter",
+  "description": null,
+  "added_date": null,
+  "victims": 10,
+  "firstseen": "2025-03-05",
+  "lastseen": "2025-03-30",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {
+    "Exfiltration": [],
+    "RMM-Tools": [],
+    "DiscoveryEnum": [],
+    "Networking": [],
+    "CredentialTheft": [],
+    "Offsec": [
+      "SharpGPOAbuse"
+    ],
+    "DefenseEvasion": [
+      "Zemana Anti-Rootkit driver"
+    ],
+    "LOLBAS": []
+  },
+  "locations": [
+    {
+      "fqdn": "7i6sfmfvmqfaabjksckwrttu3nsbopl3xev2vbxbkghsivs5lqp4yeqd.onion",
+      "title": "Crazyhunter",
+      "slug": "http://7i6sfmfvmqfaabjksckwrttu3nsbopl3xev2vbxbkghsivs5lqp4yeqd.onion/",
+      "available": false,
+      "updated": "2025-04-03 06:31:31.369599",
+      "lastscrape": "2025-06-01 21:18:24.690792",
+      "type": "DLS"
+    },
+    {
+      "fqdn": "7i6sfmfvmqfaabjksckwrttu3nsbopl3xev2vbxbkghsivs5lqp4yeqd.onion",
+      "title": "",
+      "slug": "http://7i6sfmfvmqfaabjksckwrttu3nsbopl3xev2vbxbkghsivs5lqp4yeqd.onion:8088/api/v1/product?page=1&pageSize=20",
+      "available": false,
+      "updated": "2025-04-03 07:31:29.666503",
+      "lastscrape": "2025-06-01 21:19:24.720343",
+      "type": "API"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/crazyhunter"
+}

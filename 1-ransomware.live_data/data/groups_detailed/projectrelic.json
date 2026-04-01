@@ -1,0 +1,28 @@
+{
+  "client": "dmk6603@utulsa.edu",
+  "group": "projectrelic",
+  "description": null,
+  "added_date": null,
+  "victims": 5,
+  "firstseen": "2022-11-11",
+  "lastseen": "2022-12-18",
+  "ttps": [],
+  "vulnerabilities": [],
+  "tools": {},
+  "locations": [
+    {
+      "fqdn": "relic5zqwemjnu4veilml6prgyedj6phs7de3udhicuq53z37klxm6qd.onion",
+      "title": "Project Relic. Dumps, leaks, news, announcements",
+      "slug": "http://relic5zqwemjnu4veilml6prgyedj6phs7de3udhicuq53z37klxm6qd.onion",
+      "available": false,
+      "updated": "2023-06-03 09:39:04.186286",
+      "lastscrape": "2025-06-01 21:19:12.443605",
+      "type": "DLS"
+    }
+  ],
+  "has_negotiations": false,
+  "negotiation_count": 0,
+  "has_ransomnote": false,
+  "ransomnotes_count": 0,
+  "url": "https://www.ransomware.live/group/projectrelic"
+}
