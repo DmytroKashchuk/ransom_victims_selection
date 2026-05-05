@@ -119,7 +119,14 @@
 
 {% block content %}
 <div class="container-fluid">
-	<h4 class="mb-3">Ground Truth on 200</h4>
+	<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+		<h4 class="mb-0">Ground Truth on 200</h4>
+		<a href="{{ url_for('ground_truth_200_methodology') }}"
+		   class="btn btn-outline-secondary btn-sm"
+		   target="_blank" rel="noopener">
+			📖 Column methodology
+		</a>
+	</div>
 
 	<!-- Stat Cards -->
 	<div class="stat-cards" id="statCards">

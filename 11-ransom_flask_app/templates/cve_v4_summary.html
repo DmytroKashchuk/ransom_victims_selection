@@ -140,7 +140,14 @@
 
 {% block content %}
 <div class="container-fluid">
-	<h4 class="mb-3">Tech CVE Summary (CVE v4)</h4>
+	<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+		<h4 class="mb-0">Tech CVE Summary (CVE v4)</h4>
+		<a href="{{ url_for('ground_truth_200_methodology') }}"
+		   class="btn btn-outline-secondary btn-sm"
+		   target="_blank" rel="noopener">
+			📖 Column methodology
+		</a>
+	</div>
 
 	<!-- Stat Cards -->
 	<div class="stat-cards" id="statCards">
@@ -367,6 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		columns: [
 			{
 				title: "Vendor", field: "VendorName", minWidth: 140,
+				headerTooltip: "SWDB vendor name (raw, before normalization).",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				frozen: true,
 				formatter: function(cell) {
@@ -379,6 +387,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "Product", field: "Product", minWidth: 160,
+				headerTooltip: "SWDB product name.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: function(cell) {
 					var v = escHtml(cell.getValue() || "");
@@ -390,14 +399,17 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "Category", field: "ProductCategory", minWidth: 140,
+				headerTooltip: "SWDB product category (e.g. Networking, Security).",
 				headerFilter: "input", headerFilterPlaceholder: "Search…"
 			},
 			{
 				title: "Series", field: "ProductSeries", minWidth: 120,
+				headerTooltip: "SWDB product series / family.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…"
 			},
 			{
 				title: "CPE Vendor", field: "cpe_vendor", minWidth: 120,
+				headerTooltip: "NVD CPE vendor matched to the SWDB vendor.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: function(cell) {
 					var v = escHtml(cell.getValue() || "");
@@ -409,6 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "CPE Product", field: "cpe_product", minWidth: 120,
+				headerTooltip: "NVD CPE product matched to the SWDB product.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: function(cell) {
 					var v = escHtml(cell.getValue() || "");
@@ -420,6 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "CPE Match String", field: "cpe_match_string", minWidth: 260,
+				headerTooltip: "Full cpe:2.3:* string used to query NVD.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: function(cell) {
 					var v = escHtml(cell.getValue() || "");
@@ -431,6 +445,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "CPE Score", field: "cpe_match_score", hozAlign: "right", minWidth: 90,
+				visible: false,
+				headerTooltip: "Average of vendor + product match scores (0–1). ≥0.90 trust, 0.50–0.70 review.",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) {
@@ -440,68 +456,86 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "CPE Vendor Method", field: "cpe_vendor_method", minWidth: 130,
+				visible: false,
+				headerTooltip: "Strategy used to match the vendor (exact, exact_flat, jaccard, substring, levenshtein, token_index).",
 				headerFilter: "input", headerFilterPlaceholder: "Search…"
 			},
 			{
 				title: "CPE Product Method", field: "cpe_product_method", minWidth: 130,
+				visible: false,
+				headerTooltip: "Strategy used to match the product (exact, exact_flat, jaccard, substring, levenshtein, token_index).",
 				headerFilter: "input", headerFilterPlaceholder: "Search…"
 			},
 			{
 				title: "Total CVEs", field: "total_cves", hozAlign: "right",
+				headerTooltip: "Distinct CVEs found across all 3 tiers (deduplicated).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) { return fmt(c.getValue()); }
 			},
 			{
 				title: "In NVD", field: "total_available_in_nvd", hozAlign: "right",
+				visible: false,
+				headerTooltip: "How many of the matched CVEs have an NVD record (vs. awaiting analysis).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) { return fmt(c.getValue()); }
 			},
 			{
 				title: "Tier 1", field: "tier1_cves", hozAlign: "right",
+				visible: false,
+				headerTooltip: "Tier 1: matched via official virtualMatchString (highest reliability).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) { return fmt(c.getValue()); }
 			},
 			{
 				title: "Tier 2", field: "tier2_cves", hozAlign: "right",
+				visible: false,
+				headerTooltip: "Tier 2: keyword 'vendor product' in CVE description (medium reliability).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) { return fmt(c.getValue()); }
 			},
 			{
 				title: "Tier 3", field: "tier3_cves", hozAlign: "right",
+				visible: false,
+				headerTooltip: "Tier 3: product keyword alone in CVE description (low reliability).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) { return fmt(c.getValue()); }
 			},
 			{
 				title: "Critical", field: "critical", hozAlign: "center",
+				headerTooltip: "# of CVEs with CVSS severity Critical (9.0–10.0).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: sevFormatter("critical", "sev-critical")
 			},
 			{
 				title: "High", field: "high", hozAlign: "center",
+				headerTooltip: "# of CVEs with CVSS severity High (7.0–8.9).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: sevFormatter("high", "sev-high")
 			},
 			{
 				title: "Medium", field: "medium", hozAlign: "center",
+				headerTooltip: "# of CVEs with CVSS severity Medium (4.0–6.9).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: sevFormatter("medium", "sev-medium")
 			},
 			{
 				title: "Low", field: "low", hozAlign: "center",
+				headerTooltip: "# of CVEs with CVSS severity Low (0.1–3.9).",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: sevFormatter("low", "sev-low")
 			},
 			{
 				title: "KEV", field: "kev_count", hozAlign: "right",
+				headerTooltip: "# of CVEs in CISA's Known Exploited Vulnerabilities catalog.",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) {
@@ -512,6 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "KEV Ransomware", field: "kev_ransomware_count", hozAlign: "right",
+				headerTooltip: "# of KEV CVEs flagged as known to be used in ransomware campaigns.",
 				headerFilter: "input", headerFilterPlaceholder: "Filter…",
 				sorter: "number",
 				formatter: function(c) {
@@ -522,6 +557,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "Top CWEs", field: "top_cwes", minWidth: 180,
+				headerTooltip: "Most common CWE weakness types across the matched CVEs.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: function(cell) {
 					var v = cell.getValue() || "";
@@ -531,6 +567,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "Match Method", field: "match_method", minWidth: 160,
+				headerTooltip: "Tier that produced the CVE list: virtualMatchString (T1), keyword_vendor_product (T2), keyword_product_only (T3), or no_match.",
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: function(cell) {
 					var v = cell.getValue() || "";

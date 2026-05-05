@@ -724,6 +724,19 @@ def ground_truth_200():
     return render_template("ground_truth_200.html")
 
 
+@app.route("/ground-truth-200/methodology")
+def ground_truth_200_methodology():
+    md_path = os.path.join(os.path.dirname(__file__), "ground_truth_methodology.md")
+    with open(md_path, encoding="utf-8") as f:
+        md_text = f.read()
+    html_content = markdown.markdown(md_text, extensions=["tables", "fenced_code"])
+    return render_template(
+        "ransom_leaks.html",
+        content=html_content,
+        page_title="Ground Truth — Methodology",
+    )
+
+
 _GT200_FILE = "cve_v4_summary_random_200_ground_truth.csv"
 _gt200_cache = None  # list[dict] including a stable _row_idx
 _gt200_fieldnames = None  # list[str], CSV header order (with handcheck appended)

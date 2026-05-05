@@ -5,201 +5,290 @@
 {% block extra_head %}
 <style>
 	.hero {
-		padding: 4rem 0 2rem;
+		padding: 3rem 0 1.5rem;
 		text-align: center;
 	}
 	.hero h1 {
 		font-weight: 700;
-		color: #333;
+		color: #222;
+		margin-bottom: .5rem;
 	}
-	.hero p {
+	.hero .lead {
 		color: #666;
 		font-size: 1.05rem;
+		max-width: 720px;
+		margin: 0 auto;
 	}
+
+	.section {
+		margin-top: 2.75rem;
+	}
+	.section-header {
+		display: flex;
+		align-items: baseline;
+		gap: .9rem;
+		border-bottom: 2px solid #eee;
+		padding-bottom: .35rem;
+		margin-bottom: 1rem;
+	}
+	.section-header h3 {
+		font-weight: 600;
+		font-size: 1.15rem;
+		margin: 0;
+		color: #333;
+	}
+	.section-header .section-icon {
+		font-size: 1.25rem;
+	}
+	.section-header .section-sub {
+		color: #888;
+		font-size: .85rem;
+		margin: 0;
+	}
+
 	.dash-card {
 		background: #fff;
-		border: 1px solid #e0e0e0;
+		border: 1px solid #e3e6ea;
 		border-radius: 6px;
-		padding: 1.25rem 1.5rem;
+		padding: 1rem 1.15rem;
 		text-decoration: none;
 		color: inherit;
 		display: block;
-		transition: box-shadow .15s;
+		height: 100%;
+		transition: box-shadow .15s, border-color .15s, transform .1s;
 	}
 	.dash-card:hover {
-		box-shadow: 0 4px 16px rgba(0,0,0,.08);
+		box-shadow: 0 4px 14px rgba(0,0,0,.07);
+		border-color: #c4d3e6;
 		color: inherit;
+		transform: translateY(-1px);
 	}
 	.dash-card h5 {
 		font-weight: 600;
-		font-size: 1rem;
-		margin-bottom: .35rem;
+		font-size: .98rem;
+		margin-bottom: .3rem;
+		color: #2a3a55;
 	}
 	.dash-card p {
-		font-size: .85rem;
-		color: #888;
+		font-size: .82rem;
+		color: #777;
 		margin: 0;
+		line-height: 1.35;
+	}
+	.dash-card .badge-live {
+		display: inline-block;
+		font-size: .65rem;
+		font-weight: 600;
+		background: #d1e7dd;
+		color: #0f5132;
+		padding: 1px 6px;
+		border-radius: 3px;
+		margin-left: .35rem;
+		vertical-align: middle;
+	}
+	.dash-card .badge-new {
+		display: inline-block;
+		font-size: .65rem;
+		font-weight: 600;
+		background: #fff3cd;
+		color: #664d03;
+		padding: 1px 6px;
+		border-radius: 3px;
+		margin-left: .35rem;
+		vertical-align: middle;
 	}
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container pb-5">
 	<div class="hero">
 		<h1>Ransomware Victim Analysis</h1>
-		<p class="lead mb-4">Explore odds-ratio data across technology categories, vendors, and products.</p>
+		<p class="lead">
+			Statistical, vulnerability, and intelligence dashboards exploring the technology footprint
+			of ransomware victims — from odds-ratio analysis to live NVD lookups and leaked actor chats.
+		</p>
 	</div>
 
-	<div class="row g-3 justify-content-center">
-		<div class="col-md-4">
-			<a href="{{ url_for('category_or') }}" class="dash-card">
-				<h5>Category Odds Ratios</h5>
-				<p>Technology categories and their association with ransomware victimization.</p>
-			</a>
+	<!-- ─── 1. Statistical Analysis ─────────────────────────── -->
+	<div class="section">
+		<div class="section-header">
+			<span class="section-icon">📊</span>
+			<h3>Statistical Analysis</h3>
+			<p class="section-sub ms-auto">Odds ratios, regression, factor analysis</p>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('vendor_or') }}" class="dash-card">
-				<h5>Vendor Odds Ratios</h5>
-				<p>Technology vendors and their association with ransomware victimization.</p>
-			</a>
+		<div class="row g-3">
+			<div class="col-md-4">
+				<a href="{{ url_for('category_or') }}" class="dash-card">
+					<h5>Category Odds Ratios</h5>
+					<p>Technology categories and their association with ransomware victimization.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('vendor_or') }}" class="dash-card">
+					<h5>Vendor Odds Ratios</h5>
+					<p>Technology vendors and their association with ransomware victimization.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('product_or') }}" class="dash-card">
+					<h5>Product Odds Ratios</h5>
+					<p>Individual products and their association with ransomware victimization.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('group_category_or') }}" class="dash-card">
+					<h5>Group × Category OR</h5>
+					<p>Per-group odds ratios by technology category, with adjusted p-values.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('group_vendor_or') }}" class="dash-card">
+					<h5>Group × Vendor OR</h5>
+					<p>Per-group odds ratios by technology vendor, with adjusted p-values.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('group_product_or') }}" class="dash-card">
+					<h5>Group × Product OR</h5>
+					<p>Per-group odds ratios by individual product, with adjusted p-values.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('logistic_regression') }}" class="dash-card">
+					<h5>Logistic Regression</h5>
+					<p>Multivariate regression modeling victim probability from technology features.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('factor_analysis_page') }}" class="dash-card">
+					<h5>Factor Analysis</h5>
+					<p>Latent factors emerging from co-occurrence of technologies in victim profiles.</p>
+				</a>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('product_or') }}" class="dash-card">
-				<h5>Product Odds Ratios</h5>
-				<p>Individual products and their association with ransomware victimization.</p>
-			</a>
+	</div>
+
+	<!-- ─── 2. CVE & Vulnerability Data ─────────────────────── -->
+	<div class="section">
+		<div class="section-header">
+			<span class="section-icon">🛡️</span>
+			<h3>CVE &amp; Vulnerability Data</h3>
+			<p class="section-sub ms-auto">Aggregated CVE coverage of the SWDB tech universe</p>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('group_category_or') }}" class="dash-card">
-				<h5>Group × Category OR</h5>
-				<p>Odds ratios by ransomware group and technology category with adjusted p-values.</p>
-			</a>
+		<div class="row g-3">
+			<div class="col-md-4">
+				<a href="{{ url_for('cve_v4_summary') }}" class="dash-card">
+					<h5>CVE v4 Summary</h5>
+					<p>Product-level CVE rollup — tier breakdown, severity counts, KEV data.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('cve_v4_results') }}" class="dash-card">
+					<h5>CVE v4 Results</h5>
+					<p>Individual CVE records with scores, descriptions, match-method highlighting.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('ground_truth_200') }}" class="dash-card">
+					<h5>Ground Truth on 200 <span class="badge-new">labeling</span></h5>
+					<p>200-row sample for manually validating CPE matches — editable Correct? + handcheck.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('cve_summary_teyyub') }}" class="dash-card">
+					<h5>CVE Summary (Teyyub)</h5>
+					<p>Product-level CVE &amp; KEV counts with market share across categories.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('cve_exposure') }}" class="dash-card">
+					<h5>CVE Exposure</h5>
+					<p>Organizational exposure per CVE — sites &amp; enterprises running affected products.</p>
+				</a>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('group_vendor_or') }}" class="dash-card">
-				<h5>Group × Vendor OR</h5>
-				<p>Odds ratios by ransomware group and technology vendor with adjusted p-values.</p>
-			</a>
+	</div>
+
+	<!-- ─── 3. CPE Reference & Live Lookups ─────────────────── -->
+	<div class="section">
+		<div class="section-header">
+			<span class="section-icon">🔎</span>
+			<h3>CPE Reference &amp; Live Lookups</h3>
+			<p class="section-sub ms-auto">Reference dictionaries and on-demand NVD / CISA queries</p>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('group_product_or') }}" class="dash-card">
-				<h5>Group × Product OR</h5>
-				<p>Odds ratios by ransomware group and individual product with adjusted p-values.</p>
-			</a>
+		<div class="row g-3">
+			<div class="col-md-4">
+				<a href="{{ url_for('cpe_lookup') }}" class="dash-card">
+					<h5>CPE Lookup <span class="badge-live">live</span></h5>
+					<p>Search the NVD CPE dictionary by keyword, vendor, product, or match string.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('cve_lookup') }}" class="dash-card">
+					<h5>CVE Lookup <span class="badge-live">live</span></h5>
+					<p>Search NVD vulnerabilities by keyword, CVE ID, or CPE — severity &amp; date filters.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('kev_page') }}" class="dash-card">
+					<h5>CISA KEV <span class="badge-live">live</span></h5>
+					<p>Real-time CISA Known Exploited Vulnerabilities catalog — refresh on demand.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('all_cpes_normalized') }}" class="dash-card">
+					<h5>All CPEs (Normalized)</h5>
+					<p>Full CPE dictionary (~1.6M entries) — part, vendor, product, deprecation status.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('cpe_swdb_merged') }}" class="dash-card">
+					<h5>CPE ↔ SWDB Merged</h5>
+					<p>Vendor-level merge of NVD CPE dictionary and SWDB tech universe.</p>
+				</a>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('tech_cve_summary') }}" class="dash-card">
-				<h5>Tech CVE Summary</h5>
-				<p>CVE counts by product with severity breakdown (critical, high, medium, low).</p>
-			</a>
+	</div>
+
+	<!-- ─── 4. Leak Intelligence ────────────────────────────── -->
+	<div class="section">
+		<div class="section-header">
+			<span class="section-icon">💬</span>
+			<h3>Leak Intelligence</h3>
+			<p class="section-sub ms-auto">Leaked actor communications and extracted artifacts</p>
 		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('tech_cve_results') }}" class="dash-card">
-				<h5>Tech CVE Results</h5>
-				<p>Individual CVE records (~896K rows) with severity, base score, and descriptions.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('tech_cve_normalized_summary') }}" class="dash-card">
-				<h5>Tech CVE Summary (Normalized)</h5>
-				<p>CVE counts by product with severity breakdown — normalized CPE mapping.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('tech_cve_normalized_results') }}" class="dash-card">
-				<h5>Tech CVE Results (Normalized)</h5>
-				<p>Individual CVE records (~878K rows) with severity, base score — normalized CPE mapping.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('all_cpes_normalized') }}" class="dash-card">
-				<h5>All CPEs (Normalized)</h5>
-				<p>Full CPE dictionary (~1.6M entries) with part, vendor, product, and deprecation status.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cpe_swdb_merged') }}" class="dash-card">
-				<h5>CPE ↔ SWDB Merged</h5>
-				<p>Vendor-level merge of CPE dictionary and SWDB — match status and product counts.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cve_summary_teyyub') }}" class="dash-card">
-				<h5>CVE Summary (Teyyub)</h5>
-				<p>Product-level CVE &amp; KVE counts with market share across categories and classes.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cve_exposure') }}" class="dash-card">
-				<h5>CVE Exposure</h5>
-				<p>Organizational exposure per CVE — total sites &amp; enterprises running affected products.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('complete_rows_summary') }}" class="dash-card">
-				<h5>Complete Rows Summary (v4)</h5>
-				<p>Enriched product-level CVE summary with tier breakdown, KEV counts, and CPE match data.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('complete_rows_results') }}" class="dash-card">
-				<h5>Complete Rows Results (v4)</h5>
-				<p>Individual CVE records with match tiers, KEV status, and CVE vendor/product details.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cve_v4_summary') }}" class="dash-card">
-				<h5>CVE v4 Summary</h5>
-				<p>Product-level CVE summary from the cve_v4 dataset — tier breakdown, severity counts, KEV data.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cve_v4_results') }}" class="dash-card">
-				<h5>CVE v4 Results</h5>
-				<p>Individual CVE records from cve_v4 — scores, descriptions, match method highlighting, and KEV details.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cpe_lookup') }}" class="dash-card">
-				<h5>CPE Lookup (NVD)</h5>
-				<p>Live search the NVD CPE dictionary by keyword, vendor, product, or match string.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('cve_lookup') }}" class="dash-card">
-				<h5>CVE Lookup (NVD)</h5>
-				<p>Live search NVD vulnerabilities by keyword, CVE ID, or CPE — with severity &amp; date filters.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('kev_page') }}" class="dash-card">
-				<h5>CISA KEV (Live)</h5>
-				<p>Real-time CISA Known Exploited Vulnerabilities catalog — refresh on demand, filter by vendor, product, ransomware use.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('blackbasta_leaks') }}" class="dash-card">
-				<h5>Black Basta Chat Leaks</h5>
-				<p>Browse leaked Matrix chats from Black Basta — filter by sender, chat room, date, or keyword.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('blackbasta_product_hits') }}" class="dash-card">
-				<h5>Black Basta Product Hits</h5>
-				<p>Vendor / product mentions in Black Basta chats — drill down into the actual messages where each product was named.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('blackbasta_websites') }}" class="dash-card">
-				<h5>Black Basta Websites</h5>
-				<p>Domains / URLs extracted from Black Basta chats — filter to primary domains only and explore the related messages.</p>
-			</a>
-		</div>
-		<div class="col-md-4">
-			<a href="{{ url_for('conti_leaks') }}" class="dash-card">
-				<h5>Conti Chat Leaks</h5>
-				<p>Jabber (2020 &amp; 2021–2022) and Rocket Chat dumps with Russian + English translations.</p>
-			</a>
+		<div class="row g-3">
+			<div class="col-md-4">
+				<a href="{{ url_for('leaks') }}" class="dash-card">
+					<h5>Leak Sources (overview)</h5>
+					<p>Index of all available ransomware leak datasets and their provenance.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('blackbasta_leaks') }}" class="dash-card">
+					<h5>Black Basta — Chats</h5>
+					<p>Browse leaked Matrix chats — filter by sender, room, date, or keyword.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('blackbasta_product_hits') }}" class="dash-card">
+					<h5>Black Basta — Product Hits</h5>
+					<p>Vendor / product mentions in Black Basta chats — drill down to the messages.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('blackbasta_websites') }}" class="dash-card">
+					<h5>Black Basta — Websites</h5>
+					<p>Domains / URLs extracted from Black Basta chats — primary-domain filter.</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="{{ url_for('conti_leaks') }}" class="dash-card">
+					<h5>Conti — Chats</h5>
+					<p>Jabber (2020 &amp; 2021–22) and Rocket Chat dumps with EN/RU translations.</p>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
