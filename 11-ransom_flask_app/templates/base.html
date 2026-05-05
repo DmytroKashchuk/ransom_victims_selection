@@ -87,15 +87,15 @@
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item {% if request.endpoint == 'cve_lookup' %}active{% endif %}" href="{{ url_for('cve_lookup') }}">CVE Lookup (NVD)</a></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'kev_page' %}active{% endif %}" href="{{ url_for('kev_page') }}">CISA KEV (Live)</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_summary' %}active{% endif %}" href="{{ url_for('tech_cve_summary') }}">Tech CVE Summary</a></li>
-								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_results' %}active{% endif %}" href="{{ url_for('tech_cve_results') }}">Tech CVE Results</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_normalized_summary' %}active{% endif %}" href="{{ url_for('tech_cve_normalized_summary') }}">Tech CVE Summary (Normalized)</a></li>
-								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_normalized_results' %}active{% endif %}" href="{{ url_for('tech_cve_normalized_results') }}">Tech CVE Results (Normalized)</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item {% if request.endpoint == 'complete_rows_summary' %}active{% endif %}" href="{{ url_for('complete_rows_summary') }}">Complete Rows Summary (v4)</a></li>
-								<li><a class="dropdown-item {% if request.endpoint == 'complete_rows_results' %}active{% endif %}" href="{{ url_for('complete_rows_results') }}">Complete Rows Results (v4)</a></li>
+								{# <li><hr class="dropdown-divider"></li> #}
+								{# <li><a class="dropdown-item {% if request.endpoint == 'tech_cve_summary' %}active{% endif %}" href="{{ url_for('tech_cve_summary') }}">Tech CVE Summary</a></li> #}
+								{# <li><a class="dropdown-item {% if request.endpoint == 'tech_cve_results' %}active{% endif %}" href="{{ url_for('tech_cve_results') }}">Tech CVE Results</a></li> #}
+								{# <li><hr class="dropdown-divider"></li> #}
+								{# <li><a class="dropdown-item {% if request.endpoint == 'tech_cve_normalized_summary' %}active{% endif %}" href="{{ url_for('tech_cve_normalized_summary') }}">Tech CVE Summary (Normalized)</a></li> #}
+								{# <li><a class="dropdown-item {% if request.endpoint == 'tech_cve_normalized_results' %}active{% endif %}" href="{{ url_for('tech_cve_normalized_results') }}">Tech CVE Results (Normalized)</a></li> #}
+								{# <li><hr class="dropdown-divider"></li> #}
+								{# <li><a class="dropdown-item {% if request.endpoint == 'complete_rows_summary' %}active{% endif %}" href="{{ url_for('complete_rows_summary') }}">Complete Rows Summary (v4)</a></li> #}
+								{# <li><a class="dropdown-item {% if request.endpoint == 'complete_rows_results' %}active{% endif %}" href="{{ url_for('complete_rows_results') }}">Complete Rows Results (v4)</a></li> #}
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'cve_v4_summary' %}active{% endif %}" href="{{ url_for('cve_v4_summary') }}">CVE v4 Summary</a></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'cve_v4_results' %}active{% endif %}" href="{{ url_for('cve_v4_results') }}">CVE v4 Results</a></li>
