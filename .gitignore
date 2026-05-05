@@ -1,2 +1,6 @@
 # CSV files
 *.csv
+*.bak
+*.json
+
+# Add 

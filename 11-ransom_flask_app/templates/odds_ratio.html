@@ -1,0 +1,572 @@
+{% extends "base.html" %}
+{% block title %}Odds Ratio — Ransomware Analytics{% endblock %}
+
+{% block extra_head %}
+<style>
+	.or-grid {
+		display: grid;
+		grid-template-columns: 100px 1fr 1fr;
+		gap: 0;
+		max-width: 480px;
+		margin: 0 auto;
+	}
+	.or-grid > div {
+		border: 1px solid #dee2e6;
+		padding: 0.75rem;
+		text-align: center;
+	}
+	.or-grid .corner { background: #f8f9fa; }
+	.or-grid .header { background: #f1f1f1; font-weight: 700; }
+	.or-grid .row-label { background: #f1f1f1; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+	.or-grid input {
+		width: 100%; border: none; text-align: center;
+		font-size: 1.1rem; font-weight: 600; background: transparent;
+	}
+	.or-grid input:focus { outline: 2px solid #0d6efd; background: #fff; }
+	.cell-tag { display: block; font-size: 0.75rem; color: #888; font-weight: 400; margin-top: 4px; }
+	.result-card { text-align: center; padding: 1rem; }
+	.result-card .val { font-size: 1.7rem; font-weight: 700; }
+	.result-card .lbl { font-size: 0.85rem; color: #666; }
+	.upload-zone {
+		border: 2px dashed #adb5bd; border-radius: 0.5rem;
+		padding: 1.5rem; text-align: center; cursor: pointer;
+		transition: border-color 0.2s, background 0.2s;
+	}
+	.upload-zone:hover, .upload-zone.dragover { border-color: #0d6efd; background: #f0f6ff; }
+	.upload-zone input[type="file"] { display: none; }
+	.preview-table { font-size: 0.82rem; }
+	.preview-table th { background: #f1f1f1; }
+	.legend-box {
+		font-size: 0.85rem; background: #fff8e1; border-left: 3px solid #ffc107;
+		padding: 0.6rem 0.9rem; border-radius: 0.25rem;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<h2 class="mb-1">Odds Ratio Calculator</h2>
+<p class="text-muted mb-3">
+	Compute Odds Ratio (OR), 95% CI, p-value and risk metrics from a 2×2 table.
+	Enter cells manually or compute from an uploaded CSV.
+</p>
+
+<div class="legend-box mb-3">
+	<strong>Quick guide</strong><br>
+	<b>Odds Ratio (OR)</b> answers: <em>"Are exposed subjects more likely to have the outcome than non-exposed?"</em><br>
+	• <b>Exposure</b> = the suspected risk factor (e.g. <code>sector</code>, <code>uses_Tech</code>).<br>
+	• <b>Outcome</b> = the event you measure (e.g. <code>hacked</code>, <code>ransomed</code>) — must be binary 0/1.<br>
+	• <b>Positive value</b> = which value of the column counts as "yes". Leave blank if the column is already 0/1 / yes/no / true/false.<br>
+	• <b>OR &gt; 1</b> risk factor · <b>OR &lt; 1</b> protective · <b>CI includes 1</b> → not significant · <b>p &lt; 0.05</b> → significant.<br>
+	<span class="text-muted">If your exposure has more than 2 categories (e.g. sector = finance / healthcare / retail / government) use the <b>By Category</b> tab.</span>
+</div>
+
+<ul class="nav nav-tabs mb-3" id="orTabs">
+	<li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabManual" type="button">Manual 2×2</button></li>
+	<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabCsv" type="button">CSV — binary exposure</button></li>
+	<li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabCat" type="button">CSV — By Category</button></li>
+</ul>
+
+<div class="tab-content">
+
+	<!-- ═══ Manual mode ═══ -->
+	<div class="tab-pane fade show active" id="tabManual">
+		<div class="row g-4">
+			<div class="col-lg-5">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title text-center mb-3">2×2 Contingency Table</h5>
+
+						<div class="or-grid">
+							<div class="corner"></div>
+							<div class="header">Ransomed (1)</div>
+							<div class="header">No Ransom (0)</div>
+
+							<div class="row-label">Tech (1)</div>
+							<div>
+								<input type="number" min="0" value="50" id="cellA">
+								<span class="cell-tag">(a)</span>
+							</div>
+							<div>
+								<input type="number" min="0" value="450" id="cellC">
+								<span class="cell-tag">(c)</span>
+							</div>
+
+							<div class="row-label">No Tech (0)</div>
+							<div>
+								<input type="number" min="0" value="20" id="cellB">
+								<span class="cell-tag">(b)</span>
+							</div>
+							<div>
+								<input type="number" min="0" value="980" id="cellD">
+								<span class="cell-tag">(d)</span>
+							</div>
+						</div>
+
+						<div class="text-center mt-3">
+							<button class="btn btn-primary" id="btnCompute">Compute OR</button>
+							<button class="btn btn-outline-secondary ms-2" id="btnReset">Reset</button>
+						</div>
+						<div class="text-danger small text-center mt-2" id="manualError"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-7">
+				<div id="resultsManual"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ═══ CSV mode ═══ -->
+	<div class="tab-pane fade" id="tabCsv">
+		<div class="card mb-4">
+			<div class="card-body">
+				<div class="row g-4">
+					<div class="col-md-4">
+						<h6>1. Upload CSV</h6>
+						<div class="upload-zone" id="dropZone">
+							<input type="file" id="csvFile" accept=".csv">
+							<div><strong>Drag & drop</strong> a .csv here<br>or <span class="text-primary">click to browse</span></div>
+						</div>
+						<div id="uploadStatus" class="mt-2 small"></div>
+					</div>
+
+					<div class="col-md-8" id="csvSelectPanel" style="display:none;">
+						<h6>2. Pick columns</h6>
+						<div class="row g-3 mb-3">
+							<div class="col-md-6">
+								<label class="form-label fw-bold">Exposure column <small class="text-muted">(must be binary)</small></label>
+								<select class="form-select form-select-sm" id="selExposure"></select>
+								<input class="form-control form-control-sm mt-1" id="exposurePos" placeholder='Positive value (default: 1 / "yes" / "true")'>
+								<div class="small text-muted mt-1" id="exposureValues"></div>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label fw-bold">Outcome column <small class="text-muted">(must be binary)</small></label>
+								<select class="form-select form-select-sm" id="selOutcome"></select>
+								<input class="form-control form-control-sm mt-1" id="outcomePos" placeholder='Positive value (default: 1 / "yes" / "true")'>
+								<div class="small text-muted mt-1" id="outcomeValues"></div>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="btnComputeCsv">
+							<span class="spinner-border spinner-border-sm d-none" id="csvSpinner"></span>
+							Compute OR
+						</button>
+						<span class="ms-2 text-danger small" id="csvError"></span>
+
+						<div class="mt-3" id="previewWrap" style="display:none;">
+							<small class="text-muted">Preview (first 5 rows):</small>
+							<div class="table-responsive">
+								<table class="table table-sm table-bordered preview-table" id="previewTable"></table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="resultsCsv"></div>
+	</div>
+
+	<!-- ═══ By Category mode ═══ -->
+	<div class="tab-pane fade" id="tabCat">
+		<div class="card mb-4">
+			<div class="card-body">
+				<p class="small text-muted mb-3">
+					Use this when your exposure has <b>more than 2 values</b> (e.g. <code>sector</code> = finance / healthcare / retail / government).
+					You'll get one OR per category, comparing each category against a baseline (or against all the others).
+				</p>
+				<div class="row g-4">
+					<div class="col-md-4">
+						<h6>1. Upload CSV</h6>
+						<div class="upload-zone" id="dropZoneCat">
+							<input type="file" id="csvFileCat" accept=".csv">
+							<div><strong>Drag & drop</strong> a .csv here<br>or <span class="text-primary">click to browse</span></div>
+						</div>
+						<div id="uploadStatusCat" class="mt-2 small"></div>
+					</div>
+
+					<div class="col-md-8" id="catSelectPanel" style="display:none;">
+						<h6>2. Pick columns</h6>
+						<div class="row g-3 mb-3">
+							<div class="col-md-6">
+								<label class="form-label fw-bold">Exposure column <small class="text-muted">(categorical, e.g. sector)</small></label>
+								<select class="form-select form-select-sm" id="selExposureCat"></select>
+								<div class="small text-muted mt-1" id="exposureValuesCat"></div>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label fw-bold">Outcome column <small class="text-muted">(binary, e.g. hacked)</small></label>
+								<select class="form-select form-select-sm" id="selOutcomeCat"></select>
+								<input class="form-control form-control-sm mt-1" id="outcomePosCat" placeholder='Positive value (default: 1 / "yes" / "true")'>
+								<div class="small text-muted mt-1" id="outcomeValuesCat"></div>
+							</div>
+						</div>
+						<div class="row g-3 mb-3">
+							<div class="col-md-6">
+								<label class="form-label fw-bold">Baseline category <small class="text-muted">(optional)</small></label>
+								<select class="form-select form-select-sm" id="selBaseline">
+									<option value="">— vs all other categories —</option>
+								</select>
+								<div class="small text-muted mt-1">If chosen, every other category is compared against this one (OR=1 by definition).</div>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="btnComputeCat">
+							<span class="spinner-border spinner-border-sm d-none" id="catSpinner"></span>
+							Compute OR per category
+						</button>
+						<span class="ms-2 text-danger small" id="catError"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="resultsCat"></div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	// ═══ Shared rendering ═══
+	function renderResults(target, d, contextLabel) {
+		if (d.error) {
+			target.innerHTML = '<div class="alert alert-danger">' + d.error + '</div>';
+			return;
+		}
+
+		const orVal = d.odds_ratio;
+		let orInterp = "No association";
+		let orColor = "#6c757d";
+		if (orVal > 1) { orInterp = "Increased odds (positive association)"; orColor = "#dc3545"; }
+		else if (orVal < 1) { orInterp = "Decreased odds (protective)"; orColor = "#198754"; }
+
+		let pInterp = "Not significant";
+		let pColor = "#6c757d";
+		if (d.p_value < 0.001) { pInterp = "Highly significant (p < 0.001)"; pColor = "#198754"; }
+		else if (d.p_value < 0.01) { pInterp = "Significant (p < 0.01)"; pColor = "#198754"; }
+		else if (d.p_value < 0.05) { pInterp = "Significant (p < 0.05)"; pColor = "#198754"; }
+
+		const ciIncludesOne = (d.ci_lo <= 1 && d.ci_hi >= 1);
+
+		let warnings = "";
+		if (d.zero_cell_correction) {
+			warnings += '<div class="alert alert-warning py-2 small mb-2">Zero cells detected — Haldane-Anscombe correction (+0.5) applied.</div>';
+		}
+		if (d.skipped_rows) {
+			warnings += '<div class="alert alert-info py-2 small mb-2">' + d.skipped_rows + ' rows skipped (couldn\'t parse to 0/1).</div>';
+		}
+
+		target.innerHTML =
+			(contextLabel ? '<h5 class="mb-3">' + contextLabel + '</h5>' : "") +
+			warnings +
+			'<div class="row g-3 mb-3">' +
+				'<div class="col-md-4"><div class="card result-card"><div class="val" style="color:' + orColor + '">' + orVal + '</div><div class="lbl">Odds Ratio</div><small class="text-muted">' + orInterp + '</small></div></div>' +
+				'<div class="col-md-4"><div class="card result-card"><div class="val" style="color:#0d6efd">' + d.ci_lo + ' – ' + d.ci_hi + '</div><div class="lbl">95% CI</div><small class="text-muted">' + (ciIncludesOne ? "includes 1 (not significant)" : "does NOT include 1") + '</small></div></div>' +
+				'<div class="col-md-4"><div class="card result-card"><div class="val" style="color:' + pColor + '">' + d.p_value + '</div><div class="lbl">p-value (Wald)</div><small class="text-muted">' + pInterp + '</small></div></div>' +
+			'</div>' +
+
+			'<div class="row g-3 mb-3">' +
+				'<div class="col-md-3"><div class="card result-card"><div class="val">' + d.n + '</div><div class="lbl">Total observations</div></div></div>' +
+				'<div class="col-md-3"><div class="card result-card"><div class="val">' + (d.risk_exposed !== null ? (d.risk_exposed * 100).toFixed(1) + "%" : "—") + '</div><div class="lbl">Risk in exposed</div></div></div>' +
+				'<div class="col-md-3"><div class="card result-card"><div class="val">' + (d.risk_unexposed !== null ? (d.risk_unexposed * 100).toFixed(1) + "%" : "—") + '</div><div class="lbl">Risk in unexposed</div></div></div>' +
+				'<div class="col-md-3"><div class="card result-card"><div class="val">' + (d.relative_risk !== null ? d.relative_risk : "—") + '</div><div class="lbl">Relative Risk</div></div></div>' +
+			'</div>' +
+
+			'<div class="card"><div class="card-body">' +
+				'<h6>2×2 table used</h6>' +
+				'<table class="table table-sm table-bordered text-center mb-2" style="max-width:480px;margin:0 auto;">' +
+					'<thead><tr><th></th><th>Outcome (1)</th><th>No outcome (0)</th></tr></thead>' +
+					'<tbody>' +
+						'<tr><th>Exposed</th><td>' + d.a + ' <small class="text-muted">(a)</small></td><td>' + d.c + ' <small class="text-muted">(c)</small></td></tr>' +
+						'<tr><th>Unexposed</th><td>' + d.b + ' <small class="text-muted">(b)</small></td><td>' + d.d + ' <small class="text-muted">(d)</small></td></tr>' +
+					'</tbody>' +
+				'</table>' +
+				'<details class="mt-2"><summary class="small text-muted">Computation details</summary>' +
+					'<pre class="small mb-0 mt-2">' +
+						'OR        = (a*d)/(b*c) = (' + d.a + '·' + d.d + ')/(' + d.b + '·' + d.c + ') = ' + d.odds_ratio + '\n' +
+						'log(OR)   = ' + d.log_or + '\n' +
+						'SE(logOR) = sqrt(1/a + 1/b + 1/c + 1/d) = ' + d.se_log_or + '\n' +
+						'z         = log(OR) / SE = ' + d.z + '\n' +
+						'95% CI    = exp(log(OR) ± 1.96·SE) = [' + d.ci_lo + ', ' + d.ci_hi + ']' +
+					'</pre>' +
+				'</details>' +
+			'</div></div>';
+	}
+
+	// ═══ Manual mode ═══
+	const manualEls = ["cellA", "cellB", "cellC", "cellD"].map(id => document.getElementById(id));
+	const manualErr = document.getElementById("manualError");
+	const resultsManual = document.getElementById("resultsManual");
+
+	function computeManual() {
+		manualErr.textContent = "";
+		const [a, b, c, d] = manualEls.map(el => Number(el.value));
+		if ([a, b, c, d].some(v => isNaN(v) || v < 0)) {
+			manualErr.textContent = "All cells must be non-negative numbers.";
+			return;
+		}
+		fetch("/api/odds-ratio/compute", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ a, b, c, d }),
+		}).then(r => r.json()).then(d => renderResults(resultsManual, d));
+	}
+
+	document.getElementById("btnCompute").addEventListener("click", computeManual);
+	manualEls.forEach(el => el.addEventListener("change", computeManual));
+	document.getElementById("btnReset").addEventListener("click", () => {
+		const defaults = { cellA: 50, cellB: 20, cellC: 450, cellD: 980 };
+		for (const k in defaults) document.getElementById(k).value = defaults[k];
+		computeManual();
+	});
+
+	// initial computation
+	computeManual();
+
+	// ═══ CSV mode ═══
+	let uploadSession = null;
+	const dropZone = document.getElementById("dropZone");
+	const csvInput = document.getElementById("csvFile");
+	const uploadStatus = document.getElementById("uploadStatus");
+	const csvSelectPanel = document.getElementById("csvSelectPanel");
+	const selExposure = document.getElementById("selExposure");
+	const selOutcome = document.getElementById("selOutcome");
+	const previewWrap = document.getElementById("previewWrap");
+	const previewTable = document.getElementById("previewTable");
+	const resultsCsv = document.getElementById("resultsCsv");
+	const csvSpinner = document.getElementById("csvSpinner");
+	const csvError = document.getElementById("csvError");
+
+	// helper: load unique values into an inline hint element
+	function loadColValues(sessionId, col, hintEl) {
+		if (!sessionId || !col) return;
+		hintEl.textContent = "Loading values…";
+		fetch("/api/odds-ratio/column-values", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ session_id: sessionId, column: col }),
+		}).then(r => r.json()).then(d => {
+			if (d.error) { hintEl.textContent = d.error; return; }
+			const previewVals = d.values.slice(0, 8).map(v => v.value + " (" + v.count + ")").join(" · ");
+			hintEl.innerHTML = "<b>" + d.n_unique + " unique values:</b> " + previewVals + (d.n_unique > 8 ? " …" : "");
+		});
+	}
+
+	dropZone.addEventListener("click", () => csvInput.click());
+	dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.classList.add("dragover"); });
+	dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+	dropZone.addEventListener("drop", e => {
+		e.preventDefault();
+		dropZone.classList.remove("dragover");
+		if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+	});
+	csvInput.addEventListener("change", () => { if (csvInput.files.length) handleFile(csvInput.files[0]); });
+
+	function handleFile(file) {
+		if (!file.name.toLowerCase().endsWith(".csv")) {
+			uploadStatus.innerHTML = '<span class="text-danger">Only .csv files supported</span>';
+			return;
+		}
+		uploadStatus.innerHTML = '<span class="text-muted">Uploading…</span>';
+		const fd = new FormData();
+		fd.append("file", file);
+
+		// Reuse the same upload endpoint as logistic regression
+		fetch("/api/logistic-regression/upload", { method: "POST", body: fd })
+			.then(r => r.json())
+			.then(d => {
+				if (d.error) {
+					uploadStatus.innerHTML = '<span class="text-danger">' + d.error + '</span>';
+					return;
+				}
+				uploadSession = { session_id: d.session_id, columns: d.columns };
+				uploadStatus.innerHTML = '<span class="text-success">' + file.name + ' — ' + d.n_rows + ' rows, ' + d.columns.length + ' columns</span>';
+				csvSelectPanel.style.display = "";
+				const opts = d.columns.map(c => '<option value="' + c + '">' + c + '</option>').join("");
+				selExposure.innerHTML = opts;
+				selOutcome.innerHTML = opts;
+				if (d.columns.length > 1) selOutcome.selectedIndex = 1;
+				loadColValues(uploadSession.session_id, selExposure.value, document.getElementById("exposureValues"));
+				loadColValues(uploadSession.session_id, selOutcome.value, document.getElementById("outcomeValues"));
+
+				if (d.preview && d.preview.length) {
+					previewWrap.style.display = "";
+					let html = "<thead><tr>" + d.columns.map(c => "<th>" + c + "</th>").join("") + "</tr></thead><tbody>";
+					for (const row of d.preview) {
+						html += "<tr>" + d.columns.map(c => "<td>" + (row[c] || "") + "</td>").join("") + "</tr>";
+					}
+					html += "</tbody>";
+					previewTable.innerHTML = html;
+				}
+			});
+	}
+
+	selExposure.addEventListener("change", () => loadColValues(uploadSession && uploadSession.session_id, selExposure.value, document.getElementById("exposureValues")));
+	selOutcome.addEventListener("change", () => loadColValues(uploadSession && uploadSession.session_id, selOutcome.value, document.getElementById("outcomeValues")));
+
+	document.getElementById("btnComputeCsv").addEventListener("click", function () {
+		if (!uploadSession) return;
+		csvError.textContent = "";
+		csvSpinner.classList.remove("d-none");
+		const body = {
+			session_id: uploadSession.session_id,
+			exposure: selExposure.value,
+			outcome: selOutcome.value,
+			exposure_pos: document.getElementById("exposurePos").value || null,
+			outcome_pos: document.getElementById("outcomePos").value || null,
+		};
+		fetch("/api/odds-ratio/from-csv", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body),
+		}).then(r => r.json()).then(d => {
+			csvSpinner.classList.add("d-none");
+			if (d.error) { csvError.textContent = d.error; return; }
+			renderResults(resultsCsv, d, "Result for: " + d.exposure + " × " + d.outcome);
+		}).catch(() => {
+			csvSpinner.classList.add("d-none");
+			csvError.textContent = "Network error.";
+		});
+	});
+
+	// ═══ By Category mode ═══
+	let uploadSessionCat = null;
+	const dropZoneCat = document.getElementById("dropZoneCat");
+	const csvInputCat = document.getElementById("csvFileCat");
+	const uploadStatusCat = document.getElementById("uploadStatusCat");
+	const catSelectPanel = document.getElementById("catSelectPanel");
+	const selExposureCat = document.getElementById("selExposureCat");
+	const selOutcomeCat = document.getElementById("selOutcomeCat");
+	const selBaseline = document.getElementById("selBaseline");
+	const resultsCat = document.getElementById("resultsCat");
+	const catSpinner = document.getElementById("catSpinner");
+	const catError = document.getElementById("catError");
+	const exposureValuesCatEl = document.getElementById("exposureValuesCat");
+	const outcomeValuesCatEl = document.getElementById("outcomeValuesCat");
+
+	dropZoneCat.addEventListener("click", () => csvInputCat.click());
+	dropZoneCat.addEventListener("dragover", e => { e.preventDefault(); dropZoneCat.classList.add("dragover"); });
+	dropZoneCat.addEventListener("dragleave", () => dropZoneCat.classList.remove("dragover"));
+	dropZoneCat.addEventListener("drop", e => {
+		e.preventDefault(); dropZoneCat.classList.remove("dragover");
+		if (e.dataTransfer.files.length) handleFileCat(e.dataTransfer.files[0]);
+	});
+	csvInputCat.addEventListener("change", () => { if (csvInputCat.files.length) handleFileCat(csvInputCat.files[0]); });
+
+	function handleFileCat(file) {
+		if (!file.name.toLowerCase().endsWith(".csv")) {
+			uploadStatusCat.innerHTML = '<span class="text-danger">Only .csv files supported</span>';
+			return;
+		}
+		uploadStatusCat.innerHTML = '<span class="text-muted">Uploading…</span>';
+		const fd = new FormData();
+		fd.append("file", file);
+		fetch("/api/logistic-regression/upload", { method: "POST", body: fd })
+			.then(r => r.json()).then(d => {
+				if (d.error) { uploadStatusCat.innerHTML = '<span class="text-danger">' + d.error + '</span>'; return; }
+				uploadSessionCat = { session_id: d.session_id, columns: d.columns };
+				uploadStatusCat.innerHTML = '<span class="text-success">' + file.name + ' — ' + d.n_rows + ' rows, ' + d.columns.length + ' cols</span>';
+				catSelectPanel.style.display = "";
+				const opts = d.columns.map(c => '<option value="' + c + '">' + c + '</option>').join("");
+				selExposureCat.innerHTML = opts;
+				selOutcomeCat.innerHTML = opts;
+				if (d.columns.length > 1) selOutcomeCat.selectedIndex = 1;
+				refreshExposureCatValues();
+				loadColValues(uploadSessionCat.session_id, selOutcomeCat.value, outcomeValuesCatEl);
+			});
+	}
+
+	function refreshExposureCatValues() {
+		if (!uploadSessionCat) return;
+		const col = selExposureCat.value;
+		exposureValuesCatEl.textContent = "Loading values…";
+		fetch("/api/odds-ratio/column-values", {
+			method: "POST", headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ session_id: uploadSessionCat.session_id, column: col }),
+		}).then(r => r.json()).then(d => {
+			if (d.error) { exposureValuesCatEl.textContent = d.error; return; }
+			const previewVals = d.values.slice(0, 12).map(v => v.value + " (" + v.count + ")").join(" · ");
+			exposureValuesCatEl.innerHTML = "<b>" + d.n_unique + " categories:</b> " + previewVals + (d.n_unique > 12 ? " …" : "");
+			selBaseline.innerHTML = '<option value="">— vs all other categories —</option>' +
+				d.values.map(v => '<option value="' + v.value + '">' + v.value + '</option>').join("");
+		});
+	}
+
+	selExposureCat.addEventListener("change", refreshExposureCatValues);
+	selOutcomeCat.addEventListener("change", () => loadColValues(uploadSessionCat && uploadSessionCat.session_id, selOutcomeCat.value, outcomeValuesCatEl));
+
+	document.getElementById("btnComputeCat").addEventListener("click", function () {
+		if (!uploadSessionCat) return;
+		catError.textContent = "";
+		catSpinner.classList.remove("d-none");
+		const body = {
+			session_id: uploadSessionCat.session_id,
+			exposure: selExposureCat.value,
+			outcome: selOutcomeCat.value,
+			outcome_pos: document.getElementById("outcomePosCat").value || null,
+			baseline: selBaseline.value || null,
+		};
+		fetch("/api/odds-ratio/by-category", {
+			method: "POST", headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body),
+		}).then(r => r.json()).then(d => {
+			catSpinner.classList.add("d-none");
+			if (d.error) { catError.textContent = d.error; return; }
+			renderCategoryResults(d);
+		}).catch(() => { catSpinner.classList.add("d-none"); catError.textContent = "Network error."; });
+	});
+
+	function fmtP(p) {
+		if (p === null || p === undefined) return "—";
+		if (p < 0.001) return "<0.001";
+		return p.toFixed(4);
+	}
+	function pBadge(p) {
+		if (p === null || p === undefined) return '<span class="badge bg-secondary">baseline</span>';
+		if (p < 0.001) return '<span class="badge bg-success">***</span>';
+		if (p < 0.01)  return '<span class="badge bg-success">**</span>';
+		if (p < 0.05)  return '<span class="badge bg-success">*</span>';
+		return '<span class="badge bg-secondary">ns</span>';
+	}
+	function orColor(or) {
+		if (or === null || or === undefined) return "#6c757d";
+		if (or > 1.0001) return "#dc3545";
+		if (or < 0.9999) return "#198754";
+		return "#6c757d";
+	}
+
+	function renderCategoryResults(d) {
+		const skip = d.skipped_rows ? '<div class="alert alert-info py-2 small mb-2">' + d.skipped_rows + ' rows skipped (couldn\'t parse outcome).</div>' : "";
+		let rowsHtml = "";
+		for (const r of d.rows) {
+			const ci = (r.ci_lo === null || r.ci_lo === undefined) ? "—" : (r.ci_lo + " – " + r.ci_hi);
+			const orTxt = (r.odds_ratio === null) ? "—" : r.odds_ratio;
+			const riskTxt = r.risk === null ? "—" : (r.risk * 100).toFixed(1) + "%";
+			rowsHtml +=
+				'<tr>' +
+					'<td><b>' + r.category + '</b>' + (r.is_baseline ? ' <span class="badge bg-info">baseline</span>' : '') + '</td>' +
+					'<td>' + r.n_exposed + '</td>' +
+					'<td>' + r.n_outcome_in_exposed + '</td>' +
+					'<td>' + riskTxt + '</td>' +
+					'<td style="color:' + orColor(r.odds_ratio) + ';font-weight:600">' + orTxt + '</td>' +
+					'<td>' + ci + '</td>' +
+					'<td>' + fmtP(r.p_value) + ' ' + pBadge(r.p_value) + '</td>' +
+					(r.zero_cell_correction ? '<td><small class="text-warning">+0.5</small></td>' : '<td></td>') +
+				'</tr>';
+		}
+		resultsCat.innerHTML =
+			'<h5>OR per category — ' + d.exposure + ' × ' + d.outcome + '</h5>' +
+			'<p class="text-muted small">Comparison: <b>' + d.comparison + '</b>' + (d.baseline ? ' (baseline = <code>' + d.baseline + '</code>)' : '') + '</p>' +
+			skip +
+			'<div class="table-responsive"><table class="table table-bordered table-hover">' +
+				'<thead class="table-light"><tr>' +
+					'<th>Category</th><th>n (in cat.)</th><th>outcome=1</th><th>Risk</th>' +
+					'<th>OR</th><th>95% CI</th><th>p-value</th><th>note</th>' +
+				'</tr></thead><tbody>' + rowsHtml + '</tbody></table></div>' +
+			'<p class="small text-muted">Significance: <b>***</b> p&lt;0.001 · <b>**</b> p&lt;0.01 · <b>*</b> p&lt;0.05 · <b>ns</b> not significant. Color: <span style="color:#dc3545">red OR&gt;1</span>, <span style="color:#198754">green OR&lt;1</span>.</p>';
+	}
+});
+</script>
+{% endblock %}

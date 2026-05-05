@@ -1,0 +1,433 @@
+{% extends "base.html" %}
+
+{% block title %}Conti Chat Leaks{% endblock %}
+
+{% block extra_head %}
+<style>
+	.source-tabs { margin-bottom: 1rem; }
+	.source-tabs .btn {
+		font-size: .85rem;
+		font-weight: 500;
+	}
+
+	.filter-bar {
+		display: flex; flex-wrap: wrap; gap: .75rem;
+		align-items: flex-end; margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group { display: flex; flex-direction: column; }
+	.filter-bar label {
+		font-size: .8rem; font-weight: 500; margin-bottom: .2rem; color: #555;
+	}
+	.filter-bar select, .filter-bar input {
+		font-size: .85rem; padding: .35rem .5rem;
+		border: 1px solid #ccc; border-radius: 4px; min-width: 160px;
+	}
+	.filter-bar .btn-sm { font-size: .8rem; padding: .4rem .75rem; }
+
+	.stat-cards {
+		display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .6rem 1.1rem; min-width: 160px; text-align: center;
+	}
+	.stat-card .stat-value { font-size: 1.5rem; font-weight: 700; color: #333; }
+	.stat-card .stat-label {
+		font-size: .75rem; color: #888; text-transform: uppercase; letter-spacing: .3px;
+	}
+	.stat-card .stat-sub { font-size: .72rem; color: #aaa; margin-top: .1rem; }
+
+	#chat-table { font-size: .82rem; }
+	.body-cell, .body-en-cell {
+		white-space: pre-wrap; word-break: break-word;
+		font-size: .82rem;
+		max-height: 240px; overflow: auto;
+	}
+	.body-cell { color: #333; }
+	.body-en-cell { color: #0d4f8a; font-style: italic; }
+	.handle-cell {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .76rem; word-break: break-all;
+	}
+	.ts-cell {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .76rem; white-space: nowrap;
+	}
+	.lang-badge {
+		display: inline-block;
+		padding: 1px 6px;
+		border-radius: 3px;
+		font-size: .7rem;
+		font-weight: 600;
+		background: #e9ecef;
+		color: #495057;
+	}
+	.lang-ru { background: #ffe5e5; color: #a4161a; }
+	.lang-en { background: #d6e9ff; color: #0a4275; }
+	.lang-uk { background: #fff3cd; color: #664d03; }
+
+	.facet-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .75rem 1rem; margin-bottom: 1rem;
+	}
+	.facet-card h6 {
+		font-size: .85rem; font-weight: 600; color: #555;
+		text-transform: uppercase; letter-spacing: .3px; margin-bottom: .6rem;
+	}
+	.facet-card table { width: 100%; font-size: .78rem; }
+	.facet-card td { padding: .15rem .25rem; border-bottom: 1px dotted #eee; }
+	.facet-card td.count { text-align: right; color: #555; width: 60px; }
+	.facet-card td.name {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		word-break: break-all;
+	}
+	.facet-card a.facet-link {
+		color: inherit; text-decoration: none; cursor: pointer;
+	}
+	.facet-card a.facet-link:hover { text-decoration: underline; color: #0d6efd; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-2">Conti Chat Leaks</h4>
+	<p class="text-muted" style="font-size:.85rem;">
+		Internal chats leaked from the Conti ransomware group. Choose a source
+		(Jabber 2020, Jabber 2021–2022, or Rocket Chat). Each row shows the
+		original message and its English translation. First load of each source
+		may take a few seconds while the CSV is parsed.
+	</p>
+
+	<!-- Source selector -->
+	<div class="source-tabs btn-group" role="group" id="source-tabs">
+		{% for s in sources %}
+		<button type="button"
+			class="btn btn-outline-primary {% if loop.first %}active{% endif %}"
+			data-source="{{ s.key }}">{{ s.label }}</button>
+		{% endfor %}
+	</div>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Messages</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-senders">-</div>
+			<div class="stat-label">Distinct Senders</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-recipients">-</div>
+			<div class="stat-label">Distinct Recipients</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-earliest" style="font-size:1rem;">-</div>
+			<div class="stat-label">Earliest</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-latest" style="font-size:1rem;">-</div>
+			<div class="stat-label">Latest</div>
+		</div>
+		<div class="stat-card" style="min-width:220px;">
+			<div class="stat-value" id="card-langs" style="font-size:.85rem;">-</div>
+			<div class="stat-label">Languages</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-q">Search (any field)</label>
+			<input type="text" id="filter-q" placeholder="text in original / English / sender / recipient…" style="min-width:300px;">
+		</div>
+		<div class="form-group">
+			<label for="filter-from">From</label>
+			<input type="text" id="filter-from" placeholder="user@…">
+		</div>
+		<div class="form-group">
+			<label for="filter-to">To</label>
+			<input type="text" id="filter-to" placeholder="user@… / channel">
+		</div>
+		<div class="form-group">
+			<label for="filter-body">Message contains</label>
+			<input type="text" id="filter-body" placeholder="keyword (RU or EN)…">
+		</div>
+		<div class="form-group">
+			<label for="filter-language">Language</label>
+			<select id="filter-language">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-date-from">Date from</label>
+			<input type="date" id="filter-date-from">
+		</div>
+		<div class="form-group">
+			<label for="filter-date-to">Date to</label>
+			<input type="date" id="filter-date-to">
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-primary btn-sm" id="btn-apply-filters">Apply</button>
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-9">
+			<div id="chat-table"></div>
+		</div>
+		<div class="col-lg-3">
+			<div class="facet-card">
+				<h6>Top Senders</h6>
+				<table id="top-senders"><tbody></tbody></table>
+			</div>
+			<div class="facet-card">
+				<h6>Top Recipients / Channels</h6>
+				<table id="top-recipients"><tbody></tbody></table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var currentSource = "{{ sources[0].key }}";
+	var currentFilters = {};
+	var currentSort = { field: "ts", dir: "asc" };
+
+	function escapeHtml(s) {
+		if (s == null) return "";
+		return String(s)
+			.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+	}
+
+	function langBadge(lang) {
+		if (!lang) return "";
+		var cls = "lang-badge";
+		if (lang === "ru") cls += " lang-ru";
+		else if (lang === "en") cls += " lang-en";
+		else if (lang === "uk") cls += " lang-uk";
+		return '<span class="' + cls + '">' + escapeHtml(lang) + '</span>';
+	}
+
+	function buildAjaxUrl(url, config, params) {
+		var qs = [];
+		qs.push("source=" + encodeURIComponent(currentSource));
+		qs.push("page=" + params.page);
+		qs.push("size=" + params.size);
+		qs.push("sort_field=" + encodeURIComponent(currentSort.field));
+		qs.push("sort_dir=" + encodeURIComponent(currentSort.dir));
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		return url + "?" + qs.join("&");
+	}
+
+	var table = new Tabulator("#chat-table", {
+		height: "70vh",
+		layout: "fitColumns",
+		placeholder: "Loading messages…",
+
+		pagination: true,
+		paginationMode: "remote",
+		paginationSize: 50,
+		paginationSizeSelector: [25, 50, 100, 200],
+		sortMode: "remote",
+		filterMode: "remote",
+
+		ajaxURL: "/api/leaks/conti",
+		ajaxURLGenerator: buildAjaxUrl,
+		ajaxResponse: function (url, params, response) { return response; },
+
+		initialSort: [{ column: "ts", dir: "asc" }],
+
+		columns: [
+			{
+				title: "Timestamp", field: "ts", width: 175, headerSort: true,
+				formatter: function (cell) {
+					return '<span class="ts-cell">' + escapeHtml(cell.getValue()) + '</span>';
+				}
+			},
+			{
+				title: "From", field: "from", width: 200, headerSort: true,
+				formatter: function (cell) {
+					return '<span class="handle-cell">' + escapeHtml(cell.getValue()) + '</span>';
+				}
+			},
+			{
+				title: "To / Channel", field: "to", width: 200, headerSort: true,
+				formatter: function (cell) {
+					return '<span class="handle-cell">' + escapeHtml(cell.getValue()) + '</span>';
+				}
+			},
+			{
+				title: "Lang", field: "body_language", width: 70, hozAlign: "center",
+				headerSort: true,
+				formatter: function (cell) { return langBadge(cell.getValue()); }
+			},
+			{
+				title: "Message (original)", field: "body", headerSort: false,
+				formatter: function (cell) {
+					return '<div class="body-cell">' + escapeHtml(cell.getValue()) + '</div>';
+				},
+				variableHeight: true
+			},
+			{
+				title: "Message (English)", field: "body_en", headerSort: false,
+				formatter: function (cell) {
+					return '<div class="body-en-cell">' + escapeHtml(cell.getValue()) + '</div>';
+				},
+				variableHeight: true
+			}
+		]
+	});
+
+	table.on("dataSorting", function (sorters) {
+		if (sorters.length) {
+			currentSort.field = sorters[0].field;
+			currentSort.dir = sorters[0].dir;
+		}
+	});
+
+	function readFilterInputs() {
+		currentFilters = {};
+		var q = document.getElementById("filter-q").value.trim();
+		var from = document.getElementById("filter-from").value.trim();
+		var to = document.getElementById("filter-to").value.trim();
+		var body = document.getElementById("filter-body").value.trim();
+		var lang = document.getElementById("filter-language").value;
+		var df = document.getElementById("filter-date-from").value;
+		var dt = document.getElementById("filter-date-to").value;
+		if (q) currentFilters.q = q;
+		if (from) currentFilters.from = from;
+		if (to) currentFilters.to = to;
+		if (body) currentFilters.body = body;
+		if (lang) currentFilters.language = lang;
+		if (df) currentFilters.date_from = df;
+		if (dt) currentFilters.date_to = dt + "T23:59:59";
+	}
+
+	function applyFilters() {
+		readFilterInputs();
+		table.setPage(1);
+		loadStats();
+	}
+
+	function clearFilters() {
+		["filter-q","filter-from","filter-to","filter-body",
+		 "filter-date-from","filter-date-to"].forEach(function(id) {
+			document.getElementById(id).value = "";
+		});
+		document.getElementById("filter-language").value = "";
+		currentFilters = {};
+		table.setPage(1);
+		loadStats();
+	}
+
+	document.getElementById("btn-apply-filters").addEventListener("click", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", clearFilters);
+	document.querySelectorAll(".filter-bar input").forEach(function (el) {
+		el.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") applyFilters();
+		});
+	});
+	document.getElementById("filter-language").addEventListener("change", applyFilters);
+
+	// Source switching
+	document.querySelectorAll("#source-tabs button").forEach(function (btn) {
+		btn.addEventListener("click", function () {
+			document.querySelectorAll("#source-tabs button").forEach(function (b) {
+				b.classList.remove("active");
+			});
+			btn.classList.add("active");
+			currentSource = btn.getAttribute("data-source");
+			table.setPage(1);
+			loadStats();
+		});
+	});
+
+	function loadStats() {
+		var qs = ["source=" + encodeURIComponent(currentSource)];
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		fetch("/api/leaks/conti/stats?" + qs.join("&"))
+			.then(function (r) { return r.json(); })
+			.then(function (s) {
+				document.getElementById("card-total").textContent = Number(s.total_messages).toLocaleString();
+				document.getElementById("card-senders").textContent = Number(s.distinct_senders).toLocaleString();
+				document.getElementById("card-recipients").textContent = Number(s.distinct_recipients).toLocaleString();
+				document.getElementById("card-earliest").textContent = s.earliest || "—";
+				document.getElementById("card-latest").textContent = s.latest || "—";
+
+				// Languages summary
+				var langTxt = (s.languages || []).map(function (l) {
+					return l.language + ": " + Number(l.count).toLocaleString();
+				}).join("  ·  ") || "—";
+				document.getElementById("card-langs").textContent = langTxt;
+
+				// Populate language dropdown (keep current selection)
+				var langSel = document.getElementById("filter-language");
+				var prev = langSel.value;
+				langSel.innerHTML = '<option value="">All</option>';
+				(s.languages || []).forEach(function (l) {
+					var o = document.createElement("option");
+					o.value = l.language;
+					o.textContent = l.language + " (" + Number(l.count).toLocaleString() + ")";
+					langSel.appendChild(o);
+				});
+				if (prev) langSel.value = prev;
+
+				// Top facets
+				var sBody = document.querySelector("#top-senders tbody");
+				sBody.innerHTML = "";
+				(s.top_senders || []).forEach(function (row) {
+					var tr = document.createElement("tr");
+					tr.innerHTML =
+						'<td class="name"><a class="facet-link" data-kind="from" data-val="' +
+						escapeHtml(row.from) + '">' + escapeHtml(row.from || "—") + '</a></td>' +
+						'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+					sBody.appendChild(tr);
+				});
+
+				var rBody = document.querySelector("#top-recipients tbody");
+				rBody.innerHTML = "";
+				(s.top_recipients || []).forEach(function (row) {
+					var tr = document.createElement("tr");
+					tr.innerHTML =
+						'<td class="name"><a class="facet-link" data-kind="to" data-val="' +
+						escapeHtml(row.to) + '">' + escapeHtml(row.to || "—") + '</a></td>' +
+						'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+					rBody.appendChild(tr);
+				});
+
+				document.querySelectorAll(".facet-link").forEach(function (a) {
+					a.addEventListener("click", function (e) {
+						e.preventDefault();
+						var kind = a.getAttribute("data-kind");
+						var val = a.getAttribute("data-val");
+						if (kind === "from") document.getElementById("filter-from").value = val;
+						if (kind === "to") document.getElementById("filter-to").value = val;
+						applyFilters();
+					});
+				});
+			});
+	}
+
+	loadStats();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,470 @@
+{% extends "base.html" %}
+
+{% block title %}CISA KEV (Live){% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex; flex-wrap: wrap; gap: .75rem;
+		align-items: flex-end; margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group { display: flex; flex-direction: column; }
+	.filter-bar label {
+		font-size: .8rem; font-weight: 500; margin-bottom: .2rem; color: #555;
+	}
+	.filter-bar select, .filter-bar input {
+		font-size: .85rem; padding: .35rem .5rem;
+		border: 1px solid #ccc; border-radius: 4px; min-width: 160px;
+	}
+	.filter-bar .btn-sm { font-size: .8rem; padding: .4rem .75rem; }
+
+	.stat-cards {
+		display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .6rem 1.1rem; min-width: 160px; text-align: center;
+	}
+	.stat-card .stat-value { font-size: 1.5rem; font-weight: 700; color: #333; }
+	.stat-card .stat-label {
+		font-size: .75rem; color: #888; text-transform: uppercase; letter-spacing: .3px;
+	}
+	.stat-card .stat-sub { font-size: .72rem; color: #aaa; margin-top: .1rem; }
+
+	#kev-table { font-size: .82rem; }
+	.cve-cell {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-weight: 600;
+		font-size: .8rem;
+		white-space: nowrap;
+	}
+	.cve-cell a { color: #0d6efd; text-decoration: none; }
+	.cve-cell a:hover { text-decoration: underline; }
+	.date-cell {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .78rem; white-space: nowrap;
+	}
+	.text-cell {
+		white-space: pre-wrap; word-break: break-word;
+		max-height: 180px; overflow: auto;
+		font-size: .8rem;
+	}
+	.ransom-known { color: #b02a37; font-weight: 600; }
+	.ransom-unknown { color: #6c757d; }
+	.cwe-tag {
+		display: inline-block;
+		background: #e9ecef;
+		color: #495057;
+		padding: 1px 6px;
+		border-radius: 3px;
+		font-size: .72rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		margin: 1px 2px 1px 0;
+	}
+
+	.facet-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .75rem 1rem; margin-bottom: 1rem;
+	}
+	.facet-card h6 {
+		font-size: .85rem; font-weight: 600; color: #555;
+		text-transform: uppercase; letter-spacing: .3px; margin-bottom: .6rem;
+	}
+	.facet-card table { width: 100%; font-size: .78rem; }
+	.facet-card td { padding: .15rem .25rem; border-bottom: 1px dotted #eee; }
+	.facet-card td.count { text-align: right; color: #555; width: 60px; }
+	.facet-card a.facet-link {
+		color: inherit; text-decoration: none; cursor: pointer;
+	}
+	.facet-card a.facet-link:hover { text-decoration: underline; color: #0d6efd; }
+
+	.refresh-bar {
+		display: flex; align-items: center; gap: .75rem;
+		margin-bottom: 1rem; flex-wrap: wrap;
+	}
+	.refresh-bar .last-fetched {
+		font-size: .8rem; color: #666;
+	}
+	#refresh-spinner {
+		display: none;
+		width: 1rem; height: 1rem;
+		border: 2px solid #ccc; border-top-color: #0d6efd;
+		border-radius: 50%;
+		animation: spin .8s linear infinite;
+	}
+	@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-2">CISA KEV — Known Exploited Vulnerabilities (Live)</h4>
+	<p class="text-muted" style="font-size:.85rem;">
+		Live feed from CISA:
+		<a href="https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv"
+		   target="_blank" rel="noopener noreferrer">
+			known_exploited_vulnerabilities.csv
+		</a>.
+		The catalog is fetched on demand and cached in memory until you press
+		<strong>Refresh</strong>.
+	</p>
+
+	<div class="refresh-bar">
+		<button class="btn btn-primary btn-sm" id="btn-refresh">
+			<span id="refresh-spinner"></span>
+			<span id="refresh-label">Refresh from CISA</span>
+		</button>
+		<span class="last-fetched" id="last-fetched">Loading…</span>
+	</div>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">KEV entries</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-ransom">-</div>
+			<div class="stat-label">Ransomware-Linked</div>
+			<div class="stat-sub">knownRansomwareCampaignUse = Known</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-earliest" style="font-size:1rem;">-</div>
+			<div class="stat-label">Earliest dateAdded</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-latest" style="font-size:1rem;">-</div>
+			<div class="stat-label">Latest dateAdded</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-q">Search (any field)</label>
+			<input type="text" id="filter-q" placeholder="cve / vendor / product / desc / cwe…" style="min-width:280px;">
+		</div>
+		<div class="form-group">
+			<label for="filter-cve">CVE ID</label>
+			<input type="text" id="filter-cve" placeholder="CVE-2024-…">
+		</div>
+		<div class="form-group">
+			<label for="filter-vendor">Vendor</label>
+			<input type="text" id="filter-vendor" placeholder="e.g. Microsoft">
+		</div>
+		<div class="form-group">
+			<label for="filter-product">Product</label>
+			<input type="text" id="filter-product" placeholder="e.g. Windows">
+		</div>
+		<div class="form-group">
+			<label for="filter-name">Vulnerability name</label>
+			<input type="text" id="filter-name" placeholder="keyword…">
+		</div>
+		<div class="form-group">
+			<label for="filter-cwe">CWE</label>
+			<input type="text" id="filter-cwe" placeholder="CWE-…">
+		</div>
+		<div class="form-group">
+			<label for="filter-ransomware">Ransomware use</label>
+			<select id="filter-ransomware">
+				<option value="">All</option>
+				<option value="known">Known</option>
+				<option value="unknown">Unknown</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-date-from">Added from</label>
+			<input type="date" id="filter-date-from">
+		</div>
+		<div class="form-group">
+			<label for="filter-date-to">Added to</label>
+			<input type="date" id="filter-date-to">
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-primary btn-sm" id="btn-apply-filters">Apply</button>
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-9">
+			<div id="kev-table"></div>
+		</div>
+		<div class="col-lg-3">
+			<div class="facet-card">
+				<h6>Top Vendors</h6>
+				<table id="top-vendors"><tbody></tbody></table>
+			</div>
+			<div class="facet-card">
+				<h6>Top Products</h6>
+				<table id="top-products"><tbody></tbody></table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var currentFilters = {};
+	var currentSort = { field: "dateAdded", dir: "desc" };
+	var refreshFlag = false;  // set to true on next ajax after Refresh click
+
+	function escapeHtml(s) {
+		if (s == null) return "";
+		return String(s)
+			.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+	}
+
+	function buildAjaxUrl(url, config, params) {
+		var qs = [];
+		qs.push("page=" + params.page);
+		qs.push("size=" + params.size);
+		qs.push("sort_field=" + encodeURIComponent(currentSort.field));
+		qs.push("sort_dir=" + encodeURIComponent(currentSort.dir));
+		if (refreshFlag) {
+			qs.push("refresh=1");
+			refreshFlag = false;
+		}
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		return url + "?" + qs.join("&");
+	}
+
+	function cveLink(cell) {
+		var v = cell.getValue();
+		if (!v) return "";
+		var safe = escapeHtml(v);
+		return '<span class="cve-cell"><a href="https://nvd.nist.gov/vuln/detail/' +
+			encodeURIComponent(v) + '" target="_blank" rel="noopener">' + safe + '</a></span>';
+	}
+
+	function dateFmt(cell) {
+		return '<span class="date-cell">' + escapeHtml(cell.getValue()) + '</span>';
+	}
+
+	function textFmt(cell) {
+		return '<div class="text-cell">' + escapeHtml(cell.getValue()) + '</div>';
+	}
+
+	function ransomFmt(cell) {
+		var v = (cell.getValue() || "").toLowerCase();
+		if (v === "known") return '<span class="ransom-known">Known</span>';
+		if (v === "unknown") return '<span class="ransom-unknown">Unknown</span>';
+		return escapeHtml(cell.getValue() || "");
+	}
+
+	function cweFmt(cell) {
+		var v = cell.getValue() || "";
+		if (!v) return "";
+		return v.split(/[,;\s]+/).filter(Boolean).map(function (c) {
+			return '<span class="cwe-tag">' + escapeHtml(c) + '</span>';
+		}).join("");
+	}
+
+	var table = new Tabulator("#kev-table", {
+		height: "70vh",
+		layout: "fitColumns",
+		placeholder: "Loading KEV…",
+
+		pagination: true,
+		paginationMode: "remote",
+		paginationSize: 50,
+		paginationSizeSelector: [25, 50, 100, 200, 500],
+		sortMode: "remote",
+		filterMode: "remote",
+
+		ajaxURL: "/api/kev",
+		ajaxURLGenerator: buildAjaxUrl,
+		ajaxResponse: function (url, params, response) {
+			if (response.fetched_at) updateFetchedLabel(response.fetched_at);
+			return response;
+		},
+
+		initialSort: [{ column: "dateAdded", dir: "desc" }],
+
+		columns: [
+			{ title: "CVE ID", field: "cveID", width: 160, formatter: cveLink },
+			{ title: "Vendor", field: "vendorProject", width: 140 },
+			{ title: "Product", field: "product", width: 160 },
+			{ title: "Vulnerability", field: "vulnerabilityName", widthGrow: 1.2,
+			  formatter: function (cell) {
+				  return '<div class="text-cell">' + escapeHtml(cell.getValue()) + '</div>';
+			  }, variableHeight: true },
+			{ title: "Date Added", field: "dateAdded", width: 115, formatter: dateFmt },
+			{ title: "Due Date", field: "dueDate", width: 110, formatter: dateFmt },
+			{ title: "Ransomware", field: "knownRansomwareCampaignUse",
+			  width: 105, hozAlign: "center", formatter: ransomFmt },
+			{ title: "CWE(s)", field: "cwes", width: 130, formatter: cweFmt, headerSort: false },
+			{ title: "Short Description", field: "shortDescription",
+			  widthGrow: 2, formatter: textFmt, variableHeight: true, headerSort: false },
+			{ title: "Required Action", field: "requiredAction",
+			  widthGrow: 1.5, formatter: textFmt, variableHeight: true, headerSort: false },
+			{ title: "Notes", field: "notes",
+			  widthGrow: 1.5, formatter: textFmt, variableHeight: true, headerSort: false }
+		]
+	});
+
+	table.on("dataSorting", function (sorters) {
+		if (sorters.length) {
+			currentSort.field = sorters[0].field;
+			currentSort.dir = sorters[0].dir;
+		}
+	});
+
+	function readFilterInputs() {
+		currentFilters = {};
+		var q = document.getElementById("filter-q").value.trim();
+		var cve = document.getElementById("filter-cve").value.trim();
+		var vendor = document.getElementById("filter-vendor").value.trim();
+		var product = document.getElementById("filter-product").value.trim();
+		var name = document.getElementById("filter-name").value.trim();
+		var cwe = document.getElementById("filter-cwe").value.trim();
+		var ransom = document.getElementById("filter-ransomware").value;
+		var df = document.getElementById("filter-date-from").value;
+		var dt = document.getElementById("filter-date-to").value;
+		if (q) currentFilters.q = q;
+		if (cve) currentFilters.cveID = cve;
+		if (vendor) currentFilters.vendorProject = vendor;
+		if (product) currentFilters.product = product;
+		if (name) currentFilters.vulnerabilityName = name;
+		if (cwe) currentFilters.cwes = cwe;
+		if (ransom) currentFilters.knownRansomwareCampaignUse = ransom;
+		if (df) currentFilters.date_from = df;
+		if (dt) currentFilters.date_to = dt;
+	}
+
+	function applyFilters() {
+		readFilterInputs();
+		table.setPage(1);
+		loadStats();
+	}
+
+	function clearFilters() {
+		["filter-q","filter-cve","filter-vendor","filter-product","filter-name",
+		 "filter-cwe","filter-date-from","filter-date-to"].forEach(function(id) {
+			document.getElementById(id).value = "";
+		});
+		document.getElementById("filter-ransomware").value = "";
+		currentFilters = {};
+		table.setPage(1);
+		loadStats();
+	}
+
+	document.getElementById("btn-apply-filters").addEventListener("click", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", clearFilters);
+	document.querySelectorAll(".filter-bar input").forEach(function (el) {
+		el.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") applyFilters();
+		});
+	});
+	document.getElementById("filter-ransomware").addEventListener("change", applyFilters);
+
+	// Refresh button
+	var btnRefresh = document.getElementById("btn-refresh");
+	var spinner = document.getElementById("refresh-spinner");
+	var refreshLabel = document.getElementById("refresh-label");
+	btnRefresh.addEventListener("click", function () {
+		refreshFlag = true;
+		btnRefresh.disabled = true;
+		spinner.style.display = "inline-block";
+		refreshLabel.textContent = "Refreshing…";
+		// Reload table (which will issue refresh=1) then reload stats.
+		table.setPage(1).then(function () {
+			loadStats();
+		}).catch(function () {
+			loadStats();
+		}).finally(function () {
+			btnRefresh.disabled = false;
+			spinner.style.display = "none";
+			refreshLabel.textContent = "Refresh from CISA";
+		});
+	});
+
+	function updateFetchedLabel(epochSec) {
+		if (!epochSec) {
+			document.getElementById("last-fetched").textContent = "Not yet fetched";
+			return;
+		}
+		var d = new Date(epochSec * 1000);
+		document.getElementById("last-fetched").textContent =
+			"Last fetched: " + d.toLocaleString();
+	}
+
+	function loadStats() {
+		var qs = [];
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		fetch("/api/kev/stats?" + qs.join("&"))
+			.then(function (r) { return r.json(); })
+			.then(function (s) {
+				if (s.error) {
+					document.getElementById("last-fetched").textContent = "Error: " + s.error;
+					return;
+				}
+				document.getElementById("card-total").textContent = Number(s.total).toLocaleString();
+				document.getElementById("card-ransom").textContent = Number(s.ransomware_known).toLocaleString();
+				document.getElementById("card-earliest").textContent = s.earliest_added || "—";
+				document.getElementById("card-latest").textContent = s.latest_added || "—";
+				if (s.fetched_at) updateFetchedLabel(s.fetched_at);
+
+				var vBody = document.querySelector("#top-vendors tbody");
+				vBody.innerHTML = "";
+				(s.top_vendors || []).forEach(function (row) {
+					var tr = document.createElement("tr");
+					tr.innerHTML =
+						'<td><a class="facet-link" data-kind="vendor" data-val="' +
+						escapeHtml(row.vendor) + '">' + escapeHtml(row.vendor || "—") + '</a></td>' +
+						'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+					vBody.appendChild(tr);
+				});
+
+				var pBody = document.querySelector("#top-products tbody");
+				pBody.innerHTML = "";
+				(s.top_products || []).forEach(function (row) {
+					var label = (row.vendor ? row.vendor + " · " : "") + (row.product || "");
+					var tr = document.createElement("tr");
+					tr.innerHTML =
+						'<td><a class="facet-link" data-kind="product" ' +
+						'data-val="' + escapeHtml(row.product) + '" ' +
+						'data-vendor="' + escapeHtml(row.vendor) + '">' +
+						escapeHtml(label || "—") + '</a></td>' +
+						'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+					pBody.appendChild(tr);
+				});
+
+				document.querySelectorAll(".facet-link").forEach(function (a) {
+					a.addEventListener("click", function (e) {
+						e.preventDefault();
+						var kind = a.getAttribute("data-kind");
+						if (kind === "vendor") {
+							document.getElementById("filter-vendor").value = a.getAttribute("data-val");
+						} else if (kind === "product") {
+							document.getElementById("filter-product").value = a.getAttribute("data-val");
+							var v = a.getAttribute("data-vendor");
+							if (v) document.getElementById("filter-vendor").value = v;
+						}
+						applyFilters();
+					});
+				});
+			})
+			.catch(function (err) {
+				document.getElementById("last-fetched").textContent = "Error loading stats";
+			});
+	}
+
+	loadStats();
+});
+</script>
+{% endblock %}

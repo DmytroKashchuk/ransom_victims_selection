@@ -1,0 +1,421 @@
+{% extends "base.html" %}
+{% block title %}Factor Analysis — Ransomware Analytics{% endblock %}
+
+{% block extra_head %}
+<style>
+	.upload-zone {
+		border: 2px dashed #adb5bd; border-radius: 0.5rem;
+		padding: 1.5rem; text-align: center; cursor: pointer;
+		transition: border-color 0.2s, background 0.2s;
+	}
+	.upload-zone:hover, .upload-zone.dragover { border-color: #0d6efd; background: #f0f6ff; }
+	.upload-zone input[type="file"] { display: none; }
+	.legend-box {
+		font-size: 0.85rem; background: #fff8e1; border-left: 3px solid #ffc107;
+		padding: 0.6rem 0.9rem; border-radius: 0.25rem;
+	}
+	.stat-card { text-align: center; padding: 0.8rem; }
+	.stat-card .val { font-size: 1.5rem; font-weight: 700; color: #0d6efd; }
+	.stat-card .lbl { font-size: 0.8rem; color: #666; }
+	.component-card { border-left: 4px solid #0d6efd; padding-left: 1rem; margin-bottom: 1rem; }
+	.tech-list { font-size: 0.85rem; }
+	.tech-list .weight { color: #888; font-weight: 400; }
+	.cooc-cell { padding: 0.3rem; text-align: center; font-size: 0.75rem; }
+	.cooc-table { font-size: 0.75rem; border-collapse: collapse; }
+	.cooc-table th { background: #f1f1f1; padding: 0.3rem; font-size: 0.7rem; }
+	.cooc-table th.diag-y { writing-mode: vertical-rl; transform: rotate(180deg); height: 90px; }
+	.tech-multiselect { max-height: 220px; overflow-y: auto; border: 1px solid #ced4da; border-radius: 0.25rem; padding: 0.5rem; background: #fff; }
+	.tech-multiselect label { display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2 class="mb-1">Factor Analysis — Tech Co-occurrence</h2>
+<p class="text-muted mb-3">
+	Reduce a sites × technologies matrix into latent <b>tech stacks</b> using NMF or Truncated SVD.
+	Useful when you want to feed a logistic regression with a few interpretable components instead of thousands of dummy variables.
+</p>
+
+<div class="legend-box mb-3">
+	<strong>Workflow:</strong> 1) Upload CSV → 2) Choose data format (long or wide) and pick columns → 3) Build the binary matrix → 4) Run NMF / SVD → 5) Inspect components or download <code>site × component</code> scores.<br>
+	<small>
+		<b>Long format</b>: one row per (site, tech) pair, e.g. columns <code>site_url</code>, <code>technology</code>.<br>
+		<b>Wide format</b>: one row per site, with one 0/1 column per technology.
+	</small>
+</div>
+
+<!-- Step 1: Upload -->
+<div class="card mb-3">
+	<div class="card-body">
+		<h6>Step 1 — Upload CSV</h6>
+		<div class="upload-zone" id="dropZone">
+			<input type="file" id="csvFile" accept=".csv">
+			<div><strong>Drag & drop</strong> a .csv here<br>or <span class="text-primary">click to browse</span></div>
+		</div>
+		<div id="uploadStatus" class="mt-2 small"></div>
+	</div>
+</div>
+
+<!-- Step 2: Pick columns -->
+<div class="card mb-3" id="step2" style="display:none;">
+	<div class="card-body">
+		<h6>Step 2 — Data format & columns</h6>
+		<div class="mb-3">
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="modeRadio" id="modeLong" value="long" checked>
+				<label class="form-check-label" for="modeLong"><b>Long</b> (site, tech)</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="modeRadio" id="modeWide" value="wide">
+				<label class="form-check-label" for="modeWide"><b>Wide</b> (site + many 0/1 tech columns)</label>
+			</div>
+		</div>
+
+		<div class="row g-3" id="longCols">
+			<div class="col-md-6">
+				<label class="form-label fw-bold">Site column</label>
+				<select class="form-select form-select-sm" id="selSite"></select>
+			</div>
+			<div class="col-md-6">
+				<label class="form-label fw-bold">Tech column</label>
+				<select class="form-select form-select-sm" id="selTech"></select>
+			</div>
+		</div>
+
+		<div class="row g-3" id="wideCols" style="display:none;">
+			<div class="col-md-4">
+				<label class="form-label fw-bold">Site column</label>
+				<select class="form-select form-select-sm" id="selSiteWide"></select>
+			</div>
+			<div class="col-md-8">
+				<label class="form-label fw-bold">Tech columns <small class="text-muted">(check all that apply)</small></label>
+				<div class="d-flex gap-2 mb-1">
+					<button class="btn btn-sm btn-outline-secondary" id="techSelectAll" type="button">Select all</button>
+					<button class="btn btn-sm btn-outline-secondary" id="techSelectNone" type="button">Clear</button>
+				</div>
+				<div class="tech-multiselect" id="techMultiselect"></div>
+			</div>
+		</div>
+
+		<div class="row g-3 mt-2">
+			<div class="col-md-3">
+				<label class="form-label small">Min sites per tech <small class="text-muted">(filter rare techs)</small></label>
+				<input type="number" min="1" value="2" class="form-control form-control-sm" id="minTechCount">
+			</div>
+			<div class="col-md-3">
+				<label class="form-label small">Min techs per site</label>
+				<input type="number" min="0" value="1" class="form-control form-control-sm" id="minSiteTechs">
+			</div>
+		</div>
+
+		<div class="text-end mt-3">
+			<button class="btn btn-primary" id="btnBuild">
+				<span class="spinner-border spinner-border-sm d-none" id="buildSpinner"></span>
+				Build matrix
+			</button>
+			<span class="ms-2 text-danger small" id="buildError"></span>
+		</div>
+	</div>
+</div>
+
+<!-- Step 3: Matrix stats -->
+<div class="card mb-3" id="step3" style="display:none;">
+	<div class="card-body">
+		<h6>Step 3 — Matrix overview</h6>
+		<div class="row g-2 mb-3" id="matrixStats"></div>
+		<details>
+			<summary class="small text-muted">Top 30 most frequent techs</summary>
+			<div id="topTechsList" class="mt-2 small"></div>
+		</details>
+	</div>
+</div>
+
+<!-- Step 4: Run -->
+<div class="card mb-3" id="step4" style="display:none;">
+	<div class="card-body">
+		<h6>Step 4 — Run factorization</h6>
+		<div class="row g-3 align-items-end">
+			<div class="col-md-3">
+				<label class="form-label small fw-bold">Method</label>
+				<select class="form-select form-select-sm" id="selMethod">
+					<option value="nmf" selected>NMF (interpretable stacks)</option>
+					<option value="svd">Truncated SVD (with explained variance)</option>
+				</select>
+			</div>
+			<div class="col-md-3">
+				<label class="form-label small fw-bold">k components: <span id="kVal">10</span></label>
+				<input type="range" min="2" max="50" value="10" class="form-range" id="kSlider">
+			</div>
+			<div class="col-md-3">
+				<label class="form-label small fw-bold">Top techs per component</label>
+				<input type="number" min="3" max="30" value="10" class="form-control form-control-sm" id="topNInput">
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-primary w-100" id="btnRun">
+					<span class="spinner-border spinner-border-sm d-none" id="runSpinner"></span>
+					Run
+				</button>
+			</div>
+		</div>
+		<div class="text-danger small mt-2" id="runError"></div>
+	</div>
+</div>
+
+<!-- Results -->
+<div id="resultsArea"></div>
+
+<!-- Co-occurrence -->
+<div class="card mb-3" id="step5" style="display:none;">
+	<div class="card-body">
+		<h6>Bonus — Pairwise co-occurrence (Jaccard)</h6>
+		<div class="row g-3 align-items-end mb-2">
+			<div class="col-md-3">
+				<label class="form-label small">Top techs to compare</label>
+				<input type="number" min="5" max="50" value="20" class="form-control form-control-sm" id="coocTopN">
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-outline-primary" id="btnCooc">
+					<span class="spinner-border spinner-border-sm d-none" id="coocSpinner"></span>
+					Compute co-occurrence
+				</button>
+			</div>
+		</div>
+		<div id="coocResults"></div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	let session = null;     // { session_id, columns }
+
+	const dropZone = document.getElementById("dropZone");
+	const csvInput = document.getElementById("csvFile");
+	const uploadStatus = document.getElementById("uploadStatus");
+
+	dropZone.addEventListener("click", () => csvInput.click());
+	dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.classList.add("dragover"); });
+	dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+	dropZone.addEventListener("drop", e => {
+		e.preventDefault(); dropZone.classList.remove("dragover");
+		if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+	});
+	csvInput.addEventListener("change", () => { if (csvInput.files.length) handleFile(csvInput.files[0]); });
+
+	function handleFile(file) {
+		uploadStatus.innerHTML = '<span class="text-muted">Uploading…</span>';
+		const fd = new FormData(); fd.append("file", file);
+		fetch("/api/factor-analysis/upload", { method: "POST", body: fd })
+			.then(r => r.json()).then(d => {
+				if (d.error) { uploadStatus.innerHTML = '<span class="text-danger">' + d.error + '</span>'; return; }
+				session = d;
+				uploadStatus.innerHTML = '<span class="text-success">' + d.filename + ' — ' + d.n_rows + ' rows, ' + d.columns.length + ' columns</span>';
+				populateColumnPickers(d.columns);
+				document.getElementById("step2").style.display = "";
+				document.getElementById("step3").style.display = "none";
+				document.getElementById("step4").style.display = "none";
+				document.getElementById("step5").style.display = "none";
+				document.getElementById("resultsArea").innerHTML = "";
+			});
+	}
+
+	function populateColumnPickers(cols) {
+		const opts = cols.map(c => '<option value="' + c + '">' + c + '</option>').join("");
+		document.getElementById("selSite").innerHTML = opts;
+		document.getElementById("selTech").innerHTML = opts;
+		document.getElementById("selSiteWide").innerHTML = opts;
+		if (cols.length > 1) document.getElementById("selTech").selectedIndex = 1;
+
+		const ms = document.getElementById("techMultiselect");
+		ms.innerHTML = cols.map(c =>
+			'<label><input type="checkbox" class="form-check-input me-1 tech-cb" value="' + c + '">' + c + '</label>'
+		).join("");
+	}
+
+	document.querySelectorAll('input[name="modeRadio"]').forEach(r => {
+		r.addEventListener("change", () => {
+			const longMode = document.getElementById("modeLong").checked;
+			document.getElementById("longCols").style.display = longMode ? "" : "none";
+			document.getElementById("wideCols").style.display = longMode ? "none" : "";
+		});
+	});
+
+	document.getElementById("techSelectAll").addEventListener("click",
+		() => document.querySelectorAll(".tech-cb").forEach(cb => cb.checked = true));
+	document.getElementById("techSelectNone").addEventListener("click",
+		() => document.querySelectorAll(".tech-cb").forEach(cb => cb.checked = false));
+
+	document.getElementById("btnBuild").addEventListener("click", function () {
+		if (!session) return;
+		const errEl = document.getElementById("buildError");
+		const sp = document.getElementById("buildSpinner");
+		errEl.textContent = ""; sp.classList.remove("d-none");
+
+		const mode = document.getElementById("modeLong").checked ? "long" : "wide";
+		const body = {
+			session_id: session.session_id,
+			mode: mode,
+			min_tech_count: parseInt(document.getElementById("minTechCount").value, 10),
+			min_site_techs: parseInt(document.getElementById("minSiteTechs").value, 10),
+		};
+		if (mode === "long") {
+			body.site_col = document.getElementById("selSite").value;
+			body.tech_col = document.getElementById("selTech").value;
+		} else {
+			body.site_col = document.getElementById("selSiteWide").value;
+			body.tech_columns = Array.from(document.querySelectorAll(".tech-cb:checked")).map(cb => cb.value);
+			if (body.tech_columns.length === 0) {
+				sp.classList.add("d-none");
+				errEl.textContent = "Pick at least one tech column.";
+				return;
+			}
+		}
+
+		fetch("/api/factor-analysis/build", {
+			method: "POST", headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body),
+		}).then(r => r.json()).then(d => {
+			sp.classList.add("d-none");
+			if (d.error) { errEl.textContent = d.error; return; }
+			renderMatrixStats(d);
+			document.getElementById("step3").style.display = "";
+			document.getElementById("step4").style.display = "";
+			document.getElementById("step5").style.display = "";
+
+			// adjust k slider max
+			const kSlider = document.getElementById("kSlider");
+			const maxK = Math.min(50, Math.max(2, Math.min(d.n_sites, d.n_techs) - 1));
+			kSlider.max = maxK;
+			if (parseInt(kSlider.value) > maxK) { kSlider.value = maxK; document.getElementById("kVal").textContent = maxK; }
+		});
+	});
+
+	function renderMatrixStats(d) {
+		const el = document.getElementById("matrixStats");
+		el.innerHTML =
+			'<div class="col-md-2"><div class="card stat-card"><div class="val">' + d.n_sites.toLocaleString() + '</div><div class="lbl">sites</div></div></div>' +
+			'<div class="col-md-2"><div class="card stat-card"><div class="val">' + d.n_techs.toLocaleString() + '</div><div class="lbl">technologies</div></div></div>' +
+			'<div class="col-md-2"><div class="card stat-card"><div class="val">' + d.n_pairs.toLocaleString() + '</div><div class="lbl">non-zero pairs</div></div></div>' +
+			'<div class="col-md-2"><div class="card stat-card"><div class="val">' + (d.density * 100).toFixed(2) + '%</div><div class="lbl">density</div></div></div>' +
+			'<div class="col-md-2"><div class="card stat-card"><div class="val">' + d.techs_per_site_mean + '</div><div class="lbl">avg techs/site</div></div></div>' +
+			'<div class="col-md-2"><div class="card stat-card"><div class="val">' + d.sites_per_tech_mean + '</div><div class="lbl">avg sites/tech</div></div></div>';
+
+		const list = document.getElementById("topTechsList");
+		list.innerHTML = d.top_techs.map((t, i) =>
+			'<span class="badge bg-light text-dark me-1 mb-1" style="border:1px solid #dee2e6">' + (i + 1) + '. ' + t.tech + ' <span class="text-muted">(' + t.count + ')</span></span>'
+		).join("");
+	}
+
+	const kSlider = document.getElementById("kSlider");
+	kSlider.addEventListener("input", () => document.getElementById("kVal").textContent = kSlider.value);
+
+	document.getElementById("btnRun").addEventListener("click", function () {
+		if (!session) return;
+		const errEl = document.getElementById("runError");
+		const sp = document.getElementById("runSpinner");
+		errEl.textContent = ""; sp.classList.remove("d-none");
+
+		const body = {
+			session_id: session.session_id,
+			method: document.getElementById("selMethod").value,
+			k: parseInt(kSlider.value, 10),
+			top_n: parseInt(document.getElementById("topNInput").value, 10),
+		};
+		fetch("/api/factor-analysis/run", {
+			method: "POST", headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body),
+		}).then(r => r.json()).then(d => {
+			sp.classList.add("d-none");
+			if (d.error) { errEl.textContent = d.error; return; }
+			renderRunResults(d);
+		}).catch(() => { sp.classList.add("d-none"); errEl.textContent = "Network error."; });
+	});
+
+	function renderRunResults(d) {
+		const s = d.summary;
+		let summaryHtml = '<div class="card mb-3"><div class="card-body">' +
+			'<h6>Run summary — ' + s.method.toUpperCase() + ', k=' + s.k + '</h6>';
+		if (s.method === "nmf") {
+			summaryHtml += '<p class="small mb-1">Reconstruction error: <b>' + s.reconstruction_err + '</b> · Iterations: ' + s.n_iter + '</p>';
+		} else {
+			summaryHtml += '<p class="small mb-1">Total explained variance: <b>' + (s.total_explained_variance * 100).toFixed(1) + '%</b></p>';
+			summaryHtml += '<p class="small text-muted">Per-component: ' + s.explained_variance_ratio.map((v, i) => 'c' + (i + 1) + '=' + (v * 100).toFixed(1) + '%').join(" · ") + '</p>';
+		}
+		summaryHtml += '<a href="/api/factor-analysis/download-scores?session_id=' + session.session_id + '" class="btn btn-success btn-sm">⬇ Download site × component scores (CSV)</a>';
+		summaryHtml += '<small class="text-muted ms-2">Use these as predictors in Logistic Regression instead of raw tech dummies.</small>';
+		summaryHtml += '</div></div>';
+
+		// components
+		let compHtml = '<div class="card mb-3"><div class="card-body">' +
+			'<h6>Components — top techs per latent stack</h6><div class="row g-3">';
+		for (const c of d.components) {
+			compHtml += '<div class="col-md-6 col-lg-4"><div class="component-card">' +
+				'<div class="d-flex justify-content-between align-items-center mb-1">' +
+					'<b>Component ' + c.component + '</b>' +
+					'<small class="text-muted">strength ' + c.strength + '</small>' +
+				'</div>' +
+				'<ul class="tech-list mb-0 ps-3">' +
+					c.top_techs.map(t => '<li>' + t.tech + ' <span class="weight">(' + t.weight + ')</span></li>').join("") +
+				'</ul>' +
+			'</div></div>';
+		}
+		compHtml += '</div></div></div>';
+
+		document.getElementById("resultsArea").innerHTML = summaryHtml + compHtml;
+	}
+
+	document.getElementById("btnCooc").addEventListener("click", function () {
+		if (!session) return;
+		const sp = document.getElementById("coocSpinner");
+		sp.classList.remove("d-none");
+		const body = { session_id: session.session_id, top_n: parseInt(document.getElementById("coocTopN").value, 10) };
+		fetch("/api/factor-analysis/cooccurrence", {
+			method: "POST", headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body),
+		}).then(r => r.json()).then(d => {
+			sp.classList.add("d-none");
+			if (d.error) { document.getElementById("coocResults").innerHTML = '<div class="alert alert-danger">' + d.error + '</div>'; return; }
+			renderCooc(d);
+		});
+	});
+
+	function jaccardColor(v) {
+		// 0 -> white, 1 -> deep blue
+		const intensity = Math.min(1, v);
+		const r = Math.round(255 - intensity * 200);
+		const g = Math.round(255 - intensity * 130);
+		const b = 255;
+		return 'rgb(' + r + ',' + g + ',' + b + ')';
+	}
+
+	function renderCooc(d) {
+		const t = d.techs;
+		let html = '<div class="row g-3"><div class="col-lg-7"><h6>Heatmap (Jaccard similarity)</h6>' +
+			'<div class="table-responsive"><table class="cooc-table">';
+		html += '<thead><tr><th></th>' + t.map(x => '<th class="diag-y">' + x + '</th>').join("") + '</tr></thead><tbody>';
+		const cellMap = {};
+		for (const c of d.cells) cellMap[c.y + "||" + c.x] = c;
+		for (const yi of t) {
+			html += '<tr><th>' + yi + '</th>';
+			for (const xi of t) {
+				const cell = cellMap[yi + "||" + xi];
+				const v = cell ? cell.jaccard : 0;
+				html += '<td class="cooc-cell" style="background:' + jaccardColor(v) + '" title="' + yi + ' ↔ ' + xi + ' = ' + v + ' (∩=' + cell.intersection + ')">' + (v >= 0.05 ? v.toFixed(2) : '') + '</td>';
+			}
+			html += '</tr>';
+		}
+		html += '</tbody></table></div></div>';
+
+		html += '<div class="col-lg-5"><h6>Top co-occurring pairs</h6>' +
+			'<div class="table-responsive"><table class="table table-sm table-bordered" style="font-size:0.82rem">' +
+			'<thead class="table-light"><tr><th>Tech A</th><th>Tech B</th><th>∩</th><th>Jaccard</th></tr></thead><tbody>' +
+			d.top_pairs.slice(0, 30).map(p => '<tr><td>' + p.tech_a + '</td><td>' + p.tech_b + '</td><td>' + p.intersection + '</td><td><b>' + p.jaccard + '</b></td></tr>').join("") +
+			'</tbody></table></div></div></div>';
+
+		document.getElementById("coocResults").innerHTML = html;
+	}
+});
+</script>
+{% endblock %}

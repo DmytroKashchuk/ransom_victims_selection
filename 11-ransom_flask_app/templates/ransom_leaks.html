@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Leaks — Ransomware Analytics{% endblock %}
+
+{% block extra_head %}
+<style>
+	.leak-content {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.leak-content table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 1.5rem;
+	}
+	.leak-content th,
+	.leak-content td {
+		border: 1px solid #dee2e6;
+		padding: 0.6rem 0.75rem;
+		vertical-align: top;
+	}
+	.leak-content th {
+		background-color: #f1f1f1;
+		font-weight: 600;
+	}
+	.leak-content h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+	.leak-content h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+	.leak-content a { word-break: break-all; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="leak-content">
+	{{ content | safe }}
+</div>
+{% endblock %}

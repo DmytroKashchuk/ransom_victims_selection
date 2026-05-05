@@ -337,7 +337,8 @@ def main():
                 save_checkpoint({"completed": list(completed_set), "last_index": i + 1})
                 print(f"    [Checkpoint saved at {i+1}]")
 
-    # Write summary
+    # Write summary, write all columns available for easier pivoting/analysis later
+    
     with open(SUMMARY_FILE, 'w', newline='') as sf:
         writer = csv.DictWriter(sf, fieldnames=[
             "VendorName", "Product", "ProductCategory", "ProductSeries",

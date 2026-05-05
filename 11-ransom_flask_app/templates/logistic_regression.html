@@ -1,0 +1,539 @@
+{% extends "base.html" %}
+{% block title %}Logistic Regression — Ransomware Analytics{% endblock %}
+
+{% block extra_head %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+	.card-stat { text-align: center; }
+	.card-stat .stat-value { font-size: 1.6rem; font-weight: 700; }
+	.card-stat .stat-label { font-size: 0.85rem; color: #666; }
+	.coef-table th, .coef-table td { padding: 0.45rem 0.75rem; }
+	.cm-table { width: auto; margin: 0 auto; }
+	.cm-table th, .cm-table td { text-align: center; padding: 0.5rem 1.2rem; }
+	.predict-panel { background: #fff; border: 1px solid #dee2e6; border-radius: 0.5rem; padding: 1.5rem; }
+	.prob-bar-bg { height: 28px; background: #e9ecef; border-radius: 4px; overflow: hidden; }
+	.prob-bar-fill { height: 100%; transition: width 0.4s ease; border-radius: 4px; }
+	#predictResult { font-size: 1.4rem; font-weight: 700; }
+	.chart-container { position: relative; max-width: 720px; margin: 0 auto; }
+	.upload-zone { border: 2px dashed #adb5bd; border-radius: 0.5rem; padding: 2rem; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+	.upload-zone:hover, .upload-zone.dragover { border-color: #0d6efd; background: #f0f6ff; }
+	.upload-zone input[type="file"] { display: none; }
+	.step-badge { display: inline-block; width: 28px; height: 28px; line-height: 28px; border-radius: 50%; background: #0d6efd; color: #fff; text-align: center; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem; }
+	.col-check-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.35rem; }
+	#uploadPanel .card { border-left: 4px solid #0d6efd; }
+	.preview-table { font-size: 0.82rem; }
+	.preview-table th { background: #f1f1f1; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2 class="mb-1">Logistic Regression</h2>
+<p class="text-muted mb-3">
+	Upload your own CSV or use the built-in demo dataset. Pick a binary target (0/1) and predictors.
+</p>
+
+<!-- ═══ Upload / Column-select panel ═══ -->
+<div id="uploadPanel" class="mb-4">
+	<div class="card">
+		<div class="card-body">
+			<div class="row g-4">
+				<!-- Step 1: Upload -->
+				<div class="col-md-4">
+					<h6><span class="step-badge">1</span>Upload CSV</h6>
+					<div class="upload-zone" id="dropZone">
+						<input type="file" id="csvFile" accept=".csv">
+						<div><strong>Drag & drop</strong> a .csv here<br>or <span class="text-primary">click to browse</span></div>
+					</div>
+					<div id="uploadStatus" class="mt-2 small"></div>
+					<button class="btn btn-sm btn-outline-secondary mt-2" id="btnDemo">Use demo data instead</button>
+				</div>
+
+				<!-- Step 2: Select columns -->
+				<div class="col-md-8" id="colSelectPanel" style="display:none;">
+					<h6><span class="step-badge">2</span>Select columns</h6>
+					<div class="row g-3 mb-3">
+						<div class="col-md-6">
+							<label class="form-label fw-bold">Target column <small class="text-muted">(binary 0/1)</small></label>
+							<select class="form-select form-select-sm" id="selTarget"></select>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label fw-bold">Curve feature <small class="text-muted">(X axis of chart)</small></label>
+							<select class="form-select form-select-sm" id="selCurve"></select>
+						</div>
+					</div>
+					<label class="form-label fw-bold">Predictor columns</label>
+					<div class="col-check-grid mb-3" id="predictorChecks"></div>
+					<button class="btn btn-primary" id="btnFit">
+						<span class="spinner-border spinner-border-sm d-none" id="fitSpinner"></span>
+						Fit Model
+					</button>
+					<span class="ms-2 text-danger small" id="fitError"></span>
+
+					<!-- Preview -->
+					<div class="mt-3" id="previewWrap" style="display:none;">
+						<small class="text-muted">Preview (first 5 rows):</small>
+						<div class="table-responsive"><table class="table table-sm table-bordered preview-table" id="previewTable"></table></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ═══ Results (hidden until model is fit) ═══ -->
+<div id="resultsPanel" style="display:none;">
+
+	<div class="d-flex align-items-center mb-3">
+		<h4 class="mb-0" id="resultsTitle">Model Results</h4>
+		<span class="badge bg-secondary ms-2" id="dataSourceBadge">demo</span>
+	</div>
+
+	<!-- Summary cards -->
+	<div class="row g-3 mb-4" id="summaryCards"></div>
+
+	<!-- Two-column: Chart + Predict -->
+	<div class="row g-4 mb-4">
+		<div class="col-lg-7">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title mb-3" id="chartTitle">Logistic Curve</h5>
+					<div class="chart-container">
+						<canvas id="lgrChart"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-5">
+			<div class="predict-panel">
+				<h5 class="mb-3">Interactive Prediction</h5>
+				<div id="predictControls"></div>
+				<div class="mt-3">
+					<div class="prob-bar-bg">
+						<div class="prob-bar-fill" id="probBar" style="width:0%;background:#198754;"></div>
+					</div>
+				</div>
+				<div id="predictResult" class="text-center mt-2">—</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Coefficients + Confusion matrix -->
+	<div class="row g-4 mb-4">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Model Coefficients</h5>
+					<table class="table table-sm coef-table" id="coefTable">
+						<thead><tr><th>Variable</th><th>Coefficient</th><th>Odds Ratio</th><th>Interpretation</th></tr></thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Confusion Matrix</h5>
+					<table class="table table-bordered cm-table" id="cmTable">
+						<thead><tr><th></th><th>Actual 0</th><th>Actual 1</th></tr></thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Data table -->
+	<h4 class="mb-2">Data</h4>
+	<div id="dataTable"></div>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	// ── State ──
+	let currentChart = null;
+	let currentTable = null;
+	let uploadSession = null;  // { session_id, columns }
+	let customModelSpec = null; // { session_id, target, predictors, curve_feature }
+
+	// ── DOM refs ──
+	const dropZone = document.getElementById("dropZone");
+	const csvInput = document.getElementById("csvFile");
+	const uploadStatus = document.getElementById("uploadStatus");
+	const colSelectPanel = document.getElementById("colSelectPanel");
+	const selTarget = document.getElementById("selTarget");
+	const selCurve = document.getElementById("selCurve");
+	const predictorChecks = document.getElementById("predictorChecks");
+	const previewWrap = document.getElementById("previewWrap");
+	const previewTable = document.getElementById("previewTable");
+	const btnFit = document.getElementById("btnFit");
+	const fitSpinner = document.getElementById("fitSpinner");
+	const fitError = document.getElementById("fitError");
+	const resultsPanel = document.getElementById("resultsPanel");
+	const dataSourceBadge = document.getElementById("dataSourceBadge");
+
+	// ── Load demo on page load ──
+	loadDemo();
+
+	// ── Demo button ──
+	document.getElementById("btnDemo").addEventListener("click", function () {
+		uploadSession = null;
+		customModelSpec = null;
+		colSelectPanel.style.display = "none";
+		uploadStatus.innerHTML = "";
+		loadDemo();
+	});
+
+	function loadDemo() {
+		fetch("/api/logistic-regression")
+			.then(r => r.json())
+			.then(d => {
+				dataSourceBadge.textContent = "demo";
+				dataSourceBadge.className = "badge bg-secondary ms-2";
+				renderResults(d, true);
+			});
+	}
+
+	// ── Drag & drop + click ──
+	dropZone.addEventListener("click", () => csvInput.click());
+	dropZone.addEventListener("dragover", e => { e.preventDefault(); dropZone.classList.add("dragover"); });
+	dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+	dropZone.addEventListener("drop", e => {
+		e.preventDefault();
+		dropZone.classList.remove("dragover");
+		if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+	});
+	csvInput.addEventListener("change", () => { if (csvInput.files.length) handleFile(csvInput.files[0]); });
+
+	function handleFile(file) {
+		if (!file.name.toLowerCase().endsWith(".csv")) {
+			uploadStatus.innerHTML = '<span class="text-danger">Only .csv files supported</span>';
+			return;
+		}
+		uploadStatus.innerHTML = '<span class="text-muted">Uploading…</span>';
+		const fd = new FormData();
+		fd.append("file", file);
+
+		fetch("/api/logistic-regression/upload", { method: "POST", body: fd })
+			.then(r => r.json())
+			.then(d => {
+				if (d.error) {
+					uploadStatus.innerHTML = '<span class="text-danger">' + d.error + '</span>';
+					return;
+				}
+				uploadSession = { session_id: d.session_id, columns: d.columns };
+				uploadStatus.innerHTML = '<span class="text-success">' + file.name + ' — ' + d.n_rows + ' rows, ' + d.columns.length + ' columns</span>';
+				showColumnSelect(d.columns, d.preview);
+			});
+	}
+
+	function showColumnSelect(columns, preview) {
+		colSelectPanel.style.display = "";
+
+		// Target dropdown
+		selTarget.innerHTML = columns.map(c => '<option value="' + c + '">' + c + '</option>').join("");
+		// Curve dropdown
+		selCurve.innerHTML = columns.map(c => '<option value="' + c + '">' + c + '</option>').join("");
+
+		// Predictor checkboxes
+		predictorChecks.innerHTML = columns.map(c =>
+			'<div class="form-check"><input class="form-check-input pred-chk" type="checkbox" value="' + c + '" id="chk_' + c + '">' +
+			'<label class="form-check-label" for="chk_' + c + '">' + c + '</label></div>'
+		).join("");
+
+		// Auto-exclude target from predictors when target changes
+		selTarget.addEventListener("change", syncPredictorChecks);
+		syncPredictorChecks();
+
+		// Preview table
+		if (preview && preview.length) {
+			previewWrap.style.display = "";
+			let html = "<thead><tr>" + columns.map(c => "<th>" + c + "</th>").join("") + "</tr></thead><tbody>";
+			for (const row of preview) {
+				html += "<tr>" + columns.map(c => "<td>" + (row[c] || "") + "</td>").join("") + "</tr>";
+			}
+			html += "</tbody>";
+			previewTable.innerHTML = html;
+		}
+	}
+
+	function syncPredictorChecks() {
+		const target = selTarget.value;
+		document.querySelectorAll(".pred-chk").forEach(chk => {
+			if (chk.value === target) {
+				chk.checked = false;
+				chk.disabled = true;
+			} else {
+				chk.disabled = false;
+			}
+		});
+	}
+
+	// ── Fit button ──
+	btnFit.addEventListener("click", function () {
+		if (!uploadSession) return;
+		fitError.textContent = "";
+
+		const target = selTarget.value;
+		const predictors = [...document.querySelectorAll(".pred-chk:checked")].map(c => c.value);
+		const curveFeature = selCurve.value;
+
+		if (!predictors.length) { fitError.textContent = "Select at least one predictor."; return; }
+		if (predictors.includes(target)) { fitError.textContent = "Target cannot be a predictor."; return; }
+
+		fitSpinner.classList.remove("d-none");
+		btnFit.disabled = true;
+
+		customModelSpec = {
+			session_id: uploadSession.session_id,
+			target: target,
+			predictors: predictors,
+			curve_feature: curveFeature,
+		};
+
+		fetch("/api/logistic-regression/fit", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(customModelSpec),
+		})
+			.then(r => r.json())
+			.then(d => {
+				fitSpinner.classList.add("d-none");
+				btnFit.disabled = false;
+				if (d.error) { fitError.textContent = d.error; return; }
+				dataSourceBadge.textContent = "custom upload";
+				dataSourceBadge.className = "badge bg-primary ms-2";
+				if (d.skipped_rows) {
+					fitError.textContent = d.skipped_rows + " rows skipped (non-numeric).";
+					fitError.className = "ms-2 text-warning small";
+				}
+				renderResults(d, false);
+			})
+			.catch(() => {
+				fitSpinner.classList.add("d-none");
+				btnFit.disabled = false;
+				fitError.textContent = "Network error.";
+			});
+	});
+
+	// ═══ Render results (works for both demo and custom) ═══
+	function renderResults(d, isDemo) {
+		resultsPanel.style.display = "";
+		const features = d.feature_names || [];
+		const targetName = d.target_name || "target";
+		const featureMeta = d.feature_meta || {};
+
+		// ── Summary cards ──
+		const positiveLabel = isDemo ? "Hacked Sites" : "Positive (1)";
+		const cards = [
+			{ label: "Observations", value: d.n, color: "#0d6efd" },
+			{ label: positiveLabel, value: d.n_positive !== undefined ? d.n_positive : d.n_hacked, color: "#dc3545" },
+			{ label: "Accuracy", value: (d.accuracy * 100).toFixed(1) + "%", color: "#198754" },
+			{ label: "Error Rate", value: (d.error_rate * 100).toFixed(1) + "%", color: "#fd7e14" },
+		];
+		document.getElementById("summaryCards").innerHTML = cards.map(c => `
+			<div class="col-6 col-md-3">
+				<div class="card card-stat">
+					<div class="card-body">
+						<div class="stat-value" style="color:${c.color}">${c.value}</div>
+						<div class="stat-label">${c.label}</div>
+					</div>
+				</div>
+			</div>`).join("");
+
+		// ── Coefficients table ──
+		const coeffRows = d.coefficient_rows || [];
+		let coefRows = "";
+		for (const row of coeffRows) {
+			const orVal = row.odds_ratio;
+			let interp = "Baseline";
+			if (row.feature !== "intercept" && orVal !== null && orVal !== undefined) {
+				interp = "OR = " + orVal;
+				if (orVal > 1) interp += " → increases odds";
+				else if (orVal < 1) interp += " → decreases odds";
+			}
+			coefRows += '<tr><td>' + row.feature + '</td><td>' + row.coefficient + '</td><td>' + (orVal === null || orVal === undefined ? "—" : orVal) + '</td><td>' + interp + '</td></tr>';
+		}
+		document.querySelector("#coefTable tbody").innerHTML = coefRows;
+
+		// ── Confusion matrix ──
+		const cm = d.confusion_matrix;
+		document.querySelector("#cmTable tbody").innerHTML =
+			'<tr><td><strong>Predicted 0</strong></td><td>' + cm.tn + '</td><td>' + cm.fn + '</td></tr>' +
+			'<tr><td><strong>Predicted 1</strong></td><td>' + cm.fp + '</td><td>' + cm.tp + '</td></tr>';
+
+		// ── Chart ──
+		const curveFeat = d.curve_feature || "Index";
+		document.getElementById("chartTitle").textContent = "Logistic Curve (" + curveFeat + ")";
+		if (currentChart) currentChart.destroy();
+		const ctx = document.getElementById("lgrChart").getContext("2d");
+		const datasets = [];
+		if (d.curve && d.curve.x && d.curve.x.length) {
+			datasets.push({
+				label: "Logistic Curve",
+				type: "line",
+				data: d.curve.x.map((x, i) => ({ x, y: d.curve.y[i] })),
+				borderColor: "#000", borderWidth: 3, pointRadius: 0, fill: false, order: 1,
+			});
+		}
+		datasets.push(
+			{
+				label: "Positive (1)",
+				data: d.scatter.x.map((x, i) => ({ x, y: d.scatter.y[i] })).filter(p => p.y === 1),
+				backgroundColor: "rgba(220,53,69,0.6)", pointStyle: "rectRot", pointRadius: 5, order: 2,
+			},
+			{
+				label: "Negative (0)",
+				data: d.scatter.x.map((x, i) => ({ x, y: d.scatter.y[i] })).filter(p => p.y === 0),
+				backgroundColor: "rgba(13,110,253,0.6)", pointStyle: "rectRot", pointRadius: 5, order: 2,
+			}
+		);
+		currentChart = new Chart(ctx, {
+			type: "scatter",
+			data: { datasets: datasets },
+			options: {
+				responsive: true,
+				scales: {
+					x: { title: { display: true, text: curveFeat } },
+					y: { title: { display: true, text: "P(" + targetName + " = 1)" }, min: -0.05, max: 1.05 },
+				},
+				plugins: { legend: { position: "top" } },
+			},
+		});
+
+		// ── Tabulator ──
+		if (currentTable) currentTable.destroy();
+		const tabCols = features.map(f => {
+			const meta = featureMeta[f] || { type: "numeric" };
+			if (meta.type === "categorical") {
+				return {
+					title: f,
+					field: f,
+					headerFilter: "list",
+					headerFilterParams: {
+						values: Object.fromEntries([["", "All"]].concat((meta.options || []).map(v => [String(v), String(v)]))),
+					},
+					sorter: "string",
+				};
+			}
+			return { title: f, field: f, headerFilter: "input", sorter: "number" };
+		});
+		tabCols.push({ title: targetName, field: targetName, headerFilter: "input", sorter: "number" });
+		tabCols.push({
+			title: "predicted_prob", field: "predicted_prob", sorter: "number",
+			formatter: function (cell) {
+				var v = cell.getValue();
+				var pct = (v * 100).toFixed(1);
+				var color = v > 0.5 ? "#dc3545" : "#198754";
+				return '<div style="background:#e9ecef;border-radius:3px;overflow:hidden;height:20px">' +
+					'<div style="width:' + pct + '%;background:' + color + ';height:100%;border-radius:3px"></div></div>' +
+					'<small>' + pct + '%</small>';
+			}
+		});
+		tabCols.push({
+			title: "predicted_class", field: "predicted_class", sorter: "number",
+			formatter: function (cell) {
+				return cell.getValue() === 1
+					? '<span class="badge bg-danger">1</span>'
+					: '<span class="badge bg-primary">0</span>';
+			}
+		});
+
+		currentTable = new Tabulator("#dataTable", {
+			data: d.data,
+			layout: "fitColumns",
+			height: "450px",
+			pagination: "local",
+			paginationSize: 25,
+			columns: tabCols,
+		});
+
+		// ── Interactive prediction controls ──
+		buildPredictControls(d, features, featureMeta, isDemo);
+	}
+
+	// ═══ Build dynamic predict sliders ═══
+	function buildPredictControls(d, features, featureMeta, isDemo) {
+		const container = document.getElementById("predictControls");
+		container.innerHTML = "";
+
+		for (const feat of features) {
+			const meta = featureMeta[feat] || { type: "numeric" };
+			const wrapper = document.createElement("div");
+			wrapper.className = "mb-3";
+
+			if (meta.type === "binary") {
+				wrapper.innerHTML =
+					'<label class="form-label">' + feat + '</label>' +
+					'<select class="form-select form-select-sm lgr-ctrl" data-feat="' + feat + '">' +
+					'<option value="0">0 (No)</option><option value="1">1 (Yes)</option></select>';
+			} else if (meta.type === "categorical") {
+				const opts = (meta.options || []).map(v => '<option value="' + v + '">' + v + '</option>').join("");
+				wrapper.innerHTML =
+					'<label class="form-label">' + feat + '</label>' +
+					'<select class="form-select form-select-sm lgr-ctrl" data-feat="' + feat + '">' + opts + '</select>';
+			} else {
+				const mn = Number(meta.min ?? 0);
+				const mx = Number(meta.max ?? 100);
+				const mid = Number(meta.default ?? (mn + mx) / 2);
+				const integerMode = Boolean(meta.integer);
+				const step = integerMode ? 1 : Math.max((mx - mn) / 100, 0.01).toFixed(4);
+				const start = integerMode ? Math.round(mid) : mid.toFixed(2);
+				wrapper.innerHTML =
+					'<label class="form-label">' + feat + ': <strong class="lgr-val">' + start + '</strong></label>' +
+					'<input type="range" class="form-range lgr-ctrl" data-feat="' + feat + '" min="' + mn + '" max="' + mx + '" step="' + step + '" value="' + start + '">';
+			}
+			container.appendChild(wrapper);
+		}
+
+		// Attach events
+		container.querySelectorAll(".lgr-ctrl").forEach(el => {
+			const handler = () => {
+				const label = el.closest(".mb-3").querySelector(".lgr-val");
+				if (label) label.textContent = el.value;
+				runPredict(features, isDemo);
+			};
+			el.addEventListener("input", handler);
+			el.addEventListener("change", handler);
+		});
+
+		// Initial prediction
+		runPredict(features, isDemo);
+	}
+
+	function runPredict(features, isDemo) {
+		const values = {};
+		document.querySelectorAll(".lgr-ctrl").forEach(el => {
+			values[el.dataset.feat] = el.value;
+		});
+
+		let fetchPromise;
+		if (isDemo) {
+			const params = new URLSearchParams(values);
+			fetchPromise = fetch("/api/logistic-regression/predict?" + params);
+		} else {
+			fetchPromise = fetch("/api/logistic-regression/predict-custom", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ ...customModelSpec, values }),
+			});
+		}
+
+		fetchPromise.then(r => r.json()).then(d => {
+			if (d.error) return;
+			const p = d.probability;
+			const pct = (p * 100).toFixed(1);
+			const color = p > 0.5 ? "#dc3545" : "#198754";
+			document.getElementById("probBar").style.width = pct + "%";
+			document.getElementById("probBar").style.background = color;
+			document.getElementById("predictResult").style.color = color;
+			document.getElementById("predictResult").textContent = "P(target = 1) = " + pct + "%";
+		});
+	}
+});
+</script>
+{% endblock %}

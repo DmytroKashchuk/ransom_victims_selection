@@ -1,0 +1,496 @@
+{% extends "base.html" %}
+
+{% block title %}CPE Lookup — NVD Search{% endblock %}
+
+{% block extra_head %}
+<style>
+	.search-panel {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+	.search-panel h5 {
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+	.search-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+	}
+	.search-row .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.search-row label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.search-row input,
+	.search-row select {
+		font-size: .85rem;
+		padding: .4rem .55rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 180px;
+	}
+	.search-row .btn {
+		font-size: .85rem;
+		padding: .42rem 1.2rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#results-table {
+		font-size: .85rem;
+	}
+	.help-text {
+		font-size: .78rem;
+		color: #999;
+		margin-top: .15rem;
+	}
+	.search-mode-label {
+		font-size: .78rem;
+		color: #666;
+		margin-bottom: .5rem;
+	}
+	.search-mode-label strong {
+		color: #333;
+	}
+	#spinner {
+		display: none;
+		text-align: center;
+		padding: 2rem;
+		color: #888;
+	}
+	#spinner .spinner-border {
+		width: 1.5rem;
+		height: 1.5rem;
+		border-width: .2rem;
+	}
+	#error-alert {
+		display: none;
+	}
+	.dep-badge {
+		display: inline-block;
+		padding: 1px 6px;
+		border-radius: 3px;
+		font-size: .75rem;
+		font-weight: 600;
+		background: #fff3cd;
+		color: #664d03;
+	}
+	.ref-link {
+		display: inline-block;
+		max-width: 260px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: .78rem;
+	}
+	.ref-link a { color: #0d6efd; text-decoration: none; }
+	.ref-link a:hover { text-decoration: underline; }
+	.ref-count-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 10px;
+		font-size: .75rem;
+		font-weight: 600;
+		background: #e8f4fd;
+		color: #0a58ca;
+	}
+	.repo-icon { color: #333; margin-right: 3px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">CPE Lookup — NVD Dictionary Search</h4>
+
+	<!-- Search Panel -->
+	<div class="search-panel">
+		<h5>Search Parameters</h5>
+		<div class="search-row">
+			<div class="form-group">
+				<label for="search-mode">Search Mode</label>
+				<select id="search-mode">
+					<option value="keyword">Keyword (free text)</option>
+					<option value="vendor">Vendor only</option>
+					<option value="vendor_product">Vendor + Product</option>
+					<option value="cpe_match">CPE Match String</option>
+				</select>
+			</div>
+			<div class="form-group" id="grp-keyword">
+				<label for="inp-keyword">Keyword</label>
+				<input type="text" id="inp-keyword" placeholder='e.g. "check point", "palo alto"'>
+				<div class="help-text">Searches across all CPE fields</div>
+			</div>
+			<div class="form-group" id="grp-vendor" style="display:none">
+				<label for="inp-vendor">Vendor</label>
+				<input type="text" id="inp-vendor" placeholder="e.g. checkpoint, microsoft">
+			</div>
+			<div class="form-group" id="grp-product" style="display:none">
+				<label for="inp-product">Product</label>
+				<input type="text" id="inp-product" placeholder="e.g. quantum, exchange">
+			</div>
+			<div class="form-group" id="grp-cpe" style="display:none">
+				<label for="inp-cpe">CPE Match String</label>
+				<input type="text" id="inp-cpe" placeholder="cpe:2.3:a:checkpoint:*" style="min-width:320px">
+				<div class="help-text">e.g. cpe:2.3:a:vendor:product:*</div>
+			</div>
+			<div class="form-group">
+				<label for="inp-limit">Max Results</label>
+				<select id="inp-limit">
+					<option value="25">25</option>
+					<option value="50" selected>50</option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="500">500</option>
+				</select>
+			</div>
+			<div class="form-group" style="align-self:flex-end">
+				<button class="btn btn-primary" id="btn-search">Search NVD</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Error -->
+	<div class="alert alert-danger" id="error-alert" role="alert"></div>
+
+	<!-- Spinner -->
+	<div id="spinner">
+		<div class="spinner-border text-secondary" role="status"></div>
+		<div style="margin-top:.5rem">Querying NVD API…</div>
+	</div>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="stat-cards" style="display:none">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Total Results</div>
+			<div class="stat-sub">in NVD</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-shown">-</div>
+			<div class="stat-label">Shown</div>
+			<div class="stat-sub">returned rows</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-vendors">-</div>
+			<div class="stat-label">Distinct Vendors</div>
+			<div class="stat-sub">in results</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-deprecated">-</div>
+			<div class="stat-label">Deprecated</div>
+			<div class="stat-sub">flagged CPEs</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-repos">-</div>
+			<div class="stat-label">With Repo</div>
+			<div class="stat-sub">has source repo</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-refs">-</div>
+			<div class="stat-label">Total Refs</div>
+			<div class="stat-sub">all references</div>
+		</div>
+	</div>
+
+	<div class="search-mode-label" id="query-info" style="display:none"></div>
+
+	<div id="results-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	function escHtml(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+	/* Show/hide input groups based on mode */
+	var modeSelect = document.getElementById("search-mode");
+	function updateVisibility() {
+		var m = modeSelect.value;
+		document.getElementById("grp-keyword").style.display = m === "keyword" ? "" : "none";
+		document.getElementById("grp-vendor").style.display  = (m === "vendor" || m === "vendor_product") ? "" : "none";
+		document.getElementById("grp-product").style.display  = m === "vendor_product" ? "" : "none";
+		document.getElementById("grp-cpe").style.display     = m === "cpe_match" ? "" : "none";
+	}
+	modeSelect.addEventListener("change", updateVisibility);
+	updateVisibility();
+
+	/* Tabulator */
+	var table = new Tabulator("#results-table", {
+		height: "55vh",
+		layout: "fitDataFill",
+		placeholder: "Run a search to see results",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		movableColumns: true,
+		headerSortTriState: true,
+		columns: [
+			{
+				title: "Part", field: "part", hozAlign: "center", minWidth: 50,
+				headerFilter: "input", headerFilterPlaceholder: "…"
+			},
+			{
+				title: "CPE Vendor", field: "vendor", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				frozen: true
+			},
+			{
+				title: "CPE Product", field: "product", minWidth: 180,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Version", field: "version", minWidth: 100,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Title", field: "title", minWidth: 280,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					return '<div style="white-space:pre-wrap;max-height:80px;overflow:auto">' + escHtml(cell.getValue() || "") + '</div>';
+				}
+			},
+			{
+				title: "CPE Name", field: "cpeName", minWidth: 340,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					return '<code style="font-size:.78rem">' + escHtml(cell.getValue() || "") + '</code>';
+				}
+			},
+			{
+				title: "Repo", field: "repoUrls", minWidth: 200,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				headerFilterFunc: function(hv, rv) {
+					return (rv || []).some(function(u) { return u.toLowerCase().indexOf(hv.toLowerCase()) >= 0; });
+				},
+				formatter: function(cell) {
+					var urls = cell.getValue() || [];
+					if (!urls.length) return '<span style="color:#ccc">—</span>';
+					return urls.map(function(u) {
+						var short = u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+						return '<div class="ref-link"><span class="repo-icon">&#128193;</span><a href="' + escHtml(u) + '" target="_blank" title="' + escHtml(u) + '">' + escHtml(short) + '</a></div>';
+					}).join("");
+				},
+				sorter: function(a, b) { return (a||[]).length - (b||[]).length; }
+			},
+			{
+				title: "Advisories", field: "advisoryUrls", hozAlign: "center", minWidth: 90,
+				formatter: function(cell) {
+					var urls = cell.getValue() || [];
+					if (!urls.length) return '<span style="color:#ccc">—</span>';
+					var tip = urls.join("\n");
+					return '<span class="ref-count-badge" title="' + escHtml(tip) + '" style="cursor:pointer">' + urls.length + '</span>';
+				},
+				sorter: function(a, b) { return (a||[]).length - (b||[]).length; },
+				headerFilter: "input", headerFilterPlaceholder: "#",
+				headerFilterFunc: function(hv, rv) {
+					var n = parseInt(hv);
+					if (isNaN(n)) return true;
+					return (rv||[]).length >= n;
+				}
+			},
+			{
+				title: "Changelog", field: "changelogUrls", minWidth: 160,
+				formatter: function(cell) {
+					var urls = cell.getValue() || [];
+					if (!urls.length) return '<span style="color:#ccc">—</span>';
+					return urls.map(function(u) {
+						var short = u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+						return '<div class="ref-link"><a href="' + escHtml(u) + '" target="_blank" title="' + escHtml(u) + '">' + escHtml(short) + '</a></div>';
+					}).join("");
+				},
+				sorter: function(a, b) { return (a||[]).length - (b||[]).length; }
+			},
+			{
+				title: "Vendor URL", field: "vendorUrls", minWidth: 180,
+				formatter: function(cell) {
+					var urls = cell.getValue() || [];
+					if (!urls.length) return '<span style="color:#ccc">—</span>';
+					return urls.map(function(u) {
+						var short = u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+						return '<div class="ref-link"><a href="' + escHtml(u) + '" target="_blank" title="' + escHtml(u) + '">' + escHtml(short) + '</a></div>';
+					}).join("");
+				},
+				sorter: function(a, b) { return (a||[]).length - (b||[]).length; }
+			},
+			{
+				title: "Other Refs", field: "otherUrls", hozAlign: "center", minWidth: 80,
+				formatter: function(cell) {
+					var urls = cell.getValue() || [];
+					if (!urls.length) return '<span style="color:#ccc">—</span>';
+					var tip = urls.join("\n");
+					return '<span class="ref-count-badge" title="' + escHtml(tip) + '" style="cursor:pointer;background:#f0f0f0;color:#555">' + urls.length + '</span>';
+				},
+				sorter: function(a, b) { return (a||[]).length - (b||[]).length; }
+			},
+			{
+				title: "Total Refs", field: "totalRefs", hozAlign: "center", minWidth: 80,
+				sorter: "number",
+				headerFilter: "input", headerFilterPlaceholder: "#",
+				headerFilterFunc: function(hv, rv) {
+					var n = parseInt(hv);
+					if (isNaN(n)) return true;
+					return (rv||0) >= n;
+				},
+				formatter: function(cell) {
+					var v = cell.getValue() || 0;
+					if (!v) return '<span style="color:#ccc">0</span>';
+					return '<strong>' + v + '</strong>';
+				}
+			},
+			{
+				title: "Deprecated", field: "deprecated", hozAlign: "center", minWidth: 80,
+				headerFilter: "input", headerFilterPlaceholder: "…",
+				formatter: function(cell) {
+					var v = cell.getValue();
+					if (v === true || v === "true") return '<span class="dep-badge">Yes</span>';
+					return '<span style="color:#ccc">—</span>';
+				}
+			},
+			{
+				title: "Deprecated By", field: "deprecatedBy", minWidth: 200, visible: false,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = cell.getValue() || "";
+					if (!v) return '<span style="color:#ccc">—</span>';
+					return '<code style="font-size:.75rem">' + escHtml(v) + '</code>';
+				}
+			},
+			{
+				title: "Created", field: "created", minWidth: 100, sorter: "string"
+			},
+			{
+				title: "Modified", field: "lastModified", minWidth: 100, sorter: "string"
+			}
+		]
+	});
+
+	/* Search handler */
+	function doSearch() {
+		var mode = modeSelect.value;
+		var params = { limit: document.getElementById("inp-limit").value };
+
+		if (mode === "keyword") {
+			var kw = document.getElementById("inp-keyword").value.trim();
+			if (!kw) { showError("Enter a keyword"); return; }
+			params.keyword = kw;
+		} else if (mode === "vendor") {
+			var v = document.getElementById("inp-vendor").value.trim();
+			if (!v) { showError("Enter a vendor name"); return; }
+			params.vendor = v;
+		} else if (mode === "vendor_product") {
+			var v2 = document.getElementById("inp-vendor").value.trim();
+			var p2 = document.getElementById("inp-product").value.trim();
+			if (!v2) { showError("Enter a vendor name"); return; }
+			params.vendor = v2;
+			if (p2) params.product = p2;
+		} else if (mode === "cpe_match") {
+			var cpe = document.getElementById("inp-cpe").value.trim();
+			if (!cpe) { showError("Enter a CPE match string"); return; }
+			params.cpe = cpe;
+		}
+
+		hideError();
+		document.getElementById("spinner").style.display = "";
+		document.getElementById("stat-cards").style.display = "none";
+		document.getElementById("query-info").style.display = "none";
+		table.clearData();
+
+		var qs = new URLSearchParams(params).toString();
+		fetch("{{ url_for('api_cpe_lookup') }}?" + qs)
+			.then(function(res) { return res.json(); })
+			.then(function(json) {
+				document.getElementById("spinner").style.display = "none";
+
+				if (json.error) {
+					showError(json.error);
+					return;
+				}
+
+				var rows = json.results || [];
+				document.getElementById("stat-cards").style.display = "";
+				document.getElementById("card-total").textContent = (json.totalResults || 0).toLocaleString();
+				document.getElementById("card-shown").textContent = rows.length.toLocaleString();
+
+				var vendors = {}, depCount = 0, repoCount = 0, totalRefs = 0;
+				rows.forEach(function(r) {
+					if (r.vendor) vendors[r.vendor] = true;
+					if (r.deprecated === true || r.deprecated === "true") depCount++;
+					if (r.repoUrls && r.repoUrls.length) repoCount++;
+					totalRefs += (r.totalRefs || 0);
+				});
+				document.getElementById("card-vendors").textContent = Object.keys(vendors).length;
+				document.getElementById("card-deprecated").textContent = depCount;
+				document.getElementById("card-repos").textContent = repoCount;
+				document.getElementById("card-refs").textContent = totalRefs.toLocaleString();
+
+				/* Query info */
+				var info = document.getElementById("query-info");
+				info.style.display = "";
+				info.innerHTML = "<strong>Query:</strong> " + escHtml(json.queryDescription || "");
+
+				table.setData(rows);
+			})
+			.catch(function(err) {
+				document.getElementById("spinner").style.display = "none";
+				showError("Request failed: " + err);
+			});
+	}
+
+	function showError(msg) {
+		var el = document.getElementById("error-alert");
+		el.textContent = msg;
+		el.style.display = "";
+	}
+	function hideError() {
+		document.getElementById("error-alert").style.display = "none";
+	}
+
+	document.getElementById("btn-search").addEventListener("click", doSearch);
+
+	/* Enter key triggers search */
+	document.querySelectorAll(".search-panel input[type=text]").forEach(function(inp) {
+		inp.addEventListener("keydown", function(e) { if (e.key === "Enter") doSearch(); });
+	});
+});
+</script>
+{% endblock %}

@@ -1,0 +1,387 @@
+{% extends "base.html" %}
+
+{% block title %}CVE Lookup — NVD Search{% endblock %}
+
+{% block extra_head %}
+<style>
+	.search-panel {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+	.search-panel h5 { font-weight: 600; margin-bottom: 1rem; }
+	.search-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+	}
+	.search-row .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.search-row label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.search-row input,
+	.search-row select {
+		font-size: .85rem;
+		padding: .4rem .55rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 170px;
+	}
+	.search-row .btn { font-size: .85rem; padding: .42rem 1.2rem; }
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 130px;
+		text-align: center;
+	}
+	.stat-card .stat-value { font-size: 1.5rem; font-weight: 700; color: #333; }
+	.stat-card .stat-label {
+		font-size: .75rem; color: #888;
+		text-transform: uppercase; letter-spacing: .3px;
+	}
+	.stat-card .stat-sub { font-size: .72rem; color: #aaa; margin-top: .1rem; }
+	#results-table { font-size: .85rem; }
+	.help-text { font-size: .78rem; color: #999; margin-top: .15rem; }
+	.search-mode-label { font-size: .78rem; color: #666; margin-bottom: .5rem; }
+	.search-mode-label strong { color: #333; }
+	#spinner { display: none; text-align: center; padding: 2rem; color: #888; }
+	#spinner .spinner-border { width: 1.5rem; height: 1.5rem; border-width: .2rem; }
+	#error-alert { display: none; }
+	.sev-badge {
+		display: inline-block; padding: 1px 7px; border-radius: 3px;
+		font-size: .78rem; font-weight: 600; min-width: 28px; text-align: center;
+	}
+	.sev-critical { background: #f8d7da; color: #842029; }
+	.sev-high     { background: #fff3cd; color: #664d03; }
+	.sev-medium   { background: #cfe2ff; color: #084298; }
+	.sev-low      { background: #d1e7dd; color: #0f5132; }
+	.kev-badge {
+		display: inline-block; padding: 1px 7px; border-radius: 3px;
+		font-size: .75rem; font-weight: 600;
+		background: #f8d7da; color: #842029;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">CVE Lookup — NVD Vulnerability Search</h4>
+
+	<!-- Search Panel -->
+	<div class="search-panel">
+		<h5>Search Parameters</h5>
+		<div class="search-row">
+			<div class="form-group">
+				<label for="search-mode">Search Mode</label>
+				<select id="search-mode">
+					<option value="keyword">Keyword (description)</option>
+					<option value="cve_id">CVE ID</option>
+					<option value="cpe_match">CPE Match String</option>
+				</select>
+			</div>
+			<div class="form-group" id="grp-keyword">
+				<label for="inp-keyword">Keyword</label>
+				<input type="text" id="inp-keyword" placeholder='e.g. "log4j", "apache struts"'>
+				<div class="help-text">Searches CVE descriptions</div>
+			</div>
+			<div class="form-group" id="grp-cveid" style="display:none">
+				<label for="inp-cveid">CVE ID</label>
+				<input type="text" id="inp-cveid" placeholder="e.g. CVE-2024-24919">
+			</div>
+			<div class="form-group" id="grp-cpe" style="display:none">
+				<label for="inp-cpe">CPE Match String</label>
+				<input type="text" id="inp-cpe" placeholder="cpe:2.3:a:checkpoint:quantum_security_gateway_firmware:*" style="min-width:380px">
+				<div class="help-text">virtualMatchString — e.g. cpe:2.3:a:vendor:product:*</div>
+			</div>
+			<div class="form-group">
+				<label for="inp-severity">Severity</label>
+				<select id="inp-severity">
+					<option value="">Any</option>
+					<option value="CRITICAL">Critical</option>
+					<option value="HIGH">High</option>
+					<option value="MEDIUM">Medium</option>
+					<option value="LOW">Low</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="inp-from">Published From</label>
+				<input type="date" id="inp-from" style="min-width:140px">
+			</div>
+			<div class="form-group">
+				<label for="inp-to">Published To</label>
+				<input type="date" id="inp-to" style="min-width:140px">
+			</div>
+			<div class="form-group">
+				<label for="inp-kev">KEV Only</label>
+				<select id="inp-kev">
+					<option value="">No</option>
+					<option value="1">Yes</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="inp-limit">Max Results</label>
+				<select id="inp-limit">
+					<option value="20">20</option>
+					<option value="50" selected>50</option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+					<option value="500">500</option>
+					<option value="2000">2000</option>
+				</select>
+			</div>
+			<div class="form-group" style="align-self:flex-end">
+				<button class="btn btn-primary" id="btn-search">Search NVD</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Error -->
+	<div class="alert alert-danger" id="error-alert" role="alert"></div>
+
+	<!-- Spinner -->
+	<div id="spinner">
+		<div class="spinner-border text-secondary" role="status"></div>
+		<div style="margin-top:.5rem">Querying NVD API…</div>
+	</div>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="stat-cards" style="display:none">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Total Results</div>
+			<div class="stat-sub">in NVD</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-shown">-</div>
+			<div class="stat-label">Shown</div>
+			<div class="stat-sub">returned rows</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-critical">-</div>
+			<div class="stat-label">Critical</div>
+			<div class="stat-sub">severity</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-high">-</div>
+			<div class="stat-label">High</div>
+			<div class="stat-sub">severity</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-kev">-</div>
+			<div class="stat-label">KEV</div>
+			<div class="stat-sub">known exploited</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-vendors">-</div>
+			<div class="stat-label">Vendors</div>
+			<div class="stat-sub">distinct</div>
+		</div>
+	</div>
+
+	<div class="search-mode-label" id="query-info" style="display:none"></div>
+
+	<div id="results-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	function escHtml(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+	/* Show/hide input groups based on mode */
+	var modeSelect = document.getElementById("search-mode");
+	function updateVisibility() {
+		var m = modeSelect.value;
+		document.getElementById("grp-keyword").style.display = m === "keyword" ? "" : "none";
+		document.getElementById("grp-cveid").style.display   = m === "cve_id" ? "" : "none";
+		document.getElementById("grp-cpe").style.display     = m === "cpe_match" ? "" : "none";
+	}
+	modeSelect.addEventListener("change", updateVisibility);
+	updateVisibility();
+
+	function sevBadge(cell) {
+		var v = cell.getValue();
+		if (!v) return '<span style="color:#ccc">—</span>';
+		var cls = { CRITICAL:"sev-critical", HIGH:"sev-high", MEDIUM:"sev-medium", LOW:"sev-low" }[v] || "";
+		return '<span class="sev-badge ' + cls + '">' + escHtml(v) + '</span>';
+	}
+
+	/* Tabulator */
+	var table = new Tabulator("#results-table", {
+		height: "55vh",
+		layout: "fitDataFill",
+		placeholder: "Run a search to see results",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "base_score", dir: "desc" }],
+		columns: [
+			{
+				title: "CVE ID", field: "cve_id", minWidth: 155, frozen: true,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var id = cell.getValue();
+					return '<a href="https://nvd.nist.gov/vuln/detail/' + encodeURIComponent(id) + '" target="_blank" rel="noopener">' + escHtml(id) + '</a>';
+				}
+			},
+			{
+				title: "Score", field: "base_score", hozAlign: "right", minWidth: 65,
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					return v != null && v !== "" ? Number(v).toFixed(1) : "—";
+				}
+			},
+			{
+				title: "Severity", field: "severity", hozAlign: "center", minWidth: 90,
+				headerFilter: "list",
+				headerFilterParams: { values: { "": "All", CRITICAL: "Critical", HIGH: "High", MEDIUM: "Medium", LOW: "Low" } },
+				formatter: sevBadge
+			},
+			{
+				title: "Published", field: "published", minWidth: 100, sorter: "string",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…"
+			},
+			{
+				title: "KEV", field: "kev", hozAlign: "center", minWidth: 55,
+				formatter: function(c) {
+					return c.getValue() ? '<span class="kev-badge">KEV</span>' : '<span style="color:#ccc">—</span>';
+				}
+			},
+			{
+				title: "Vendors", field: "vendors", minWidth: 150,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Products", field: "products", minWidth: 180,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "CPEs", field: "cpes", minWidth: 260,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var arr = cell.getValue();
+					if (!arr || !arr.length) return '<span style="color:#ccc">—</span>';
+					var html = '<div style="white-space:pre-wrap;max-height:120px;overflow:auto;font-family:monospace;font-size:0.82em;line-height:1.4">';
+					arr.forEach(function(c) { html += escHtml(c) + '\n'; });
+					return html + '</div>';
+				},
+				sorter: function(a, b) { return (a||[]).length - (b||[]).length; },
+				accessorDownload: function(v) { return (v||[]).join("; "); }
+			},
+			{
+				title: "Description", field: "description", minWidth: 350,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					return '<div style="white-space:pre-wrap;max-height:120px;overflow:auto">' + escHtml(cell.getValue() || "") + '</div>';
+				}
+			}
+		]
+	});
+
+	/* Search handler */
+	function doSearch() {
+		var mode = modeSelect.value;
+		var params = { limit: document.getElementById("inp-limit").value };
+
+		if (mode === "keyword") {
+			var kw = document.getElementById("inp-keyword").value.trim();
+			if (!kw) { showError("Enter a keyword"); return; }
+			params.keyword = kw;
+		} else if (mode === "cve_id") {
+			var id = document.getElementById("inp-cveid").value.trim().toUpperCase();
+			if (!id) { showError("Enter a CVE ID"); return; }
+			params.cve_id = id;
+		} else if (mode === "cpe_match") {
+			var cpe = document.getElementById("inp-cpe").value.trim();
+			if (!cpe) { showError("Enter a CPE match string"); return; }
+			params.cpe = cpe;
+		}
+
+		var sev = document.getElementById("inp-severity").value;
+		if (sev) params.severity = sev;
+		var from = document.getElementById("inp-from").value;
+		if (from) params.pub_from = from;
+		var to = document.getElementById("inp-to").value;
+		if (to) params.pub_to = to;
+		var kev = document.getElementById("inp-kev").value;
+		if (kev) params.kev = "1";
+
+		hideError();
+		document.getElementById("spinner").style.display = "";
+		document.getElementById("stat-cards").style.display = "none";
+		document.getElementById("query-info").style.display = "none";
+		table.clearData();
+
+		var qs = new URLSearchParams(params).toString();
+		fetch("{{ url_for('api_cve_lookup') }}?" + qs)
+			.then(function(res) { return res.json(); })
+			.then(function(json) {
+				document.getElementById("spinner").style.display = "none";
+
+				if (json.error) { showError(json.error); return; }
+
+				var rows = json.results || [];
+				document.getElementById("stat-cards").style.display = "";
+				document.getElementById("card-total").textContent = (json.totalResults || 0).toLocaleString();
+				document.getElementById("card-shown").textContent = rows.length.toLocaleString();
+
+				var sev = { CRITICAL: 0, HIGH: 0 }, kevCount = 0, vendorSet = {};
+				rows.forEach(function(r) {
+					if (r.severity === "CRITICAL") sev.CRITICAL++;
+					if (r.severity === "HIGH") sev.HIGH++;
+					if (r.kev) kevCount++;
+					(r.vendors || "").split(", ").forEach(function(v) { if (v) vendorSet[v] = true; });
+				});
+				document.getElementById("card-critical").textContent = sev.CRITICAL;
+				document.getElementById("card-high").textContent = sev.HIGH;
+				document.getElementById("card-kev").textContent = kevCount;
+				document.getElementById("card-vendors").textContent = Object.keys(vendorSet).length;
+
+				var info = document.getElementById("query-info");
+				info.style.display = "";
+				info.innerHTML = "<strong>Query:</strong> " + escHtml(json.queryDescription || "");
+
+				table.setData(rows);
+			})
+			.catch(function(err) {
+				document.getElementById("spinner").style.display = "none";
+				showError("Request failed: " + err);
+			});
+	}
+
+	function showError(msg) {
+		var el = document.getElementById("error-alert");
+		el.textContent = msg; el.style.display = "";
+	}
+	function hideError() { document.getElementById("error-alert").style.display = "none"; }
+
+	document.getElementById("btn-search").addEventListener("click", doSearch);
+	document.querySelectorAll(".search-panel input[type=text]").forEach(function(inp) {
+		inp.addEventListener("keydown", function(e) { if (e.key === "Enter") doSearch(); });
+	});
+});
+</script>
+{% endblock %}

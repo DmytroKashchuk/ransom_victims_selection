@@ -83,6 +83,15 @@
 	.status-both     { background: #d1e7dd; color: #0f5132; }
 	.status-cpe-only { background: #cfe2ff; color: #084298; }
 	.status-swdb-only{ background: #fff3cd; color: #664d03; }
+	.method-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-size: .78rem;
+		font-weight: 600;
+		background: #e8eaf6;
+		color: #283593;
+	}
 </style>
 {% endblock %}
 
@@ -122,6 +131,11 @@
 			<div class="stat-label">SWDB Products</div>
 			<div class="stat-sub">filtered sum</div>
 		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-avg-score">-</div>
+			<div class="stat-label">Avg Match Score</div>
+			<div class="stat-sub">filtered mean</div>
+		</div>
 	</div>
 
 	<!-- Filters -->
@@ -142,6 +156,12 @@
 		<div class="form-group">
 			<label for="filter-min-swdb">Min SWDB Products</label>
 			<input type="number" id="filter-min-swdb" placeholder="e.g. 1" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-method">Match Method</label>
+			<select id="filter-method">
+				<option value="">All</option>
+			</select>
 		</div>
 		<div class="form-group" style="align-self:flex-end;">
 			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear Filters</button>
@@ -211,6 +231,24 @@ document.addEventListener("DOMContentLoaded", function () {
 				title: "Match Status", field: "Match_Status", hozAlign: "center", minWidth: 120,
 				headerFilter: "input", headerFilterPlaceholder: "Search…",
 				formatter: statusFormatter
+			},
+			{
+				title: "Match Method", field: "Match_Method", minWidth: 140,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = cell.getValue();
+					if (!v) return '<span style="color:#ccc">&mdash;</span>';
+					return '<span class="method-badge">' + v + '</span>';
+				}
+			},
+			{
+				title: "Match Score", field: "Match_Score", hozAlign: "right", minWidth: 100,
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					return v != null && v !== "" ? Number(v).toFixed(0) : "&mdash;";
+				}
 			}
 		]
 	});
@@ -229,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			return;
 		}
 
-		var both = 0, cpeOnly = 0, swdbOnly = 0, sumCpe = 0, sumSwdb = 0;
+		var both = 0, cpeOnly = 0, swdbOnly = 0, sumCpe = 0, sumSwdb = 0, sumScore = 0, scoreCount = 0;
 		rows.forEach(function(r) {
 			var s = r.Match_Status;
 			if (s === "Both") both++;
@@ -237,6 +275,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			else if (s === "SWDB Only") swdbOnly++;
 			sumCpe  += (r.CPE_Products || 0);
 			sumSwdb += (r.SWDB_Products || 0);
+			var sc = r.Match_Score;
+			if (sc != null && sc !== "") { sumScore += Number(sc); scoreCount++; }
 		});
 
 		document.getElementById("card-both").textContent = both.toLocaleString();
@@ -244,6 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("card-swdb-only").textContent = swdbOnly.toLocaleString();
 		document.getElementById("card-total-cpe-products").textContent = sumCpe.toLocaleString();
 		document.getElementById("card-total-swdb-products").textContent = sumSwdb.toLocaleString();
+		document.getElementById("card-avg-score").textContent = scoreCount > 0 ? (sumScore / scoreCount).toFixed(1) : "\u2014";
 	}
 
 	table.on("dataFiltered", function() { setTimeout(updateCards, 0); });
@@ -253,6 +294,15 @@ document.addEventListener("DOMContentLoaded", function () {
 		.then(function(res) { return res.json(); })
 		.then(function(data) {
 			allData = data;
+			/* populate Match Method dropdown dynamically */
+			var methods = {};
+			data.forEach(function(r) { var m = r.Match_Method; if (m) methods[m] = true; });
+			var sel = document.getElementById("filter-method");
+			Object.keys(methods).sort().forEach(function(m) {
+				var opt = document.createElement("option");
+				opt.value = m; opt.textContent = m;
+				sel.appendChild(opt);
+			});
 			table.setData(data).then(function() { updateCards(); });
 		})
 		.catch(function(err) {
@@ -271,17 +321,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (!isNaN(minCpe))  filters.push({ field: "CPE_Products", type: ">=", value: minCpe });
 		if (!isNaN(minSwdb)) filters.push({ field: "SWDB_Products", type: ">=", value: minSwdb });
 
+		var method = document.getElementById("filter-method").value;
+		if (method)          filters.push({ field: "Match_Method", type: "=", value: method });
+
 		table.setFilter(filters);
 	}
 
 	document.getElementById("filter-status").addEventListener("change", applyExternalFilters);
 	document.getElementById("filter-min-cpe").addEventListener("input", applyExternalFilters);
 	document.getElementById("filter-min-swdb").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-method").addEventListener("change", applyExternalFilters);
 
 	document.getElementById("btn-clear-filters").addEventListener("click", function() {
 		document.getElementById("filter-status").value = "";
 		document.getElementById("filter-min-cpe").value = "";
 		document.getElementById("filter-min-swdb").value = "";
+		document.getElementById("filter-method").value = "";
 		table.clearFilter(true);
 		table.clearHeaderFilter();
 	});

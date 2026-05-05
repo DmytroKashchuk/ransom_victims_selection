@@ -1,0 +1,456 @@
+{% extends "base.html" %}
+
+{% block title %}Ground Truth on 200{% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stats-bar {
+		font-size: .82rem;
+		color: #666;
+		margin-bottom: .5rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#gt-table {
+		font-size: .85rem;
+	}
+	.badge-true  { background:#d1e7dd; color:#0f5132; padding:1px 7px; border-radius:3px; font-weight:600; }
+	.badge-false { background:#f8d7da; color:#842029; padding:1px 7px; border-radius:3px; font-weight:600; }
+	.badge-na    { background:#eee; color:#666; padding:1px 7px; border-radius:3px; font-weight:600; }
+	.badge-hand  { background:#fff3cd; color:#664d03; padding:1px 7px; border-radius:3px; font-weight:600; }
+	.editable-cell { cursor: pointer; }
+	.editable-cell:hover { background: #f0f7ff; }
+	#save-toast {
+		position: fixed; bottom: 1.25rem; right: 1.25rem;
+		background: #198754; color: #fff;
+		padding: .55rem .9rem; border-radius: 4px;
+		font-size: .85rem; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+		opacity: 0; transition: opacity .25s ease;
+		pointer-events: none; z-index: 1080;
+	}
+	#save-toast.show { opacity: 1; }
+	#save-toast.error { background: #dc3545; }
+	.col-selector-bar {
+		display: flex;
+		align-items: center;
+		gap: .75rem;
+		margin-bottom: .75rem;
+	}
+	.col-selector-bar .btn-sm {
+		font-size: .8rem;
+		padding: .35rem .7rem;
+	}
+	.col-panel {
+		display: none;
+		background: #f9f9f9;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+		padding: .75rem 1rem;
+		margin-bottom: 1rem;
+		max-height: 220px;
+		overflow-y: auto;
+	}
+	.col-panel.open { display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+	.col-panel label {
+		font-size: .82rem;
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.col-panel label input { margin-right: 4px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">Ground Truth on 200</h4>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Total Rows</div>
+			<div class="stat-sub">visible</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-true">-</div>
+			<div class="stat-label">Correct (TRUE)</div>
+			<div class="stat-sub" id="card-true-pct"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-false">-</div>
+			<div class="stat-label">Incorrect (FALSE)</div>
+			<div class="stat-sub" id="card-false-pct"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-accuracy">-</div>
+			<div class="stat-label">Accuracy</div>
+			<div class="stat-sub">TRUE / (TRUE+FALSE)</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-correct">Correct?</label>
+			<select id="filter-correct">
+				<option value="">All</option>
+				<option value="TRUE">TRUE</option>
+				<option value="FALSE">FALSE</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-match-method">Match Method</label>
+			<select id="filter-match-method">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-vendor-method">CPE Vendor Method</label>
+			<select id="filter-vendor-method">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-product-method">CPE Product Method</label>
+			<select id="filter-product-method">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear Filters</button>
+		</div>
+	</div>
+
+	<div class="stats-bar">
+		Showing <strong id="rowCount">0</strong> of <strong id="totalCount">0</strong> records
+	</div>
+
+	<!-- Column Selector + Download -->
+	<div class="col-selector-bar">
+		<button class="btn btn-outline-primary btn-sm" id="btn-toggle-cols">Select Columns</button>
+		<button class="btn btn-outline-success btn-sm" id="btn-download-csv">⬇ Download CSV</button>
+		<span style="font-size:.78rem;color:#999" id="col-count-label"></span>
+	</div>
+	<div class="col-panel" id="colPanel"></div>
+
+	<div id="gt-table"></div>
+</div>
+<div id="save-toast">Saved</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	function escHtml(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+	function normBool(v) {
+		if (v === true) return "TRUE";
+		if (v === false) return "FALSE";
+		if (v == null || v === "") return "";
+		return String(v).toUpperCase();
+	}
+
+	function boolFormatter(cell) {
+		var s = normBool(cell.getValue());
+		if (s === "TRUE")  return '<span class="badge-true">TRUE</span>';
+		if (s === "FALSE") return '<span class="badge-false">FALSE</span>';
+		return '<span class="badge-na">—</span>';
+	}
+
+	function csvEsc(v) {
+		if (v == null) return "";
+		var s = String(v);
+		if (s.indexOf(",") !== -1 || s.indexOf('"') !== -1 || s.indexOf("\n") !== -1)
+			return '"' + s.replace(/"/g, '""') + '"';
+		return s;
+	}
+
+	/* ── Column selector helpers ──────────────────── */
+	var colPanel = document.getElementById("colPanel");
+	var colCountLabel = document.getElementById("col-count-label");
+
+	document.getElementById("btn-toggle-cols").addEventListener("click", function() {
+		colPanel.classList.toggle("open");
+	});
+
+	function buildColCheckboxes() {
+		colPanel.innerHTML = '';
+		var cols = table.getColumns();
+		cols.forEach(function(col) {
+			var def = col.getDefinition();
+			var field = def.field;
+			if (!field) return;
+			var lbl = document.createElement("label");
+			var cb = document.createElement("input");
+			cb.type = "checkbox";
+			cb.checked = col.isVisible();
+			cb.dataset.field = field;
+			cb.addEventListener("change", function() {
+				if (this.checked) table.showColumn(field); else table.hideColumn(field);
+				updateColCount();
+			});
+			lbl.appendChild(cb);
+			lbl.appendChild(document.createTextNode(def.title));
+			colPanel.appendChild(lbl);
+		});
+		updateColCount();
+	}
+
+	function updateColCount() {
+		var vis = table.getColumns().filter(function(c) { return c.isVisible() && c.getDefinition().field; });
+		var total = table.getColumns().filter(function(c) { return c.getDefinition().field; });
+		colCountLabel.textContent = vis.length + " / " + total.length + " columns selected";
+	}
+
+	/* ── CSV download (selected columns only) ────── */
+	document.getElementById("btn-download-csv").addEventListener("click", function() {
+		var visCols = table.getColumns().filter(function(c) { return c.isVisible() && c.getDefinition().field; });
+		var fields = visCols.map(function(c) { return c.getDefinition().field; });
+		var titles = visCols.map(function(c) { return c.getDefinition().title; });
+
+		var rows = table.getRows("active");
+		var csvRows = [titles.map(csvEsc).join(",")];
+		rows.forEach(function(row) {
+			var d = row.getData();
+			csvRows.push(fields.map(function(f) { return csvEsc(d[f]); }).join(","));
+		});
+
+		var blob = new Blob([csvRows.join("\n")], { type: "text/csv;charset=utf-8;" });
+		var a = document.createElement("a");
+		a.href = URL.createObjectURL(blob);
+		a.download = "ground_truth_200_export.csv";
+		a.click();
+		URL.revokeObjectURL(a.href);
+	});
+
+	var table = new Tabulator("#gt-table", {
+		height: "62vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100, 200],
+		movableColumns: true,
+		headerSortTriState: true,
+		columns: [
+			{ title: "Vendor",             field: "Vendor",             minWidth: 140, headerFilter: "input", headerFilterPlaceholder: "Search…", frozen: true,
+			  formatter: function(c){ return escHtml(c.getValue() || ""); } },
+			{ title: "Product",            field: "Product",            minWidth: 180, headerFilter: "input", headerFilterPlaceholder: "Search…",
+			  formatter: function(c){ return escHtml(c.getValue() || ""); } },
+			{ title: "CPE Vendor",         field: "CPE Vendor",         minWidth: 140, headerFilter: "input", headerFilterPlaceholder: "Search…" },
+			{ title: "CPE Product",        field: "CPE Product",        minWidth: 160, headerFilter: "input", headerFilterPlaceholder: "Search…" },
+			{ title: "CPE Match String",   field: "CPE Match String",   minWidth: 280, headerFilter: "input", headerFilterPlaceholder: "Search…" },
+			{ title: "CPE Vendor Method",  field: "CPE Vendor Method",  minWidth: 150 },
+			{ title: "CPE Product Method", field: "CPE Product Method", minWidth: 160 },
+			{ title: "Match Method",       field: "Match Method",       minWidth: 170 },
+			{
+				title: "Correct?", field: "is_correct_match", minWidth: 130, hozAlign: "center",
+				formatter: function (cell) {
+					return '<span class="editable-cell" title="Click to toggle">' +
+						boolFormatter(cell).replace(/^<span /, '<span ') + '</span>';
+				},
+				editor: "list",
+				editorParams: { values: ["TRUE", "FALSE"], autocomplete: false },
+				sorter: function(a, b) { return normBool(a).localeCompare(normBool(b)); }
+			},
+			{
+				title: "Handcheck", field: "handcheck", minWidth: 100, hozAlign: "center",
+				formatter: function (cell) {
+					return normBool(cell.getValue()) === "TRUE"
+						? '<span class="badge-hand">manual</span>'
+						: '<span class="badge-na">auto</span>';
+				},
+				headerFilter: "list",
+				headerFilterParams: { values: { "": "All", "TRUE": "manual", "FALSE": "auto" } },
+				headerFilterFunc: function (headerValue, rowValue) {
+					if (!headerValue) return true;
+					return normBool(rowValue) === headerValue;
+				},
+				sorter: function(a, b) { return normBool(a).localeCompare(normBool(b)); }
+			}
+		]
+	});
+
+	/* ── Persist edits to the backend ─────────────── */
+	var toastEl = document.getElementById("save-toast");
+	var toastTimer = null;
+	function showToast(msg, isError) {
+		toastEl.textContent = msg;
+		toastEl.classList.toggle("error", !!isError);
+		toastEl.classList.add("show");
+		if (toastTimer) clearTimeout(toastTimer);
+		toastTimer = setTimeout(function () { toastEl.classList.remove("show"); }, 1800);
+	}
+
+	table.on("cellEdited", function (cell) {
+		if (cell.getField() !== "is_correct_match") return;
+		var row = cell.getRow();
+		var d = row.getData();
+		var newVal = normBool(cell.getValue());
+		if (newVal !== "TRUE" && newVal !== "FALSE") {
+			cell.restoreOldValue();
+			return;
+		}
+		fetch("/api/ground-truth-200/update", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ row_idx: d._row_idx, is_correct_match: newVal })
+		})
+			.then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+			.then(function (resp) {
+				if (!resp.ok || resp.j.error) {
+					cell.restoreOldValue();
+					showToast("Save failed: " + (resp.j.error || "unknown"), true);
+					return;
+				}
+				row.update({ handcheck: resp.j.handcheck, is_correct_match: resp.j.is_correct_match });
+				showToast("Saved \u2713");
+				updateStats();
+			})
+			.catch(function () {
+				cell.restoreOldValue();
+				showToast("Network error", true);
+			});
+	});
+
+	function uniqueSorted(field) {
+		var seen = {};
+		table.getData().forEach(function(d) {
+			var v = d[field];
+			if (v != null && v !== "") seen[v] = true;
+		});
+		return Object.keys(seen).sort();
+	}
+
+	function populateSelect(id, values) {
+		var sel = document.getElementById(id);
+		while (sel.options.length > 1) sel.remove(1);
+		values.forEach(function(v) {
+			var o = document.createElement("option");
+			o.value = v; o.textContent = v;
+			sel.appendChild(o);
+		});
+	}
+
+	function applyFilters() {
+		var corr = document.getElementById("filter-correct").value;
+		var mm   = document.getElementById("filter-match-method").value;
+		var vm   = document.getElementById("filter-vendor-method").value;
+		var pm   = document.getElementById("filter-product-method").value;
+
+		table.clearFilter(true);
+		if (corr) table.addFilter(function(d) { return normBool(d["is_correct_match"]) === corr; });
+		if (mm)   table.addFilter("Match Method", "=", mm);
+		if (vm)   table.addFilter("CPE Vendor Method", "=", vm);
+		if (pm)   table.addFilter("CPE Product Method", "=", pm);
+	}
+
+	["filter-correct","filter-match-method","filter-vendor-method","filter-product-method"].forEach(function(id) {
+		document.getElementById(id).addEventListener("change", applyFilters);
+	});
+
+	document.getElementById("btn-clear-filters").addEventListener("click", function() {
+		["filter-correct","filter-match-method","filter-vendor-method","filter-product-method"].forEach(function(id) {
+			document.getElementById(id).value = "";
+		});
+		table.clearFilter(true);
+	});
+
+	function updateStats() {
+		var rows = table.getRows("active").map(function(r) { return r.getData(); });
+		var total = rows.length;
+		var t = 0, f = 0;
+		rows.forEach(function(d) {
+			var s = normBool(d["is_correct_match"]);
+			if (s === "TRUE") t++;
+			else if (s === "FALSE") f++;
+		});
+		var denom = t + f;
+		document.getElementById("card-total").textContent = total.toLocaleString();
+		document.getElementById("card-true").textContent  = t.toLocaleString();
+		document.getElementById("card-false").textContent = f.toLocaleString();
+		document.getElementById("card-true-pct").textContent  = denom ? ((t/denom)*100).toFixed(1) + "%" : "";
+		document.getElementById("card-false-pct").textContent = denom ? ((f/denom)*100).toFixed(1) + "%" : "";
+		document.getElementById("card-accuracy").textContent  = denom ? ((t/denom)*100).toFixed(1) + "%" : "—";
+		document.getElementById("rowCount").textContent  = total.toLocaleString();
+	}
+
+	table.on("dataFiltered", updateStats);
+
+	fetch("{{ url_for('api_ground_truth_200') }}")
+		.then(function(r) { return r.json(); })
+		.then(function(data) {
+			table.setData(data).then(function() {
+				document.getElementById("totalCount").textContent = data.length.toLocaleString();
+				populateSelect("filter-match-method",   uniqueSorted("Match Method"));
+				populateSelect("filter-vendor-method",  uniqueSorted("CPE Vendor Method"));
+				populateSelect("filter-product-method", uniqueSorted("CPE Product Method"));
+				buildColCheckboxes();
+				updateStats();
+			});
+		})
+		.catch(function(err) {
+			console.error("Failed to load ground truth data:", err);
+		});
+});
+</script>
+{% endblock %}

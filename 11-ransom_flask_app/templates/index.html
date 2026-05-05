@@ -135,6 +135,72 @@
 				<p>Organizational exposure per CVE — total sites &amp; enterprises running affected products.</p>
 			</a>
 		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('complete_rows_summary') }}" class="dash-card">
+				<h5>Complete Rows Summary (v4)</h5>
+				<p>Enriched product-level CVE summary with tier breakdown, KEV counts, and CPE match data.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('complete_rows_results') }}" class="dash-card">
+				<h5>Complete Rows Results (v4)</h5>
+				<p>Individual CVE records with match tiers, KEV status, and CVE vendor/product details.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cve_v4_summary') }}" class="dash-card">
+				<h5>CVE v4 Summary</h5>
+				<p>Product-level CVE summary from the cve_v4 dataset — tier breakdown, severity counts, KEV data.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cve_v4_results') }}" class="dash-card">
+				<h5>CVE v4 Results</h5>
+				<p>Individual CVE records from cve_v4 — scores, descriptions, match method highlighting, and KEV details.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cpe_lookup') }}" class="dash-card">
+				<h5>CPE Lookup (NVD)</h5>
+				<p>Live search the NVD CPE dictionary by keyword, vendor, product, or match string.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('cve_lookup') }}" class="dash-card">
+				<h5>CVE Lookup (NVD)</h5>
+				<p>Live search NVD vulnerabilities by keyword, CVE ID, or CPE — with severity &amp; date filters.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('kev_page') }}" class="dash-card">
+				<h5>CISA KEV (Live)</h5>
+				<p>Real-time CISA Known Exploited Vulnerabilities catalog — refresh on demand, filter by vendor, product, ransomware use.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('blackbasta_leaks') }}" class="dash-card">
+				<h5>Black Basta Chat Leaks</h5>
+				<p>Browse leaked Matrix chats from Black Basta — filter by sender, chat room, date, or keyword.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('blackbasta_product_hits') }}" class="dash-card">
+				<h5>Black Basta Product Hits</h5>
+				<p>Vendor / product mentions in Black Basta chats — drill down into the actual messages where each product was named.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('blackbasta_websites') }}" class="dash-card">
+				<h5>Black Basta Websites</h5>
+				<p>Domains / URLs extracted from Black Basta chats — filter to primary domains only and explore the related messages.</p>
+			</a>
+		</div>
+		<div class="col-md-4">
+			<a href="{{ url_for('conti_leaks') }}" class="dash-card">
+				<h5>Conti Chat Leaks</h5>
+				<p>Jabber (2020 &amp; 2021–2022) and Rocket Chat dumps with Russian + English translations.</p>
+			</a>
+		</div>
 	</div>
 </div>
 {% endblock %}

@@ -1,0 +1,520 @@
+{% extends "base.html" %}
+
+{% block title %}Black Basta Chat Leaks{% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group { display: flex; flex-direction: column; }
+	.filter-bar label {
+		font-size: .8rem; font-weight: 500; margin-bottom: .2rem; color: #555;
+	}
+	.filter-bar select, .filter-bar input {
+		font-size: .85rem; padding: .35rem .5rem;
+		border: 1px solid #ccc; border-radius: 4px; min-width: 170px;
+	}
+	.filter-bar .btn-sm { font-size: .8rem; padding: .4rem .75rem; }
+
+	.stat-cards {
+		display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .6rem 1.1rem; min-width: 160px; text-align: center;
+	}
+	.stat-card .stat-value { font-size: 1.5rem; font-weight: 700; color: #333; }
+	.stat-card .stat-label {
+		font-size: .75rem; color: #888; text-transform: uppercase; letter-spacing: .3px;
+	}
+	.stat-card .stat-sub { font-size: .72rem; color: #aaa; margin-top: .1rem; }
+
+	#chat-table { font-size: .82rem; }
+	.msg-cell {
+		white-space: pre-wrap;
+		word-break: break-word;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .8rem;
+		max-height: 220px;
+		overflow: auto;
+	}
+	.alias-cell, .chat-cell {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .78rem;
+		word-break: break-all;
+	}
+	mark.hl { background: #fff3a3; padding: 0 .1rem; border-radius: 2px; }
+
+	/* Make the whole message cell feel clickable */
+	.msg-clickable { cursor: pointer; }
+	.msg-clickable:hover { background: #f5faff; }
+
+	/* Conversation modal */
+	#thread-modal .modal-dialog { max-width: 900px; }
+	#thread-modal .modal-body { max-height: 75vh; overflow-y: auto; padding: 0; }
+	.thread-meta {
+		font-size: .78rem; color: #666;
+		padding: .5rem .9rem;
+		background: #fafafa;
+		border-bottom: 1px solid #eee;
+		position: sticky; top: 0; z-index: 2;
+	}
+	.thread-msg {
+		padding: .55rem .9rem;
+		border-bottom: 1px solid #f0f0f0;
+	}
+	.thread-msg.anchor {
+		background: #fff7e6;
+		border-left: 4px solid #ffb84d;
+		padding-left: calc(.9rem - 4px);
+	}
+	.thread-msg-head {
+		display: flex; flex-wrap: wrap; gap: .75rem;
+		font-size: .72rem; color: #555; margin-bottom: .25rem;
+	}
+	.thread-msg-head .ts { font-family: ui-monospace, monospace; color: #333; }
+	.thread-msg-head .sender { font-family: ui-monospace, monospace; color: #0d6efd; }
+	.thread-msg-body {
+		white-space: pre-wrap; word-break: break-word;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .8rem;
+		background: #fafafa;
+		padding: .4rem .6rem;
+		border-radius: 4px;
+		border: 1px solid #eee;
+	}
+	.thread-msg.anchor .thread-msg-body {
+		background: #fff;
+		border-color: #ffd9a8;
+	}
+	.ts-cell {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .78rem;
+		white-space: nowrap;
+	}
+
+	.facet-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .75rem 1rem; margin-bottom: 1rem;
+	}
+	.facet-card h6 {
+		font-size: .85rem; font-weight: 600; color: #555;
+		text-transform: uppercase; letter-spacing: .3px; margin-bottom: .6rem;
+	}
+	.facet-card table { width: 100%; font-size: .78rem; }
+	.facet-card td { padding: .15rem .25rem; border-bottom: 1px dotted #eee; }
+	.facet-card td.count { text-align: right; color: #555; width: 60px; }
+	.facet-card td.name {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		word-break: break-all;
+	}
+	.facet-card a.facet-link {
+		color: inherit; text-decoration: none; cursor: pointer;
+	}
+	.facet-card a.facet-link:hover { text-decoration: underline; color: #0d6efd; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">Black Basta Chat Leaks</h4>
+	<p class="text-muted" style="font-size:.85rem;">
+		Leaked Matrix chat messages from the Black Basta ransomware group
+		(source file: <code>data/leaks/blackbasta_chats.json</code>).
+		Use the filters below to search by message text, sender, chat room, or date range.
+		Click a top sender / chat to filter the table.
+	</p>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Messages</div>
+			<div class="stat-sub">filtered count</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-senders">-</div>
+			<div class="stat-label">Distinct Senders</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-chats">-</div>
+			<div class="stat-label">Distinct Chats</div>
+			<div class="stat-sub">filtered</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-earliest" style="font-size:1rem;">-</div>
+			<div class="stat-label">Earliest</div>
+			<div class="stat-sub">UTC timestamp</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-latest" style="font-size:1rem;">-</div>
+			<div class="stat-label">Latest</div>
+			<div class="stat-sub">UTC timestamp</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-q">Search (any field)</label>
+			<input type="text" id="filter-q" placeholder="text in message / sender / chat…" style="min-width:280px;">
+		</div>
+		<div class="form-group">
+			<label for="filter-sender">Sender alias</label>
+			<input type="text" id="filter-sender" placeholder="@username…">
+		</div>
+		<div class="form-group">
+			<label for="filter-chat">Chat ID</label>
+			<input type="text" id="filter-chat" placeholder="!roomid…">
+		</div>
+		<div class="form-group">
+			<label for="filter-message">Message contains</label>
+			<input type="text" id="filter-message" placeholder="keyword…">
+		</div>
+		<div class="form-group">
+			<label for="filter-date-from">Date from</label>
+			<input type="date" id="filter-date-from">
+		</div>
+		<div class="form-group">
+			<label for="filter-date-to">Date to</label>
+			<input type="date" id="filter-date-to">
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-primary btn-sm" id="btn-apply-filters">Apply</button>
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-9">
+			<div id="chat-table"></div>
+		</div>
+		<div class="col-lg-3">
+			<div class="facet-card">
+				<h6>Top Senders</h6>
+				<table id="top-senders"><tbody></tbody></table>
+			</div>
+			<div class="facet-card">
+				<h6>Top Chats</h6>
+				<table id="top-chats"><tbody></tbody></table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Conversation modal -->
+<div class="modal fade" id="thread-modal" tabindex="-1" aria-labelledby="thread-modal-label" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="thread-modal-label">Conversation</h5>
+				<div class="d-flex align-items-center gap-2 ms-auto me-2">
+					<label for="thread-before" class="text-muted" style="font-size:.75rem;">Before</label>
+					<input type="number" id="thread-before" min="0" max="200" value="15"
+						style="width:60px; font-size:.78rem; padding:.15rem .35rem; border:1px solid #ccc; border-radius:4px;">
+					<label for="thread-after" class="text-muted" style="font-size:.75rem;">After</label>
+					<input type="number" id="thread-after" min="0" max="500" value="30"
+						style="width:60px; font-size:.78rem; padding:.15rem .35rem; border:1px solid #ccc; border-radius:4px;">
+					<button class="btn btn-sm btn-outline-primary" id="thread-reload">Reload</button>
+				</div>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body" id="thread-body">Loading…</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var currentFilters = {};
+	var currentSort = { field: "timestamp", dir: "asc" };
+
+	function escapeHtml(s) {
+		if (s == null) return "";
+		return String(s)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;");
+	}
+
+	function escapeRe(s) {
+		return String(s).replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+	}
+
+	// Highlight any of the given terms (case-insensitive) inside an HTML-escaped string.
+	function highlightTerms(text, terms) {
+		var safe = escapeHtml(text);
+		var parts = (terms || [])
+			.map(function (t) { return (t || "").trim(); })
+			.filter(function (t) { return t.length > 0; })
+			.map(escapeRe);
+		if (!parts.length) return safe;
+		try {
+			var re = new RegExp("(" + parts.join("|") + ")(?![^<]*>)", "gi");
+			return safe.replace(re, '<mark class="hl">$1</mark>');
+		} catch (e) { return safe; }
+	}
+
+	function buildAjaxUrl(url, config, params) {
+		var qs = [];
+		qs.push("page=" + params.page);
+		qs.push("size=" + params.size);
+		qs.push("sort_field=" + encodeURIComponent(currentSort.field));
+		qs.push("sort_dir=" + encodeURIComponent(currentSort.dir));
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		return url + "?" + qs.join("&");
+	}
+
+	var table = new Tabulator("#chat-table", {
+		height: "70vh",
+		layout: "fitColumns",
+		placeholder: "Loading messages…",
+
+		pagination: true,
+		paginationMode: "remote",
+		paginationSize: 50,
+		paginationSizeSelector: [25, 50, 100, 200],
+		sortMode: "remote",
+		filterMode: "remote",
+
+		ajaxURL: "/api/leaks/blackbasta",
+		ajaxURLGenerator: buildAjaxUrl,
+		ajaxResponse: function (url, params, response) { return response; },
+
+		initialSort: [{ column: "timestamp", dir: "asc" }],
+
+		columns: [
+			{
+				title: "Timestamp", field: "timestamp", width: 170, headerSort: true,
+				formatter: function (cell) {
+					return '<span class="ts-cell">' + escapeHtml(cell.getValue()) + '</span>';
+				}
+			},
+			{
+				title: "Sender", field: "sender_alias", width: 230, headerSort: true,
+				formatter: function (cell) {
+					var terms = [currentFilters.sender_alias, currentFilters.q].filter(Boolean);
+					return '<span class="alias-cell">' + highlightTerms(cell.getValue(), terms) + '</span>';
+				}
+			},
+			{
+				title: "Chat ID", field: "chat_id", width: 230, headerSort: true,
+				formatter: function (cell) {
+					var terms = [currentFilters.chat_id, currentFilters.q].filter(Boolean);
+					return '<span class="chat-cell">' + highlightTerms(cell.getValue(), terms) + '</span>';
+				}
+			},
+			{
+				title: "Message", field: "message", headerSort: false,
+				formatter: function (cell) {
+					var terms = [currentFilters.message, currentFilters.q].filter(Boolean);
+					return '<div class="msg-cell msg-clickable" title="Click to view conversation context">' +
+						highlightTerms(cell.getValue(), terms) + '</div>';
+				},
+				cellClick: function (e, cell) {
+					var d = cell.getRow().getData();
+					openThread(d.chat_id, d.timestamp);
+				},
+				variableHeight: true
+			}
+		]
+	});
+
+	table.on("dataSorting", function (sorters) {
+		if (sorters.length) {
+			currentSort.field = sorters[0].field;
+			currentSort.dir = sorters[0].dir;
+		}
+	});
+
+	function readFilterInputs() {
+		currentFilters = {};
+		var q = document.getElementById("filter-q").value.trim();
+		var sender = document.getElementById("filter-sender").value.trim();
+		var chat = document.getElementById("filter-chat").value.trim();
+		var msg = document.getElementById("filter-message").value.trim();
+		var df = document.getElementById("filter-date-from").value;
+		var dt = document.getElementById("filter-date-to").value;
+		if (q) currentFilters.q = q;
+		if (sender) currentFilters.sender_alias = sender;
+		if (chat) currentFilters.chat_id = chat;
+		if (msg) currentFilters.message = msg;
+		if (df) currentFilters.date_from = df;
+		if (dt) currentFilters.date_to = dt + " 23:59:59";
+	}
+
+	function applyFilters() {
+		readFilterInputs();
+		table.setPage(1);
+		loadStats();
+	}
+
+	function clearFilters() {
+		["filter-q","filter-sender","filter-chat","filter-message",
+		 "filter-date-from","filter-date-to"].forEach(function(id) {
+			document.getElementById(id).value = "";
+		});
+		currentFilters = {};
+		table.setPage(1);
+		loadStats();
+	}
+
+	document.getElementById("btn-apply-filters").addEventListener("click", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", clearFilters);
+	document.querySelectorAll(".filter-bar input").forEach(function (el) {
+		el.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") applyFilters();
+		});
+	});
+
+	function loadStats() {
+		var qs = [];
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k]) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		fetch("/api/leaks/blackbasta/stats?" + qs.join("&"))
+			.then(function (r) { return r.json(); })
+			.then(function (s) {
+				document.getElementById("card-total").textContent = Number(s.total_messages).toLocaleString();
+				document.getElementById("card-senders").textContent = Number(s.distinct_senders).toLocaleString();
+				document.getElementById("card-chats").textContent = Number(s.distinct_chats).toLocaleString();
+				document.getElementById("card-earliest").textContent = s.earliest || "—";
+				document.getElementById("card-latest").textContent = s.latest || "—";
+
+				var sBody = document.querySelector("#top-senders tbody");
+				sBody.innerHTML = "";
+				s.top_senders.forEach(function (row) {
+					var tr = document.createElement("tr");
+					tr.innerHTML =
+						'<td class="name"><a class="facet-link" data-kind="sender" data-val="' +
+						escapeHtml(row.sender_alias) + '">' + escapeHtml(row.sender_alias) + '</a></td>' +
+						'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+					sBody.appendChild(tr);
+				});
+
+				var cBody = document.querySelector("#top-chats tbody");
+				cBody.innerHTML = "";
+				s.top_chats.forEach(function (row) {
+					var tr = document.createElement("tr");
+					tr.innerHTML =
+						'<td class="name"><a class="facet-link" data-kind="chat" data-val="' +
+						escapeHtml(row.chat_id) + '">' + escapeHtml(row.chat_id) + '</a></td>' +
+						'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+					cBody.appendChild(tr);
+				});
+
+				document.querySelectorAll(".facet-link").forEach(function (a) {
+					a.addEventListener("click", function (e) {
+						e.preventDefault();
+						var kind = a.getAttribute("data-kind");
+						var val = a.getAttribute("data-val");
+						if (kind === "sender") document.getElementById("filter-sender").value = val;
+						if (kind === "chat") document.getElementById("filter-chat").value = val;
+						applyFilters();
+					});
+				});
+			});
+	}
+
+	// ── Conversation thread modal ──
+	var threadModal = null;
+	var threadCtx = { chat_id: null, timestamp: null };
+
+	function getThreadModal() {
+		if (!threadModal) {
+			threadModal = new bootstrap.Modal(document.getElementById("thread-modal"), {});
+		}
+		return threadModal;
+	}
+
+	function openThread(chatId, timestamp) {
+		threadCtx.chat_id = chatId;
+		threadCtx.timestamp = timestamp;
+		document.getElementById("thread-modal-label").textContent =
+			"Conversation — " + chatId;
+		document.getElementById("thread-body").innerHTML =
+			"<div class='text-muted' style='padding:1rem'>Loading…</div>";
+		getThreadModal().show();
+		loadThread();
+	}
+
+	function loadThread() {
+		if (!threadCtx.chat_id) return;
+		var before = parseInt(document.getElementById("thread-before").value, 10);
+		var after = parseInt(document.getElementById("thread-after").value, 10);
+		if (isNaN(before) || before < 0) before = 15;
+		if (isNaN(after) || after < 0) after = 30;
+
+		var url = "/api/leaks/blackbasta/thread"
+			+ "?chat_id=" + encodeURIComponent(threadCtx.chat_id)
+			+ "&timestamp=" + encodeURIComponent(threadCtx.timestamp)
+			+ "&before=" + before + "&after=" + after;
+
+		var body = document.getElementById("thread-body");
+		fetch(url).then(function (r) { return r.json(); }).then(function (resp) {
+			if (resp.error) {
+				body.innerHTML = "<div class='text-danger' style='padding:1rem'>" +
+					escapeHtml(resp.error) + "</div>";
+				return;
+			}
+			// build inline-search terms = active filters (so the highlighting matches the table)
+			var terms = [
+				currentFilters.q,
+				currentFilters.message,
+				currentFilters.sender_alias,
+				currentFilters.chat_id
+			].filter(Boolean);
+
+			var html = '<div class="thread-meta">' +
+				'Showing ' + resp.data.length + ' of ' +
+				Number(resp.total_in_chat).toLocaleString() +
+				' messages in this chat. Anchor highlighted in orange.' +
+				'</div>';
+
+			resp.data.forEach(function (m, i) {
+				var isAnchor = (i === resp.anchor_index);
+				html += '<div class="thread-msg' + (isAnchor ? ' anchor' : '') + '"' +
+					(isAnchor ? ' id="thread-anchor"' : '') + '>' +
+					'<div class="thread-msg-head">' +
+					'<span class="ts">' + escapeHtml(m.timestamp) + '</span>' +
+					'<span class="sender">' + escapeHtml(m.sender_alias) + '</span>' +
+					(isAnchor ? '<span class="badge bg-warning text-dark" style="font-size:.65rem">selected</span>' : '') +
+					'</div>' +
+					'<div class="thread-msg-body">' + highlightTerms(m.message, terms) + '</div>' +
+					'</div>';
+			});
+			body.innerHTML = html;
+
+			// scroll the anchor into view
+			var anchorEl = document.getElementById("thread-anchor");
+			if (anchorEl) {
+				anchorEl.scrollIntoView({ block: "center" });
+			}
+		}).catch(function (err) {
+			body.innerHTML = "<div class='text-danger' style='padding:1rem'>Failed to load conversation.</div>";
+		});
+	}
+
+	document.getElementById("thread-reload").addEventListener("click", loadThread);
+
+	loadStats();
+});
+</script>
+{% endblock %}

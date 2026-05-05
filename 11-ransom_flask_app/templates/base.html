@@ -81,16 +81,75 @@
 
 						<!-- CVE Analysis dropdown -->
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle {% if request.endpoint in ['tech_cve_summary','tech_cve_results','cve_summary_teyyub','cve_exposure'] %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a class="nav-link dropdown-toggle {% if request.endpoint in ['tech_cve_summary','tech_cve_results','tech_cve_normalized_summary','tech_cve_normalized_results','cve_summary_teyyub','cve_exposure','complete_rows_summary','complete_rows_results','cve_v4_summary','cve_v4_results','ground_truth_200','cve_lookup','kev_page'] %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								CVE Analysis
 							</a>
 							<ul class="dropdown-menu">
+								<li><a class="dropdown-item {% if request.endpoint == 'cve_lookup' %}active{% endif %}" href="{{ url_for('cve_lookup') }}">CVE Lookup (NVD)</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'kev_page' %}active{% endif %}" href="{{ url_for('kev_page') }}">CISA KEV (Live)</a></li>
+								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_summary' %}active{% endif %}" href="{{ url_for('tech_cve_summary') }}">Tech CVE Summary</a></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_results' %}active{% endif %}" href="{{ url_for('tech_cve_results') }}">Tech CVE Results</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_normalized_summary' %}active{% endif %}" href="{{ url_for('tech_cve_normalized_summary') }}">Tech CVE Summary (Normalized)</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'tech_cve_normalized_results' %}active{% endif %}" href="{{ url_for('tech_cve_normalized_results') }}">Tech CVE Results (Normalized)</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'complete_rows_summary' %}active{% endif %}" href="{{ url_for('complete_rows_summary') }}">Complete Rows Summary (v4)</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'complete_rows_results' %}active{% endif %}" href="{{ url_for('complete_rows_results') }}">Complete Rows Results (v4)</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'cve_v4_summary' %}active{% endif %}" href="{{ url_for('cve_v4_summary') }}">CVE v4 Summary</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'cve_v4_results' %}active{% endif %}" href="{{ url_for('cve_v4_results') }}">CVE v4 Results</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'ground_truth_200' %}active{% endif %}" href="{{ url_for('ground_truth_200') }}">Ground Truth on 200</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'cve_summary_teyyub' %}active{% endif %}" href="{{ url_for('cve_summary_teyyub') }}">CVE Summary (Teyyub)</a></li>
 								<li><a class="dropdown-item {% if request.endpoint == 'cve_exposure' %}active{% endif %}" href="{{ url_for('cve_exposure') }}">CVE Exposure</a></li>
 							</ul>
+						</li>
+
+						<!-- CPE / SWDB dropdown -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {% if request.endpoint in ['all_cpes_normalized','cpe_swdb_merged','cpe_lookup'] %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								CPE / SWDB
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item {% if request.endpoint == 'cpe_lookup' %}active{% endif %}" href="{{ url_for('cpe_lookup') }}">CPE Lookup (NVD)</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'all_cpes_normalized' %}active{% endif %}" href="{{ url_for('all_cpes_normalized') }}">All CPEs (Normalized)</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'cpe_swdb_merged' %}active{% endif %}" href="{{ url_for('cpe_swdb_merged') }}">CPE ↔ SWDB Merged</a></li>
+							</ul>
+						</li>
+
+						<!-- Leaks -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {% if request.endpoint in ['leaks','blackbasta_leaks','blackbasta_product_hits','blackbasta_websites','conti_leaks'] %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Leaks
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item {% if request.endpoint == 'leaks' %}active{% endif %}" href="{{ url_for('leaks') }}">Leak Sources (overview)</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><h6 class="dropdown-header">Black Basta</h6></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'blackbasta_leaks' %}active{% endif %}" href="{{ url_for('blackbasta_leaks') }}">Black Basta Chats</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'blackbasta_product_hits' %}active{% endif %}" href="{{ url_for('blackbasta_product_hits') }}">Black Basta Product Hits</a></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'blackbasta_websites' %}active{% endif %}" href="{{ url_for('blackbasta_websites') }}">Black Basta Websites</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><h6 class="dropdown-header">Conti</h6></li>
+								<li><a class="dropdown-item {% if request.endpoint == 'conti_leaks' %}active{% endif %}" href="{{ url_for('conti_leaks') }}">Conti Chats (Jabber + Rocket)</a></li>
+							</ul>
+						</li>
+
+						<!-- Logistic Regression -->
+						<li class="nav-item">
+							<a class="nav-link {% if request.endpoint == 'logistic_regression' %}active{% endif %}" href="{{ url_for('logistic_regression') }}">Logistic Regression</a>
+						</li>
+
+						<!-- Odds Ratio -->
+						<li class="nav-item">
+							<a class="nav-link {% if request.endpoint == 'odds_ratio_page' %}active{% endif %}" href="{{ url_for('odds_ratio_page') }}">Odds Ratio</a>
+						</li>
+
+						<!-- Factor Analysis -->
+						<li class="nav-item">
+							<a class="nav-link {% if request.endpoint == 'factor_analysis_page' %}active{% endif %}" href="{{ url_for('factor_analysis_page') }}">Factor Analysis</a>
 						</li>
 					</ul>
 				</div>

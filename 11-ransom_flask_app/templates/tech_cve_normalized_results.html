@@ -84,6 +84,29 @@
 	.sev-high     { background: #fff3cd; color: #664d03; }
 	.sev-medium   { background: #cfe2ff; color: #084298; }
 	.sev-low      { background: #d1e7dd; color: #0f5132; }
+	.kw-vendor {
+		background: #e8f5e9;
+		color: #2e7d32;
+		padding: 0 3px;
+		border-radius: 2px;
+		font-weight: 600;
+	}
+	.kw-product {
+		background: #e3f2fd;
+		color: #1565c0;
+		padding: 0 3px;
+		border-radius: 2px;
+		font-weight: 600;
+	}
+	.toggle-cpe {
+		display: inline-flex;
+		align-items: center;
+		gap: .4rem;
+		font-size: .82rem;
+		cursor: pointer;
+		user-select: none;
+		margin-bottom: 1rem;
+	}
 </style>
 {% endblock %}
 
@@ -168,6 +191,10 @@
 		</div>
 	</div>
 
+	<label class="toggle-cpe">
+		<input type="checkbox" id="toggle-cpe-cols"> Show CPE columns
+	</label>
+
 	<div id="cve-table"></div>
 </div>
 {% endblock %}
@@ -179,6 +206,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	/* ── helpers ───────────────────────────────── */
 	var fmtN = function(v) { return v == null ? "—" : Number(v).toLocaleString(); };
+	function escHtml(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+	function escRe(s) { return s.replace(/[-.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 	function sevBadge(cell) {
 		var v = cell.getValue();
@@ -243,6 +272,14 @@ document.addEventListener("DOMContentLoaded", function () {
 				title: "Product", field: "Product", minWidth: 160
 			},
 			{
+				title: "CPE Vendor", field: "cpe_vendor", minWidth: 120,
+				visible: false
+			},
+			{
+				title: "CPE Product", field: "cpe_product", minWidth: 120,
+				visible: false
+			},
+			{
 				title: "Category", field: "ProductCategory", minWidth: 140
 			},
 			{
@@ -266,12 +303,55 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{
 				title: "Description", field: "description", minWidth: 300,
-				formatter: "textarea"
+				formatter: function(cell) {
+					var desc = cell.getValue() || "";
+					var row = cell.getRow().getData();
+					var method = row.match_method || "";
+					var vendor = row.VendorName || "";
+					var product = row.Product || "";
+					var cpeV = row.cpe_vendor || "";
+					var cpeP = row.cpe_product || "";
+
+					var safe = escHtml(desc);
+
+					if (method === "virtualMatchString") {
+						/* highlight cpe_product and cpe_vendor in description —
+						   CPE uses underscores for spaces, so match either.
+						   Use \w* on both sides for substring/partial matching. */
+						if (cpeP) {
+							var pPat = cpeP.split("_").map(escRe).join("[_ ]");
+							safe = safe.replace(new RegExp("(\\w*" + pPat + "\\w*)", "gi"), '<span class="kw-product">$1</span>');
+						}
+						if (cpeV && cpeV.toLowerCase() !== cpeP.toLowerCase()) {
+							var vPat = cpeV.split("_").map(escRe).join("[_ ]");
+							safe = safe.replace(new RegExp("(\\w*" + vPat + "\\w*)", "gi"), '<span class="kw-vendor">$1</span>');
+						}
+					} else if (method === "keyword_vendor_product") {
+						if (product) safe = safe.replace(new RegExp("(\\w*" + escRe(product) + "\\w*)", "gi"), '<span class="kw-product">$1</span>');
+						if (vendor && vendor.toLowerCase() !== product.toLowerCase()) safe = safe.replace(new RegExp("(\\w*" + escRe(vendor) + "\\w*)", "gi"), '<span class="kw-vendor">$1</span>');
+					} else if (method === "keyword_product_only") {
+						if (product) safe = safe.replace(new RegExp("(\\w*" + escRe(product) + "\\w*)", "gi"), '<span class="kw-product">$1</span>');
+					}
+
+					return '<div style="white-space:pre-wrap;max-height:120px;overflow:auto">' + safe + '</div>';
+				}
 			},
 			{
 				title: "Match Method", field: "match_method", minWidth: 130
 			}
 		]
+	});
+
+	/* ── CPE column toggle ──────────────────── */
+	document.getElementById("toggle-cpe-cols").addEventListener("change", function() {
+		var show = this.checked;
+		if (show) {
+			table.showColumn("cpe_vendor");
+			table.showColumn("cpe_product");
+		} else {
+			table.hideColumn("cpe_vendor");
+			table.hideColumn("cpe_product");
+		}
 	});
 
 	/* ── sort handling ────────────────────────── */

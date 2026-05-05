@@ -1,0 +1,521 @@
+{% extends "base.html" %}
+
+{% block title %}Black Basta Websites{% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group { display: flex; flex-direction: column; }
+	.filter-bar label {
+		font-size: .8rem; font-weight: 500; margin-bottom: .2rem; color: #555;
+	}
+	.filter-bar select, .filter-bar input {
+		font-size: .85rem; padding: .35rem .5rem;
+		border: 1px solid #ccc; border-radius: 4px; min-width: 160px;
+	}
+	.filter-bar .btn-sm { font-size: .8rem; padding: .4rem .75rem; }
+	.filter-bar .form-check {
+		display: flex; align-items: center; gap: .35rem;
+		font-size: .85rem; color: #333;
+	}
+
+	.stat-cards {
+		display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .6rem 1.1rem; min-width: 150px; text-align: center;
+	}
+	.stat-card .stat-value { font-size: 1.5rem; font-weight: 700; color: #333; }
+	.stat-card .stat-label {
+		font-size: .75rem; color: #888; text-transform: uppercase; letter-spacing: .3px;
+	}
+
+	#sites-table { font-size: .85rem; }
+	.mono {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .78rem;
+	}
+	.row-explore-btn { font-size: .72rem; padding: .15rem .5rem; }
+	.badge-primary-dom {
+		display: inline-block; font-size: .65rem; font-weight: 600;
+		background: #d1ecf1; color: #0c5460;
+		padding: .05rem .35rem; border-radius: 3px;
+	}
+	.badge-hacked {
+		display: inline-block; font-size: .65rem; font-weight: 600;
+		background: #f8d7da; color: #842029;
+		padding: .05rem .35rem; border-radius: 3px;
+	}
+
+	.facet-card {
+		background: #fff; border: 1px solid #e0e0e0; border-radius: 6px;
+		padding: .75rem 1rem; margin-bottom: 1rem;
+	}
+	.facet-card h6 {
+		font-size: .85rem; font-weight: 600; color: #555;
+		text-transform: uppercase; letter-spacing: .3px; margin-bottom: .6rem;
+	}
+	.facet-card table { width: 100%; font-size: .78rem; }
+	.facet-card td { padding: .15rem .25rem; border-bottom: 1px dotted #eee; }
+	.facet-card td.count { text-align: right; color: #555; width: 60px; }
+	.facet-card td.name { word-break: break-all; }
+	.facet-card a.facet-link { color: inherit; text-decoration: none; cursor: pointer; }
+	.facet-card a.facet-link:hover { text-decoration: underline; color: #0d6efd; }
+
+	/* Messages drawer */
+	.msg-drawer {
+		background: #fff;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+		padding: 1rem 1.25rem;
+		margin-top: 1rem;
+		display: none;
+	}
+	.msg-drawer.open { display: block; }
+	.msg-drawer-header {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: .75rem;
+		padding-bottom: .5rem;
+		border-bottom: 1px solid #eee;
+	}
+	.msg-drawer-title { font-size: 1rem; font-weight: 600; }
+	.msg-drawer-meta { font-size: .8rem; color: #666; }
+	.msg-list { max-height: 60vh; overflow-y: auto; }
+	.msg-item { padding: .6rem .75rem; border-bottom: 1px solid #f0f0f0; }
+	.msg-item:last-child { border-bottom: none; }
+	.msg-item-head {
+		display: flex; flex-wrap: wrap; gap: .75rem;
+		font-size: .75rem; color: #555; margin-bottom: .35rem;
+	}
+	.msg-item-head .ts { font-family: ui-monospace, monospace; color: #333; }
+	.msg-item-head .sender { font-family: ui-monospace, monospace; color: #0d6efd; }
+	.msg-item-head .chat { font-family: ui-monospace, monospace; color: #888; }
+	.msg-body {
+		white-space: pre-wrap; word-break: break-word;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .82rem;
+		background: #fafafa;
+		padding: .5rem .65rem;
+		border-radius: 4px;
+		border: 1px solid #eee;
+	}
+	.msg-pager {
+		display: flex; gap: .5rem; align-items: center;
+		margin-top: .75rem; font-size: .8rem;
+	}
+	mark.hl { background: #fff3a3; padding: 0 .1rem; border-radius: 2px; }
+	mark.hl-auto {
+		background: #ffd8a8; color: #7a3e00; font-weight: 600;
+		padding: 0 .15rem; border-radius: 2px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">Black Basta — Websites &amp; Domains in Chats</h4>
+	<p class="text-muted" style="font-size:.85rem;">
+		Domains extracted from URLs / e‑mails in the leaked Black Basta Matrix
+		chats (source file: <code>data/leaks/blackbasta_websites.csv</code>). Use
+		<strong>Only primary domains</strong> to hide subdomains
+		(<code>mail.foo.com</code> → keep only <code>foo.com</code>). Click
+		<strong>Explore msgs</strong> on any row to read the actual chat messages.
+	</p>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-rows">-</div>
+			<div class="stat-label">Domains</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-primary">-</div>
+			<div class="stat-label">Primary domains</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-hacked">-</div>
+			<div class="stat-label">Marked hacked</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-sum">-</div>
+			<div class="stat-label">Total mentions</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-unique">-</div>
+			<div class="stat-label">Unique msgs</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-q">Search (domain / sender / urls)</label>
+			<input type="text" id="filter-q" placeholder="text…" style="min-width:240px;">
+		</div>
+		<div class="form-group">
+			<label for="filter-domain">Domain contains</label>
+			<input type="text" id="filter-domain" placeholder=".onion, .ru, gov…">
+		</div>
+		<div class="form-group">
+			<label for="filter-hacked">Hacked</label>
+			<select id="filter-hacked">
+				<option value="">— any —</option>
+				<option value="true">True</option>
+				<option value="false">False</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-min-count">Min count</label>
+			<input type="number" id="filter-min-count" min="0" placeholder="0" style="min-width:100px;">
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" id="filter-only-primary">
+				<label class="form-check-label" for="filter-only-primary">Only primary domains</label>
+			</div>
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-primary btn-sm" id="btn-apply-filters">Apply</button>
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-9">
+			<div id="sites-table"></div>
+
+			<!-- Messages drawer -->
+			<div class="msg-drawer" id="msg-drawer">
+				<div class="msg-drawer-header">
+					<div>
+						<div class="msg-drawer-title" id="drawer-title">—</div>
+						<div class="msg-drawer-meta" id="drawer-meta"></div>
+					</div>
+					<div style="display:flex; gap:.5rem; align-items:center;">
+						<input type="text" id="msg-q" placeholder="filter messages…"
+							style="font-size:.8rem; padding:.3rem .5rem; border:1px solid #ccc; border-radius:4px;">
+						<button class="btn btn-sm btn-outline-primary" id="msg-q-btn">Search</button>
+						<button class="btn btn-sm btn-outline-secondary" id="drawer-close">Close</button>
+					</div>
+				</div>
+				<div class="msg-list" id="msg-list">Loading…</div>
+				<div class="msg-pager">
+					<button class="btn btn-sm btn-outline-secondary" id="msg-prev">‹ Prev</button>
+					<span id="msg-page-info">—</span>
+					<button class="btn btn-sm btn-outline-secondary" id="msg-next">Next ›</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="facet-card">
+				<h6>Top Domains</h6>
+				<table id="top-domains"><tbody></tbody></table>
+			</div>
+			<div class="facet-card">
+				<h6>Top Primary Domains</h6>
+				<table id="top-primary"><tbody></tbody></table>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var currentFilters = {};
+	var currentSort = { field: "count", dir: "desc" };
+
+	var drawer = {
+		domain: null,
+		page: 1, size: 25, lastPage: 1, q: "",
+		autoTerms: []
+	};
+
+	function escapeHtml(s) {
+		if (s == null) return "";
+		return String(s)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;");
+	}
+
+	function escapeRe(s) {
+		return String(s).replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+	}
+
+	function highlight(text, qTerms, autoTerms) {
+		var safe = escapeHtml(text);
+		function apply(terms, cls) {
+			var parts = (terms || [])
+				.map(function (t) { return (t || "").trim(); })
+				.filter(function (t) { return t.length > 0; })
+				.map(escapeRe);
+			if (!parts.length) return;
+			try {
+				var re = new RegExp("(" + parts.join("|") + ")(?![^<]*>)", "gi");
+				safe = safe.replace(re, '<mark class="' + cls + '">$1</mark>');
+			} catch (e) { /* ignore */ }
+		}
+		apply(autoTerms, "hl-auto");
+		apply(qTerms, "hl");
+		return safe;
+	}
+
+	function buildAjaxUrl(url, config, params) {
+		var qs = [];
+		qs.push("page=" + params.page);
+		qs.push("size=" + params.size);
+		qs.push("sort_field=" + encodeURIComponent(currentSort.field));
+		qs.push("sort_dir=" + encodeURIComponent(currentSort.dir));
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k] !== "" && currentFilters[k] !== undefined && currentFilters[k] !== null) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		return url + "?" + qs.join("&");
+	}
+
+	var table = new Tabulator("#sites-table", {
+		height: "65vh",
+		layout: "fitColumns",
+		placeholder: "Loading websites…",
+
+		pagination: true,
+		paginationMode: "remote",
+		paginationSize: 50,
+		paginationSizeSelector: [25, 50, 100, 200],
+		sortMode: "remote",
+		filterMode: "remote",
+
+		ajaxURL: "/api/leaks/blackbasta-websites",
+		ajaxURLGenerator: buildAjaxUrl,
+		ajaxResponse: function (url, params, response) { return response; },
+
+		initialSort: [{ column: "count", dir: "desc" }],
+
+		columns: [
+			{
+				title: "Domain", field: "domain", headerSort: true, minWidth: 220,
+				formatter: function (cell) {
+					var d = cell.getRow().getData();
+					var badges = "";
+					if (d.is_primary) badges += ' <span class="badge-primary-dom">primary</span>';
+					if (d.hacked) badges += ' <span class="badge-hacked">hacked</span>';
+					return '<span class="mono">' + escapeHtml(cell.getValue()) + '</span>' + badges;
+				}
+			},
+			{ title: "Count", field: "count", width: 90, hozAlign: "right", headerSort: true },
+			{ title: "Unique msgs", field: "n_unique_msgs", width: 110, hozAlign: "right", headerSort: true },
+			{ title: "Senders", field: "n_unique_senders", width: 90, hozAlign: "right", headerSort: true },
+			{ title: "Chats", field: "n_unique_chats", width: 80, hozAlign: "right", headerSort: true },
+			{
+				title: "First seen", field: "first_seen", width: 150, headerSort: true,
+				formatter: function (cell) { return '<span class="mono">' + escapeHtml(cell.getValue()) + '</span>'; }
+			},
+			{
+				title: "Last seen", field: "last_seen", width: 150, headerSort: true,
+				formatter: function (cell) { return '<span class="mono">' + escapeHtml(cell.getValue()) + '</span>'; }
+			},
+			{
+				title: "", field: "_explore", width: 110, headerSort: false,
+				formatter: function (cell) {
+					var d = cell.getRow().getData();
+					return '<button class="btn btn-sm btn-outline-primary row-explore-btn" ' +
+						'data-domain="' + escapeHtml(d.domain) + '">Explore msgs</button>';
+				},
+				cellClick: function (e, cell) {
+					var btn = e.target.closest("button.row-explore-btn");
+					if (!btn) return;
+					openDrawer(btn.dataset.domain);
+				}
+			}
+		]
+	});
+
+	table.on("dataSorting", function (sorters) {
+		if (sorters.length) {
+			currentSort.field = sorters[0].field;
+			currentSort.dir = sorters[0].dir;
+		}
+	});
+
+	function readFilterInputs() {
+		currentFilters = {};
+		var q = document.getElementById("filter-q").value.trim();
+		var dom = document.getElementById("filter-domain").value.trim();
+		var hacked = document.getElementById("filter-hacked").value;
+		var minc = document.getElementById("filter-min-count").value.trim();
+		var onlyPrim = document.getElementById("filter-only-primary").checked;
+		if (q) currentFilters.q = q;
+		if (dom) currentFilters.domain = dom;
+		if (hacked) currentFilters.hacked = hacked;
+		if (minc) currentFilters.min_count = minc;
+		if (onlyPrim) currentFilters.only_primary = "1";
+	}
+
+	function applyFilters() {
+		readFilterInputs();
+		table.setPage(1);
+		loadStats();
+	}
+
+	function clearFilters() {
+		["filter-q","filter-domain","filter-min-count"].forEach(function(id) {
+			document.getElementById(id).value = "";
+		});
+		document.getElementById("filter-hacked").value = "";
+		document.getElementById("filter-only-primary").checked = false;
+		currentFilters = {};
+		table.setPage(1);
+		loadStats();
+	}
+
+	document.getElementById("btn-apply-filters").addEventListener("click", applyFilters);
+	document.getElementById("btn-clear-filters").addEventListener("click", clearFilters);
+	document.getElementById("filter-only-primary").addEventListener("change", applyFilters);
+	document.getElementById("filter-hacked").addEventListener("change", applyFilters);
+	document.querySelectorAll(".filter-bar input[type=text], .filter-bar input[type=number]").forEach(function (el) {
+		el.addEventListener("keydown", function (e) {
+			if (e.key === "Enter") applyFilters();
+		});
+	});
+
+	function loadStats() {
+		var qs = [];
+		Object.keys(currentFilters).forEach(function (k) {
+			if (currentFilters[k] !== "" && currentFilters[k] !== undefined && currentFilters[k] !== null) {
+				qs.push("filter_" + encodeURIComponent(k) + "=" + encodeURIComponent(currentFilters[k]));
+			}
+		});
+		fetch("/api/leaks/blackbasta-websites/stats?" + qs.join("&"))
+			.then(function (r) { return r.json(); })
+			.then(function (s) {
+				document.getElementById("card-rows").textContent = Number(s.total_rows).toLocaleString();
+				document.getElementById("card-primary").textContent = Number(s.n_primary).toLocaleString();
+				document.getElementById("card-hacked").textContent = Number(s.n_hacked).toLocaleString();
+				document.getElementById("card-sum").textContent = Number(s.sum_count).toLocaleString();
+				document.getElementById("card-unique").textContent = Number(s.sum_unique_msgs).toLocaleString();
+
+				renderFacet("#top-domains tbody", s.top_domains);
+				renderFacet("#top-primary tbody", s.top_primary);
+			});
+	}
+
+	function renderFacet(sel, rows) {
+		var body = document.querySelector(sel);
+		body.innerHTML = "";
+		rows.forEach(function (row) {
+			var tr = document.createElement("tr");
+			tr.innerHTML =
+				'<td class="name mono"><a class="facet-link">' +
+				escapeHtml(row.domain) + '</a></td>' +
+				'<td class="count">' + Number(row.count).toLocaleString() + '</td>';
+			tr.querySelector("a.facet-link").addEventListener("click", function (e) {
+				e.preventDefault();
+				document.getElementById("filter-domain").value = row.domain;
+				applyFilters();
+			});
+			body.appendChild(tr);
+		});
+	}
+
+	// ── Drawer ──
+	function openDrawer(domain) {
+		drawer.domain = domain;
+		drawer.page = 1;
+		drawer.q = "";
+		drawer.autoTerms = [domain];
+		document.getElementById("msg-q").value = "";
+		document.getElementById("msg-drawer").classList.add("open");
+		document.getElementById("drawer-title").textContent = domain;
+		document.getElementById("msg-drawer").scrollIntoView({ behavior: "smooth", block: "start" });
+		loadMessages();
+	}
+
+	function closeDrawer() {
+		document.getElementById("msg-drawer").classList.remove("open");
+		drawer.domain = null;
+	}
+
+	function loadMessages() {
+		if (!drawer.domain) return;
+		var url = "/api/leaks/blackbasta-websites/messages"
+			+ "?domain=" + encodeURIComponent(drawer.domain)
+			+ "&page=" + drawer.page
+			+ "&size=" + drawer.size;
+		if (drawer.q) url += "&msg_q=" + encodeURIComponent(drawer.q);
+
+		var listEl = document.getElementById("msg-list");
+		listEl.innerHTML = "<div class='text-muted'>Loading messages…</div>";
+
+		fetch(url).then(function (r) { return r.json(); }).then(function (resp) {
+			drawer.lastPage = resp.last_page || 1;
+			document.getElementById("drawer-meta").textContent =
+				resp.total.toLocaleString() + " message" + (resp.total === 1 ? "" : "s")
+				+ " referenced" + (drawer.q ? " (filtered)" : "");
+			document.getElementById("msg-page-info").textContent =
+				"Page " + drawer.page + " / " + drawer.lastPage;
+
+			if (!resp.data.length) {
+				listEl.innerHTML = "<div class='text-muted' style='padding:1rem'>No messages.</div>";
+				return;
+			}
+
+			var html = "";
+			resp.data.forEach(function (m) {
+				html += '<div class="msg-item">' +
+					'<div class="msg-item-head">' +
+					'<span class="ts">' + escapeHtml(m.timestamp) + '</span>' +
+					'<span class="sender">' + escapeHtml(m.sender_alias) + '</span>' +
+					'<span class="chat">' + escapeHtml(m.chat_id) + '</span>' +
+					'</div>' +
+					'<div class="msg-body">' +
+					highlight(m.message, drawer.q ? [drawer.q] : [], drawer.autoTerms) +
+					'</div>' +
+					'</div>';
+			});
+			listEl.innerHTML = html;
+		}).catch(function () {
+			listEl.innerHTML = "<div class='text-danger'>Failed to load messages.</div>";
+		});
+	}
+
+	document.getElementById("drawer-close").addEventListener("click", closeDrawer);
+	document.getElementById("msg-prev").addEventListener("click", function () {
+		if (drawer.page > 1) { drawer.page--; loadMessages(); }
+	});
+	document.getElementById("msg-next").addEventListener("click", function () {
+		if (drawer.page < drawer.lastPage) { drawer.page++; loadMessages(); }
+	});
+	document.getElementById("msg-q-btn").addEventListener("click", function () {
+		drawer.q = document.getElementById("msg-q").value.trim();
+		drawer.page = 1;
+		loadMessages();
+	});
+	document.getElementById("msg-q").addEventListener("keydown", function (e) {
+		if (e.key === "Enter") {
+			drawer.q = e.target.value.trim();
+			drawer.page = 1;
+			loadMessages();
+		}
+	});
+
+	loadStats();
+});
+</script>
+{% endblock %}

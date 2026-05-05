@@ -1,0 +1,652 @@
+{% extends "base.html" %}
+
+{% block title %}Tech CVE Summary (CVE v4){% endblock %}
+
+{% block extra_head %}
+<style>
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		align-items: flex-end;
+		margin-bottom: 1.25rem;
+	}
+	.filter-bar .form-group {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter-bar label {
+		font-size: .8rem;
+		font-weight: 500;
+		margin-bottom: .2rem;
+		color: #555;
+	}
+	.filter-bar select,
+	.filter-bar input {
+		font-size: .85rem;
+		padding: .35rem .5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		min-width: 150px;
+	}
+	.filter-bar .btn-sm {
+		font-size: .8rem;
+		padding: .4rem .75rem;
+	}
+	.stats-bar {
+		font-size: .82rem;
+		color: #666;
+		margin-bottom: .5rem;
+	}
+	.stat-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+		margin-bottom: 1.25rem;
+	}
+	.stat-card {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		border-radius: 6px;
+		padding: .6rem 1.1rem;
+		min-width: 140px;
+		text-align: center;
+	}
+	.stat-card .stat-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #333;
+	}
+	.stat-card .stat-label {
+		font-size: .75rem;
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: .3px;
+	}
+	.stat-card .stat-sub {
+		font-size: .72rem;
+		color: #aaa;
+		margin-top: .1rem;
+	}
+	#cve-table {
+		font-size: .85rem;
+	}
+	.sev-badge {
+		display: inline-block;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-size: .78rem;
+		font-weight: 600;
+		min-width: 28px;
+		text-align: center;
+	}
+	.sev-critical { background: #f8d7da; color: #842029; }
+	.sev-high     { background: #fff3cd; color: #664d03; }
+	.sev-medium   { background: #cfe2ff; color: #084298; }
+	.sev-low      { background: #d1e7dd; color: #0f5132; }
+	.kw-vendor {
+		background: #e8f5e9;
+		color: #2e7d32;
+		padding: 1px 4px;
+		border-radius: 2px;
+		font-weight: 600;
+	}
+	.kw-product {
+		background: #e3f2fd;
+		color: #1565c0;
+		padding: 1px 4px;
+		border-radius: 2px;
+		font-weight: 600;
+	}
+	.kw-cpe {
+		background: #fff3e0;
+		color: #e65100;
+		padding: 1px 4px;
+		border-radius: 2px;
+		font-weight: 600;
+	}
+	.match-none {
+		color: #bbb;
+	}
+	.col-selector-bar {
+		display: flex;
+		align-items: center;
+		gap: .75rem;
+		margin-bottom: .75rem;
+	}
+	.col-selector-bar .btn-sm {
+		font-size: .8rem;
+		padding: .35rem .7rem;
+	}
+	.col-panel {
+		display: none;
+		background: #f9f9f9;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+		padding: .75rem 1rem;
+		margin-bottom: 1rem;
+		max-height: 220px;
+		overflow-y: auto;
+	}
+	.col-panel.open { display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+	.col-panel label {
+		font-size: .82rem;
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.col-panel label input { margin-right: 4px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<h4 class="mb-3">Tech CVE Summary (CVE v4)</h4>
+
+	<!-- Stat Cards -->
+	<div class="stat-cards" id="statCards">
+		<div class="stat-card">
+			<div class="stat-value" id="card-total">-</div>
+			<div class="stat-label">Products</div>
+			<div class="stat-sub">visible rows</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-with-cves">-</div>
+			<div class="stat-label">With CVEs</div>
+			<div class="stat-sub" id="card-with-cves-pct"></div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-total-cves">-</div>
+			<div class="stat-label">Total CVEs</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-critical">-</div>
+			<div class="stat-label">Critical</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-high">-</div>
+			<div class="stat-label">High</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-kev">-</div>
+			<div class="stat-label">KEV Count</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+		<div class="stat-card">
+			<div class="stat-value" id="card-kev-ransom">-</div>
+			<div class="stat-label">KEV Ransomware</div>
+			<div class="stat-sub">filtered sum</div>
+		</div>
+	</div>
+
+	<!-- Filters -->
+	<div class="filter-bar">
+		<div class="form-group">
+			<label for="filter-category">Category</label>
+			<select id="filter-category">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="filter-min-cves">Min Total CVEs</label>
+			<input type="number" id="filter-min-cves" placeholder="e.g. 1" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-min-critical">Min Critical</label>
+			<input type="number" id="filter-min-critical" placeholder="e.g. 1" step="1">
+		</div>
+		<div class="form-group">
+			<label for="filter-match">Match Method</label>
+			<select id="filter-match">
+				<option value="">All</option>
+			</select>
+		</div>
+		<div class="form-group" style="align-self:flex-end;">
+			<button class="btn btn-outline-secondary btn-sm" id="btn-clear-filters">Clear Filters</button>
+		</div>
+	</div>
+
+	<div class="stats-bar">
+		Showing <strong id="rowCount">0</strong> of <strong id="totalCount">0</strong> records
+	</div>
+
+	<div style="font-size:.8rem;margin-bottom:.75rem;color:#666">
+		<strong>Legend:</strong>
+		<span class="kw-vendor">Vendor match</span>
+		<span class="kw-product">Product match</span>
+		<span class="kw-cpe">CPE match</span>
+		<span class="match-none">no_match</span>
+	</div>
+
+	<!-- Column Selector + Download -->
+	<div class="col-selector-bar">
+		<button class="btn btn-outline-primary btn-sm" id="btn-toggle-cols">Select Columns</button>
+		<button class="btn btn-outline-success btn-sm" id="btn-download-csv">⬇ Download CSV</button>
+		<button class="btn btn-outline-warning btn-sm" id="btn-download-random">🎲 Random Sample CSV</button>
+		<span style="font-size:.78rem;color:#999" id="col-count-label"></span>
+	</div>
+	<div class="col-panel" id="colPanel"></div>
+
+	<div id="cve-table"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+	var allData = [];
+	var fmt = function(v) { return v == null ? "—" : Number(v).toLocaleString(); };
+	function escHtml(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+	function sevFormatter(field, cls) {
+		return function(cell) {
+			var v = cell.getValue();
+			if (v == null || v === 0) return '<span style="color:#ccc">0</span>';
+			return '<span class="sev-badge ' + cls + '">' + fmt(v) + '</span>';
+		};
+	}
+
+	/* ── Column selector helpers ──────────────────── */
+	var colPanel = document.getElementById("colPanel");
+	var colCountLabel = document.getElementById("col-count-label");
+
+	document.getElementById("btn-toggle-cols").addEventListener("click", function() {
+		colPanel.classList.toggle("open");
+	});
+
+	function buildColCheckboxes() {
+		colPanel.innerHTML = '';
+		var cols = table.getColumns();
+		cols.forEach(function(col) {
+			var def = col.getDefinition();
+			var field = def.field;
+			if (!field) return;
+			var lbl = document.createElement("label");
+			var cb = document.createElement("input");
+			cb.type = "checkbox";
+			cb.checked = col.isVisible();
+			cb.dataset.field = field;
+			cb.addEventListener("change", function() {
+				if (this.checked) table.showColumn(field); else table.hideColumn(field);
+				updateColCount();
+			});
+			lbl.appendChild(cb);
+			lbl.appendChild(document.createTextNode(def.title));
+			colPanel.appendChild(lbl);
+		});
+		updateColCount();
+	}
+
+	function updateColCount() {
+		var vis = table.getColumns().filter(function(c) { return c.isVisible() && c.getDefinition().field; });
+		var total = table.getColumns().filter(function(c) { return c.getDefinition().field; });
+		colCountLabel.textContent = vis.length + " / " + total.length + " columns selected";
+	}
+
+	/* ── CSV download (selected columns only) ────── */
+	document.getElementById("btn-download-csv").addEventListener("click", function() {
+		var visCols = table.getColumns().filter(function(c) { return c.isVisible() && c.getDefinition().field; });
+		var fields = visCols.map(function(c) { return c.getDefinition().field; });
+		var titles = visCols.map(function(c) { return c.getDefinition().title; });
+
+		var rows = table.getRows("active");
+		var csvRows = [titles.map(csvEsc).join(",")];
+		rows.forEach(function(row) {
+			var d = row.getData();
+			csvRows.push(fields.map(function(f) { return csvEsc(d[f]); }).join(","));
+		});
+
+		var blob = new Blob([csvRows.join("\n")], { type: "text/csv;charset=utf-8;" });
+		var a = document.createElement("a");
+		a.href = URL.createObjectURL(blob);
+		a.download = "cve_v4_summary_export.csv";
+		a.click();
+		URL.revokeObjectURL(a.href);
+	});
+
+	function csvEsc(v) {
+		if (v == null) return "";
+		var s = String(v);
+		if (s.indexOf(",") !== -1 || s.indexOf('"') !== -1 || s.indexOf("\n") !== -1)
+			return '"' + s.replace(/"/g, '""') + '"';
+		return s;
+	}
+
+	/* ── Random sample CSV download ────────────────── */
+	document.getElementById("btn-download-random").addEventListener("click", function() {
+		var rows = table.getRows("active");
+		var total = rows.length;
+		if (total === 0) { alert("No rows available to sample."); return; }
+
+		var input = prompt("How many random rows to download? (1 - " + total + ")", Math.min(10, total));
+		if (input == null) return;
+		var n = parseInt(input, 10);
+		if (isNaN(n) || n < 1) { alert("Please enter a positive integer."); return; }
+		if (n > total) n = total;
+
+		// Fisher-Yates partial shuffle to pick n unique random rows
+		var idx = rows.map(function(_, i) { return i; });
+		for (var i = 0; i < n; i++) {
+			var j = i + Math.floor(Math.random() * (idx.length - i));
+			var tmp = idx[i]; idx[i] = idx[j]; idx[j] = tmp;
+		}
+		var sampleRows = idx.slice(0, n).map(function(k) { return rows[k]; });
+
+		var visCols = table.getColumns().filter(function(c) { return c.isVisible() && c.getDefinition().field; });
+		var fields = visCols.map(function(c) { return c.getDefinition().field; });
+		var titles = visCols.map(function(c) { return c.getDefinition().title; });
+
+		var csvRows = [titles.map(csvEsc).join(",")];
+		sampleRows.forEach(function(row) {
+			var d = row.getData();
+			csvRows.push(fields.map(function(f) { return csvEsc(d[f]); }).join(","));
+		});
+
+		var blob = new Blob([csvRows.join("\n")], { type: "text/csv;charset=utf-8;" });
+		var a = document.createElement("a");
+		a.href = URL.createObjectURL(blob);
+		a.download = "cve_v4_summary_random_" + n + ".csv";
+		a.click();
+		URL.revokeObjectURL(a.href);
+	});
+
+	var table = new Tabulator("#cve-table", {
+		height: "62vh",
+		layout: "fitDataFill",
+		placeholder: "Loading data…",
+		pagination: true,
+		paginationSize: 25,
+		paginationSizeSelector: [10, 25, 50, 100],
+		movableColumns: true,
+		headerSortTriState: true,
+		initialSort: [{ column: "total_cves", dir: "desc" }],
+		columns: [
+			{
+				title: "Vendor", field: "VendorName", minWidth: 140,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				frozen: true,
+				formatter: function(cell) {
+					var v = escHtml(cell.getValue() || "");
+					var m = cell.getRow().getData().match_method || "";
+					if (m === "keyword_vendor_product" || m === "virtualMatchString") return '<span class="kw-vendor">' + v + '</span>';
+					if (m === "no_match") return '<span class="match-none">' + v + '</span>';
+					return v;
+				}
+			},
+			{
+				title: "Product", field: "Product", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = escHtml(cell.getValue() || "");
+					var m = cell.getRow().getData().match_method || "";
+					if (m === "keyword_vendor_product" || m === "keyword_product_only" || m === "virtualMatchString") return '<span class="kw-product">' + v + '</span>';
+					if (m === "no_match") return '<span class="match-none">' + v + '</span>';
+					return v;
+				}
+			},
+			{
+				title: "Category", field: "ProductCategory", minWidth: 140,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Series", field: "ProductSeries", minWidth: 120,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "CPE Vendor", field: "cpe_vendor", minWidth: 120,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = escHtml(cell.getValue() || "");
+					var m = cell.getRow().getData().match_method || "";
+					if (m === "virtualMatchString") return '<span class="kw-cpe">' + v + '</span>';
+					if (m === "no_match") return '<span class="match-none">' + v + '</span>';
+					return v;
+				}
+			},
+			{
+				title: "CPE Product", field: "cpe_product", minWidth: 120,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = escHtml(cell.getValue() || "");
+					var m = cell.getRow().getData().match_method || "";
+					if (m === "virtualMatchString") return '<span class="kw-cpe">' + v + '</span>';
+					if (m === "no_match") return '<span class="match-none">' + v + '</span>';
+					return v;
+				}
+			},
+			{
+				title: "CPE Match String", field: "cpe_match_string", minWidth: 260,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = escHtml(cell.getValue() || "");
+					var m = cell.getRow().getData().match_method || "";
+					if (m === "virtualMatchString") return '<span class="kw-cpe">' + v + '</span>';
+					if (m === "no_match") return '<span class="match-none">' + v + '</span>';
+					return v;
+				}
+			},
+			{
+				title: "CPE Score", field: "cpe_match_score", hozAlign: "right", minWidth: 90,
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					return v != null && v !== "" ? Number(v).toFixed(2) : "—";
+				}
+			},
+			{
+				title: "CPE Vendor Method", field: "cpe_vendor_method", minWidth: 130,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "CPE Product Method", field: "cpe_product_method", minWidth: 130,
+				headerFilter: "input", headerFilterPlaceholder: "Search…"
+			},
+			{
+				title: "Total CVEs", field: "total_cves", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "In NVD", field: "total_available_in_nvd", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Tier 1", field: "tier1_cves", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Tier 2", field: "tier2_cves", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Tier 3", field: "tier3_cves", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) { return fmt(c.getValue()); }
+			},
+			{
+				title: "Critical", field: "critical", hozAlign: "center",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: sevFormatter("critical", "sev-critical")
+			},
+			{
+				title: "High", field: "high", hozAlign: "center",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: sevFormatter("high", "sev-high")
+			},
+			{
+				title: "Medium", field: "medium", hozAlign: "center",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: sevFormatter("medium", "sev-medium")
+			},
+			{
+				title: "Low", field: "low", hozAlign: "center",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: sevFormatter("low", "sev-low")
+			},
+			{
+				title: "KEV", field: "kev_count", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					if (v == null || v === 0) return '<span style="color:#ccc">0</span>';
+					return '<span class="sev-badge sev-critical">' + fmt(v) + '</span>';
+				}
+			},
+			{
+				title: "KEV Ransomware", field: "kev_ransomware_count", hozAlign: "right",
+				headerFilter: "input", headerFilterPlaceholder: "Filter…",
+				sorter: "number",
+				formatter: function(c) {
+					var v = c.getValue();
+					if (v == null || v === 0) return '<span style="color:#ccc">0</span>';
+					return '<span class="sev-badge sev-critical">' + fmt(v) + '</span>';
+				}
+			},
+			{
+				title: "Top CWEs", field: "top_cwes", minWidth: 180,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = cell.getValue() || "";
+					if (!v) return '<span style="color:#ccc">—</span>';
+					return '<div style="white-space:pre-wrap;max-height:80px;overflow:auto;font-size:.8rem">' + escHtml(v) + '</div>';
+				}
+			},
+			{
+				title: "Match Method", field: "match_method", minWidth: 160,
+				headerFilter: "input", headerFilterPlaceholder: "Search…",
+				formatter: function(cell) {
+					var v = cell.getValue() || "";
+					if (v === "no_match") return '<span class="match-none">' + v + '</span>';
+					if (v === "virtualMatchString") return '<span class="kw-cpe">' + v + '</span>';
+					if (v === "keyword_vendor_product") return '<span class="kw-vendor">' + v + '</span>';
+					if (v === "keyword_product_only") return '<span class="kw-product">' + v + '</span>';
+					return v;
+				}
+			}
+		]
+	});
+
+	/* ── Card updates ────────────────────────────── */
+	function updateCards() {
+		var rows = table.getRows("active").map(function(r) { return r.getData(); });
+		var n = rows.length;
+		document.getElementById("rowCount").textContent = n;
+		document.getElementById("totalCount").textContent = allData.length;
+		document.getElementById("card-total").textContent = n.toLocaleString();
+
+		if (n === 0) {
+			["card-with-cves","card-total-cves","card-critical","card-high","card-kev","card-kev-ransom"]
+				.forEach(function(id) { document.getElementById(id).textContent = "—"; });
+			document.getElementById("card-with-cves-pct").textContent = "";
+			return;
+		}
+
+		var sumCves = 0, sumCritical = 0, sumHigh = 0, withCves = 0, sumKev = 0, sumKevRansom = 0;
+		rows.forEach(function(r) {
+			sumCves += (r.total_cves || 0);
+			sumCritical += (r.critical || 0);
+			sumHigh += (r.high || 0);
+			sumKev += (r.kev_count || 0);
+			sumKevRansom += (r.kev_ransomware_count || 0);
+			if (r.total_cves > 0) withCves++;
+		});
+
+		document.getElementById("card-with-cves").textContent = withCves.toLocaleString();
+		document.getElementById("card-with-cves-pct").textContent = ((withCves / n) * 100).toFixed(1) + "% of filtered";
+		document.getElementById("card-total-cves").textContent = sumCves.toLocaleString();
+		document.getElementById("card-critical").textContent = sumCritical.toLocaleString();
+		document.getElementById("card-high").textContent = sumHigh.toLocaleString();
+		document.getElementById("card-kev").textContent = sumKev.toLocaleString();
+		document.getElementById("card-kev-ransom").textContent = sumKevRansom.toLocaleString();
+	}
+
+	table.on("dataFiltered", function() { setTimeout(updateCards, 0); });
+
+	/* ── Populate dropdown filters ───────────────── */
+	function populateDropdowns(data) {
+		var categories = [], methods = [];
+		data.forEach(function(r) {
+			if (r.ProductCategory && categories.indexOf(r.ProductCategory) === -1) categories.push(r.ProductCategory);
+			if (r.match_method && methods.indexOf(r.match_method) === -1) methods.push(r.match_method);
+		});
+		categories.sort();
+		methods.sort();
+
+		var catSel = document.getElementById("filter-category");
+		categories.forEach(function(c) {
+			var opt = document.createElement("option");
+			opt.value = c; opt.textContent = c;
+			catSel.appendChild(opt);
+		});
+
+		var matchSel = document.getElementById("filter-match");
+		methods.forEach(function(m) {
+			var opt = document.createElement("option");
+			opt.value = m; opt.textContent = m;
+			matchSel.appendChild(opt);
+		});
+	}
+
+	/* ── Fetch data ──────────────────────────────── */
+	fetch("{{ url_for('api_cve_v4_summary') }}")
+		.then(function(res) { return res.json(); })
+		.then(function(data) {
+			allData = data;
+			populateDropdowns(data);
+			table.setData(data).then(function() { updateCards(); buildColCheckboxes(); });
+		})
+		.catch(function(err) {
+			document.getElementById("cve-table").innerHTML =
+				'<div class="alert alert-danger">Failed to load data: ' + err + '</div>';
+		});
+
+	/* ── External filter bar ─────────────────────── */
+	function applyExternalFilters() {
+		var filters = [];
+		var cat = document.getElementById("filter-category").value;
+		var minCves = parseFloat(document.getElementById("filter-min-cves").value);
+		var minCritical = parseFloat(document.getElementById("filter-min-critical").value);
+		var matchMethod = document.getElementById("filter-match").value;
+
+		if (cat)                 filters.push({ field: "ProductCategory", type: "=", value: cat });
+		if (!isNaN(minCves))     filters.push({ field: "total_cves", type: ">=", value: minCves });
+		if (!isNaN(minCritical)) filters.push({ field: "critical", type: ">=", value: minCritical });
+		if (matchMethod)         filters.push({ field: "match_method", type: "=", value: matchMethod });
+
+		table.setFilter(filters);
+	}
+
+	document.getElementById("filter-category").addEventListener("change", applyExternalFilters);
+	document.getElementById("filter-min-cves").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-min-critical").addEventListener("input", applyExternalFilters);
+	document.getElementById("filter-match").addEventListener("change", applyExternalFilters);
+
+	document.getElementById("btn-clear-filters").addEventListener("click", function() {
+		document.getElementById("filter-category").value = "";
+		document.getElementById("filter-min-cves").value = "";
+		document.getElementById("filter-min-critical").value = "";
+		document.getElementById("filter-match").value = "";
+		table.clearFilter(true);
+		table.clearHeaderFilter();
+	});
+});
+</script>
+{% endblock %}
