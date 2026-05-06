@@ -3,6 +3,7 @@ import io
 import math
 import os
 import sys
+import subprocess
 import requests
 import markdown
 import numpy as np
@@ -734,6 +735,55 @@ def ground_truth_200_methodology():
         "ransom_leaks.html",
         content=html_content,
         page_title="Ground Truth — Methodology",
+    )
+
+
+# ── Test Single Product (live SWDB→CPE→CVE pipeline runner) ───────
+@app.route("/test-single-product", methods=["GET", "POST"])
+def test_single_product():
+    output = None
+    error = None
+    vendor = (request.values.get("vendor") or "").strip()
+    product = (request.values.get("product") or "").strip()
+    try:
+        max_cves = int(request.values.get("max_cves") or 10)
+    except ValueError:
+        max_cves = 10
+    max_cves = max(1, min(max_cves, 100))
+    skip_tier23 = bool(request.values.get("skip_tier23"))
+
+    if request.method == "POST" and vendor and product:
+        script = os.path.join(os.path.dirname(__file__), "cpe_cve_process.py")
+        cmd = [sys.executable, script, vendor, product, "--max-cves", str(max_cves)]
+        api_key = os.environ.get("NVD_API_KEY", "").strip()
+        if api_key:
+            cmd += ["--api-key", api_key]
+        if skip_tier23:
+            cmd.append("--no-tier23")
+        try:
+            proc = subprocess.run(
+                cmd,
+                cwd=os.path.dirname(__file__),
+                capture_output=True,
+                text=True,
+                timeout=180,
+            )
+            output = (proc.stdout or "") + (("\n[stderr]\n" + proc.stderr) if proc.stderr else "")
+            if proc.returncode != 0:
+                error = f"Process exited with code {proc.returncode}"
+        except subprocess.TimeoutExpired:
+            error = "Pipeline timed out after 180s. Try --no-tier23 or fewer CVEs."
+        except Exception as e:
+            error = f"Failed to run pipeline: {e}"
+
+    return render_template(
+        "test_single_product.html",
+        vendor=vendor,
+        product=product,
+        max_cves=max_cves,
+        skip_tier23=skip_tier23,
+        output=output,
+        error=error,
     )
 
 

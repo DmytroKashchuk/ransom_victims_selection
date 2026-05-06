@@ -14,7 +14,7 @@ Strip legal suffixes (Inc, LLC, Ltd, GmbH, Corp, PLC, AG, Foundation), the prefi
 
 ## Step 2 — Download CPE dictionary
 
-From [tiiuae/cpedict](https://github.com/tiiuae/cpedict): all `(vendor, product)` pairs in NVD. Build in-memory indexes (vendor set, vendor → products, token → vendors).
+Downloaded locally
 
 ## Step 3 — Match SWDB to CPE
 

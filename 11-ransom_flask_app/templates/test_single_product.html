@@ -1,0 +1,506 @@
+{% extends "base.html" %}
+{% block title %}Test Single Product — SWDB→CPE→CVE Pipeline{% endblock %}
+
+{% block extra_head %}
+<style>
+	.tsp-wrap { max-width: 1200px; margin: 0 auto; }
+
+	/* ───── Form ───── */
+	.tsp-form {
+		background: #fff; border: 1px solid #e3e6ea; border-radius: 8px;
+		padding: 1.1rem 1.4rem; margin-bottom: 1.25rem;
+	}
+	.tsp-examples a {
+		display: inline-block; font-size: .78rem;
+		background: #f1f3f5; border: 1px solid #dfe3e8;
+		border-radius: 12px; padding: 1px 9px; margin: 2px 4px 2px 0;
+		color: #495057; text-decoration: none;
+	}
+	.tsp-examples a:hover { background: #e7f1ff; border-color: #b6d4fe; color: #0a58ca; }
+	.spinner-row { display: none; }
+	.spinner-row.active { display: flex; }
+
+	/* ───── Pipeline diagram ───── */
+	.tsp-pipeline {
+		display: flex; flex-wrap: wrap; gap: .35rem;
+		font-size: .72rem; margin-bottom: 1rem;
+	}
+	.tsp-step {
+		background: #f8f9fa; border: 1px solid #e0e3e7;
+		border-radius: 4px; padding: .25rem .55rem; color: #6c757d;
+	}
+	.tsp-step.done { background: #d1e7dd; border-color: #a3cfbb; color: #0f5132; }
+
+	/* ───── KPI cards ───── */
+	.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: .6rem; margin-bottom: 1rem; }
+	.kpi {
+		background: #fff; border: 1px solid #e3e6ea;
+		border-radius: 6px; padding: .6rem .8rem;
+	}
+	.kpi .lbl { font-size: .72rem; color: #6c757d; text-transform: uppercase; letter-spacing: .03em; }
+	.kpi .val { font-size: 1.45rem; font-weight: 700; line-height: 1.1; margin-top: .15rem; }
+	.kpi.crit .val { color: #c92a2a; }
+	.kpi.high .val { color: #e8590c; }
+	.kpi.med  .val { color: #1864ab; }
+	.kpi.low  .val { color: #2b8a3e; }
+	.kpi.kev  .val { color: #862e9c; }
+
+	/* ───── Decisions strip (top of page) ───── */
+	.tsp-decisions {
+		display: flex; flex-wrap: wrap; gap: .5rem;
+		margin-bottom: 1rem;
+	}
+	.tsp-decision {
+		background: #fff8e1; border: 1px solid #ffe69c;
+		border-left: 4px solid #ffc107;
+		border-radius: 4px; padding: .3rem .6rem;
+		font-size: .78rem; color: #5b4500;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	}
+	.tsp-decision .stg { color: #998000; font-weight: 700; margin-right: .35rem; }
+
+	/* ───── Stage cards ───── */
+	.tsp-stage {
+		background: #fff; border: 1px solid #e3e6ea;
+		border-radius: 8px; margin-bottom: .9rem; overflow: hidden;
+	}
+	.tsp-stage-head {
+		display: flex; align-items: center; gap: .6rem;
+		padding: .65rem 1rem; background: #f8f9fa;
+		border-bottom: 1px solid #e9ecef; cursor: pointer;
+		list-style: none;
+	}
+	.tsp-stage-head::-webkit-details-marker { display: none; }
+	.tsp-badge {
+		display: inline-flex; align-items: center; justify-content: center;
+		min-width: 1.7rem; height: 1.7rem; padding: 0 .45rem;
+		background: #0d6efd; color: #fff; font-weight: 700;
+		font-size: .78rem; border-radius: 4px;
+	}
+	.tsp-stage-title { font-weight: 600; flex: 1; }
+
+	.tsp-explain {
+		font-size: .82rem; color: #495057; padding: .6rem 1rem;
+		background: #f8fbff; border-bottom: 1px solid #eef2f7;
+	}
+	.tsp-explain code { background: #e7f1ff; color: #0a58ca; padding: 0 4px; border-radius: 3px; }
+
+	/* Decision callout inside a stage */
+	.tsp-decision-line {
+		background: #fff8e1; border-left: 4px solid #ffc107;
+		padding: .5rem .8rem; margin: 0 0 .15rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .82rem; color: #5b4500; font-weight: 600;
+	}
+
+	/* Markdown-style table rendered from "  | … |" lines */
+	.tsp-table-wrap { padding: .6rem 1rem .2rem; background: #fff; }
+	.tsp-table {
+		border-collapse: collapse; font-size: .82rem; margin-bottom: .35rem;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	}
+	.tsp-table th, .tsp-table td {
+		border: 1px solid #e3e6ea; padding: .25rem .55rem;
+	}
+	.tsp-table th { background: #f1f3f5; text-align: left; }
+	.tsp-table tr:nth-child(2) td { background: #fffbeb; font-weight: 600; }   /* highlight rank 1 */
+
+	/* Per-CVE validation lines */
+	.tsp-cve-list {
+		padding: .35rem 1rem .65rem;
+		background: #fff;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .8rem;
+	}
+	.tsp-cve-row {
+		display: flex; gap: .5rem; align-items: center;
+		padding: .15rem 0; border-bottom: 1px dashed #f1f3f5;
+	}
+	.tsp-cve-row:last-child { border-bottom: none; }
+	.tsp-cve-icon {
+		display: inline-block; width: 1.3rem; text-align: center;
+		font-weight: 700;
+	}
+	.tsp-cve-row.accept .tsp-cve-icon { color: #2b8a3e; }
+	.tsp-cve-row.reject .tsp-cve-icon { color: #c92a2a; }
+	.tsp-cve-row.skip   .tsp-cve-icon { color: #868e96; }
+	.tsp-cve-id { color: #1864ab; min-width: 8.5rem; }
+	.tsp-cve-reason { color: #495057; font-size: .76rem; }
+
+	/* Default stage body (terminal-style fallback) */
+	.tsp-body {
+		padding: .55rem 1rem; margin: 0;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: .8rem; line-height: 1.55;
+		background: #1e1e1e; color: #e8e8e8;
+		white-space: pre; overflow-x: auto;
+	}
+	.tsp-body .ok    { color: #c3e88d; }
+	.tsp-body .warn  { color: #ffcb6b; }
+	.tsp-body .err   { color: #ff6b6b; }
+	.tsp-body .info  { color: #82aaff; }
+	.tsp-body .kev   { color: #ff79c6; font-weight: 700; }
+	.tsp-body .hit   { color: #c3e88d; font-weight: 700; }
+	.tsp-body .miss  { color: #6c757d; }
+	.tsp-body .strategy { color: #c792ea; }
+
+	details.tsp-raw {
+		margin-top: 1rem; background: #fff;
+		border: 1px solid #e3e6ea; border-radius: 6px; padding: .5rem .9rem;
+	}
+	details.tsp-raw summary { cursor: pointer; font-weight: 600; color: #495057; }
+	details.tsp-raw pre {
+		background: #1e1e1e; color: #e8e8e8;
+		padding: .8rem 1rem; border-radius: 4px; margin-top: .6rem;
+		font-size: .76rem; max-height: 60vh; overflow: auto;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid tsp-wrap">
+	<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+		<h4 class="mb-0">Test Single Product — SWDB→CPE→CVE Pipeline</h4>
+		<a href="{{ url_for('ground_truth_200_methodology') }}"
+		   class="btn btn-outline-secondary btn-sm" target="_blank" rel="noopener">
+			📖 Methodology
+		</a>
+	</div>
+
+	<p class="text-muted" style="font-size:.9rem;max-width:880px">
+		Run the full pipeline on a single (vendor, product) pair and inspect every choice it makes:
+		input normalization, the cascade of 6 vendor-matching strategies (and 5 product-matching ones),
+		three-tier CVE search (<code>virtualMatchString</code> → keyword "vendor product" → keyword "product"),
+		per-CVE validation against each CVE's own CPE configurations, and KEV annotation.
+	</p>
+
+	<form method="post" class="tsp-form" id="tsp-form">
+		<div class="row g-2">
+			<div class="col-md-5">
+				<label class="form-label" for="vendor">Vendor</label>
+				<input type="text" class="form-control" id="vendor" name="vendor"
+				       value="{{ vendor or '' }}" placeholder="e.g. Adobe Systems Inc." required>
+			</div>
+			<div class="col-md-5">
+				<label class="form-label" for="product">Product</label>
+				<input type="text" class="form-control" id="product" name="product"
+				       value="{{ product or '' }}" placeholder="e.g. Adobe Photoshop" required>
+			</div>
+			<div class="col-md-2">
+				<label class="form-label" for="max_cves">Max CVEs / tier</label>
+				<input type="number" class="form-control" id="max_cves" name="max_cves"
+				       value="{{ max_cves }}" min="1" max="100">
+			</div>
+		</div>
+		<div class="row mt-2 align-items-end">
+			<div class="col-md-4">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="skip_tier23"
+					       name="skip_tier23" value="1" {% if skip_tier23 %}checked{% endif %}>
+					<label class="form-check-label" for="skip_tier23">Skip Tier 2 / Tier 3 (faster)</label>
+				</div>
+			</div>
+			<div class="col-md-8 text-end">
+				<button type="submit" class="btn btn-primary" id="tsp-submit">▶ Run pipeline</button>
+			</div>
+		</div>
+
+		<div class="tsp-examples mt-2">
+			<span class="text-muted" style="font-size:.78rem">Try:</span>
+			<a href="#" data-v="Check Point" data-p="Quantum Security Gateway">Check Point — Quantum Security Gateway</a>
+			<a href="#" data-v="Adobe Systems Inc." data-p="Adobe Photoshop">Adobe — Photoshop</a>
+			<a href="#" data-v="Cisco Systems Inc" data-p="Cisco Jabber">Cisco — Jabber</a>
+			<a href="#" data-v="The Apache Software Foundation" data-p="Apache Tomcat">Apache — Tomcat</a>
+			<a href="#" data-v="Fortinet" data-p="FortiGate">Fortinet — FortiGate</a>
+		</div>
+
+		<div class="row spinner-row mt-3" id="spinner">
+			<div class="col-12 text-muted" style="font-size:.9rem">
+				<span class="spinner-border spinner-border-sm me-2" role="status"></span>
+				Running pipeline… can take up to 2 min depending on Tier 2/3 + NVD rate limits.
+			</div>
+		</div>
+	</form>
+
+	{% if error %}<div class="alert alert-danger" style="font-size:.9rem">{{ error }}</div>{% endif %}
+
+	{% if output %}
+		<div class="tsp-pipeline" id="tsp-pipeline">
+			<div class="tsp-step" data-stage="1">1 · Normalize</div>
+			<div class="tsp-step" data-stage="2">2 · Load CPE</div>
+			<div class="tsp-step" data-stage="3">3 · Vendor match</div>
+			<div class="tsp-step" data-stage="4">4 · Product match</div>
+			<div class="tsp-step" data-stage="5">5 · Build CPE string</div>
+			<div class="tsp-step" data-stage="10">↳ Load KEV</div>
+			<div class="tsp-step" data-stage="6">6 · Tier 1 CPE</div>
+			<div class="tsp-step" data-stage="7">7 · Tier 2 kw v+p</div>
+			<div class="tsp-step" data-stage="8">8 · Tier 3 kw p</div>
+			<div class="tsp-step" data-stage="11">11 · Summary</div>
+		</div>
+
+		<div class="tsp-decisions" id="tsp-decisions"></div>
+		<div class="kpi-grid" id="tsp-kpis"></div>
+
+		<div id="tsp-stages"></div>
+
+		<details class="tsp-raw">
+			<summary>Raw script output</summary>
+			<pre id="tsp-raw-output">{{ output }}</pre>
+		</details>
+	{% elif request.method == 'POST' and not error %}
+		<div class="alert alert-warning">No output produced.</div>
+	{% endif %}
+</div>
+
+<script>
+	// ─── Form helpers ─────────────────────────────────────────────────────
+	document.querySelectorAll('.tsp-examples a').forEach(function (a) {
+		a.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.getElementById('vendor').value = a.dataset.v;
+			document.getElementById('product').value = a.dataset.p;
+		});
+	});
+	document.getElementById('tsp-form').addEventListener('submit', function () {
+		document.getElementById('spinner').classList.add('active');
+		var btn = document.getElementById('tsp-submit');
+		btn.disabled = true;
+		btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Running…';
+	});
+
+	// ─── Render pipeline output ───────────────────────────────────────────
+	(function () {
+		var raw = document.getElementById('tsp-raw-output');
+		if (!raw) return;
+		var text = raw.textContent;
+
+		var EXPLAIN = {
+			1:  "Strip legal suffixes (Inc, LLC, GmbH, Foundation, …), the leading <code>The</code>, " +
+			    "trailing parentheticals, ADR, punctuation, and lowercase-snake-case the rest. " +
+			    "This produces a stable key so messy SWDB names line up with NVD CPE names.",
+			2:  "Load the local NVD CPE dictionary " +
+			    "(<code>data/tech_cve_normalized/all_cpes.csv</code>) and build an index " +
+			    "(unique vendors, per-vendor product sets, token index). Skips deprecated entries.",
+			3:  "Cascade of 6 strategies — first hit above the score threshold wins: " +
+			    "<code>exact</code> → <code>exact_flat</code> (no underscores) → <code>jaccard</code> " +
+			    "(token overlap) → <code>substring</code> → <code>levenshtein</code> (edit distance) → " +
+			    "<code>token_index</code> (any shared token > 3 chars). Threshold = 0.50.",
+			4:  "Same ladder (5 strategies — no token_index) but restricted to products of the chosen CPE vendor. " +
+			    "Pre-strips the vendor prefix and trailing version numbers from the product name " +
+			    "(e.g. <code>Cisco Jabber</code> → <code>jabber</code>). Threshold = 0.40.",
+			5:  "Build <code>cpe:2.3:*:&lt;vendor&gt;:&lt;product&gt;:*:*:*:*:*:*:*</code>. " +
+			    "The <code>*</code> in the part field covers application / OS / hardware in one query. " +
+			    "If either vendor or product was <code>no_match</code>, the CPE string is empty and Tier 1 is skipped.",
+			6:  "<b>Tier 1</b> — the strongest evidence: query NVD with <code>virtualMatchString</code>. " +
+			    "NVD itself confirms the CPE applies, so no extra validation is needed.",
+			7:  "<b>Tier 2</b> — keyword search <code>\"vendor product\"</code>. " +
+			    "Each hit is then validated: the CVE's own <code>configurations[].cpeMatch</code> must mention our vendor token, " +
+			    "or the description must contain both vendor and product. Rejected hits are listed below.",
+			8:  "<b>Tier 3</b> — keyword search <code>\"product\"</code> alone. " +
+			    "Catches CVEs where the vendor isn't in the description. Same validation as Tier 2.",
+			10: "Download (or load from 24h cache) the CISA <b>Known Exploited Vulnerabilities</b> catalog. " +
+			    "Used to flag CVEs confirmed exploited in the wild and which are linked to ransomware campaigns.",
+			11: "Aggregate everything: per-tier counts, severity distribution, KEV hits, " +
+			    "and a preview of the first 10 CVEs with their tier and validation reason."
+		};
+		var TITLES = {
+			1: "STAGE 1 — Normalize input",
+			2: "STAGE 2 — Load CPE dictionary",
+			3: "STAGE 3 — Match CPE vendor (6 strategies)",
+			4: "STAGE 4 — Match CPE product (5 strategies)",
+			5: "STAGE 5 — Build CPE match string",
+			6: "STAGE 6 — Tier 1: virtualMatchString",
+			7: "STAGE 7 — Tier 2: keyword \"vendor product\"",
+			8: "STAGE 8 — Tier 3: keyword \"product\" only",
+			10: "STAGE 10 — Load CISA KEV catalog",
+			11: "STAGE 11 — Summary"
+		};
+
+		// ─ Split into stages by ═══ banners ─
+		var lines = text.split('\n');
+		var stages = [];
+		var current = { n: 0, title: 'Input', body: [] };
+		var i = 0;
+		while (i < lines.length) {
+			if (/^═{5,}\s*$/.test(lines[i]) && i + 2 < lines.length && /^═{5,}\s*$/.test(lines[i + 2])) {
+				if (current.body.length || current.n === 0) stages.push(current);
+				var titleLine = lines[i + 1].trim();
+				var m = titleLine.match(/^STAGE\s+(\d+)\s*—\s*(.+)$/);
+				current = { n: m ? parseInt(m[1], 10) : 0, title: titleLine, body: [] };
+				i += 3; continue;
+			}
+			current.body.push(lines[i]); i++;
+		}
+		if (current.body.length) stages.push(current);
+
+		// ─ Highlight pipeline diagram ─
+		var seen = new Set(stages.map(function (s) { return s.n; }));
+		document.querySelectorAll('#tsp-pipeline .tsp-step').forEach(function (el) {
+			if (seen.has(parseInt(el.dataset.stage, 10))) el.classList.add('done');
+		});
+
+		var esc = function (s) {
+			return s.replace(/[<>&]/g, function (c) { return { '<':'&lt;','>':'&gt;','&':'&amp;' }[c]; });
+		};
+
+		// ─ Detect decision lines and surface them in the top strip ─
+		var decisions = [];
+		stages.forEach(function (s) {
+			s.body.forEach(function (ln) {
+				var m = ln.match(/^\s*→ DECISION:\s*(.+)$/);
+				if (m) decisions.push({ n: s.n, txt: m[1] });
+			});
+		});
+		document.getElementById('tsp-decisions').innerHTML = decisions.map(function (d) {
+			return '<div class="tsp-decision"><span class="stg">S' + d.n + '</span>' + esc(d.txt) + '</div>';
+		}).join('');
+
+		// ─ Detect markdown-style tables ("  | a | b |") and convert to HTML ─
+		function extractTables(body) {
+			var blocks = [];   // { startIdx, endIdx, html }
+			var i = 0;
+			while (i < body.length) {
+				if (/^\s*\|.+\|\s*$/.test(body[i]) && i + 1 < body.length && /^\s*\|[-\s|]+\|\s*$/.test(body[i + 1])) {
+					var start = i;
+					var headers = body[i].trim().replace(/^\||\|$/g, '').split('|').map(function (s) { return s.trim(); });
+					i += 2; // skip header + separator
+					var rows = [];
+					while (i < body.length && /^\s*\|.+\|\s*$/.test(body[i])) {
+						rows.push(body[i].trim().replace(/^\||\|$/g, '').split('|').map(function (s) { return s.trim(); }));
+						i++;
+					}
+					var html = '<table class="tsp-table"><thead><tr>' +
+						headers.map(function (h) { return '<th>' + esc(h) + '</th>'; }).join('') +
+						'</tr></thead><tbody>' +
+						rows.map(function (r) {
+							return '<tr>' + r.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>';
+						}).join('') + '</tbody></table>';
+					blocks.push({ start: start, end: i - 1, html: html });
+					continue;
+				}
+				i++;
+			}
+			return blocks;
+		}
+
+		// ─ Detect per-CVE validation rows ("    ✓ CVE-... accept (...)") ─
+		function extractCveRows(body) {
+			var rows = [];
+			body.forEach(function (ln, idx) {
+				var m = ln.match(/^\s*([✓✗⊘])\s+(CVE-\d+-\d+)\s+(\w+)\s*\(([^)]*)\)\s*$/);
+				if (m) {
+					var cls = m[1] === '✓' ? 'accept' : (m[1] === '✗' ? 'reject' : 'skip');
+					rows.push({ idx: idx, icon: m[1], cls: cls, id: m[2], action: m[3], reason: m[4] });
+				}
+			});
+			return rows;
+		}
+
+		function colorize(s) {
+			return esc(s)
+				.replace(/(\baccepted=?\s*\d+)/g, '<span class="ok">$1</span>')
+				.replace(/(\brejected[^=:]*[=:]\s*\d+)/g, '<span class="warn">$1</span>')
+				.replace(/(\[KEV\])/g, '<span class="kev">$1</span>')
+				.replace(/(\[stderr\][\s\S]*)/g, '<span class="err">$1</span>')
+				.replace(/^(\s*Query:.*)$/gm, '<span class="info">$1</span>')
+				.replace(/(NVD returned\s+\d+\s+CVEs[^\n]*)/g, '<span class="info">$1</span>')
+				.replace(/(→ HIT[^\n]*)/g, '<span class="hit">$1</span>')
+				.replace(/(→ miss[^\n]*)/g, '<span class="miss">$1</span>')
+				.replace(/(→ skipped[^\n]*)/g, '<span class="miss">$1</span>')
+				.replace(/^(\s*\[\d\/\d\] \w+\s*)/gm, '<span class="strategy">$1</span>');
+		}
+
+		// ─ Render KPI summary by scraping STAGE 11 ─
+		var summary = stages.find(function (s) { return s.n === 11; });
+		if (summary) {
+			var body = summary.body.join('\n');
+			function get(rx) { var mm = body.match(rx); return mm ? mm[1] : null; }
+			var kpis = [
+				{ k: 'Total CVEs',  v: get(/Total unique CVEs:\s+(\d+)/),     cls: '' },
+				{ k: 'Tier 1 (CPE)', v: get(/Tier 1 \(CPE\):\s+(\d+)/),       cls: '' },
+				{ k: 'Tier 2 (kw v+p)', v: get(/Tier 2 \(kw v\+p\):\s+(\d+)/), cls: '' },
+				{ k: 'Tier 3 (kw p)', v: get(/Tier 3 \(kw p\):\s+(\d+)/),     cls: '' },
+				{ k: 'Critical',    v: get(/Critical:\s+(\d+)/),              cls: 'crit' },
+				{ k: 'High',        v: get(/High:\s+(\d+)/),                  cls: 'high' },
+				{ k: 'Medium',      v: get(/Medium:\s+(\d+)/),                cls: 'med' },
+				{ k: 'Low',         v: get(/Low:\s+(\d+)/),                   cls: 'low' },
+				{ k: 'KEV',         v: get(/KEV:\s+(\d+)/),                   cls: 'kev' },
+				{ k: 'KEV w/ ransom', v: get(/KEV w\/ ransomware:\s+(\d+)/),  cls: 'kev' },
+				{ k: 'CPE score',   v: get(/cpe_match_score:\s+([\d\.]+)/),   cls: '' }
+			].filter(function (x) { return x.v !== null; });
+			document.getElementById('tsp-kpis').innerHTML = kpis.map(function (k) {
+				return '<div class="kpi ' + k.cls + '"><div class="lbl">' + k.k +
+				       '</div><div class="val">' + k.v + '</div></div>';
+			}).join('');
+		}
+
+		// ─ Render stage cards with rich subsections ─
+		var container = document.getElementById('tsp-stages');
+		var html = stages.map(function (s) {
+			if (!s.n) return ''; // skip the small INPUT block
+			var body = s.body.slice();
+			while (body.length && body[0].trim() === '') body.shift();
+			while (body.length && body[body.length - 1].trim() === '') body.pop();
+
+			var title = TITLES[s.n] || s.title;
+			var explain = EXPLAIN[s.n] || '';
+
+			// Pull out decision lines for this stage
+			var dec = [];
+			body = body.filter(function (ln) {
+				var m = ln.match(/^\s*→ DECISION:\s*(.+)$/);
+				if (m) { dec.push(m[1]); return false; }
+				return true;
+			});
+			var decisionsHtml = dec.map(function (d) {
+				return '<div class="tsp-decision-line">→ ' + esc(d) + '</div>';
+			}).join('');
+
+			// Pull out tables (markdown style)
+			var tables = extractTables(body);
+			var tablesHtml = '';
+			if (tables.length) {
+				tablesHtml = '<div class="tsp-table-wrap">' +
+					tables.map(function (t) { return t.html; }).join('') + '</div>';
+				// remove table lines from body
+				var skip = new Set();
+				tables.forEach(function (t) { for (var k = t.start; k <= t.end; k++) skip.add(k); });
+				body = body.filter(function (_, idx) { return !skip.has(idx); });
+			}
+
+			// Pull out per-CVE validation rows
+			var cveRows = extractCveRows(body);
+			var cveHtml = '';
+			if (cveRows.length) {
+				cveHtml = '<div class="tsp-cve-list">' + cveRows.map(function (r) {
+					return '<div class="tsp-cve-row ' + r.cls + '">' +
+						'<span class="tsp-cve-icon">' + r.icon + '</span>' +
+						'<span class="tsp-cve-id">' + esc(r.id) + '</span>' +
+						'<span class="tsp-cve-reason">' + esc(r.action) + ' — ' + esc(r.reason) + '</span>' +
+						'</div>';
+				}).join('') + '</div>';
+				var skip2 = new Set(cveRows.map(function (r) { return r.idx; }));
+				body = body.filter(function (_, idx) { return !skip2.has(idx); });
+			}
+
+			// Whatever is left → terminal-style body
+			var rest = body.join('\n').replace(/^\n+|\n+$/g, '');
+			var restHtml = rest ? '<pre class="tsp-body">' + colorize(rest) + '</pre>' : '';
+
+			return '<details class="tsp-stage" open>' +
+				'<summary class="tsp-stage-head">' +
+					'<span class="tsp-badge">' + s.n + '</span>' +
+					'<span class="tsp-stage-title">' + esc(title) + '</span>' +
+					'<span class="text-muted small">click to collapse</span>' +
+				'</summary>' +
+				(explain ? '<div class="tsp-explain">' + explain + '</div>' : '') +
+				decisionsHtml +
+				restHtml +
+				tablesHtml +
+				cveHtml +
+				'</details>';
+		}).join('');
+		container.innerHTML = html;
+	})();
+</script>
+{% endblock %}
