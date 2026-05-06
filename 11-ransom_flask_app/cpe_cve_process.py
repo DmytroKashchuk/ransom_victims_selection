@@ -40,7 +40,7 @@ NVD_CPE_API = "https://services.nvd.nist.gov/rest/json/cpes/2.0"
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 CPE_DICT_URL = "https://raw.githubusercontent.com/tiiuae/cpedict/main/data/cpedict.csv"
 
-CPE_DICT_PATH = "/Users/dmk6603/Documents/ransom_victims/11-ransom_flask_app/data/tech_cve_normalized/all_cpes.csv"
+CPE_DICT_PATH = os.path.join(os.path.dirname(__file__), "data", "tech_cve_normalized", "all_cpes.csv")
 KEV_CACHE = "kev_catalog.json"
 
 # Score thresholds: below these we say no_match instead of inventing a match
